@@ -1,0 +1,173 @@
+<resources>
+
+    <!-- * * * * * * * * * * * BASE THEME * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- Base application theme - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="background">@color/background</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+        <item name="actionMenuTextColor">@color/colorIcon</item>
+        <item name="colorScheme">@color/colorBottomSheetIcon</item>
+
+        <!-- ACTION MENU -->
+        <item name="android:popupMenuStyle">@style/ToolbarPopupMenuStyle</item>
+
+        <!-- BOTTOM NAVIGATION -->
+        <item name="bottomNavigationStyle">@style/BottomMenuStyle</item>
+
+        <!-- HEADLINE -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Headline</item>
+
+        <!-- TITLE -->
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Title</item>
+
+        <!-- SUB TITLE 1 -->
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Subtitle1</item>
+
+        <!-- SUB TITLE 2 -->
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Subtitle2</item>
+
+        <!-- SUB TITLE 3 -->
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Subtitle3</item>
+
+        <!-- SUB TITLE 2 -->
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Subtitle4</item>
+
+        <!-- BODY 1 -->
+        <item name="textAppearanceBody1">@style/TextAppearance.Body1</item>
+
+        <!-- FONTS -->
+        <item name="android:fontFamily">@font/questrial</item>
+        <item name="fontFamily">@font/questrial</item>
+
+        <!-- BOTTOM SHEET -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
+    </style>
+
+    <!-- * * * * * * * * * * * TEXT APPEARANCE * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+    <!-- HEADLINE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Headline" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">@dimen/dimen_26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- TITLE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Title" parent="TextAppearance.Headline">
+        <item name="android:textSize">@dimen/dimen_24sp</item>
+    </style>
+
+    <!-- SUB TITLE 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Subtitle1" parent="TextAppearance.Headline">
+        <item name="android:textSize">@dimen/dimen_22sp</item>
+    </style>
+
+    <!-- SUB TITLE 2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Subtitle2" parent="TextAppearance.Headline">
+        <item name="android:textSize">@dimen/dimen_20sp</item>
+    </style>
+
+    <!-- SUB TITLE 3 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Subtitle3" parent="TextAppearance.Headline">
+        <item name="android:textSize">@dimen/dimen_18sp</item>
+    </style>
+
+    <!-- SUB TITLE 4 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Subtitle4" parent="TextAppearance.Headline">
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+    </style>
+
+    <!-- BODY TEXT1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/colorOnSurfaceSecondary</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/dimen_18sp</item>
+    </style>
+
+    <!-- * * * * * * * * * * * TOOLBAR * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- Toolbar style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+    <style name="ToolbarStyle" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorOnPrimary</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Toolbar Title style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="ToolbarTitleStyle" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">@dimen/dimen_18sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="fontFamily">@font/questrial</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Toolbar Sub Title style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="ToolbarSubTitleStyle" parent="ToolbarTitleStyle">
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+    </style>
+
+    <!-- Popup Menu style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+    <style name="ToolbarPopupMenuStyle" parent="Widget.AppCompat.Light.PopupMenu">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="fontFamily">@font/questrial</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+
+    <!-- * * * * * * * * * * * MENU * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- Bottom Menu style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -->
+    <style name="BottomMenuStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">?attr/background</item>
+        <item name="itemTextColor">@color/bottom_navigation_text_color</item>
+        <item name="itemTextAppearanceActive">@style/BottomMenuActiveTextStyle</item>
+        <item name="itemTextAppearanceInactive">@style/BottomMenuActiveTextStyle</item>
+    </style>
+
+    <!-- Bottom Menu text style (active) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -->
+    <style name="BottomMenuActiveTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/dimen_12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Side Menu text style (active) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -->
+    <style name="SideMenuTextStyle" parent="BottomMenuActiveTextStyle">
+        <item name="android:textSize">@dimen/dimen_15sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <!-- * * * * * * * * * * * BOTTOM SHEET * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- BottomSheetDialog - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="AppBottomSheetDialogTheme"
+           parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <!-- ModalBottomSheet - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="AppModalStyle"
+           parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+</resources>

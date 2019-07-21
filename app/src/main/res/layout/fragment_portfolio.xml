@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".screens.portfolio.PortfolioFragment">
+    <data>
+        <variable name="model" type="me.tumur.portfolio.screens.portfolio.PortfolioViewModel"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ViewPager -->
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/portfolio_screen_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:onPortfolioPageScrolled="@{model}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:showIn="@layout/pager_item_portfolio_screen">
+
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/portfolio_screen_tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabIndicatorGravity="bottom"
+                        app:tabIndicatorHeight="@dimen/dimen_2dp"
+                        app:tabInlineLabel="true"
+                        app:tabSelectedTextColor="@color/colorOnSurface"
+                        app:tabTextAppearance="?attr/textAppearanceHeadline5"
+                        app:tabTextColor="@color/colorOnSurfaceSecondary"/>
+
+            </androidx.viewpager.widget.ViewPager>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

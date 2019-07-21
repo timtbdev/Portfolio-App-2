@@ -1,0 +1,93 @@
+<animated-vector
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+                android:name="vector"
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+            <group android:name="group">
+                <path
+                        android:name="path"
+                        android:pathData="M 18 24 L 30 24 L 30 39 L 18 39 Z"
+                        android:fillColor="#eac3a2"
+                        android:strokeWidth="1"/>
+                <path
+                        android:name="path_2"
+                        android:pathData="M 46 44.009 C 46 42.347 44.771 40.462 43.249 39.797 L 30 34 C 28.312 35.25 26.246 36 24 36 C 21.754 36 19.688 35.25 18.018 34 L 4.754 39.797 C 3.233 40.461 2 42.35 2 44.009 L 2 46.997 C 2 47.551 2.45 48 3.002 48 L 44.998 48 C 45.552 48 46 47.562 46 46.997 L 46 44.009 Z"
+                        android:fillColor="#4285f4"
+                        android:strokeWidth="1"/>
+                <path
+                        android:name="path_4"
+                        android:pathData="M 24 38 C 27.104 38 29.951 36.909 32.186 35.093 L 30 34 C 28.312 35.25 26.246 36 24 36 C 21.754 36 19.688 35.25 18.018 34 L 15.819 35.098 C 18.054 36.91 20.899 38 24 38 Z"
+                        android:fillColor="#005AB1"
+                        android:strokeWidth="1"/>
+                <group android:name="head_hair">
+                    <path
+                            android:name="head"
+                            android:pathData="M 35 12 L 35 20 C 35 26.065 30.065 31 24 31 C 17.935 31 13 26.065 13 20 L 13 12 L 35 12 Z"
+                            android:fillColor="#f1d9c5"
+                            android:strokeWidth="1"/>
+                    <path
+                            android:name="hair"
+                            android:pathData="M 13 11.999 C 13 8.686 15.535 5.095 18.654 3.981 L 26.06 1.336 C 26.579 1.15 27.199 1.398 27.444 1.888 L 29 5 C 32.314 5 35 7.693 35 11 L 35 17 C 35 14.239 32.761 12 30 12 L 18 12 C 15.239 12 13 14.239 13 17 L 13 11.999 Z"
+                            android:fillColor="#000000"
+                            android:strokeWidth="1"/>
+                </group>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="head_hair">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                        android:propertyName="rotation"
+                        android:duration="400"
+                        android:valueFrom="0"
+                        android:valueTo="-30"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                        android:propertyName="translateX"
+                        android:duration="400"
+                        android:valueFrom="0"
+                        android:valueTo="-8"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                        android:propertyName="translateY"
+                        android:duration="400"
+                        android:valueFrom="0"
+                        android:valueTo="15"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                        android:propertyName="rotation"
+                        android:startOffset="400"
+                        android:duration="400"
+                        android:valueFrom="-30"
+                        android:valueTo="0"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                        android:propertyName="translateX"
+                        android:startOffset="400"
+                        android:duration="400"
+                        android:valueFrom="-8"
+                        android:valueTo="0"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                        android:propertyName="translateY"
+                        android:startOffset="400"
+                        android:duration="400"
+                        android:valueFrom="15"
+                        android:valueTo="0"
+                        android:valueType="floatType"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

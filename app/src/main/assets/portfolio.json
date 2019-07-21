@@ -1,0 +1,18 @@
+[
+  {
+    "id": "YvlbIeO4gwikTqhO3bF8",
+    "owner_id": "t8AFhsy1JQjxdjjmnYLK",
+    "title": "Portfolio App",
+    "sub_title": "Personal Portfolio 2.0",
+    "logo": "https://tumur.me/img/portfolio-app-icon.png",
+    "logo_description": "app's logo",
+    "cover_image": "https://tumur.me/img/portfolio_screen.jpg",
+    "image_description": "User profile screen",
+    "info": "A end result of my 18 months of learning of Kotlin & Android Jetpack. It wasn't easy ;-)",
+    "text": "This is a personal portfolio app where I want to show my skills and passion for Android design and development. I used the latest, up to date technologies such as Android Jetpack components, Kotlin Coroutines, and many best practices. The code is available on Github, and it may help others to learn the latest Android components to build the first Android Kotlin app.",
+    "date_from": "November 2018",
+    "date_to": "July 2019",
+    "order": 1,
+    "header": "Mobile"
+  }
+]

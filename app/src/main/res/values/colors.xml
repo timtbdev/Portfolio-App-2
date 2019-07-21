@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- * * * * * * * * * * * BASE COLOR * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <color name="colorPrimary">#0061BF</color>
+    <color name="colorPrimaryVariant">#025BB1</color>
+    <color name="colorPrimaryDark">#014384</color>
+    <color name="colorOnPrimary">@android:color/white</color>
+    <color name="background">@android:color/white</color>
+    <color name="colorSurface">@android:color/white</color>
+    <color name="colorOnSurfaceSecondary">#9AA0A6</color>
+    <color name="colorOnSurface">#1A2025</color>
+    <color name="colorSecondary">#0061BF</color>
+    <color name="colorSecondaryVariant">#AD0D16</color>
+    <color name="colorOnSecondary">@android:color/white</color>
+    <color name="colorError">#E13E37</color>
+    <color name="colorOnError">@android:color/white</color>
+    <color name="colorIcon">#6A6D71</color>
+
+    <!-- * * * * * * * * * * * MAIN SCREEN COLORS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- Main Screen: Progressbar -->
+    <color name="progressBar">#818487</color>
+
+    <!-- Main Screen: Bottom Menu -->
+    <color name="colorBackgroundBottomNav">#F0F0F0</color>
+    <color name="menuIcon">#9AA0A6</color>
+
+    <!-- * * * * * * * * * * * BUTTONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <color name="colorStrokeOutlineButton">#9AA0A6</color>
+    <color name="colorTextOutlineButton">#9AA0A6</color>
+    <color name="colorRippleOutlineButton">#DADCE0</color>
+
+    <!-- * * * * * * * * * * * PROFILE SCREEN COLORS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <!-- Profile Screen: Header -->
+    <color name="colorIconTintProfileButton">#9AA0A6</color>
+    <color name="colorTextProfileButton">#9AA0A6</color>
+    <color name="colorAvatarBorder">#E2E2E2</color>
+
+    <color name="colorBackgroundSocialItem">#DADCE0</color>
+    <color name="colorButtonBackgroundMiddle">#F2F2F2</color>
+    <color name="colorButtonBackgroundStart">#F7F7F7</color>
+    <color name="colorBorder">#E2E2E2</color>
+    <color name="colorMenuIcon">#9AA0A6</color>
+    <color name="colorHeader">#1A2025</color>
+
+    <!-- * * * * * * * * * * * BOTTOM SHEET * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+    <color name="colorBottomSheetIcon">#5F6368</color>
+    <color name="colorBottomSheetPrimaryText">#3C4043</color>
+    <color name="colorBottomSheetSecondaryText">#5F6368</color>
+    <color name="colorBottomSheetBorder">#DADCE0</color>
+    <color name="colorBottomSheetIndicator">#E8EAED</color>
+
+    <!-- * * * * * * * * * * * PREFERENCE * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <!-- Category -->
+    <color name="colorPreferenceCategoryBackground">#F0F0F5</color>
+    <color name="colorPreferenceCategoryTitle">#5A6B7A</color>
+
+    <!-- Item -->
+    <color name="colorPreferenceItemBorder">#D5D5D9</color>
+    <color name="colorPreferenceItemSwitchInActive">#BDBDBD</color>
+
+    <!-- * * * * * * * * * * * LOGO * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <color name="colorLogoBackground">#b3b3b3</color>
+    <color name="colorLogoFace">#EAD8C5</color>
+    <color name="colorLogoNeck">#EAC3A2</color>
+    <color name="colorLogoShirt">#4285f4</color>
+    <color name="colorLogoHair">#000000</color>
+
+
+</resources>

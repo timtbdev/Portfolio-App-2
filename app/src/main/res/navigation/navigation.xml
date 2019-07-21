@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_nav"
+            app:startDestination="@id/profile_nav">
+
+    <fragment android:id="@+id/welcomeScreen"
+              android:name="me.tumur.portfolio.screens.welcome.WelcomeFragment"
+              tools:layout="@layout/fragment_welcome">
+
+        <action android:id="@+id/action_to_profileScreen"
+                app:destination="@id/profile_nav"
+                app:popUpToInclusive="true"
+                app:popUpTo="@+id/welcomeScreen"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment android:id="@+id/experienceScreen"
+              android:name="me.tumur.portfolio.screens.experience.ExperienceFragment"
+              android:label="@string/menu_experience"
+              tools:layout="@layout/fragment_experience"/>
+
+    <fragment android:id="@+id/settingsScreen"
+              android:name="me.tumur.portfolio.screens.settings.SettingsFragment"
+              android:label="@string/menu_settings">
+    </fragment>
+
+    <action android:id="@+id/action_global_welcomeScreen"
+            app:destination="@id/welcomeScreen"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpTo="@id/main_nav"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+
+    <dialog android:id="@+id/dialogFragment"
+            android:name="me.tumur.portfolio.screens.settings.dialog.AppDialogFragment"
+            android:label="@string/dialog_app_info"/>
+
+    <action android:id="@+id/action_global_dialogFragment"
+            app:destination="@id/dialogFragment"
+            app:popUpTo="@id/dialogFragment"
+            app:popUpToInclusive="true"/>
+
+    <navigation
+            android:id="@+id/profile_nav"
+            app:startDestination="@id/profileScreen" >
+
+        <fragment
+                android:id="@+id/profileScreen"
+                android:name="me.tumur.portfolio.screens.profile.ProfileFragment"
+                android:label="@string/menu_profile"
+                tools:layout="@layout/fragment_profile" app:startDestination="@id/action_to_profileBottomSheetScreen">
+
+            <deepLink app:uri="https://www.tumur.me/profile" />
+
+            <action
+                    android:id="@+id/action_to_profileBottomSheetScreen"
+                    app:destination="@id/profileBottomSheetScreen"
+                    app:enterAnim="@anim/slide_up"
+                    app:exitAnim="@anim/slide_down"
+                    app:popEnterAnim="@anim/slide_up"
+                    app:popExitAnim="@anim/slide_down" />
+
+        </fragment>
+        <dialog
+                android:id="@+id/profileBottomSheetScreen"
+                android:name="me.tumur.portfolio.screens.profile.bottomsheet.ProfileBottomSheetFragment"
+                tools:layout="@layout/fragment_profile_bottom_sheet">
+        </dialog>
+    </navigation>
+    <navigation android:id="@+id/portfolio_nav"
+                app:startDestination="@id/portfolioScreen">
+
+        <fragment android:id="@+id/portfolioScreen"
+                  android:name="me.tumur.portfolio.screens.portfolio.PortfolioFragment"
+                  android:label="@string/menu_portfolio"
+                  tools:layout="@layout/fragment_portfolio"/>
+
+        <fragment android:id="@+id/portfolioPagerFragment"
+                  android:name="me.tumur.portfolio.screens.portfolio.pager.PortfolioPagerFragment"
+                  android:label="PortfolioPagerFragment"/>
+    </navigation>
+
+</navigation>

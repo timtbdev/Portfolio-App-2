@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="social"
+                type="me.tumur.portfolio.repository.database.model.profile.SocialModel"/>
+        <variable
+                name="clickListener"
+                type="me.tumur.portfolio.utils.adapters.listItemAdapters.social.SocialClickListener"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bs_social_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            android:onClick="@{() -> clickListener.onClick(social)}"
+            android:padding="@dimen/_5sdp">
+
+        <!-- Icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bs_social_item_icon"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:socialIcon="@{social.name}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bs_social_item_name"
+                tools:src="@drawable/ic_github"/>
+
+        <!-- Name -->
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bs_social_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textSize="@dimen/dimen_16sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{social.name}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bs_social_item_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/colorBottomSheetPrimaryText"
+                tools:text="@tools:sample/full_names"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

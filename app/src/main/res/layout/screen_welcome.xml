@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="model" type="me.tumur.portfolio.screens.welcome.WelcomeViewModel"/>
+    </data>
+
+    <!-- Welcome screen: Portrait mode -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/welcome_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- ViewPager -->
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/welcome_screen_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0dp"
+                app:layout_constraintVertical_weight="4"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/welcome_screen_page_indicator"
+                app:onPageScrolled="@{model}"
+                app:scrollToItem="@{model.scrollToItem}"
+                app:smoothScroll="@{true}"
+                tools:showIn="@layout/pager_item_welcome_screen"/>
+
+        <!-- Page Indicator -->
+        <com.pixelcan.inkpageindicator.InkPageIndicator
+                android:id="@+id/welcome_screen_page_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintVertical_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcome_screen_view_pager"
+                app:layout_constraintBottom_toTopOf="@+id/welcome_screen_btn"
+                app:ipi_dotDiameter="@dimen/_8sdp"
+                app:ipi_dotGap="@dimen/_4sdp"
+                app:ipi_animationDuration="320"
+                app:ipi_pageIndicatorColor="@color/colorOnSurfaceSecondary"
+                app:ipi_currentPageIndicatorColor="?attr/colorOnSurface"/>
+
+        <!-- Button -->
+        <include
+                layout="@layout/button_welcome_screen"
+                tools:showIn="@layout/button_welcome_screen"
+                bind:model="@{model}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

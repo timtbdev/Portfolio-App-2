@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:behavior_peekHeight="800dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        tools:context=".screens.profile.bottomsheet.ProfileBottomSheetFragment">
+    <data>
+        <variable name="model" type="me.tumur.portfolio.screens.profile.ProfileViewModel"/>
+    </data>
+    <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/profile_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/fragment_profile_bottom_sheet">
+
+        <!-- Indicator -->
+        <View
+                android:id="@+id/profile_bs_top_indicator"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/rounded_indicator"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/profile_bs_avatar"/>
+
+
+        <!-- Avatar -->
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_bs_avatar"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:contentDescription="@{model.profile.imageDescription}"
+                app:imageUrl="@{model.profile.image}"
+                app:placeholder="@{@drawable/ic_profile_placeholder}"
+                app:civ_border_width="@dimen/_1sdp"
+                app:civ_border_color="?attr/colorOnPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/profile_bs_top_indicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profile_bs_name"
+                app:layout_constraintBottom_toTopOf="@+id/divider_top"
+                tools:src="@drawable/profile"/>
+
+        <!-- Name -->
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/profile_bs_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textSize="@dimen/dimen_16sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="@+id/profile_bs_avatar"
+                app:layout_constraintStart_toEndOf="@+id/profile_bs_avatar"
+                app:layout_constraintBottom_toTopOf="@+id/profile_bs_email"
+                android:textColor="@color/colorBottomSheetPrimaryText"
+                android:text="@{model.profile.name}"
+                tools:text="@tools:sample/full_names"/>
+
+        <!-- Email -->
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/profile_bs_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/dimen_14sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@+id/profile_bs_name"
+                app:layout_constraintStart_toEndOf="@+id/profile_bs_avatar"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_bs_avatar"
+                android:textColor="@color/colorBottomSheetSecondaryText"
+                android:text="@{model.profile.email}"
+                tools:text="@tools:sample/full_names"/>
+
+        <!-- Divider top -->
+        <View
+                android:id="@+id/divider_top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorBottomSheetBorder"
+                app:layout_constraintTop_toBottomOf="@+id/profile_bs_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/profile_bs_social_list"/>
+
+        <!-- Social list -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_bs_social_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/profile_bs_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cl_contact_me"
+                tools:listitem="@tools:sample/avatars"/>
+
+
+        <!-- Contact me layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_contact_me"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:onClick="@{() -> model.emailItemOnClick(true)}"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@+id/profile_bs_social_list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Divider bottom -->
+            <View
+                    android:id="@+id/divider_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/colorBottomSheetBorder"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/contact_me"/>
+
+            <!-- Contact me -->
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/contact_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textAlignment="center"
+                    android:lineSpacingExtra="@dimen/_5sdp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintTop_toBottomOf="@id/divider_bottom"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/colorBottomSheetSecondaryText"
+                    android:text="@string/copy_right"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+</layout>

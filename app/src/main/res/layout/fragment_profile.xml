@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        tools:context=".screens.profile.ProfileFragment">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="model" type="me.tumur.portfolio.screens.profile.ProfileViewModel"/>
+        <variable name="shared" type="me.tumur.portfolio.screens.MainViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- Profile screen -->
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/profile_screen_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="false">
+
+            <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp">
+
+                <!-- Header -->
+                <include
+                        layout="@layout/screen_profile_header"
+                        bind:model="@{model}"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!-- About content -->
+            <include
+                    layout="@layout/screen_profile_about"
+                    bind:model="@{model}"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:onClick="@{() -> model.setShowProfileBottomsheet(true)}"
+                    app:layout_behavior=".utils.fabButton.ScrollAwareFABBehavior"
+                    app:srcCompat="@drawable/ic_read_more"
+                    app:maxImageSize="@dimen/_16sdp"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:layout_anchor="@+id/screen_profile_about_content"
+                    app:layout_anchorGravity="bottom|end"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "852832723346",
+    "firebase_url": "https://portfolio-app-147b5.firebaseio.com",
+    "project_id": "portfolio-app-147b5",
+    "storage_bucket": "portfolio-app-147b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852832723346:android:c8b206b00866c4fa",
+        "android_client_info": {
+          "package_name": "me.tumur.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852832723346-ddic85s6rk4gb9b9e7t6c85ig7733n0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.tumur.portfolio",
+            "certificate_hash": "d7ad4634a38255ed8eda9e62be06a518d53f28ea"
+          }
+        },
+        {
+          "client_id": "852832723346-ldtgti7i46pk2fe8tbc9b2k3ak7bun1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2X5f4wo6QC9Pgrz3mcms5-Z0n0gWQx-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852832723346-ldtgti7i46pk2fe8tbc9b2k3ak7bun1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

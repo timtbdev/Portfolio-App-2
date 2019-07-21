@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="model" type="me.tumur.portfolio.screens.MainViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- Loader Screen -->
+        <include
+                layout="@layout/screen_loader"
+                bind:model="@{model}"/>
+
+        <!-- NavHost Screen -->
+        <include
+                layout="@layout/screen_nav_host"
+                bind:model="@{model}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
