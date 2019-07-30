@@ -5,5 +5,8 @@ sealed class NavigationState
 /** Hide Navigation */
 object HideNavigation: NavigationState()
 
-/** Welcome Screen */
+/** Show Navigation */
 object ShowNavigation : NavigationState()
+
+/** Hide Bottom navigation */
+object GoneNavigation : NavigationState()

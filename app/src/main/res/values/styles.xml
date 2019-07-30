@@ -6,6 +6,7 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowContentTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -97,6 +98,13 @@
         <item name="android:textColor">@color/colorOnSurfaceSecondary</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/dimen_18sp</item>
+    </style>
+
+    <!-- CHIP TEXT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="Chip.TextAppearance" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/colorOnSurfaceSecondary</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/dimen_12sp</item>
     </style>
 
     <!-- * * * * * * * * * * * TOOLBAR * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

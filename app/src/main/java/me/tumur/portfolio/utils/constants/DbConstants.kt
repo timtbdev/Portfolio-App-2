@@ -15,6 +15,8 @@ object DbConstants {
     const val TASK_JSON = "task.json"
     const val PORTFOLIO_JSON = "portfolio.json"
     const val EXPERIENCE_JSON = "experience.json"
+    const val CATEGORY_JSON = "category.json"
+    const val SCREENSHOT_JSON = "screenshot.json"
     const val APP_JSON = "app.json"
 
     /** TABLE CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -27,6 +29,8 @@ object DbConstants {
     const val EXPERIENCE = "experience"
     const val TASKS = "tasks"
     const val BUTTON = "button"
+    const val CATEGORY = "category"
+    const val SCREENSHOT = "screenshot"
 
     /** COLUMNS CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"
@@ -43,6 +47,8 @@ object DbConstants {
     const val IMAGE = "image"
     const val COVER_IMAGE = "cover_image"
     const val IMAGE_DESCRIPTION = "image_description"
+    const val ICON = "icon"
+    const val ICON_DESCRIPTION = "icon_description"
     const val LOCATION = "location"
     const val INFO = "info"
     const val DATE_FROM = "date_from"
@@ -55,6 +61,10 @@ object DbConstants {
     const val ORDER = "order"
     const val ORDERS = "orders"
     const val TAB = "tab"
+    const val TYPE = "type"
+    const val YOUTUBE_ID = "youtube_id"
+    const val DESCRIPTION = "description"
+    const val VIDEO_URL = "video_url"
     const val QUERY = "query"
 
     /** QUERIES'S CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -84,12 +94,12 @@ object DbConstants {
     /** Portfolio table's queries --------------------------------------------------------------- */
     const val DELETE_PORTFOLIO = "DELETE FROM $PORTFOLIO"
     const val GET_PORTFOLIO_LIST_BY_OWNER_ID = "SELECT * FROM $PORTFOLIO WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
-    const val GET_PORTFOLIO_DATA_BY_OWNER_ID_AND_TAB = "SELECT * FROM $PORTFOLIO WHERE $OWNER_ID=:$ID AND $HEADER=:$TAB ORDER BY $ORDERS"
     const val GET_PORTFOLIO_ITEM_BY_ID = "SELECT * FROM $PORTFOLIO WHERE $ID=:$ID"
     const val GET_PORTFOLIO_BY_QUERY = "SELECT * FROM $PORTFOLIO WHERE $TITLE MATCH $QUERY"
 
     /** Buttons table's queries -------------------------------------------------------- */
     const val DELETE_BUTTON = "DELETE FROM $BUTTON"
+    const val GET_BUTTON_BY_OWNER_ID = "SELECT * FROM $BUTTON WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
     /** Experience table's queries -------------------------------------------------------------- */
     const val DELETE_EXPERIENCE = "DELETE FROM $EXPERIENCE"
@@ -97,4 +107,12 @@ object DbConstants {
 
     /** Tasks table's queries -------------------------------------------------------- */
     const val DELETE_TASK= "DELETE FROM $TASKS"
+
+    /** Category table's queries --------------------------------------------------------------- */
+    const val DELETE_CATEGORY = "DELETE FROM $CATEGORY"
+    const val GET_CATEGORY_BY_TYPE = "SELECT * FROM $CATEGORY WHERE $TYPE=:$TYPE ORDER BY $ORDERS"
+
+    /** Screenshot table's queries --------------------------------------------------------------- */
+    const val DELETE_SCREENSHOT = "DELETE FROM $SCREENSHOT"
+    const val GET_SCREENSHOT_BY_OWNER_ID = "SELECT * FROM $SCREENSHOT WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 }

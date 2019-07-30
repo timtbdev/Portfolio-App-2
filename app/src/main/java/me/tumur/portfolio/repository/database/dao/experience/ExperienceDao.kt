@@ -21,8 +21,4 @@ abstract class ExperienceDao {
     /** Delete */
     @Query(DbConstants.DELETE_EXPERIENCE)
     abstract suspend fun delete()
-
-//    /** Get */
-//    @Query(DbConstants.GET_EXPERIENCE)
-//    abstract fun get(): LiveData<List<ExperienceFullModel>>
 }

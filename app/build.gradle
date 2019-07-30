@@ -136,8 +136,7 @@ dependencies {
     implementation deps.utilities.circle_image_view
     implementation deps.utilities.ink_page_indicator
     implementation deps.utilities.chrome_custom_tab
-    implementation deps.utilities.android_youtube_player
-    implementation deps.utilities.android_youtube_player_chrome
+    implementation deps.utilities.exo_player
     // Test
     testImplementation deps.test.junit
     androidTestImplementation deps.androidx.test

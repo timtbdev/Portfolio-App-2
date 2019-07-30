@@ -3,87 +3,130 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/main_nav"
-            app:startDestination="@id/profile_nav">
+            app:startDestination="@id/profile_screen">
 
-    <fragment android:id="@+id/welcomeScreen"
+    <!-- Welcome screen -->
+    <fragment android:id="@+id/welcome_screen"
               android:name="me.tumur.portfolio.screens.welcome.WelcomeFragment"
               tools:layout="@layout/fragment_welcome">
 
-        <action android:id="@+id/action_to_profileScreen"
-                app:destination="@id/profile_nav"
-                app:popUpToInclusive="true"
-                app:popUpTo="@+id/welcomeScreen"
+        <action android:id="@+id/action_to_profile_screen"
+                app:destination="@id/profile_screen"
                 app:enterAnim="@anim/fade_in"
                 app:exitAnim="@anim/fade_out"
                 app:popEnterAnim="@anim/fade_in"
-                app:popExitAnim="@anim/fade_out"/>
+                app:popExitAnim="@anim/fade_out"
+                app:popUpTo="@+id/welcome_screen"
+                app:popUpToInclusive="true"/>
     </fragment>
 
-    <fragment android:id="@+id/experienceScreen"
+    <!-- Global action to welcome screen -->
+    <action android:id="@+id/action_global_to_welcome_screen"
+            app:destination="@id/welcome_screen"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/main_nav"/>
+
+    <!-- Experience screen -->
+    <fragment android:id="@+id/experience_screen"
               android:name="me.tumur.portfolio.screens.experience.ExperienceFragment"
               android:label="@string/menu_experience"
               tools:layout="@layout/fragment_experience"/>
 
-    <fragment android:id="@+id/settingsScreen"
+    <!-- Settings screen -->
+    <fragment android:id="@+id/settings_screen"
               android:name="me.tumur.portfolio.screens.settings.SettingsFragment"
               android:label="@string/menu_settings">
     </fragment>
 
-    <action android:id="@+id/action_global_welcomeScreen"
-            app:destination="@id/welcomeScreen"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popUpTo="@id/main_nav"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out"/>
-
-    <dialog android:id="@+id/dialogFragment"
+    <!-- App info dialog -->
+    <dialog android:id="@+id/app_info_dialog"
             android:name="me.tumur.portfolio.screens.settings.dialog.AppDialogFragment"
             android:label="@string/dialog_app_info"/>
 
-    <action android:id="@+id/action_global_dialogFragment"
-            app:destination="@id/dialogFragment"
-            app:popUpTo="@id/dialogFragment"
+    <!-- Global action to app info dialog -->
+    <action android:id="@+id/action_global_to_app_info_dialog"
+            app:destination="@id/app_info_dialog"
+            app:popUpTo="@id/app_info_dialog"
             app:popUpToInclusive="true"/>
 
+    <!-- Profile screen -->
     <navigation
-            android:id="@+id/profile_nav"
-            app:startDestination="@id/profileScreen" >
+            android:id="@+id/profile_screen"
+            app:startDestination="@id/profile">
 
+        <!-- Profile -->
         <fragment
-                android:id="@+id/profileScreen"
+                android:id="@+id/profile"
                 android:name="me.tumur.portfolio.screens.profile.ProfileFragment"
                 android:label="@string/menu_profile"
-                tools:layout="@layout/fragment_profile" app:startDestination="@id/action_to_profileBottomSheetScreen">
+                tools:layout="@layout/fragment_profile">
 
-            <deepLink app:uri="https://www.tumur.me/profile" />
+            <deepLink app:uri="https://www.tumur.me/profile"/>
 
             <action
-                    android:id="@+id/action_to_profileBottomSheetScreen"
-                    app:destination="@id/profileBottomSheetScreen"
+                    android:id="@+id/action_to_social"
+                    app:destination="@id/social"
                     app:enterAnim="@anim/slide_up"
                     app:exitAnim="@anim/slide_down"
                     app:popEnterAnim="@anim/slide_up"
-                    app:popExitAnim="@anim/slide_down" />
+                    app:popExitAnim="@anim/slide_down"/>
 
         </fragment>
+
+        <!-- Social -->
         <dialog
-                android:id="@+id/profileBottomSheetScreen"
+                android:id="@+id/social"
                 android:name="me.tumur.portfolio.screens.profile.bottomsheet.ProfileBottomSheetFragment"
                 tools:layout="@layout/fragment_profile_bottom_sheet">
         </dialog>
     </navigation>
-    <navigation android:id="@+id/portfolio_nav"
-                app:startDestination="@id/portfolioScreen">
 
-        <fragment android:id="@+id/portfolioScreen"
-                  android:name="me.tumur.portfolio.screens.portfolio.PortfolioFragment"
-                  android:label="@string/menu_portfolio"
-                  tools:layout="@layout/fragment_portfolio"/>
+    <!-- Portfolio screen -->
+    <fragment android:id="@+id/portfolio_screen"
+              android:name="me.tumur.portfolio.screens.portfolio.PortfolioFragment"
+              android:label="@string/menu_portfolio"
+              tools:layout="@layout/fragment_portfolio">
 
-        <fragment android:id="@+id/portfolioPagerFragment"
-                  android:name="me.tumur.portfolio.screens.portfolio.pager.PortfolioPagerFragment"
-                  android:label="PortfolioPagerFragment"/>
-    </navigation>
+        <!-- Action to portfolio detail screen -->
+        <action android:id="@+id/action_to_portfolio_detail_screen"
+                app:destination="@id/portfolio_detail_screen"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out">
+            <argument
+                    android:name="id"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+            <argument
+                    android:name="title"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+        </action>
+    </fragment>
+
+    <!-- Portfolio detail screen -->
+    <fragment android:id="@+id/portfolio_detail_screen"
+              android:name="me.tumur.portfolio.screens.portfolio.detail.PortfolioDetailFragment"
+              android:label="{title}"
+              tools:layout="@layout/fragment_portfolio_detail">
+
+        <argument
+                android:name="id"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+        <argument
+                android:name="title"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+
+    </fragment>
 
 </navigation>

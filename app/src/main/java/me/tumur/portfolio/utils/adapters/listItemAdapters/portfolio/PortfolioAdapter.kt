@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
-import me.tumur.portfolio.utils.adapters.listItemAdapters.social.SocialViewHolder
 
 /**
  * An adapter that provides a list of [PortfolioModel] to a [RecyclerView]
@@ -13,7 +12,7 @@ import me.tumur.portfolio.utils.adapters.listItemAdapters.social.SocialViewHolde
 class PortfolioAdapter(private val clickListener: PortfolioClickListener) : PagedListAdapter<PortfolioModel, PortfolioViewHolder>(PortfolioDiffCallBack()) {
 
     /**
-     * Part of the RecyclerView adapter, called when RecyclerView needs a new [SocialViewHolder]
+     * Part of the RecyclerView adapter, called when RecyclerView needs a new [PortfolioViewHolder]
      *
      * A [PortfolioViewHolder] holds the view for the [RecyclerView] as well as providing information
      * to the RecyclerView such as where on the screen it was last drawn during scrolling.

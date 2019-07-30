@@ -2,9 +2,6 @@ package me.tumur.portfolio.utils.constants
 
 object Constants {
 
-    /** Delay * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    const val DELAY = 1000L
-
     /** Saved state * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val FRAGMENT_STATE = "FragmentState"
     const val FRAGMENT_PROFILE = "FragmentProfile"
@@ -17,11 +14,6 @@ object Constants {
     const val APP = "Portfolio"
     const val FIRST = "isFirstRun"
     const val POSITION = "Position"
-
-    /** NETWORK * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-    /** Cache ------------------------------------------------------------------------------------------------------ */
-    const val CACHE = "CACHE"
 
 
     /** EMAIL * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -37,7 +29,23 @@ object Constants {
     /** LIST ITEMS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val HEADER = 0
     const val ITEM = 1
-    const val ANDROID = "Android Apps"
-    const val WEB = "Websites"
+    const val CATEGORY_ANDROID = "android"
+    const val CATEGORY_WEB = "web"
+    const val CATEGORY_CODE = "code"
+    const val BUTTON_NORMAL = 2
+    const val BUTTON_OUTLINE = 3
+    const val BUTTON_GITHUB = "github"
+    const val BUTTON_GOOGLE = "google"
+    const val BUTTON_WEB = "web"
+    const val BUTTON_YOUTUBE = "youtube"
 
+    /** PLAYER * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    const val USER_AGENT = "Portolio App Player"
+    const val FORMAT_MP3 = "mp3"
+    const val FORMAT_MP4 = "mp4"
+    const val FORMAT_M3U8 = "m3u8"
+
+    /** BUNDLE * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    const val ID = "id"
+    const val TITLE = "title"
 }

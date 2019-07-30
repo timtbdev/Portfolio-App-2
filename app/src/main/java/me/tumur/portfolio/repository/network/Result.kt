@@ -2,11 +2,8 @@ package me.tumur.portfolio.repository.network
 
 sealed class Result
 
-/** Splash Screen */
+/** Network request successfull */
 object Success : Result()
 
-/** Main Screen */
-object Loading : Result()
-
-/** Loader Screen */
+/** Network request failed */
 object Failed : Result()

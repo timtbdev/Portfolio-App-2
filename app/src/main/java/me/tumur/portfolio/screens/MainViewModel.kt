@@ -49,7 +49,8 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     val screenState: LiveData<ScreenState> = _screenState
 
     /** Fragment state  */
-    private val _fragmentState = savedStateHandle.getLiveData(Constants.FRAGMENT_STATE, Constants.FRAGMENT_EMPTY)
+    private val _fragmentState: MutableLiveData<String> =
+        savedStateHandle.getLiveData(Constants.FRAGMENT_STATE, Constants.FRAGMENT_EMPTY)
     val fragmentState: LiveData<String> = _fragmentState
 
     /** Routed to saved Fragment state */
@@ -57,7 +58,8 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     val routed: LiveData<Boolean> = _routed
 
     /** Navigation state  */
-    private val _navigation = MutableLiveData<NavigationState>().apply { if(isFirstRun) value = HideNavigation else value = ShowNavigation }
+    private val _navigation =
+        MutableLiveData<NavigationState>().apply { value = if (isFirstRun) HideNavigation else ShowNavigation }
     val navigation : LiveData<NavigationState> = _navigation
 
     /** Toast messages */
@@ -78,12 +80,13 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
                 }
             }
         } else {
-            viewModelScope.launch {
-                setScreenStateWithDelay(LoaderScreen)
-            }
-            if(network) fetch(MainScreen) else
-                viewModelScope.launch {
-                setScreenStateWithDelay(MainScreen)
+
+            when (fragmentState.value) {
+                Constants.FRAGMENT_EMPTY -> {
+                    viewModelScope.launch { setScreenStateWithDelay(LoaderScreen) }
+                    if (network) fetch(MainScreen) else viewModelScope.launch { setScreenStateWithDelay(MainScreen) }
+                }
+                else -> setScreenState(MainScreen)
             }
         }
     }
@@ -116,7 +119,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     }
 
     /** Set saved state handle for screen state */
-    suspend fun setScreenStateWithDelay(state: ScreenState) {
+    private suspend fun setScreenStateWithDelay(state: ScreenState) {
         delay(1000L)
         _screenState.value = state
     }
@@ -124,7 +127,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     /** Set saved state handle for fragment state */
     fun setFragmentState(state: String) {
         // Sets a new value for the object associated to the key.
-        savedStateHandle.set(Constants.FRAGMENT_STATE, state)
+        if (state != fragmentState.value) _fragmentState.value = state
     }
 
     /** Set routed fragment state for saved state handle */

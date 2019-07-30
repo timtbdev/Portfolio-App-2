@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -43,7 +44,7 @@ class ProfileFragment : Fragment() {
      * this Fragment is attached i.e.,after Fragment.onAttach,
      * and access prior to that will result in IllegalArgumentException.
      * */
-    private val viewModel: ProfileViewModel by navGraphViewModels(R.id.profile_nav)
+    private val viewModel: ProfileViewModel by navGraphViewModels(R.id.profile_screen)
     private val sharedViewModel: MainViewModel by activityViewModels()
 
     /** Databinding */
@@ -101,6 +102,9 @@ class ProfileFragment : Fragment() {
         /** Set options menu */
         setHasOptionsMenu(true)
 
+        /** Set fragment state in shared view model */
+        sharedViewModel.setFragmentState(Constants.FRAGMENT_PROFILE)
+
         /** Set observers */
         setObservers(aboutAdapter)
 
@@ -134,7 +138,7 @@ class ProfileFragment : Fragment() {
         val showProfileBottomSheetObserver = Observer<Boolean> { data ->
             data?.let {
                 if(it) {
-                    this.findNavController().navigate(ProfileFragmentDirections.actionToProfileBottomSheetScreen())
+                    this.findNavController().navigate(ProfileFragmentDirections.actionToSocial())
                     viewModel.resetShowProfileBottomsheet()
                 }
             }
@@ -173,7 +177,7 @@ class ProfileFragment : Fragment() {
         url?.let {
             /** Chrome custom tab  */
             val builder = CustomTabsIntent.Builder().apply {
-                this.setToolbarColor(resources.getColor(R.color.colorPrimary))
+                this.setToolbarColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
                 this.setShowTitle(true)
             }
             builder.build().launchUrl(context, (Uri.parse(url)))

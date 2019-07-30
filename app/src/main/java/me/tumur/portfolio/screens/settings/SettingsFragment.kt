@@ -4,12 +4,15 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import me.tumur.portfolio.R
 import me.tumur.portfolio.R.string
 import me.tumur.portfolio.R.xml
+import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.constants.Constants
 
 
@@ -18,6 +21,20 @@ import me.tumur.portfolio.utils.constants.Constants
  */
 
 class SettingsFragment : PreferenceFragmentCompat() {
+
+    /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    /** ViewModel */
+
+    /**
+     * Returns a property delegate to access ViewModel
+     * by default scoped to this Fragment:
+     * Default scope may be overridden with parameter ownerProducer:
+     * This property can be accessed only after
+     * this Fragment is attached i.e.,after Fragment.onAttach,
+     * and access prior to that will result in IllegalArgumentException.
+     * */
+    private val sharedViewModel: MainViewModel by activityViewModels()
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -33,6 +50,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         /** Update summary and intent data of some preferences*/
         updatePreferenceSummary()
+
+        /** Set fragment state in shared view model */
+        sharedViewModel.setFragmentState(Constants.FRAGMENT_SETTINGS)
 
     }
 
@@ -54,7 +74,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             sourceCode -> startCustomTab(Constants.SOURCE_CODE_URL)
             privacy -> startCustomTab(Constants.PRIVACY_URL)
             twitter -> startCustomTab(Constants.TWITTER_URL)
-            appInfo -> findNavController().navigate(R.id.action_global_dialogFragment)
+            appInfo -> findNavController().navigate(R.id.action_global_to_app_info_dialog)
         }
 
         return super.onPreferenceTreeClick(preference)
@@ -94,7 +114,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         url?.let {
             /** Chrome custom tab  */
             val builder = CustomTabsIntent.Builder().apply {
-                this.setToolbarColor(resources.getColor(R.color.colorPrimary))
+                this.setToolbarColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
                 this.setShowTitle(true)
             }
             builder.build().launchUrl(context, (Uri.parse(url)))

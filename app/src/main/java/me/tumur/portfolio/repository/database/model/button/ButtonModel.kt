@@ -19,5 +19,6 @@ data class ButtonModel(
     @Json(name = DbConstants.OWNER_ID) @ColumnInfo(name = DbConstants.OWNER_ID) var ownerId: String,
     @Json(name = DbConstants.TITLE) @ColumnInfo(name = DbConstants.TITLE) var title: String,
     @Json(name = DbConstants.URL) @ColumnInfo(name = DbConstants.URL) var url: String,
+    @Json(name = DbConstants.TYPE) @ColumnInfo(name = DbConstants.TYPE) var type: String,
     @Json(name = DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
 ): Parcelable

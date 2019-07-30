@@ -4,5 +4,17 @@
     "title": "Current Version",
     "text": "1.0.0.debug",
     "order": 1
+  },
+  {
+    "id": "txARXsQ6BVVAzFgfSYbU",
+    "title": "Latest Version",
+    "text": "1.1.1-alpha1",
+    "order": 2
+  },
+  {
+    "id": "1x1xgTdg49vn5mzqcEwv",
+    "title": "Latest updated",
+    "text": "June 23, 2019",
+    "order": 3
   }
 ]

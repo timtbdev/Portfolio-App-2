@@ -24,25 +24,14 @@ abstract class PortfolioDao {
     @Query(DbConstants.DELETE_PORTFOLIO)
     abstract suspend fun delete()
 
-//    /** Get item by id */
-//    @Query(DbConstants.GET_FULL_PORTFOLIO_BY_ID)
-//    abstract fun getItemById(id: String): LiveData<PortfolioFullModel>
-
-    /** Get list by id */
+    /** Get portfolio list by owner id */
     @Query(DbConstants.GET_PORTFOLIO_LIST_BY_OWNER_ID)
-    abstract fun getListById(id: String): LiveData<List<PortfolioModel>>
+    abstract fun getListByOwnerId(id: String): DataSource.Factory<Int, PortfolioModel>
 
-    /** Get item by id  and tab */
-    @Query(DbConstants.GET_PORTFOLIO_DATA_BY_OWNER_ID_AND_TAB)
-    abstract fun getDataByIdAndTab(id: String, tab: String): LiveData<List<PortfolioModel>>
 
-    /** Get paged item by id and tab */
-    @Query(DbConstants.GET_PORTFOLIO_DATA_BY_OWNER_ID_AND_TAB)
-    abstract fun getPagedDataByIdAndTab(id: String, tab: String): DataSource.Factory<Int, PortfolioModel>
-
-    /** Get item by id */
+    /** Get portfolio item by id*/
     @Query(DbConstants.GET_PORTFOLIO_ITEM_BY_ID)
-    abstract fun getItemById(id: String): LiveData<PortfolioModel>
+    abstract fun getById(id: String): LiveData<PortfolioModel>
 
 //    /** Search by query */
 //    @Query(DbConstants.GET_PORTFOLIO_BY_QUERY)

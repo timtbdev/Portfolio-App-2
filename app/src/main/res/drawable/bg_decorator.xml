@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorBottomSheetIndicator"/>
+        </shape>
+    </item>
+    <item
+            android:top="@dimen/dimen_1dp"
+            android:bottom="@dimen/dimen_1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPreferenceCategoryBackground"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -11,7 +11,7 @@ import me.tumur.portfolio.screens.portfolio.PortfolioViewModel
 fun setViewPagerPortfolioChangeListener(viewPager: ViewPager, viewModel: PortfolioViewModel) {
     viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
         override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-            viewModel.setCurrentPositon(position)
+            //viewModel.setCurrentPosition(position)
         }
         override fun onPageScrollStateChanged(state: Int) { }
         override fun onPageSelected(position: Int) { }

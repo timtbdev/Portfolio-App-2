@@ -71,5 +71,16 @@
     <color name="colorLogoShirt">#4285f4</color>
     <color name="colorLogoHair">#000000</color>
 
+    <!-- * * * * * * * * * * * BUTTON * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <color name="colorGithub">#24292E</color>
+    <color name="colorGithubActive">#343944</color>
+    <color name="colorGoogle">#699E3F</color>
+    <color name="colorGoogleActive">#265F27</color>
+    <color name="colorTwitter">#1DA1F2</color>
+    <color name="colorTwitterActive">#0F5C88</color>
+    <color name="colorYoutube">#E62117</color>
+    <color name="colorYoutubeActive">#7C1009</color>
+
+    <color name="transparentBackground">#34000000</color>
 
 </resources>

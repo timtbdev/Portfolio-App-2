@@ -1,17 +1,23 @@
 package me.tumur.portfolio.repository.repo
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.paging.DataSource
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
+import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
 import me.tumur.portfolio.repository.database.dao.profile.SocialDao
+import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
+import me.tumur.portfolio.repository.database.model.button.ButtonModel
+import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
+import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.network.RestApi
 import me.tumur.portfolio.repository.network.Result
@@ -34,6 +40,8 @@ class RepositoryImp : Repository, KoinComponent {
     private val experienceDao: ExperienceDao by inject()
     private val buttonDao: ButtonDao by inject()
     private val taskDao: TaskDao by inject()
+    private val categoryDao: CategoryDao by inject()
+    private val screenShotDao: ScreenShotDao by inject()
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
@@ -100,6 +108,16 @@ class RepositoryImp : Repository, KoinComponent {
                 httpResponseAll.body()?.app?.let {
                     appDao.update(it)
                 }
+
+                /** Update category table */
+                httpResponseAll.body()?.category?.let {
+                    categoryDao.update(it)
+                }
+
+                /** Update screenshot table */
+                httpResponseAll.body()?.screenshot?.let {
+                    screenShotDao.update(it)
+                }
                 Success
             } else Failed
         } catch (exception: IOException) {
@@ -135,25 +153,25 @@ class RepositoryImp : Repository, KoinComponent {
     /**
      * Content that can be shown on the profile screen.
      */
-    override suspend fun getProfile(id: String) = liveData {
+    override suspend fun getProfileById(id: String) = liveData {
         /**  Start the emission */
-        emitSource(profileDao.get(id))
+        emitSource(profileDao.getById(id))
     }
 
     /**
      * Content that can be shown on the profile screen.
      */
-    override suspend fun getAbout(id: String) = liveData {
+    override suspend fun getAboutById(id: String) = liveData {
         /**  Start the emission */
-        emitSource(aboutDao.get(id))
+        emitSource(aboutDao.getById(id))
     }
 
     /**
      * Content that can be shown on the profile screen.
      */
-    override suspend fun getSocial(id: String) = liveData {
+    override suspend fun getSocialById(id: String) = liveData {
         /**  Start the emission */
-        emitSource(socialDao.get(id))
+        emitSource(socialDao.getById(id))
     }
 
     /** APP DIALOG -------------------------------------------------------------------------------------------- */
@@ -170,34 +188,38 @@ class RepositoryImp : Repository, KoinComponent {
     /** PORTFOLIO SCREEN -------------------------------------------------------------------------------------- */
 
     /**
-     * Content that can be shown on the portfolio screen.
+     * Content that can be shown on the portfolio view pager screen.
      */
-    override suspend fun getPortfolioList(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(portfolioDao.getListById(id))
-    }
-
-    /**
-     * Content that can be shown on the portfolio screen.
-     */
-    override suspend fun getPortfolioItem(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(portfolioDao.getItemById(id))
+    override fun getPortfolioList(id: String): DataSource.Factory<Int, PortfolioModel> {
+        return portfolioDao.getListByOwnerId(id)
     }
 
     /**
      * Content that can be shown on the portfolio view pager screen.
      */
-    override suspend fun getPortfolioTabData(id: String, tab: String) = liveData {
-        /**  Start the emission */
-        emitSource(portfolioDao.getDataByIdAndTab(id, tab))
+    override fun getPortfolioItem(id: String): LiveData<PortfolioModel> {
+        return portfolioDao.getById(id)
     }
 
     /**
-     * Content that can be shown on the portfolio view pager screen.
+     * Content that can be shown on the detail portfolio screen
      */
-    override fun getPortfolioPagedTabData(id: String, tab: String): DataSource.Factory<Int, PortfolioModel> {
-        return portfolioDao.getPagedDataByIdAndTab(id, tab)
+    override fun getButtonList(id: String): DataSource.Factory<Int, ButtonModel> {
+        return buttonDao.getById(id)
+    }
+
+    /**
+     * Content that can be shown on the detail portfolio screen
+     */
+    override fun getCategoryList(group: Int): DataSource.Factory<Int, CategoryModel> {
+        return categoryDao.getByGroup(group)
+    }
+
+    /**
+     * Content that can be shown on the detail portfolio screen
+     */
+    override fun getScreenShotList(id: String): DataSource.Factory<Int, ScreenShotModel> {
+        return screenShotDao.getByOwnerId(id)
     }
 
 //    /**

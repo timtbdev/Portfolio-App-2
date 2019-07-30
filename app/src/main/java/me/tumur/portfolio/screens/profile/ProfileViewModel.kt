@@ -17,17 +17,17 @@ class ProfileViewModel: ViewModel(), KoinComponent{
 
     /** Profile */
     val profile = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getProfile(DbConstants.PERSON_ID))
+        emitSource(repo.getProfileById(DbConstants.PERSON_ID))
     }
 
     /** About */
     val about = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getAbout(DbConstants.PERSON_ID))
+        emitSource(repo.getAboutById(DbConstants.PERSON_ID))
     }
 
     /** Social*/
     val social = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getSocial(DbConstants.PERSON_ID))
+        emitSource(repo.getSocialById(DbConstants.PERSON_ID))
     }
 
 

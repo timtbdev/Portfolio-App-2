@@ -6,9 +6,11 @@
 	<dimen name="dimen_20dp">20dp</dimen>
 	<dimen name="dimen_4dp">4dp</dimen>
 	<dimen name="dimen_230dp">230dp</dimen>
+    <dimen name="dimen_480dp">480dp</dimen>
 	<dimen name="dimen_welcome_btn_corner_start">80</dimen>
 	<dimen name="dimen_welcome_btn_corner_end">0</dimen>
 	<dimen name="dimen_5sp">5sp</dimen>
+    <dimen name="dimen_4sp">4sp</dimen>
 	<dimen name="dimen_10sp">10sp</dimen>
 	<dimen name="dimen_12sp">12sp</dimen>
 	<dimen name="dimen_14sp">14sp</dimen>

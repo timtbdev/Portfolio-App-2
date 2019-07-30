@@ -2,11 +2,13 @@ package me.tumur.portfolio.repository.database.model.all
 
 import com.squareup.moshi.Json
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
+import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.experience.ExperienceModel
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.profile.AboutModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
 import me.tumur.portfolio.repository.database.model.profile.SocialModel
+import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.database.model.settings.AppModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
@@ -39,5 +41,11 @@ data class RequestAll (
     val button: List<ButtonModel>,
 
     @Json(name = DbConstants.TASK)
-    val task: List<TaskModel>
+    val task: List<TaskModel>,
+
+    @Json(name = DbConstants.CATEGORY)
+    val category: List<CategoryModel>,
+
+    @Json(name = DbConstants.SCREENSHOT)
+    val screenshot: List<ScreenShotModel>
 )

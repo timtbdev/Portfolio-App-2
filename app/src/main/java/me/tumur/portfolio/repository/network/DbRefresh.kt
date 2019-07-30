@@ -4,20 +4,18 @@ import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
+import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
 import me.tumur.portfolio.repository.database.dao.profile.SocialDao
+import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
-import me.tumur.portfolio.utils.constants.Constants
-import me.tumur.portfolio.utils.constants.DbConstants
-import me.tumur.portfolio.utils.delegates.Preference
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import org.threeten.bp.LocalDateTime
 import retrofit2.HttpException
 
 class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(context, params), KoinComponent{
@@ -34,15 +32,11 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
     private val experienceDao: ExperienceDao by inject()
     private val buttonDao: ButtonDao by inject()
     private val taskDao: TaskDao by inject()
+    private val categoryDao: CategoryDao by inject()
+    private val screenShotDao: ScreenShotDao by inject()
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
-
-    /** SHARED PREFERENCE ------------------------------------------------------------------------------------------- */
-    private var cache by Preference(Constants.CACHE, 0)
-    private var portfolioCache by Preference(DbConstants.PORTFOLIO, 0)
-    private var experienceCache by Preference(DbConstants.EXPERIENCE, 0)
-
 
     override suspend fun doWork(): Result {
         return try {
@@ -99,7 +93,15 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
                     appDao.update(it)
                 }
 
-                cache = LocalDateTime.now().hour
+                /** Update category table */
+                httpResponseAll.body()?.category?.let {
+                    categoryDao.update(it)
+                }
+
+                /** Update screenshot table */
+                httpResponseAll.body()?.screenshot?.let {
+                    screenShotDao.update(it)
+                }
 
                 Result.success()
             } else {

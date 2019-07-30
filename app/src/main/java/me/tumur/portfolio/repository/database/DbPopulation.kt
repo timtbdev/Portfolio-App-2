@@ -9,20 +9,24 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
+import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
 import me.tumur.portfolio.repository.database.dao.profile.SocialDao
+import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
+import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.experience.ExperienceModel
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.profile.AboutModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
 import me.tumur.portfolio.repository.database.model.profile.SocialModel
+import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.database.model.settings.AppModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
@@ -46,6 +50,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
     private val portfolioDao: PortfolioDao by inject()
     private val experienceDao: ExperienceDao by inject()
     private val appDao: AppDao by inject()
+    private val categoryDao: CategoryDao by inject()
+    private val screenshotDao: ScreenShotDao by inject()
 
     /**
      * WorkManager function to populate database from existing json files from assets folder
@@ -62,6 +68,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
         val listTypePortfolio = Types.newParameterizedType(List::class.java, PortfolioModel::class.java)
         val listTypeExperience = Types.newParameterizedType(List::class.java, ExperienceModel::class.java)
         val listTypeApp = Types.newParameterizedType(List::class.java, AppModel::class.java)
+        val listTypeCategory = Types.newParameterizedType(List::class.java, CategoryModel::class.java)
+        val listTypeScreenShot = Types.newParameterizedType(List::class.java, ScreenShotModel::class.java)
 
         /** Input stream */
         val inputStreamWelcome = applicationContext.assets.open(DbConstants.WELCOME_JSON)
@@ -73,6 +81,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
         val inputStreamPortfolio = applicationContext.assets.open(DbConstants.PORTFOLIO_JSON)
         val inputStreamExperience = applicationContext.assets.open(DbConstants.EXPERIENCE_JSON)
         val inputStreamApp = applicationContext.assets.open(DbConstants.APP_JSON)
+        val inputStreamCategory = applicationContext.assets.open(DbConstants.CATEGORY_JSON)
+        val inputStreamScreenShot = applicationContext.assets.open(DbConstants.SCREENSHOT_JSON)
 
         /** Buffer */
         val sourceWelcome = inputStreamWelcome.source()
@@ -84,6 +94,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
         val sourcePortfolio = inputStreamPortfolio.source()
         val sourceExperience = inputStreamExperience.source()
         val sourceApp = inputStreamApp.source()
+        val sourceCategory = inputStreamCategory.source()
+        val sourceScreenShot = inputStreamScreenShot.source()
 
 
         /** Moshi */
@@ -106,6 +118,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
             val adapterPortfolio: JsonAdapter<List<PortfolioModel>> = moshi.adapter(listTypePortfolio)
             val adapterExperience: JsonAdapter<List<ExperienceModel>> = moshi.adapter(listTypeExperience)
             val adapterApp: JsonAdapter<List<AppModel>> = moshi.adapter(listTypeApp)
+            val adapterCategory: JsonAdapter<List<CategoryModel>> = moshi.adapter(listTypeCategory)
+            val adapterScreenShot: JsonAdapter<List<ScreenShotModel>> = moshi.adapter(listTypeScreenShot)
 
             /** Read from Json buffers */
             val welcome = adapterWelcome.fromJson(sourceWelcome.buffer())
@@ -117,6 +131,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
             val portfolio = adapterPortfolio.fromJson(sourcePortfolio.buffer())
             val experience = adapterExperience.fromJson(sourceExperience.buffer())
             val app = adapterApp.fromJson(sourceApp.buffer())
+            val category = adapterCategory.fromJson(sourceCategory.buffer())
+            val screenShot = adapterScreenShot.fromJson(sourceScreenShot.buffer())
 
             /** Update the tables  */
 
@@ -129,6 +145,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
             portfolio?.let{ portfolioDao.insert(it) }
             experience?.let{ experienceDao.insert(it) }
             app?.let{ appDao.insert(it) }
+            category?.let { categoryDao.insert(it) }
+            screenShot?.let { screenshotDao.insert(it) }
             Result.success()
 
         } catch (ex: Exception) {
@@ -147,6 +165,8 @@ class DbPopulation(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx
             sourcePortfolio.close()
             sourceExperience.close()
             sourceApp.close()
+            sourceCategory.close()
+            sourceScreenShot.close()
         }
 
     }

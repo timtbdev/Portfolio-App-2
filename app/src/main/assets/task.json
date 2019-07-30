@@ -1,5 +1,47 @@
 [
   {
+    "id": "4KqfT0M3m2aBoKyoEdAw",
+    "owner_id": "46U0IVJRyjAEEWtC5pKH",
+    "task": "Increased service activation by over 30% and optimized data traffic of a wireless network by 5%",
+    "order": 2
+  },
+  {
+    "id": "JewHAeG6hitymAiwOHbm",
+    "owner_id": "46U0IVJRyjAEEWtC5pKH",
+    "task": "Lead the development of a custom messenger app for communication between Blackberry and Android devices",
+    "order": 1
+  },
+  {
+    "id": "pIyvAB1Pd4Gau8H0xI0p",
+    "owner_id": "ZdCDU7XfCgmwZ05foSto",
+    "task": "Designed and developed two Java-Android apps and published on Google Play Store",
+    "order": 1
+  },
+  {
+    "id": "0ZgjnMUZoNBD9n2niatl",
+    "owner_id": "d0nQ71yt4l6O0KHNJRNe",
+    "task": "Improvement and Optimization of software products",
+    "order": 2
+  },
+  {
+    "id": "zAhvdw3d30bmsGRzsAt1",
+    "owner_id": "d0nQ71yt4l6O0KHNJRNe",
+    "task": "Implementation of manual and automated tests",
+    "order": 1
+  },
+  {
+    "id": "5hFgPVgeVlg7bUGAL4iB",
+    "owner_id": "iVPvLMuo4afHlrvnVlcX",
+    "task": "Automated and implemented over 60 data quality reports using MS Access",
+    "order": 2
+  },
+  {
+    "id": "Cf2gxks6oMvHoDW4rfmF",
+    "owner_id": "iVPvLMuo4afHlrvnVlcX",
+    "task": "Migrated 100+ logistic and material reports into Inbound Logistics System using Cognos Report Studio",
+    "order": 1
+  },
+  {
     "id": "OnI58TzS2Q5PzmHBfJJF",
     "owner_id": "tFpJvi3h5S1x7mya0unV",
     "task": "Lead a technical team and conducted numerous researches, prepared project related documents for a feasibility study",

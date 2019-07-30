@@ -40,6 +40,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="?android:actionBarSize"
                         android:elevation="@dimen/elevation_16dp"
+                        app:navigation="@{model.navigation}"
                         app:titleTextAppearance="@style/ToolbarTitleStyle"
                         app:subtitleTextAppearance="@style/ToolbarSubTitleStyle"
                         app:popupTheme="@style/ToolbarPopupMenuStyle"

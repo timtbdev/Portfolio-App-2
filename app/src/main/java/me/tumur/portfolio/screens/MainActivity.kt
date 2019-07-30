@@ -92,7 +92,9 @@ class MainActivity : AppCompatActivity() {
         /** Binding navigation controller with host fragment */
         navController = findNavController(R.id.main_screen_host_fragment)
 
+        /** Set action bar */
         setSupportActionBar(binding.main.main_screen_toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         /** Delayed initialization */
         delayedInit()
@@ -122,16 +124,6 @@ class MainActivity : AppCompatActivity() {
         prefs.unregisterOnSharedPreferenceChangeListener(prefsListener)
     }
 
-    override fun onDestroy() {
-        when(navController.currentDestination?.id){
-            R.id.profile_nav -> viewModel.setFragmentState(Constants.FRAGMENT_PROFILE)
-            R.id.portfolioScreen -> viewModel.setFragmentState(Constants.FRAGMENT_PORTFOLIO)
-            R.id.experienceScreen -> viewModel.setFragmentState(Constants.FRAGMENT_EXPERIENCE)
-            R.id.settingsScreen -> viewModel.setFragmentState(Constants.FRAGMENT_SETTINGS)
-        }
-        super.onDestroy()
-    }
-
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Set delayed initialization */
@@ -139,7 +131,6 @@ class MainActivity : AppCompatActivity() {
         activityScope.launch {
             setBottomMenu()
             setSideMenu()
-            //setNavigationListener()
         }
     }
 
@@ -147,7 +138,7 @@ class MainActivity : AppCompatActivity() {
     private fun setWelcomeScreenObserver(){
         val screenWelcomeObserver = Observer<ScreenState> { state ->
             when(state){
-                is WelcomeScreen ->navController.navigate(R.id.action_global_welcomeScreen)
+                is WelcomeScreen -> navController.navigate(R.id.action_global_to_welcome_screen)
             }
         }
         viewModel.screenState.observe(this, screenWelcomeObserver)
@@ -158,9 +149,10 @@ class MainActivity : AppCompatActivity() {
         val fragmentStateObserver = Observer<String> { state ->
             if(viewModel.routed.value == false){
                 when(state){
-                    Constants.FRAGMENT_PROFILE ->navController.navigate(R.id.profile_nav)
-                    Constants.FRAGMENT_PORTFOLIO ->navController.navigate(R.id.portfolioScreen)
-                    Constants.FRAGMENT_EXPERIENCE ->navController.navigate(R.id.experienceScreen)
+                    Constants.FRAGMENT_PROFILE -> navController.navigate(R.id.profile_screen)
+                    Constants.FRAGMENT_PORTFOLIO -> navController.navigate(R.id.portfolio_screen)
+                    Constants.FRAGMENT_EXPERIENCE -> navController.navigate(R.id.experience_screen)
+                    Constants.FRAGMENT_SETTINGS -> navController.navigate(R.id.settings_screen)
                 }
                 viewModel.setRouted(true)
             }
@@ -168,22 +160,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.fragmentState.observe(this, fragmentStateObserver)
     }
 
-//    /** Navigation destination change listener for saved state handle -> Last opened Fragment */
-//    private fun setNavigationListener(){
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            when(destination.id){
-//                R.id.profile_nav -> viewModel.setFragmentState(Constants.FRAGMENT_PROFILE)
-//                R.id.portfolioScreen -> viewModel.setFragmentState(Constants.FRAGMENT_PORTFOLIO)
-//                R.id.experienceScreen -> viewModel.setFragmentState(Constants.FRAGMENT_EXPERIENCE)
-//                R.id.settingsScreen -> viewModel.setFragmentState(Constants.FRAGMENT_SETTINGS)
-//            }
-//        }
-//    }
-
     /** Setup bottom menu */
     private fun setBottomMenu(){
         // Variables
-        val navigationGraphTopLevel = setOf(R.id.profileScreen, R.id.portfolioScreen, R.id.experienceScreen, R.id.settingsScreen)
+        val navigationGraphTopLevel =
+            setOf(R.id.profile_screen, R.id.portfolio_screen, R.id.experience_screen, R.id.settings_screen)
         // Application bar configuration for navigationController
         val appBarConfiguration = AppBarConfiguration(navigationGraphTopLevel)
         // Setup bottom menu
@@ -199,7 +180,8 @@ class MainActivity : AppCompatActivity() {
     /** Setup side menu */
     private fun setSideMenu(){
         // Variables
-        val navigationGraphTopLevel = setOf(R.id.profileScreen, R.id.portfolioScreen, R.id.experienceScreen, R.id.settingsScreen)
+        val navigationGraphTopLevel =
+            setOf(R.id.profile_screen, R.id.portfolio_screen, R.id.experience_screen, R.id.settings_screen)
         val drawerLayout = findViewById<DrawerLayout>(R.id.main_screen_drawer_layout)
         // Application bar configuration for navigationController
         val appBarConfiguration = AppBarConfiguration(navigationGraphTopLevel, drawerLayout)

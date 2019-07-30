@@ -1,4 +1,4 @@
-package me.tumur.portfolio.utils.view
+package me.tumur.portfolio.utils.button
 
 import android.content.Context
 import android.util.AttributeSet

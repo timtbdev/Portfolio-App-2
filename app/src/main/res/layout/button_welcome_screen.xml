@@ -3,7 +3,7 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+>
 
     <data>
         <import type="android.view.View"/>
@@ -12,7 +12,7 @@
 
     <!-- Welcome Screen Button: Portrait mode -->
     <!-- Custom motion layout view with onPageChangedListener -->
-    <me.tumur.portfolio.utils.view.WelcomeButton
+    <me.tumur.portfolio.utils.button.WelcomeButton
             android:id="@+id/welcome_screen_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,6 +50,6 @@
                 android:textColor="@color/button_outline_icon_text_border_color"
                 android:text="@string/button_skip"/>
 
-    </me.tumur.portfolio.utils.view.WelcomeButton>
+    </me.tumur.portfolio.utils.button.WelcomeButton>
 
 </layout>

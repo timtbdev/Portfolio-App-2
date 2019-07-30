@@ -2,7 +2,6 @@ package me.tumur.portfolio.repository.database.dao.profile
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import me.tumur.portfolio.repository.database.model.profile.ProfileFullModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
 import me.tumur.portfolio.utils.constants.DbConstants
 
@@ -24,13 +23,9 @@ abstract class ProfileDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun insert(data: List<ProfileModel>)
 
-    /** Get full */
+    /** Get by id */
     @Query(DbConstants.GET_PROFILE_BY_ID)
-    abstract fun getFull(id: String): LiveData<ProfileFullModel>
-
-    /** Get full */
-    @Query(DbConstants.GET_PROFILE_BY_ID)
-    abstract fun get(id: String): LiveData<ProfileModel>
+    abstract fun getById(id: String): LiveData<ProfileModel>
 
 
 }

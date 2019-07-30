@@ -25,5 +25,5 @@ abstract class AboutDao {
 
     /** Get */
     @Query(DbConstants.GET_ABOUT_BY_OWNER_ID)
-    abstract fun get(id: String): LiveData<List<AboutModel>>
+    abstract fun getById(id: String): LiveData<List<AboutModel>>
 }

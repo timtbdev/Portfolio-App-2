@@ -87,6 +87,16 @@ fun hideOrShowNavigation(view: View, state :NavigationState) {
     view.visibility = if(state is HideNavigation) View.INVISIBLE else View.VISIBLE
 }
 
+/** Hide or Show Bottom Navigation */
+@BindingAdapter("showHideBottomNav")
+fun hideOrShowBottomNav(view: View, state: NavigationState) {
+    when (state) {
+        is HideNavigation -> view.visibility = View.INVISIBLE
+        is ShowNavigation -> view.visibility = View.VISIBLE
+        is GoneNavigation -> view.visibility = View.GONE
+    }
+}
+
 /** BINDING ADAPTER FOR LOADER * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /** Animated loader icon */

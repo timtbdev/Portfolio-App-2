@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -44,7 +45,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
      * this Fragment is attached i.e.,after Fragment.onAttach,
      * and access prior to that will result in IllegalArgumentException.
      * */
-    private val viewModel: ProfileViewModel by navGraphViewModels(R.id.profile_nav)
+    private val viewModel: ProfileViewModel by navGraphViewModels(R.id.profile_screen)
 
     /** Databinding */
     private lateinit var binding: FragmentProfileBottomSheetBinding
@@ -77,7 +78,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_bottom_sheet, container, false)
 
         /** Social items */
-        val socialAdapter = SocialAdapter(SocialClickListener { it -> viewModel.socialItemOnClick(it) })
+        val socialAdapter = SocialAdapter(SocialClickListener { viewModel.socialItemOnClick(it) })
         val layoutManagerSocial = LinearLayoutManager(context)
         layoutManagerSocial.orientation = LinearLayoutManager.VERTICAL
         val socialList = binding.profileBsSocialList.profile_bs_social_list
@@ -111,7 +112,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
                     viewModel.socialItemClicked()
                     // Set chrome custom tab
                     val builder = CustomTabsIntent.Builder()
-                    builder.setToolbarColor(resources.getColor(R.color.colorPrimary))
+                    builder.setToolbarColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
                     builder.setShowTitle(true)
                     val intent = builder.build()
                     intent.launchUrl(context, Uri.parse(item.url))

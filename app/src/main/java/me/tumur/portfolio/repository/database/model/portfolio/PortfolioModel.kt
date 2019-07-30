@@ -27,5 +27,7 @@ data class PortfolioModel(
     @Json(name = DbConstants.DATE_FROM) @ColumnInfo(name = DbConstants.DATE_FROM) var dateFrom: String,
     @Json(name = DbConstants.DATE_TO) @ColumnInfo(name = DbConstants.DATE_TO) var dateTo: String,
     @Json(name = DbConstants.HEADER) @ColumnInfo(name = DbConstants.HEADER) var header: String,
+    @Json(name = DbConstants.TYPE) @ColumnInfo(name = DbConstants.TYPE) var categoryType: Int,
+    @Json(name = DbConstants.VIDEO_URL) @ColumnInfo(name = DbConstants.VIDEO_URL) var videoUrl: String?,
     @Json(name = DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
 ): Parcelable
