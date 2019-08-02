@@ -26,7 +26,7 @@ abstract class FavoriteDao {
 
     /** Delete single item */
     @Query(DbConstants.FAVORITE_DELETE_SINGLE_ITEM)
-    abstract suspend fun deleteSingleItem(id: String)
+    abstract suspend fun deleteSingleItem(id: String): Int
 
     /** Get single item */
     @Query(DbConstants.FAVORITE_GET_SINGLE_ITEM)
@@ -42,7 +42,7 @@ abstract class FavoriteDao {
 
     /** Get max order */
     @Query(DbConstants.FAVORITE_GET_MAX_ORDER)
-    abstract suspend fun getMaxOrder(): Int
+    abstract suspend fun getMaxOrder(): FavoriteModel
 
     /** Check table */
     @Query(DbConstants.FAVORITE_CHECK)

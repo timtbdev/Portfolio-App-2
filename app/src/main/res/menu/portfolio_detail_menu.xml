@@ -19,10 +19,27 @@
             android:title="@string/menu_remove"/>
 
     <item
-            android:id="@+id/menu_share"
-            android:icon="@drawable/ic_menu_share"
-            app:iconTint="@color/colorBottomSheetPrimaryText"
-            app:showAsAction="collapseActionView|withText"
-            android:title="@string/menu_share"/>
+            android:id="@+id/action_profile_menu"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_menu_dots"
+            app:iconTint="?attr/colorOnPrimary"
+            android:orderInCategory="100"
+            android:title="">
+        <menu>
+            <item
+                    android:id="@+id/menu_share"
+                    android:icon="@drawable/ic_menu_share"
+                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:showAsAction="collapseActionView"
+                    android:title="@string/menu_share"/>
+
+            <item
+                    android:id="@+id/menu_rate"
+                    android:icon="@drawable/ic_menu_rate"
+                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:showAsAction="collapseActionView"
+                    android:title="@string/menu_rate"/>
+        </menu>
+    </item>
 
 </menu>

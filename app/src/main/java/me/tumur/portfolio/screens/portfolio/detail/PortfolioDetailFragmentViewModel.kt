@@ -16,10 +16,6 @@ import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.favorite.FavoriteModel
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
-import me.tumur.portfolio.utils.state.ToastEmpty
-import me.tumur.portfolio.utils.state.ToastSaved
-import me.tumur.portfolio.utils.state.ToastState
-import me.tumur.portfolio.utils.state.ToastUnsaved
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import java.util.*
@@ -50,9 +46,9 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     private val _screenShotOrder = MutableLiveData<Int>()
     val screenShotOrder: LiveData<Int> = _screenShotOrder
 
-    /** Show a toast message */
-    private val _showToast = MutableLiveData<ToastState>().apply { value = ToastEmpty }
-    val showToast: LiveData<ToastState> = _showToast
+//    /** Show a toast message */
+//    private val _showToast = MutableLiveData<ToastState>().apply { value = ToastEmpty }
+//    val showToast: LiveData<ToastState> = _showToast
 
     /** Video Url */
     private val _videoUrl = MutableLiveData<String>()
@@ -124,12 +120,12 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
         _videoUrl.value = url
     }
 
-    /**
-     * Set show toast
-     * */
-    fun setShowToast(state: ToastState) {
-        _showToast.value = state
-    }
+//    /**
+//     * Set show toast
+//     * */
+//    fun setShowToast(state: ToastState) {
+//        _showToast.value = state
+//    }
 
     /**
      * Save as favorite
@@ -156,19 +152,17 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
         )
 
         viewModelScope.launch {
-
             /** Get max order */
-            val maxOrder = withContext(Dispatchers.IO) {
+            val favoriteMax = withContext(Dispatchers.IO) {
                 favoriteDao.getMaxOrder()
             }
-
             /** Insert a portfolio item in to favorite table */
-            val insert = withContext(Dispatchers.IO) {
-                if (maxOrder != null && maxOrder > 0) favorite.order = maxOrder + 1
+            withContext(Dispatchers.IO) {
+                if (favoriteMax != null) {
+                    if (favoriteMax.order > 0) favorite.order = favoriteMax.order + 1
+                }
                 favoriteDao.insert(favorite)
             }
-
-            if (insert > 0) setShowToast(ToastSaved)
         }
     }
 
@@ -176,10 +170,9 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
      * Remove from favorite
      * */
     fun removeFromFavorite(id: String) {
-        val remove = viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             /** Remove a favorite item */
             favoriteDao.deleteSingleItem(id)
         }
-        if (remove.isCompleted) setShowToast(ToastUnsaved)
     }
 }

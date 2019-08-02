@@ -2,7 +2,6 @@ package me.tumur.portfolio.screens.portfolio.detail
 
 import android.content.Context
 import android.content.pm.ActivityInfo
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -17,7 +16,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.*
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentPortfolioDetailBinding
@@ -30,10 +28,6 @@ import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.Butto
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.category.CategoryAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot.ScreenShotAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot.ScreenShotClickListener
-import me.tumur.portfolio.utils.state.ToastEmpty
-import me.tumur.portfolio.utils.state.ToastSaved
-import me.tumur.portfolio.utils.state.ToastState
-import me.tumur.portfolio.utils.state.ToastUnsaved
 import org.koin.android.ext.android.inject
 
 
@@ -94,6 +88,9 @@ class PortfolioDetailFragment : Fragment() {
     /** Portfolio id */
     private lateinit var id: String
 
+    /** Menu */
+    private lateinit var topMenu: Menu
+
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -150,6 +147,7 @@ class PortfolioDetailFragment : Fragment() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        topMenu = menu
         uiScope.launch {
             val isFavorite = withContext(Dispatchers.IO) {
                 favoriteDao.existSingleItem(id)
@@ -172,13 +170,13 @@ class PortfolioDetailFragment : Fragment() {
                 viewModel.portfolio.value?.let {
                     viewModel.saveToFavorite(it)
                 }
-                item.icon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_menu_saved) }
+                topMenu.findItem(R.id.menu_saved).isVisible = true
+                topMenu.findItem(R.id.menu_save).isVisible = false
             }
             R.id.menu_saved -> {
-                viewModel.portfolio.value?.let {
-                    viewModel.removeFromFavorite(it.id)
-                }
-                item.icon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_menu_save) }
+                viewModel.removeFromFavorite(id)
+                topMenu.findItem(R.id.menu_saved).isVisible = false
+                topMenu.findItem(R.id.menu_save).isVisible = true
             }
         }
         return true
@@ -291,14 +289,14 @@ class PortfolioDetailFragment : Fragment() {
         }
         viewModel.videoUrl.observe(viewLifecycleOwner, observerVideoUrl)
 
-        /** Set observer for a toast message */
-        val observerShowToast = Observer<ToastState> {
-            when (it) {
-                ToastSaved -> showToastMessage(this.getString(R.string.toast_saved), toastIconSaved)
-                ToastUnsaved -> showToastMessage(this.getString(R.string.toast_unsaved), toastIconUnSaved)
-            }
-        }
-        viewModel.showToast.observe(viewLifecycleOwner, observerShowToast)
+//        /** Set observer for a toast message */
+//        val observerShowToast = Observer<ToastState> {
+//            when (it) {
+//                ToastSaved -> showToastMessage(this.getString(R.string.toast_saved), toastIconSaved)
+//                ToastUnsaved -> showToastMessage(this.getString(R.string.toast_unsaved), toastIconUnSaved)
+//            }
+//        }
+//        viewModel.showToast.observe(viewLifecycleOwner, observerShowToast)
 
     }
 
@@ -318,9 +316,9 @@ class PortfolioDetailFragment : Fragment() {
         }
     }
 
-    /** Show toast message */
-    private fun showToastMessage(message: String, icon: Drawable?) {
-        Toasty.custom(ctx, message, icon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
-        viewModel.setShowToast(ToastEmpty)
-    }
+//    /** Show toast message */
+//    private fun showToastMessage(message: String, icon: Drawable?) {
+//        Toasty.custom(ctx, message, icon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
+//        viewModel.setShowToast(ToastEmpty)
+//    }
 }

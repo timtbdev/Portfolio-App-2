@@ -13,7 +13,7 @@
 	<string name="menu_search">Search</string>
 	<string name="menu_refresh">Refresh</string>
 	<string name="menu_share">Share</string>
-	<string name="menu_rate">Rate</string>
+    <string name="menu_rate">Rate this app</string>
 	<string name="menu_privacy">Privacy</string>
 	<string name="menu_save">Save</string>
 	<string name="menu_remove">Remove</string>
@@ -73,8 +73,8 @@
 	<string name="category_footer">Thanks for visiting my Portfolio</string>
 	<string name="toast_success">Your data is up to date</string>
 	<string name="toast_failed">Please check your internet connection</string>
-    <string name="toast_saved">Item saved</string>
-    <string name="toast_unsaved">Item saved</string>
+    <string name="toast_saved">Saved</string>
+    <string name="toast_unsaved">Removed</string>
     <string name="technology">Technology</string>
     <string name="screenshot">Screenshots</string>
     <string name="description">Description</string>
