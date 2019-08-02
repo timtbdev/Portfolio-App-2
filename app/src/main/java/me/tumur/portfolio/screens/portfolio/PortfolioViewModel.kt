@@ -13,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.tumur.portfolio.R
+import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.network.Success
@@ -26,6 +27,7 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Repository */
+    private val dao: PortfolioDao by inject()
     private val repo: Repository by inject()
 
     /** Saved state */
@@ -49,7 +51,7 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
         .setInitialLoadSizeHint(5)
         .build()
 
-    val data: LiveData<PagedList<PortfolioModel>> = repo.getPortfolioList(DbConstants.PERSON_ID).toLiveData(config)
+    val data: LiveData<PagedList<PortfolioModel>> = dao.getListItems(DbConstants.PERSON_ID).toLiveData(config)
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 

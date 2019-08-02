@@ -2,8 +2,8 @@ package me.tumur.portfolio.screens.welcome
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
+import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
-import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.delegates.Preference
 import org.koin.core.KoinComponent
@@ -21,14 +21,14 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Repository */
-    private val repo: Repository by inject()
+    private val welcomeDao: WelcomeDao by inject()
 
     /** Shared preferences */
     private var isFirstRun by Preference(Constants.FIRST, true)
 
     /** Welcome data */
     val welcomeScreen = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getWelcome())
+        emitSource(welcomeDao.getListItems())
     }
 
     /** Current item of view pager  */

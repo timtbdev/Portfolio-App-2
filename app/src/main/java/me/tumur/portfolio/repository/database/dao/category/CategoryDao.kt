@@ -10,20 +10,20 @@ abstract class CategoryDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(data: List<CategoryModel>): List<Long> {
+    open suspend fun update(list: List<CategoryModel>): List<Long> {
         delete()
-        return insert(data)
+        return insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(data: List<CategoryModel>): List<Long>
+    abstract suspend fun insert(list: List<CategoryModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_CATEGORY)
+    @Query(DbConstants.CATEGORY_DELETE)
     abstract suspend fun delete()
 
-    /** Get button by owner id */
-    @Query(DbConstants.GET_CATEGORY_BY_TYPE)
-    abstract fun getByGroup(type: Int): DataSource.Factory<Int, CategoryModel>
+    /** Get list items */
+    @Query(DbConstants.CATEGORY_GET_LIST_ITEMS)
+    abstract fun getListItems(type: Int): DataSource.Factory<Int, CategoryModel>
 }

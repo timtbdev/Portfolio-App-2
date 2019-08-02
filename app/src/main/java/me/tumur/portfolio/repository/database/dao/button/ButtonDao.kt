@@ -10,20 +10,20 @@ abstract class ButtonDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(data: List<ButtonModel>): List<Long> {
+    open suspend fun update(list: List<ButtonModel>): List<Long> {
         delete()
-        return insert(data)
+        return insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(data: List<ButtonModel>): List<Long>
+    abstract suspend fun insert(list: List<ButtonModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_BUTTON)
+    @Query(DbConstants.BUTTON_DELETE)
     abstract suspend fun delete()
 
-    /** Get button by owner id */
-    @Query(DbConstants.GET_BUTTON_BY_OWNER_ID)
-    abstract fun getById(id: String): DataSource.Factory<Int, ButtonModel>
+    /** Get list items */
+    @Query(DbConstants.BUTTON_GET_LIST_ITEMS)
+    abstract fun getListItems(id: String): DataSource.Factory<Int, ButtonModel>
 }

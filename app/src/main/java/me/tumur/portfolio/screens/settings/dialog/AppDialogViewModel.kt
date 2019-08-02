@@ -2,7 +2,7 @@ package me.tumur.portfolio.screens.settings.dialog
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
-import me.tumur.portfolio.repository.repo.Repository
+import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -11,11 +11,11 @@ class AppDialogViewModel: ViewModel(), KoinComponent{
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** RepositoryImp */
-    private val repo: Repository by inject()
+    private val appDao: AppDao by inject()
 
     /** Profile data */
     val appInfo = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getApp())
+        emitSource(appDao.getListItems())
     }
 
     /** Close button on click */

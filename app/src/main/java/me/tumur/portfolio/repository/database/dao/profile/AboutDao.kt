@@ -10,20 +10,20 @@ abstract class AboutDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(about: List<AboutModel>) {
+    open suspend fun update(list: List<AboutModel>) {
         delete()
-        insert(about)
+        insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(about: List<AboutModel>): List<Long>
+    abstract suspend fun insert(list: List<AboutModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_ABOUT)
+    @Query(DbConstants.ABOUT_DELETE)
     abstract suspend fun delete()
 
-    /** Get */
-    @Query(DbConstants.GET_ABOUT_BY_OWNER_ID)
-    abstract fun getById(id: String): LiveData<List<AboutModel>>
+    /** Get list items */
+    @Query(DbConstants.ABOUT_GET_LIST_ITEMS)
+    abstract fun getListItems(id: String): LiveData<List<AboutModel>>
 }

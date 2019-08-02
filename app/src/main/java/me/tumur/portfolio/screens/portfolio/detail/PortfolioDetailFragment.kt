@@ -1,6 +1,8 @@
 package me.tumur.portfolio.screens.portfolio.detail
 
+import android.content.Context
 import android.content.pm.ActivityInfo
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -10,12 +12,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import es.dmoral.toasty.Toasty
+import kotlinx.coroutines.*
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentPortfolioDetailBinding
+import me.tumur.portfolio.repository.database.dao.favorite.FavoriteDao
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
@@ -24,7 +30,11 @@ import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.Butto
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.category.CategoryAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot.ScreenShotAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot.ScreenShotClickListener
-import timber.log.Timber
+import me.tumur.portfolio.utils.state.ToastEmpty
+import me.tumur.portfolio.utils.state.ToastSaved
+import me.tumur.portfolio.utils.state.ToastState
+import me.tumur.portfolio.utils.state.ToastUnsaved
+import org.koin.android.ext.android.inject
 
 
 /**
@@ -56,6 +66,9 @@ class PortfolioDetailFragment : Fragment() {
      */
     private lateinit var binding: FragmentPortfolioDetailBinding
 
+    /** Context */
+    private val ctx: Context by inject()
+
     /** Adapter */
     private lateinit var buttonAdapter: ButtonAdapter
     private lateinit var categoryAdapter: CategoryAdapter
@@ -63,6 +76,24 @@ class PortfolioDetailFragment : Fragment() {
 
     /** Safe args */
     private val args: PortfolioDetailFragmentArgs by navArgs()
+
+    /** Parameters for toast message */
+    private val toastBg = ContextCompat.getColor(ctx, R.color.colorOnSurface)
+    private val toastTextColor = ContextCompat.getColor(ctx, R.color.colorOnPrimary)
+    private val toastIconSaved = ContextCompat.getDrawable(ctx, R.drawable.ic_saved)
+    private val toastIconUnSaved = ContextCompat.getDrawable(ctx, R.drawable.ic_un_saved)
+
+    /** Coroutines */
+    private val job = Job()
+    private val ioScope = CoroutineScope(Dispatchers.IO + job)
+    private val uiScope = CoroutineScope(Dispatchers.Main.immediate + job)
+
+    /** Repository */
+    private val favoriteDao: FavoriteDao by inject()
+
+    /** Portfolio id */
+    private lateinit var id: String
+
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -94,6 +125,7 @@ class PortfolioDetailFragment : Fragment() {
         /** Set portfolio id for detail screen */
         args.id?.let {
             viewModel.setPortfolioId(it)
+            id = it
         }
 
         /** Set options menu */
@@ -106,25 +138,55 @@ class PortfolioDetailFragment : Fragment() {
         binding.apply {
             this.lifecycleOwner = viewLifecycleOwner
             this.model = viewModel
+            this.clickListener = VideoClickListener(viewModel::setVideoUrl)
         }
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         // Inflate menu resource file.
-        inflater.inflate(R.menu.portfolio_list_menu, menu)
+        inflater.inflate(R.menu.portfolio_detail_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        uiScope.launch {
+            val isFavorite = withContext(Dispatchers.IO) {
+                favoriteDao.existSingleItem(id)
+            }
+            if (isFavorite == 1) {
+                menu.findItem(R.id.menu_saved).isVisible = true
+                menu.findItem(R.id.menu_save).isVisible = false
+            } else {
+                menu.findItem(R.id.menu_saved).isVisible = false
+                menu.findItem(R.id.menu_save).isVisible = true
+            }
+        }
+
+        super.onPrepareOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Timber.tag("Menu").d(item.itemId.toString())
         when (item.itemId) {
-            android.R.id.home -> {
-//                val action = PortfolioDetailFragmentDirections.actionToPortfolioScreen()
-//                findNavController().navigate(action)
+            R.id.menu_save -> {
+                viewModel.portfolio.value?.let {
+                    viewModel.saveToFavorite(it)
+                }
+                item.icon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_menu_saved) }
+            }
+            R.id.menu_saved -> {
+                viewModel.portfolio.value?.let {
+                    viewModel.removeFromFavorite(it.id)
+                }
+                item.icon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_menu_save) }
             }
         }
         return true
+    }
+
+    override fun onPause() {
+        job.cancel()
+        super.onPause()
     }
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -132,7 +194,7 @@ class PortfolioDetailFragment : Fragment() {
     /** Adapters */
     private fun setAdapters() {
         /** Set Button Adapter */
-        buttonAdapter = ButtonAdapter(ButtonClickListener { viewModel.setButtonUrl(it) })
+        buttonAdapter = ButtonAdapter(ButtonClickListener(viewModel::setButtonUrl))
         val layoutManager = GridLayoutManager(activity, 2)
         val buttonList = binding.portfolioItemDetailButton
 
@@ -154,7 +216,7 @@ class PortfolioDetailFragment : Fragment() {
         }
 
         /** Set Screenshot Adapter */
-        screenShotAdapter = ScreenShotAdapter(ScreenShotClickListener { viewModel.setScreenShotUrl(it) })
+        screenShotAdapter = ScreenShotAdapter(ScreenShotClickListener(viewModel::setScreenIdAndOrder))
         val layoutManagerScreenShot = LinearLayoutManager(context)
         layoutManagerScreenShot.orientation = LinearLayoutManager.HORIZONTAL
         val screenShotList = binding.portfolioItemDetailScreenshot
@@ -207,27 +269,58 @@ class PortfolioDetailFragment : Fragment() {
         viewModel.buttonUrl.observe(viewLifecycleOwner, observerButtonUrl)
 
         /** Set observer for screenshot click listener */
-        val observerScreenShotUrl = Observer<String> {
+        val observerScreenShotOwnerId = Observer<String> {
             it?.let {
-                // TODO - Navigate to detailed portfolio fragment
+                val action = viewModel.screenShotOrder.value?.let { order ->
+                    PortfolioDetailFragmentDirections.actionToPortfolioDetailScreenPreview(
+                        it,
+                        order
+                    )
+                }
+                action?.let { nextAction -> findNavController().navigate(nextAction) }
             }
         }
-        viewModel.screenShotUrl.observe(viewLifecycleOwner, observerScreenShotUrl)
+        viewModel.screenShotOwnerId.observe(viewLifecycleOwner, observerScreenShotOwnerId)
 
-//        /** Set observer for video url */
-//        val observerVideoUrl = Observer<PortfolioModel> { portfolio ->
-//            portfolio.videoUrl?.let {
-//                play(it)
-//            }
-//        }
-//        viewModel.portfolio.observe(viewLifecycleOwner, observerVideoUrl)
+        /** Set observer for open video click listener */
+        val observerVideoUrl = Observer<String> {
+            it?.let {
+                startCustomTab(it)
+                viewModel.setVideoUrl(null)
+            }
+        }
+        viewModel.videoUrl.observe(viewLifecycleOwner, observerVideoUrl)
+
+        /** Set observer for a toast message */
+        val observerShowToast = Observer<ToastState> {
+            when (it) {
+                ToastSaved -> showToastMessage(this.getString(R.string.toast_saved), toastIconSaved)
+                ToastUnsaved -> showToastMessage(this.getString(R.string.toast_unsaved), toastIconUnSaved)
+            }
+        }
+        viewModel.showToast.observe(viewLifecycleOwner, observerShowToast)
+
     }
 
-//    /** Play a video */
-//    private fun play(url: String){
-//        val uri = Uri.parse(url)
-//        context?.let {
-//            Player(it, binding.player).play(uri)
-//        }
-//    }
+    /**
+     * Starts custom tab
+     * as an new intent
+     * */
+    private fun startCustomTab(url: String?) {
+
+        url?.let {
+            /** Chrome custom tab  */
+            val builder = CustomTabsIntent.Builder().apply {
+                this.setToolbarColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
+                this.setShowTitle(true)
+            }
+            builder.build().launchUrl(context, (Uri.parse(url)))
+        }
+    }
+
+    /** Show toast message */
+    private fun showToastMessage(message: String, icon: Drawable?) {
+        Toasty.custom(ctx, message, icon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
+        viewModel.setShowToast(ToastEmpty)
+    }
 }

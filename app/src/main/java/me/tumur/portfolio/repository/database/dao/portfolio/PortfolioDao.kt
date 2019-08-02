@@ -11,27 +11,27 @@ abstract class PortfolioDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(data: List<PortfolioModel>): List<Long> {
+    open suspend fun update(list: List<PortfolioModel>): List<Long> {
         delete()
-        return insert(data)
+        return insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(data: List<PortfolioModel>): List<Long>
+    abstract suspend fun insert(list: List<PortfolioModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_PORTFOLIO)
+    @Query(DbConstants.PORTFOLIO_DELETE)
     abstract suspend fun delete()
 
-    /** Get portfolio list by owner id */
-    @Query(DbConstants.GET_PORTFOLIO_LIST_BY_OWNER_ID)
-    abstract fun getListByOwnerId(id: String): DataSource.Factory<Int, PortfolioModel>
+    /** Get list items */
+    @Query(DbConstants.PORTFOLIO_GET_LIST_ITEMS)
+    abstract fun getListItems(id: String): DataSource.Factory<Int, PortfolioModel>
 
 
-    /** Get portfolio item by id*/
-    @Query(DbConstants.GET_PORTFOLIO_ITEM_BY_ID)
-    abstract fun getById(id: String): LiveData<PortfolioModel>
+    /** Get single item */
+    @Query(DbConstants.PORTFOLIO_GET_SINGLE_ITEM)
+    abstract fun getSingleItem(id: String): LiveData<PortfolioModel>
 
 //    /** Search by query */
 //    @Query(DbConstants.GET_PORTFOLIO_BY_QUERY)

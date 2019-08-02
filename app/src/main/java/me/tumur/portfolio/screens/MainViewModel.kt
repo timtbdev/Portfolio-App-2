@@ -9,6 +9,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.tumur.portfolio.R
+import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.utils.constants.Constants
@@ -37,6 +38,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
 
     /** RepositoryImp */
     private val repo: Repository by inject()
+    private val welcomeDao: WelcomeDao by inject()
 
     /** Shared preferences */
     var isFirstRun by Preference(Constants.FIRST, true)
@@ -97,7 +99,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     private fun populateDb() = viewModelScope.launch{
 
         /** Fake dao is required to create and populate database from local resource  */
-        withContext(Dispatchers.IO){ repo.checkWelcome() }
+        withContext(Dispatchers.IO) { welcomeDao.check() }
     }
 
     /** Fetch network data, update the database, set screen state */

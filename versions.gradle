@@ -13,9 +13,9 @@ versions.gradle = '3.6.0-alpha03'
 versions.gradle_version_update = '0.21.0'
 versions.kotlin = '1.3.41'
 versions.google = '4.3.0'
-versions.google_material_design = '1.1.0-alpha08'
+versions.google_material_design = '1.1.0-alpha09'
 versions.google_guava = '28.0-jre'
-versions.fabric_tools = '1.30.0'
+versions.fabric_tools = '1.31.0'
 
 // AndroidX foundation
 versions.androidx_core = '1.2.0-alpha02'
@@ -38,7 +38,7 @@ versions.androidx_saved_state = '1.0.0-alpha02'
 versions.androidx_room = '2.2.0-alpha01'
 versions.androidx_paging = '2.1.0'
 versions.androidx_navigation_controller = '2.1.0-beta02'
-versions.androidx_work_manager = '2.2.0-beta02'
+versions.androidx_work_manager = '2.2.0-rc01'
 
 // Firebase
 versions.firebase_bom = '21.1.0'
@@ -51,7 +51,7 @@ versions.koin = '2.0.1'
 versions.kotlinx_coroutines = '1.3.0-RC'
 
 // Network components
-versions.retrofit = '2.6.0'
+versions.retrofit = '2.6.1'
 versions.retrofit_koltin_coroutines_adapter = '0.9.2'
 versions.moshi = '1.8.0'
 versions.okhttp = '4.0.1'
@@ -60,14 +60,14 @@ versions.glide = '4.9.0'
 versions.stetho = '1.5.1'
 
 // Utilities
-versions.leak_canary = '2.0-alpha-3'
+versions.leak_canary = '2.0-beta-1'
 versions.timber = '4.7.1'
 versions.three_ten_abp = '1.2.1'
 versions.circle_image_view = '3.0.0'
 versions.sdp = '1.0.6'
 versions.ink_page_indicator='1.3.0'
 versions.chrome_custom_tab='28.0.0'
-versions.exo_player='2.10.3'
+versions.toasty='1.4.2'
 
 // Test components
 versions.junit = '4.13-beta-3'
@@ -252,7 +252,7 @@ utilities.sdp = "com.intuit.sdp:sdp-android:$versions.sdp"
 utilities.circle_image_view = "de.hdodenhof:circleimageview:$versions.circle_image_view"
 utilities.ink_page_indicator = "com.pacioianu.david:ink-page-indicator:$versions.ink_page_indicator"
 utilities.chrome_custom_tab="com.android.support:customtabs:$versions.chrome_custom_tab"
-utilities.exo_player="com.google.android.exoplayer:exoplayer:$versions.exo_player"
+utilities.toasty = "com.github.GrenderG:Toasty:$versions.toasty"
 deps.utilities = utilities
 
 // Test
@@ -267,6 +267,7 @@ def addRepos(RepositoryHandler handler) {
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url 'https://maven.fabric.io/public' }
+    handler.maven { url "https://jitpack.io" }
 }
 ext.addRepos = this.&addRepos // Add repositories to extension
 

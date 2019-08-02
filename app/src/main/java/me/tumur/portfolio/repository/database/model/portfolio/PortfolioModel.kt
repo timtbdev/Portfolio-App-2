@@ -3,13 +3,14 @@ package me.tumur.portfolio.repository.database.model.portfolio
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 import me.tumur.portfolio.utils.constants.DbConstants
 
-@Entity(tableName = DbConstants.PORTFOLIO)
+@Entity(tableName = DbConstants.PORTFOLIO, indices = [Index(value = [DbConstants.ID], unique = true)])
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class PortfolioModel(
@@ -30,4 +31,4 @@ data class PortfolioModel(
     @Json(name = DbConstants.TYPE) @ColumnInfo(name = DbConstants.TYPE) var categoryType: Int,
     @Json(name = DbConstants.VIDEO_URL) @ColumnInfo(name = DbConstants.VIDEO_URL) var videoUrl: String?,
     @Json(name = DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
-): Parcelable
+) : Parcelable

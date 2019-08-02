@@ -127,6 +127,42 @@
                 app:argType="string"
                 app:nullable="true"/>
 
+        <!-- Action to portfolio detail screen video -->
+        <action android:id="@+id/action_to_portfolio_detail_screen_preview"
+                app:destination="@id/portfolio_detail_screen_preview"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out">
+            <argument
+                    android:name="id"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+            <argument
+                    android:name="order"
+                    android:defaultValue="1"
+                    app:argType="integer"/>
+        </action>
+
     </fragment>
+
+    <!-- Video -->
+    <fragment
+            android:id="@+id/portfolio_detail_screen_preview"
+            android:name="me.tumur.portfolio.screens.portfolio.detail.preview.PreviewFragment"
+            android:label="@string/preview"
+            tools:layout="@layout/fragment_preview">
+        <argument
+                android:name="id"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+        <argument
+                android:name="order"
+                android:defaultValue="1"
+                app:argType="integer"/>
+    </fragment>
+
 
 </navigation>

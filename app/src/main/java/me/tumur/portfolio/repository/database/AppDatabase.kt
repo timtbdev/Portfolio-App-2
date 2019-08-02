@@ -2,9 +2,11 @@ package me.tumur.portfolio.repository.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
+import me.tumur.portfolio.repository.database.dao.favorite.FavoriteDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
@@ -16,6 +18,7 @@ import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.experience.ExperienceModel
+import me.tumur.portfolio.repository.database.model.favorite.FavoriteModel
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.profile.AboutModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
@@ -26,11 +29,11 @@ import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
 
 @Database(
-    version = 35,
-    entities = [WelcomeModel::class, ProfileModel::class, SocialModel::class, AboutModel::class, AppModel::class, PortfolioModel::class, ExperienceModel::class, TaskModel::class, ButtonModel::class, CategoryModel::class, ScreenShotModel::class],
+    version = 46,
+    entities = [WelcomeModel::class, ProfileModel::class, SocialModel::class, AboutModel::class, AppModel::class, PortfolioModel::class, ExperienceModel::class, TaskModel::class, ButtonModel::class, CategoryModel::class, ScreenShotModel::class, FavoriteModel::class],
     exportSchema = false
 )
-
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract val welcomeDao: WelcomeDao
     abstract val profileDao: ProfileDao
@@ -43,4 +46,5 @@ abstract class AppDatabase : RoomDatabase() {
     abstract val buttonDao: ButtonDao
     abstract val categoryDao: CategoryDao
     abstract val screenShotDao: ScreenShotDao
+    abstract val favoriteDao: FavoriteDao
 }

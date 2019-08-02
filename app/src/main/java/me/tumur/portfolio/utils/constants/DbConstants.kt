@@ -31,10 +31,10 @@ object DbConstants {
     const val BUTTON = "button"
     const val CATEGORY = "category"
     const val SCREENSHOT = "screenshot"
+    const val FAVORITE = "favorite"
 
     /** COLUMNS CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"
-    const val ROW_ID = "rowid"
     const val OWNER_ID = "owner_id"
     const val NAME = "name"
     const val TITLE = "title"
@@ -60,9 +60,7 @@ object DbConstants {
     const val TASK = "task"
     const val ORDER = "order"
     const val ORDERS = "orders"
-    const val TAB = "tab"
     const val TYPE = "type"
-    const val YOUTUBE_ID = "youtube_id"
     const val DESCRIPTION = "description"
     const val VIDEO_URL = "video_url"
     const val QUERY = "query"
@@ -70,49 +68,61 @@ object DbConstants {
     /** QUERIES'S CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Welcome table's queries ----------------------------------------------------------------- */
-    const val CHECK_WELCOME = "SELECT COUNT(*) $WELCOME"
-    const val GET_WELCOME_BY_ID = "SELECT * FROM $WELCOME WHERE $ID=:$ID"
-    const val GET_ALL_WELCOME = "SELECT * FROM $WELCOME ORDER BY $ORDERS"
-    const val DELETE_WELCOME = "DELETE FROM $WELCOME"
+    const val WELCOME_DELETE = "DELETE FROM $WELCOME"
+    const val WELCOME_CHECK = "SELECT COUNT(*) FROM $WELCOME"
+    const val WELCOME_GET_SINGLE_ITEM = "SELECT * FROM $WELCOME WHERE $ID=:$ID"
+    const val WELCOME_GET_LIST_ITEMS = "SELECT * FROM $WELCOME ORDER BY $ORDERS"
 
-    /** Profile table's queries ----------------------------------------------------------------- */
-    const val GET_PROFILE_BY_ID = "SELECT * FROM $PROFILE WHERE $ID=:$ID"
-    const val DELETE_PROFILE = "DELETE FROM $PROFILE"
+    /** PROFILE QUERIES --------------------------------------------------------------------------------------------- */
+    const val PROFILE_DELETE = "DELETE FROM $PROFILE"
+    const val PROFILE_GET_SINGLE_ITEM = "SELECT * FROM $PROFILE WHERE $ID=:$ID"
 
-    /** About table's queries ------------------------------------------------------------------- */
-    const val DELETE_ABOUT = "DELETE FROM $ABOUT"
-    const val GET_ABOUT_BY_OWNER_ID = "SELECT * FROM $ABOUT WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
-    /** Social table's queries ------------------------------------------------------------------ */
-    const val DELETE_SOCIAL = "DELETE FROM $SOCIAL"
-    const val GET_SOCIAL_BY_OWNER_ID = "SELECT * FROM $SOCIAL WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    /** ABOUT QUERIES ----------------------------------------------------------------------------------------------- */
+    const val ABOUT_DELETE = "DELETE FROM $ABOUT"
+    const val ABOUT_GET_LIST_ITEMS = "SELECT * FROM $ABOUT WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
-    /** App table's queries --------------------------------------------------------------------- */
-    const val GET_APP = "SELECT * FROM $APP"
-    const val DELETE_APP = "DELETE FROM $APP"
+    /** SOCIAL QUERIES ---------------------------------------------------------------------------------------------- */
+    const val SOCIAL_DELETE = "DELETE FROM $SOCIAL"
+    const val SOCIAL_GET_LIST_ITEMS = "SELECT * FROM $SOCIAL WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
-    /** Portfolio table's queries --------------------------------------------------------------- */
-    const val DELETE_PORTFOLIO = "DELETE FROM $PORTFOLIO"
-    const val GET_PORTFOLIO_LIST_BY_OWNER_ID = "SELECT * FROM $PORTFOLIO WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
-    const val GET_PORTFOLIO_ITEM_BY_ID = "SELECT * FROM $PORTFOLIO WHERE $ID=:$ID"
+    /** APP QUERIES ------------------------------------------------------------------------------------------------- */
+    const val APP_DELETE = "DELETE FROM $APP"
+    const val APP_GET_LIST_ITEMS = "SELECT * FROM $APP"
+
+    /** PORTFOLIO QUERIES ------------------------------------------------------------------------------------------- */
+    const val PORTFOLIO_DELETE = "DELETE FROM $PORTFOLIO"
+    const val PORTFOLIO_GET_LIST_ITEMS = "SELECT * FROM $PORTFOLIO WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    const val PORTFOLIO_GET_SINGLE_ITEM = "SELECT * FROM $PORTFOLIO WHERE $ID=:$ID"
     const val GET_PORTFOLIO_BY_QUERY = "SELECT * FROM $PORTFOLIO WHERE $TITLE MATCH $QUERY"
 
-    /** Buttons table's queries -------------------------------------------------------- */
-    const val DELETE_BUTTON = "DELETE FROM $BUTTON"
-    const val GET_BUTTON_BY_OWNER_ID = "SELECT * FROM $BUTTON WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    /** BUTTON QUERIES ---------------------------------------------------------------------------------------------- */
+    const val BUTTON_DELETE = "DELETE FROM $BUTTON"
+    const val BUTTON_GET_LIST_ITEMS = "SELECT * FROM $BUTTON WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
-    /** Experience table's queries -------------------------------------------------------------- */
-    const val DELETE_EXPERIENCE = "DELETE FROM $EXPERIENCE"
-    const val GET_EXPERIENCE = "SELECT * FROM $EXPERIENCE"
+    /** CATEGORY QUERIES -------------------------------------------------------------------------------------------- */
+    const val CATEGORY_DELETE = "DELETE FROM $CATEGORY"
+    const val CATEGORY_GET_LIST_ITEMS = "SELECT * FROM $CATEGORY WHERE $TYPE=:$TYPE ORDER BY $ORDERS"
 
-    /** Tasks table's queries -------------------------------------------------------- */
-    const val DELETE_TASK= "DELETE FROM $TASKS"
+    /** SCREENSHOT QUERIES ------------------------------------------------------------------------------------------ */
+    const val SCREENSHOT_DELETE = "DELETE FROM $SCREENSHOT"
+    const val SCREENSHOT_GET_LIST_ITEMS = "SELECT * FROM $SCREENSHOT WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
 
-    /** Category table's queries --------------------------------------------------------------- */
-    const val DELETE_CATEGORY = "DELETE FROM $CATEGORY"
-    const val GET_CATEGORY_BY_TYPE = "SELECT * FROM $CATEGORY WHERE $TYPE=:$TYPE ORDER BY $ORDERS"
+    /** EXPERIENCE QUERIES ------------------------------------------------------------------------------------------ */
+    const val EXPERIENCE_DELETE = "DELETE FROM $EXPERIENCE"
+    const val EXPERIENCE_GET_LIST_ITEMS = "SELECT * FROM $EXPERIENCE WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    const val EXPERIENCE_GET_SINGLE_ITEM = "SELECT * FROM $EXPERIENCE WHERE $ID=:$ID"
 
-    /** Screenshot table's queries --------------------------------------------------------------- */
-    const val DELETE_SCREENSHOT = "DELETE FROM $SCREENSHOT"
-    const val GET_SCREENSHOT_BY_OWNER_ID = "SELECT * FROM $SCREENSHOT WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    /** TASK QUERIES ------------------------------------------------------------------------------------------------ */
+    const val TASK_DELETE = "DELETE FROM $TASKS"
+    const val TASK_GET_LIST_ITEMS = "SELECT * FROM $TASKS WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+
+    /** FAVORITE QUERIES -------------------------------------------------------------------------------------------- */
+    const val FAVORITE_DELETE = "DELETE FROM $FAVORITE"
+    const val FAVORITE_DELETE_SINGLE_ITEM = "DELETE FROM $FAVORITE WHERE $ID=:$ID"
+    const val FAVORITE_GET_SINGLE_ITEM = "SELECT * FROM $FAVORITE WHERE $ID=:$ID"
+    const val FAVORITE_GET_LIST_ITEMS = "SELECT * FROM $FAVORITE ORDER BY $ORDERS AND $DATE"
+    const val FAVORITE_EXIST_SINGLE_ITEM = "SELECT COUNT($ID) FROM $FAVORITE WHERE $ID=:$ID"
+    const val FAVORITE_GET_MAX_ORDER = "SELECT MAX($ORDERS) FROM $FAVORITE"
+    const val FAVORITE_CHECK = "SELECT COUNT(*) $FAVORITE"
 }

@@ -75,6 +75,9 @@ val databaseModule = module {
 
     /** ScreenShot DAO */
     factory { get<AppDatabase>().screenShotDao }
+
+    /** Favorite DAO */
+    factory { get<AppDatabase>().favoriteDao }
 }
 
 /** NETWORK MODULES ------------------------------------------------------------------------------------------------- */

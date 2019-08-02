@@ -39,12 +39,6 @@ object Constants {
     const val BUTTON_WEB = "web"
     const val BUTTON_YOUTUBE = "youtube"
 
-    /** PLAYER * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    const val USER_AGENT = "Portolio App Player"
-    const val FORMAT_MP3 = "mp3"
-    const val FORMAT_MP4 = "mp4"
-    const val FORMAT_M3U8 = "m3u8"
-
     /** BUNDLE * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"
     const val TITLE = "title"

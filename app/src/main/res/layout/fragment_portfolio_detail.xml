@@ -5,10 +5,10 @@
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="model" type="me.tumur.portfolio.screens.portfolio.detail.PortfolioDetailFragmentViewModel"/>
+        <variable name="clickListener" type="me.tumur.portfolio.screens.portfolio.detail.VideoClickListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/portfolio_item_detail_screen_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -32,8 +32,6 @@
                         android:id="@+id/portfolio_item_detail_video"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_200sdp"
-                        android:clickable="true"
-                        android:focusable="true"
                         app:layout_constraintBottom_toTopOf="@+id/portfolio_item_detail_logo"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -53,9 +51,9 @@
                             app:layout_constraintTop_toTopOf="parent"
                             tools:src="@drawable/ic_avatar_placeholder"/>
 
-                    <!-- Overlay -->
+                    <!-- Background -->
                     <View
-                            android:id="@+id/portfolio_item_detail_image_overlay"
+                            android:id="@+id/portfolio_item_detail_image_overlay_background"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/transparentBackground"
@@ -64,13 +62,13 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
 
-
                     <!-- Play icon -->
                     <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/portfolio_item_detail_play_icon"
                             android:layout_width="@dimen/_50sdp"
                             android:layout_height="@dimen/_50sdp"
                             android:contentDescription="@string/cd_play"
+                            android:backgroundTint="@color/colorOnSurface"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -79,6 +77,20 @@
                             app:layout_constraintVertical_bias="0.5"
                             app:srcCompat="@drawable/ic_play"
                             tools:src="@drawable/ic_avatar_placeholder"/>
+
+                    <!-- Foreground -->
+                    <View
+                            android:id="@+id/portfolio_item_detail_image_overlay_foreground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:onClick="@{() -> clickListener.onClick(model.portfolio.videoUrl)}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

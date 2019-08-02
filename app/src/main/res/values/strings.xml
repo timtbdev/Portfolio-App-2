@@ -74,6 +74,7 @@
 	<string name="toast_success">Your data is up to date</string>
 	<string name="toast_failed">Please check your internet connection</string>
     <string name="toast_saved">Item saved</string>
+    <string name="toast_unsaved">Item saved</string>
     <string name="technology">Technology</string>
     <string name="screenshot">Screenshots</string>
     <string name="description">Description</string>

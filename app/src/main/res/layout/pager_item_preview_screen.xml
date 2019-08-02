@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable name="model" type="me.tumur.portfolio.screens.portfolio.detail.preview.pager.PreviewPagerViewModel"/>
+        <variable name="shared" type="me.tumur.portfolio.screens.portfolio.detail.preview.PreviewFragmentViewModel"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pager_item_preview_screen"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <!-- Image -->
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pager_item_preview_screen_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@{model.data.imageDescription}"
+                app:imageUrl="@{model.data.url}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_avatar_placeholder"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,5 +1,6 @@
 package me.tumur.portfolio.repository.database.dao.task
 
+import androidx.paging.DataSource
 import androidx.room.*
 import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.utils.constants.DbConstants
@@ -9,16 +10,20 @@ abstract class TaskDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(data: List<TaskModel>): List<Long> {
+    open suspend fun update(list: List<TaskModel>): List<Long> {
         delete()
-        return insert(data)
+        return insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(data: List<TaskModel>): List<Long>
+    abstract suspend fun insert(list: List<TaskModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_TASK)
+    @Query(DbConstants.TASK_DELETE)
     abstract suspend fun delete()
+
+    /** Get list items */
+    @Query(DbConstants.TASK_GET_LIST_ITEMS)
+    abstract fun getListItems(id: String): DataSource.Factory<Int, TaskModel>
 }

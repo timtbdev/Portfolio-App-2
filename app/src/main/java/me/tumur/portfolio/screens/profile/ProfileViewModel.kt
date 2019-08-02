@@ -2,8 +2,10 @@ package me.tumur.portfolio.screens.profile
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
+import me.tumur.portfolio.repository.database.dao.profile.AboutDao
+import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
+import me.tumur.portfolio.repository.database.dao.profile.SocialDao
 import me.tumur.portfolio.repository.database.model.profile.SocialModel
-import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.utils.constants.DbConstants
 import org.koin.core.KoinComponent
 import org.koin.core.inject
@@ -12,22 +14,24 @@ class ProfileViewModel: ViewModel(), KoinComponent{
 
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /** RepositoryImp */
-    private val repo: Repository by inject()
+    /** Repository */
+    private val profileDao: ProfileDao by inject()
+    private val aboutDao: AboutDao by inject()
+    private val socialDao: SocialDao by inject()
 
     /** Profile */
     val profile = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getProfileById(DbConstants.PERSON_ID))
+        emitSource(profileDao.getSingleItem(DbConstants.PERSON_ID))
     }
 
     /** About */
     val about = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getAboutById(DbConstants.PERSON_ID))
+        emitSource(aboutDao.getListItems(DbConstants.PERSON_ID))
     }
 
     /** Social*/
     val social = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
-        emitSource(repo.getSocialById(DbConstants.PERSON_ID))
+        emitSource(socialDao.getListItems(DbConstants.PERSON_ID))
     }
 
 

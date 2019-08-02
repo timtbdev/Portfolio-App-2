@@ -10,20 +10,20 @@ abstract class SocialDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(social: List<SocialModel>) {
+    open suspend fun update(list: List<SocialModel>) {
         delete()
-        insert(social)
+        insert(list)
     }
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(social: List<SocialModel>): List<Long>
+    abstract suspend fun insert(list: List<SocialModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_SOCIAL)
+    @Query(DbConstants.SOCIAL_DELETE)
     abstract suspend fun delete()
 
-    /** Get */
-    @Query(DbConstants.GET_SOCIAL_BY_OWNER_ID)
-    abstract fun getById(id: String): LiveData<List<SocialModel>>
+    /** Get list items */
+    @Query(DbConstants.SOCIAL_GET_LIST_ITEMS)
+    abstract fun getListItems(id: String): LiveData<List<SocialModel>>
 }

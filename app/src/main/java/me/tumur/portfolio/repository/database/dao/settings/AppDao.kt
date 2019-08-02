@@ -20,10 +20,10 @@ abstract class AppDao {
     abstract suspend fun insert(list: List<AppModel>): List<Long>
 
     /** Delete */
-    @Query(DbConstants.DELETE_APP)
+    @Query(DbConstants.APP_DELETE)
     abstract suspend fun delete()
 
-    /** Get */
-    @Query(DbConstants.GET_APP)
-    abstract fun get(): LiveData<List<AppModel>>
+    /** Get list items */
+    @Query(DbConstants.APP_GET_LIST_ITEMS)
+    abstract fun getListItems(): LiveData<List<AppModel>>
 }

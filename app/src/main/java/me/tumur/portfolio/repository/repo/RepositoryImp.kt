@@ -1,8 +1,5 @@
 package me.tumur.portfolio.repository.repo
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
-import androidx.paging.DataSource
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
@@ -14,10 +11,6 @@ import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
-import me.tumur.portfolio.repository.database.model.button.ButtonModel
-import me.tumur.portfolio.repository.database.model.category.CategoryModel
-import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
-import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.network.RestApi
 import me.tumur.portfolio.repository.network.Result
@@ -45,10 +38,6 @@ class RepositoryImp : Repository, KoinComponent {
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
-
-    /** 2.FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-    /** MAIN SCREEN ------------------------------------------------------------------------------------------------- */
 
     /**
      * Fetch data from network and update the database,
@@ -124,109 +113,4 @@ class RepositoryImp : Repository, KoinComponent {
             Failed
         }
     }
-
-    /** WELCOME SCREEN ---------------------------------------------------------------------------------------------- */
-
-    /**
-     * Content of view pager that can be shown on the welcome screen.
-     */
-
-    override suspend fun getWelcomeById(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(welcomeDao.getById(id))
-    }
-
-    override suspend fun getWelcome() = liveData {
-        /**  Start the emission */
-        emitSource(welcomeDao.get())
-    }
-
-    /**
-     * This function will be used for FakeDao to populate Database
-     */
-    override suspend fun checkWelcome(): Int {
-        return welcomeDao.check()
-    }
-
-    /** PROFILE SCREEN ---------------------------------------------------------------------------------------------- */
-
-    /**
-     * Content that can be shown on the profile screen.
-     */
-    override suspend fun getProfileById(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(profileDao.getById(id))
-    }
-
-    /**
-     * Content that can be shown on the profile screen.
-     */
-    override suspend fun getAboutById(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(aboutDao.getById(id))
-    }
-
-    /**
-     * Content that can be shown on the profile screen.
-     */
-    override suspend fun getSocialById(id: String) = liveData {
-        /**  Start the emission */
-        emitSource(socialDao.getById(id))
-    }
-
-    /** APP DIALOG -------------------------------------------------------------------------------------------- */
-
-    /**
-     * Content that can be shown on the app info dialog.
-     * App info data
-     */
-    override suspend fun getApp() = liveData {
-        /**  Start the emission */
-        emitSource(appDao.get())
-    }
-
-    /** PORTFOLIO SCREEN -------------------------------------------------------------------------------------- */
-
-    /**
-     * Content that can be shown on the portfolio view pager screen.
-     */
-    override fun getPortfolioList(id: String): DataSource.Factory<Int, PortfolioModel> {
-        return portfolioDao.getListByOwnerId(id)
-    }
-
-    /**
-     * Content that can be shown on the portfolio view pager screen.
-     */
-    override fun getPortfolioItem(id: String): LiveData<PortfolioModel> {
-        return portfolioDao.getById(id)
-    }
-
-    /**
-     * Content that can be shown on the detail portfolio screen
-     */
-    override fun getButtonList(id: String): DataSource.Factory<Int, ButtonModel> {
-        return buttonDao.getById(id)
-    }
-
-    /**
-     * Content that can be shown on the detail portfolio screen
-     */
-    override fun getCategoryList(group: Int): DataSource.Factory<Int, CategoryModel> {
-        return categoryDao.getByGroup(group)
-    }
-
-    /**
-     * Content that can be shown on the detail portfolio screen
-     */
-    override fun getScreenShotList(id: String): DataSource.Factory<Int, ScreenShotModel> {
-        return screenShotDao.getByOwnerId(id)
-    }
-
-//    /**
-//     * Content that can be shown on the profile screen.
-//     */
-//    override suspend fun search(query: String) = liveData {
-//        /**  Start the emission */
-//        emitSource(portfolioDao.getByQuery(query))
-//    }
 }

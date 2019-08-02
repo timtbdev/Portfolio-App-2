@@ -10,22 +10,22 @@ abstract class ProfileDao {
 
     /** Update */
     @Transaction
-    open suspend fun update(data: List<ProfileModel>){
+    open suspend fun update(list: List<ProfileModel>) {
         delete()
-        insert(data)
+        insert(list)
     }
 
     /** Delete */
-    @Query(DbConstants.DELETE_PROFILE)
+    @Query(DbConstants.PROFILE_DELETE)
     abstract suspend fun delete()
 
     /** Insert */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(data: List<ProfileModel>)
+    abstract suspend fun insert(list: List<ProfileModel>)
 
-    /** Get by id */
-    @Query(DbConstants.GET_PROFILE_BY_ID)
-    abstract fun getById(id: String): LiveData<ProfileModel>
+    /** Get single item */
+    @Query(DbConstants.PROFILE_GET_SINGLE_ITEM)
+    abstract fun getSingleItem(id: String): LiveData<ProfileModel>
 
 
 }

@@ -1,13 +1,8 @@
 package me.tumur.portfolio.utils.adapters.bindingAdapters
 
-import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
-import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
-import androidx.vectordrawable.graphics.drawable.Animatable2Compat
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import me.tumur.portfolio.R
 import me.tumur.portfolio.utils.state.*
 
@@ -94,25 +89,5 @@ fun hideOrShowBottomNav(view: View, state: NavigationState) {
         is HideNavigation -> view.visibility = View.INVISIBLE
         is ShowNavigation -> view.visibility = View.VISIBLE
         is GoneNavigation -> view.visibility = View.GONE
-    }
-}
-
-/** BINDING ADAPTER FOR LOADER * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-/** Animated loader icon */
-@BindingAdapter("loaderIcon", "screenState")
-fun setLoaderIcon(view: ImageView, @DrawableRes loaderIcon: Int, screenState: ScreenState?) {
-    if (screenState != null && screenState is LoaderScreen) {
-        val avdLoader = AnimatedVectorDrawableCompat.create(view.context, loaderIcon)!!
-        avdLoader.registerAnimationCallback(object : Animatable2Compat.AnimationCallback() {
-            override fun onAnimationEnd(drawable: Drawable?) {
-                when(screenState){
-                    LoaderScreen -> avdLoader.start()
-                    else -> avdLoader.stop()
-                }
-            }
-        })
-        view.setImageDrawable(avdLoader)
-        avdLoader.start()
     }
 }
