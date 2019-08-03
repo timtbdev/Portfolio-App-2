@@ -1,14 +1,11 @@
 package me.tumur.portfolio.screens
 
 import android.content.Context
-import android.view.Gravity
-import android.widget.Toast
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import me.tumur.portfolio.R
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.repo.Repository
@@ -47,12 +44,11 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     private val network = (isNetworkAvailable(context))
 
     /** Screen state  */
-    private val _screenState = MutableLiveData<ScreenState>().apply { value = SplashScreen }
+    private val _screenState = MutableLiveData<ScreenState>()
     val screenState: LiveData<ScreenState> = _screenState
 
     /** Fragment state  */
-    private val _fragmentState: MutableLiveData<String> =
-        savedStateHandle.getLiveData(Constants.FRAGMENT_STATE, Constants.FRAGMENT_EMPTY)
+    private val _fragmentState = MutableLiveData<String>()
     val fragmentState: LiveData<String> = _fragmentState
 
     /** Routed to saved Fragment state */
@@ -64,8 +60,9 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
         MutableLiveData<NavigationState>().apply { value = if (isFirstRun) HideNavigation else ShowNavigation }
     val navigation : LiveData<NavigationState> = _navigation
 
-    /** Toast messages */
-    private val msgFailed = context.getString(R.string.toast_failed)
+    /** Show a toast message */
+    private val _showToast = MutableLiveData<ToastState>().apply { value = ToastEmpty }
+    val showToast: LiveData<ToastState> = _showToast
 
     /** INITIALIZATION  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -75,16 +72,16 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     init {
         /** Check first run */
         if (isFirstRun) {
+            setScreenState(SplashScreen)
             val job = populateDb()
             job.isCompleted.let {
-                if(network) fetch(WelcomeScreen) else     viewModelScope.launch {
-                    setScreenStateWithDelay(WelcomeScreen)
-                }
+                if (network) fetch(WelcomeScreen)
+                else viewModelScope.launch { setScreenStateWithDelay(WelcomeScreen) }
             }
         } else {
-
-            when (fragmentState.value) {
+            when (getSavedStateHandle()) {
                 Constants.FRAGMENT_EMPTY -> {
+                    setScreenState(SplashScreen)
                     viewModelScope.launch { setScreenStateWithDelay(LoaderScreen) }
                     if (network) fetch(MainScreen) else viewModelScope.launch { setScreenStateWithDelay(MainScreen) }
                 }
@@ -93,7 +90,28 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
         }
     }
 
+    override fun onCleared() {
+        setSavedStateHandle(fragmentState.value)
+        super.onCleared()
+    }
+
     /** FUNCTIONS  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+    /** Set saved state handle */
+    private fun setSavedStateHandle(state: String?) {
+        // Sets a new value for the object associated to the key.
+        state?.let {
+            savedStateHandle.set(Constants.FRAGMENT_STATE, it)
+        }
+
+    }
+
+    /** Get saved state handle */
+    private fun getSavedStateHandle(): String {
+        // Gets the current value of the user id from the saved state handle
+        return savedStateHandle.get(Constants.FRAGMENT_STATE) ?: Constants.FRAGMENT_EMPTY
+    }
 
     /** Database population at very first run */
     private fun populateDb() = viewModelScope.launch{
@@ -105,7 +123,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     /** Fetch network data, update the database, set screen state */
     private fun fetch(screen: ScreenState?) = viewModelScope.launch{
         when(withContext(Dispatchers.IO) { repo.fetchAll() }){
-            is Failed -> showToastMessage(msgFailed)
+            is Failed -> setShowToast(ToastShow)
         }
         screen?.let { setScreenStateWithDelay(screen) }
     }
@@ -138,10 +156,10 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
         _routed.value = state
     }
 
-    /** Show toast message */
-    private fun showToastMessage(message: String){
-        val toast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
-        toast.setGravity(0, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
-        toast.show()
+    /**
+     * Set show toast
+     * */
+    fun setShowToast(state: ToastState) {
+        _showToast.value = state
     }
 }

@@ -13,7 +13,7 @@
 	<string name="menu_search">Search</string>
 	<string name="menu_refresh">Refresh</string>
 	<string name="menu_share">Share</string>
-    <string name="menu_rate">Rate this app</string>
+	<string name="menu_rate">Rate</string>
 	<string name="menu_privacy">Privacy</string>
 	<string name="menu_save">Save</string>
 	<string name="menu_remove">Remove</string>

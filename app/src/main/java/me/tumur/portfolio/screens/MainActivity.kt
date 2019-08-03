@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateViewModelFactory
@@ -14,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.screen_main.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,10 +24,7 @@ import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.ActivityMainBinding
 import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.extensions.activityBinding
-import me.tumur.portfolio.utils.state.HideNavigation
-import me.tumur.portfolio.utils.state.ScreenState
-import me.tumur.portfolio.utils.state.ShowNavigation
-import me.tumur.portfolio.utils.state.WelcomeScreen
+import me.tumur.portfolio.utils.state.*
 
 
 /**
@@ -73,6 +72,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    /** Parameters for toast message */
+    private val toastBg = ContextCompat.getColor(this, R.color.colorPrimary)
+    private val toastTextColor = ContextCompat.getColor(this, R.color.colorOnPrimary)
+    private val toastIcon = ContextCompat.getDrawable(this, R.drawable.ic_no_connection)
+    private val toastMessage = this.getString(R.string.toast_failed)
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -100,8 +104,7 @@ class MainActivity : AppCompatActivity() {
         delayedInit()
 
         /** Set observers*/
-        setWelcomeScreenObserver()
-        setFragmentStateObserver()
+        setObservers()
     }
 
     /**
@@ -134,18 +137,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /** Setup welcome screen observer  */
-    private fun setWelcomeScreenObserver(){
+    /** Set observers */
+    private fun setObservers() {
+
+        /** Setup welcome screen observer  */
         val screenWelcomeObserver = Observer<ScreenState> { state ->
             when(state){
                 is WelcomeScreen -> navController.navigate(R.id.action_global_to_welcome_screen)
             }
         }
         viewModel.screenState.observe(this, screenWelcomeObserver)
-    }
 
-    /** Setup fragment state observer  */
-    private fun setFragmentStateObserver(){
+        /** Setup fragment state observer  */
         val fragmentStateObserver = Observer<String> { state ->
             if(viewModel.routed.value == false){
                 when(state){
@@ -158,6 +161,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
         viewModel.fragmentState.observe(this, fragmentStateObserver)
+
+        /** Set observer for a toast message */
+        val observerShowToast = Observer<ToastState> {
+            when (it) {
+                ToastShow -> showToastMessage()
+            }
+        }
+        viewModel.showToast.observe(this, observerShowToast)
     }
 
     /** Setup bottom menu */
@@ -193,5 +204,11 @@ class MainActivity : AppCompatActivity() {
             this.setupWithNavController(navController)
         }
         binding.main.main_screen_toolbar?.setupWithNavController(navController, appBarConfiguration)
+    }
+
+    /** Show toast message */
+    private fun showToastMessage() {
+        Toasty.custom(this, toastMessage, toastIcon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
+        viewModel.setShowToast(ToastEmpty)
     }
 }

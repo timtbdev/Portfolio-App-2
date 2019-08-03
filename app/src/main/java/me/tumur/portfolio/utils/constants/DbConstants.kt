@@ -64,6 +64,7 @@ object DbConstants {
     const val DESCRIPTION = "description"
     const val VIDEO_URL = "video_url"
     const val QUERY = "query"
+    const val LINK_TO_SHARE = "link_to_share"
 
     /** QUERIES'S CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 

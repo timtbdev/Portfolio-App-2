@@ -29,7 +29,7 @@ import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
 
 @Database(
-    version = 46,
+    version = 47,
     entities = [WelcomeModel::class, ProfileModel::class, SocialModel::class, AboutModel::class, AppModel::class, PortfolioModel::class, ExperienceModel::class, TaskModel::class, ButtonModel::class, CategoryModel::class, ScreenShotModel::class, FavoriteModel::class],
     exportSchema = false
 )

@@ -46,10 +46,6 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     private val _screenShotOrder = MutableLiveData<Int>()
     val screenShotOrder: LiveData<Int> = _screenShotOrder
 
-//    /** Show a toast message */
-//    private val _showToast = MutableLiveData<ToastState>().apply { value = ToastEmpty }
-//    val showToast: LiveData<ToastState> = _showToast
-
     /** Video Url */
     private val _videoUrl = MutableLiveData<String>()
     val videoUrl: LiveData<String> = _videoUrl
@@ -119,13 +115,6 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     fun setVideoUrl(url: String?) {
         _videoUrl.value = url
     }
-
-//    /**
-//     * Set show toast
-//     * */
-//    fun setShowToast(state: ToastState) {
-//        _showToast.value = state
-//    }
 
     /**
      * Save as favorite

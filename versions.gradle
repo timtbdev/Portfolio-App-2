@@ -60,7 +60,7 @@ versions.glide = '4.9.0'
 versions.stetho = '1.5.1'
 
 // Utilities
-versions.leak_canary = '2.0-beta-1'
+versions.leak_canary = '2.0-beta-2'
 versions.timber = '4.7.1'
 versions.three_ten_abp = '1.2.1'
 versions.circle_image_view = '3.0.0'

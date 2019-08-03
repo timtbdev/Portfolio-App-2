@@ -15,6 +15,7 @@
     "order": 1,
     "header": "Android Apps",
     "type": 1,
+    "link_to_share": "https://8io.co/pro/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -33,6 +34,7 @@
     "order": 2,
     "header": "Android Apps",
     "type": 1,
+    "link_to_share": "https://8io.co/po/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -51,6 +53,7 @@
     "order": 3,
     "header": "Android Apps",
     "type": 2,
+    "link_to_share": "http://tumur.info/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -69,6 +72,7 @@
     "order": 4,
     "header": "Android Apps",
     "type": 2,
+    "link_to_share": "https://8io.co/co/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -87,6 +91,7 @@
     "order": 5,
     "header": "Android Apps",
     "type": 2,
+    "link_to_share": "https://8io.co/co/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -105,6 +110,7 @@
     "order": 6,
     "header": "Websites",
     "type": 3,
+    "link_to_share": "http://tumur.info/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -123,6 +129,7 @@
     "order": 7,
     "header": "Websites",
     "type": 3,
+    "link_to_share": "http://www.tumur.info/assets/web/tumur/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   },
   {
@@ -141,6 +148,7 @@
     "order": 8,
     "header": "Websites",
     "type": 3,
+    "link_to_share": "https://8io.co/eg/",
     "video_url": "https://www.youtube.com/watch?v=NfCFAsJsNp8"
   }
 ]

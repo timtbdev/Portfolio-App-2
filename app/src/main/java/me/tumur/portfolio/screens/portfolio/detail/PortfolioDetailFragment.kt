@@ -1,6 +1,7 @@
 package me.tumur.portfolio.screens.portfolio.detail
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
@@ -71,15 +72,8 @@ class PortfolioDetailFragment : Fragment() {
     /** Safe args */
     private val args: PortfolioDetailFragmentArgs by navArgs()
 
-    /** Parameters for toast message */
-    private val toastBg = ContextCompat.getColor(ctx, R.color.colorOnSurface)
-    private val toastTextColor = ContextCompat.getColor(ctx, R.color.colorOnPrimary)
-    private val toastIconSaved = ContextCompat.getDrawable(ctx, R.drawable.ic_saved)
-    private val toastIconUnSaved = ContextCompat.getDrawable(ctx, R.drawable.ic_un_saved)
-
     /** Coroutines */
     private val job = Job()
-    private val ioScope = CoroutineScope(Dispatchers.IO + job)
     private val uiScope = CoroutineScope(Dispatchers.Main.immediate + job)
 
     /** Repository */
@@ -178,6 +172,10 @@ class PortfolioDetailFragment : Fragment() {
                 topMenu.findItem(R.id.menu_saved).isVisible = false
                 topMenu.findItem(R.id.menu_save).isVisible = true
             }
+            R.id.menu_share -> {
+                getShareIntent()
+
+            }
         }
         return true
     }
@@ -269,11 +267,12 @@ class PortfolioDetailFragment : Fragment() {
         /** Set observer for screenshot click listener */
         val observerScreenShotOwnerId = Observer<String> {
             it?.let {
+
+                val menuAction = topMenu.findItem(R.id.menu_share)
+                onOptionsItemSelected(menuAction)
+
                 val action = viewModel.screenShotOrder.value?.let { order ->
-                    PortfolioDetailFragmentDirections.actionToPortfolioDetailScreenPreview(
-                        it,
-                        order
-                    )
+                    PortfolioDetailFragmentDirections.actionToPortfolioDetailScreenPreview(it, order)
                 }
                 action?.let { nextAction -> findNavController().navigate(nextAction) }
             }
@@ -288,16 +287,6 @@ class PortfolioDetailFragment : Fragment() {
             }
         }
         viewModel.videoUrl.observe(viewLifecycleOwner, observerVideoUrl)
-
-//        /** Set observer for a toast message */
-//        val observerShowToast = Observer<ToastState> {
-//            when (it) {
-//                ToastSaved -> showToastMessage(this.getString(R.string.toast_saved), toastIconSaved)
-//                ToastUnsaved -> showToastMessage(this.getString(R.string.toast_unsaved), toastIconUnSaved)
-//            }
-//        }
-//        viewModel.showToast.observe(viewLifecycleOwner, observerShowToast)
-
     }
 
     /**
@@ -316,9 +305,17 @@ class PortfolioDetailFragment : Fragment() {
         }
     }
 
-//    /** Show toast message */
-//    private fun showToastMessage(message: String, icon: Drawable?) {
-//        Toasty.custom(ctx, message, icon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
-//        viewModel.setShowToast(ToastEmpty)
-//    }
+    /** Get a share intent */
+    private fun getShareIntent(): Intent {
+        /** Share intent */
+        val intent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_SUBJECT, viewModel.portfolio.value?.title)
+            putExtra(Intent.EXTRA_TITLE, viewModel.portfolio.value?.subTitle)
+            putExtra(Intent.EXTRA_TEXT, viewModel.portfolio.value?.linkToShare)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(intent, resources.getText(R.string.app_share_message)))
+        return intent
+    }
 }
