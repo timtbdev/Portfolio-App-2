@@ -68,6 +68,7 @@ versions.sdp = '1.0.6'
 versions.ink_page_indicator='1.3.0'
 versions.chrome_custom_tab='28.0.0'
 versions.toasty='1.4.2'
+versions.circle_image_view="3.0.0"
 
 // Test components
 versions.junit = '4.13-beta-3'
@@ -253,6 +254,7 @@ utilities.circle_image_view = "de.hdodenhof:circleimageview:$versions.circle_ima
 utilities.ink_page_indicator = "com.pacioianu.david:ink-page-indicator:$versions.ink_page_indicator"
 utilities.chrome_custom_tab="com.android.support:customtabs:$versions.chrome_custom_tab"
 utilities.toasty = "com.github.GrenderG:Toasty:$versions.toasty"
+utilities.circle_image_view = "de.hdodenhof:circleimageview:$versions.circle_image_view"
 deps.utilities = utilities
 
 // Test

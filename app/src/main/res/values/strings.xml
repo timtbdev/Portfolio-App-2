@@ -37,6 +37,9 @@
 	<string name="cd_calendar">Calendar</string>
     <string name="cd_play">Play a video</string>
     <string name="cd_delete">Delete item</string>
+	<string name="cd_job_title">Job title</string>
+	<string name="cd_company">Company\'s name</string>
+	<string name="cd_location">Company\'s location</string>
 	<string name="copy_right">You can get in touch with me \n ✉️ tumur.alex@gmail.com</string>
 	<string name="preference_key_display">display</string>
 	<string name="preference_key_dark_theme">dark_theme_mode</string>

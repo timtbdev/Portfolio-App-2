@@ -1,29 +1,31 @@
 package me.tumur.portfolio.screens.experience
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.paging.PagedList
+import androidx.recyclerview.widget.LinearLayoutManager
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentExperienceBinding
+import me.tumur.portfolio.repository.database.model.experience.ExperienceModel
 import me.tumur.portfolio.screens.MainViewModel
+import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.ExperienceAdapter
+import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.ExperienceClickListener
 import me.tumur.portfolio.utils.constants.Constants
 
 /**
- * An fragment that inflates a experience layout.
+ * An fragment that inflates a portfolio layout.
  */
 class ExperienceFragment : Fragment() {
 
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /**
-     * Create new instance
-     */
-
+    /** Create a new instance */
     companion object {
         fun newInstance() = ExperienceFragment()
     }
@@ -38,16 +40,22 @@ class ExperienceFragment : Fragment() {
      * this Fragment is attached i.e.,after Fragment.onAttach,
      * and access prior to that will result in IllegalArgumentException.
      * */
-
-    val vmodel: ExperienceViewModel by viewModels()
     private val sharedViewModel: MainViewModel by activityViewModels()
+
+    /**
+     * Lazily create a ViewModel the first time the system calls an activity's onCreate() method.
+     * Re-created fragments receive the same ViewModel instance created by the parent fragment.
+     * */
+    private val viewModel: ExperienceViewModel by viewModels()
 
     /**
      * Databinding
      */
     private lateinit var binding: FragmentExperienceBinding
 
-    /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    private lateinit var experienceMenu: Menu
+
+    /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -68,19 +76,82 @@ class ExperienceFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        /** Binding data to layout */
+        /** Lock fragment in portrait screen orientation */
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
+        /** Data binding */
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_experience, container, false)
-        binding.apply {
-            this.lifecycleOwner = viewLifecycleOwner
-            this.model = vmodel
-        }
 
         /** Set fragment state in shared view model */
         sharedViewModel.setFragmentState(Constants.FRAGMENT_EXPERIENCE)
 
+        /** Experience items */
+        val experienceAdapter = ExperienceAdapter(ExperienceClickListener(viewModel::setSelectedItem))
+        val layoutManagerExperience = LinearLayoutManager(context)
+        layoutManagerExperience.orientation = LinearLayoutManager.VERTICAL
+        val portfolioList = binding.experienceScreenList
+
+        portfolioList.apply {
+            this.layoutManager = layoutManagerExperience
+            this.hasFixedSize()
+            this.adapter = experienceAdapter
+        }
+
+        binding.apply {
+            this.lifecycleOwner = viewLifecycleOwner
+            this.model = viewModel
+        }
+
+        /** Options menu */
+        setHasOptionsMenu(true)
+
+        /** Set observers */
+        setObservers(experienceAdapter)
+
         return binding.root
     }
 
-    /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        experienceMenu = menu
+        inflater.inflate(R.menu.portfolio_list_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_search -> {
+            }
+        }
+        return true
+    }
+
+    /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    /** Set observers */
+    private fun setObservers(experienceAdapter: ExperienceAdapter) {
+
+        /**
+         * Observer for portfolio adapters data
+         * */
+        val observerData = Observer<PagedList<ExperienceModel>> { data ->
+            data?.let {
+                experienceAdapter.submitList(it)
+            }
+        }
+        viewModel.data.observe(viewLifecycleOwner, observerData)
+
+        /**
+         * Click listener for experience item
+         * */
+        val observerItem = Observer<ExperienceModel> {
+            it?.let {
+                experienceMenu.let { menu ->
+                    val menuAction = menu.findItem(R.id.menu_search)
+                    onOptionsItemSelected(menuAction)
+                }
+
+            }
+        }
+        viewModel.selectedItem.observe(viewLifecycleOwner, observerItem)
+    }
 }
