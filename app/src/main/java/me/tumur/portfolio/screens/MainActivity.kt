@@ -25,6 +25,7 @@ import me.tumur.portfolio.databinding.ActivityMainBinding
 import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.extensions.activityBinding
 import me.tumur.portfolio.utils.state.*
+import org.koin.android.ext.android.inject
 
 
 /**
@@ -72,11 +73,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+    /** Context */
+
+    private val context: Context by inject()
+
     /** Parameters for toast message */
-    private val toastBg = ContextCompat.getColor(this, R.color.colorPrimary)
-    private val toastTextColor = ContextCompat.getColor(this, R.color.colorOnPrimary)
-    private val toastIcon = ContextCompat.getDrawable(this, R.drawable.ic_no_connection)
-    private val toastMessage = this.getString(R.string.toast_failed)
+    private val toastBg = ContextCompat.getColor(context, R.color.colorPrimary)
+    private val toastTextColor = ContextCompat.getColor(context, R.color.colorOnPrimary)
+    private val toastIcon = ContextCompat.getDrawable(context, R.drawable.ic_no_connection)
+    private val toastMessage = context.getString(R.string.toast_failed)
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -156,6 +162,7 @@ class MainActivity : AppCompatActivity() {
                     Constants.FRAGMENT_PORTFOLIO -> navController.navigate(R.id.portfolio_screen)
                     Constants.FRAGMENT_EXPERIENCE -> navController.navigate(R.id.experience_screen)
                     Constants.FRAGMENT_SETTINGS -> navController.navigate(R.id.settings_screen)
+                    Constants.FRAGMENT_FAVORITE -> navController.navigate(R.id.favorite_screen)
                 }
                 viewModel.setRouted(true)
             }

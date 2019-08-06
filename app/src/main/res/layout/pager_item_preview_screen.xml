@@ -11,9 +11,25 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/pager_item_preview_screen"
-            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+        <!-- Progress Bar -->
+        <ProgressBar
+                style="@android:style/Widget.Material.Light.ProgressBar.Large"
+                android:id="@+id/loader_screen_progress_bar"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:screenPreviewProgressBar="@{model.state}"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:progressTint="@color/progressBar"
+                android:indeterminateTint="@color/colorOnSurfaceSecondary"
+                android:indeterminate="true"/>
 
         <!-- Image -->
         <androidx.appcompat.widget.AppCompatImageView
@@ -21,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
+                app:screenPreviewImage="@{model.state}"
                 android:contentDescription="@{model.data.imageDescription}"
                 app:imageUrl="@{model.data.url}"
                 app:layout_constraintBottom_toBottomOf="parent"

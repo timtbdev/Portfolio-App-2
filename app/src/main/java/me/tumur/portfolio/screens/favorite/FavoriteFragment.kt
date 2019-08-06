@@ -1,4 +1,4 @@
-package me.tumur.portfolio.screens.portfolio
+package me.tumur.portfolio.screens.favorite
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -12,24 +12,23 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import me.tumur.portfolio.R
-import me.tumur.portfolio.databinding.FragmentPortfolioBinding
-import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
+import me.tumur.portfolio.databinding.FragmentFavoriteBinding
+import me.tumur.portfolio.repository.database.model.favorite.FavoriteModel
 import me.tumur.portfolio.screens.MainViewModel
-import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.PortfolioAdapter
-import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.PortfolioClickListener
+import me.tumur.portfolio.utils.adapters.listItemAdapters.favorite.FavoriteAdapter
+import me.tumur.portfolio.utils.adapters.listItemAdapters.favorite.FavoriteClickListener
 import me.tumur.portfolio.utils.constants.Constants
-
 
 /**
  * An fragment that inflates a portfolio layout.
  */
-class PortfolioFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Create a new instance */
     companion object {
-        fun newInstance() = PortfolioFragment()
+        fun newInstance() = FavoriteFragment()
     }
 
     /** ViewModel */
@@ -48,19 +47,15 @@ class PortfolioFragment : Fragment() {
      * Lazily create a ViewModel the first time the system calls an activity's onCreate() method.
      * Re-created fragments receive the same ViewModel instance created by the parent fragment.
      * */
-    private val viewModel: PortfolioViewModel by viewModels()
+    private val viewModel: FavoriteViewModel by viewModels()
 
     /**
      * Databinding
      */
-    private lateinit var binding: FragmentPortfolioBinding
+    private lateinit var binding: FragmentFavoriteBinding
 
-    /**
-     * Pull to refresh layout
-     */
-    private val pullToRefresh by lazy { binding.portfolioScreenRefresh }
-
-    private lateinit var portfolioMenu: Menu
+    /** Action bar menu */
+    private lateinit var favoriteMenu: Menu
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -87,21 +82,21 @@ class PortfolioFragment : Fragment() {
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         /** Data binding */
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_portfolio, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorite, container, false)
 
         /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_PORTFOLIO)
+        sharedViewModel.setFragmentState(Constants.FRAGMENT_FAVORITE)
 
-        /** Portfolio items */
-        val portfolioAdapter = PortfolioAdapter(PortfolioClickListener { viewModel.setSelectedItem(it) })
-        val layoutManagerPortfolio = LinearLayoutManager(context)
-        layoutManagerPortfolio.orientation = LinearLayoutManager.VERTICAL
-        val portfolioList = binding.portfolioScreenList
+        /** Favorite items */
+        val favoriteAdapter = FavoriteAdapter(FavoriteClickListener(viewModel::setSelectedItem))
+        val layoutManagerFavorite = LinearLayoutManager(context)
+        layoutManagerFavorite.orientation = LinearLayoutManager.VERTICAL
+        val favoriteList = binding.favoriteScreenList
 
-        portfolioList.apply {
-            this.layoutManager = layoutManagerPortfolio
+        favoriteList.apply {
+            this.layoutManager = layoutManagerFavorite
             this.hasFixedSize()
-            this.adapter = portfolioAdapter
+            this.adapter = favoriteAdapter
         }
 
         binding.apply {
@@ -113,43 +108,30 @@ class PortfolioFragment : Fragment() {
         setHasOptionsMenu(true)
 
         /** Set observers */
-        setPortfolioAdapter(portfolioAdapter)
-        setRefreshObserver()
-
-        /** Set listeners */
-        setPortfolioItemClickListener()
-        setPullToRefreshListener()
+        setObservers(favoriteAdapter)
 
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        portfolioMenu = menu
-        inflater.inflate(R.menu.portfolio_list_menu, menu)
+        favoriteMenu = menu
+        inflater.inflate(R.menu.favorite_list_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_search -> {
-                val portfolioItem = viewModel.selectedItem.value
-                if (portfolioItem != null) {
+            R.id.menu_delete_all -> {
+                val favoriteItem = viewModel.selectedItem.value
+                if (favoriteItem != null) {
                     val action =
-                        PortfolioFragmentDirections.actionToPortfolioDetailScreen(portfolioItem.id, portfolioItem.title)
+                        FavoriteFragmentDirections.actionToPortfolioDetailScreen(favoriteItem.id, favoriteItem.title)
                     findNavController().navigate(action)
-                    viewModel.setSelectedItem(null)
+                    viewModel.setSelectedItem(null, false)
                 } else {
-                    findNavController().navigate(R.id.settings_screen)
+                    viewModel.deleteAllItems()
+                    viewModel.checkEmptyTable()
                 }
-            }
-
-            R.id.menu_refresh -> {
-                viewModel.setRefreshStatus(true)
-                viewModel.fetch()
-            }
-
-            R.id.menu_favorite -> {
-                findNavController().navigate(R.id.favorite_screen)
             }
         }
         return true
@@ -157,53 +139,39 @@ class PortfolioFragment : Fragment() {
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /**
-     * Observer for portfolio adapters data
-     * */
-    private fun setPortfolioAdapter(portfolioAdapter: PortfolioAdapter) {
-        val observer = Observer<PagedList<PortfolioModel>> { data ->
+    private fun setObservers(favoriteAdapter: FavoriteAdapter) {
+        /**
+         * Observer for favorite list items data
+         * */
+        val observer = Observer<PagedList<FavoriteModel>> { data ->
             data?.let {
-                portfolioAdapter.submitList(it)
+                favoriteAdapter.submitList(it)
             }
         }
         viewModel.data.observe(viewLifecycleOwner, observer)
-    }
 
-    /**
-     * Click listener for portfolio item
-     * */
-    private fun setPortfolioItemClickListener() {
-        val observer = Observer<PortfolioModel> {
+        /**
+         * Observer for click listener
+         * */
+        val observerClickListener = Observer<FavoriteModel> {
             it?.let {
 
-                val menuAction = portfolioMenu.findItem(R.id.menu_search)
+                val menuAction = favoriteMenu.findItem(R.id.menu_delete_all)
                 onOptionsItemSelected(menuAction)
             }
         }
-        viewModel.selectedItem.observe(viewLifecycleOwner, observer)
-    }
+        viewModel.selectedItem.observe(viewLifecycleOwner, observerClickListener)
 
-    /**
-     * Sets up a SwipeRefreshLayout.OnRefreshListener that is invoked when the user
-     * performs a swipe-to-refresh gesture.
-     * */
-    private fun setPullToRefreshListener() {
-        pullToRefresh.setOnRefreshListener {
-            viewModel.fetch()
+        /**
+         * Observer for delete item id
+         * */
+        val observerDeleteItemId = Observer<String> {
+            it?.let {
+                viewModel.deleteSingleItem(it)
+                viewModel.setDeleteItemId(null)
+                viewModel.checkEmptyTable()
+            }
         }
-    }
-
-    /**
-     * Set observer for refresh status
-     * */
-    private fun setRefreshObserver() {
-        val observer = Observer<Boolean> { status ->
-            if (!pullToRefresh.isRefreshing && status) {
-                pullToRefresh.isRefreshing = status
-                viewModel.fetch()
-            } else if (pullToRefresh.isRefreshing && !status)
-                pullToRefresh.isRefreshing = status
-        }
-        viewModel.isRefreshing.observe(viewLifecycleOwner, observer)
+        viewModel.deleteItemId.observe(viewLifecycleOwner, observerDeleteItemId)
     }
 }

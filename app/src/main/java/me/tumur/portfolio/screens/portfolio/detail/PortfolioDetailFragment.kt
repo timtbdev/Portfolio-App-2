@@ -83,7 +83,7 @@ class PortfolioDetailFragment : Fragment() {
     private lateinit var id: String
 
     /** Menu */
-    private lateinit var topMenu: Menu
+    private var topMenu: Menu? = null
 
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -137,11 +137,11 @@ class PortfolioDetailFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         // Inflate menu resource file.
         inflater.inflate(R.menu.portfolio_detail_menu, menu)
+        topMenu = menu
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
-        topMenu = menu
         uiScope.launch {
             val isFavorite = withContext(Dispatchers.IO) {
                 favoriteDao.existSingleItem(id)
@@ -164,16 +164,19 @@ class PortfolioDetailFragment : Fragment() {
                 viewModel.portfolio.value?.let {
                     viewModel.saveToFavorite(it)
                 }
-                topMenu.findItem(R.id.menu_saved).isVisible = true
-                topMenu.findItem(R.id.menu_save).isVisible = false
+                topMenu?.findItem(R.id.menu_saved)?.isVisible = true
+                topMenu?.findItem(R.id.menu_save)?.isVisible = false
             }
             R.id.menu_saved -> {
                 viewModel.removeFromFavorite(id)
-                topMenu.findItem(R.id.menu_saved).isVisible = false
-                topMenu.findItem(R.id.menu_save).isVisible = true
+                topMenu?.findItem(R.id.menu_saved)?.isVisible = false
+                topMenu?.findItem(R.id.menu_save)?.isVisible = true
             }
             R.id.menu_share -> {
-                getShareIntent()
+                val model = viewModel.clickedScreenShot.value
+
+                if (model != null) routeToPreview(model.ownerId, model.order) else getShareIntent()
+
 
             }
         }
@@ -212,7 +215,7 @@ class PortfolioDetailFragment : Fragment() {
         }
 
         /** Set Screenshot Adapter */
-        screenShotAdapter = ScreenShotAdapter(ScreenShotClickListener(viewModel::setScreenIdAndOrder))
+        screenShotAdapter = ScreenShotAdapter(ScreenShotClickListener(viewModel::setClickedScreenShot))
         val layoutManagerScreenShot = LinearLayoutManager(context)
         layoutManagerScreenShot.orientation = LinearLayoutManager.HORIZONTAL
         val screenShotList = binding.portfolioItemDetailScreenshot
@@ -265,19 +268,17 @@ class PortfolioDetailFragment : Fragment() {
         viewModel.buttonUrl.observe(viewLifecycleOwner, observerButtonUrl)
 
         /** Set observer for screenshot click listener */
-        val observerScreenShotOwnerId = Observer<String> {
+        val observerClickedScreenShot = Observer<ScreenShotModel> {
             it?.let {
-
-                val menuAction = topMenu.findItem(R.id.menu_share)
-                onOptionsItemSelected(menuAction)
-
-                val action = viewModel.screenShotOrder.value?.let { order ->
-                    PortfolioDetailFragmentDirections.actionToPortfolioDetailScreenPreview(it, order)
+                topMenu?.let { menu ->
+                    val menuAction = menu.findItem(R.id.menu_share)
+                    menuAction?.let { item ->
+                        onOptionsItemSelected(item)
+                    }
                 }
-                action?.let { nextAction -> findNavController().navigate(nextAction) }
             }
         }
-        viewModel.screenShotOwnerId.observe(viewLifecycleOwner, observerScreenShotOwnerId)
+        viewModel.clickedScreenShot.observe(viewLifecycleOwner, observerClickedScreenShot)
 
         /** Set observer for open video click listener */
         val observerVideoUrl = Observer<String> {
@@ -317,5 +318,15 @@ class PortfolioDetailFragment : Fragment() {
         }
         startActivity(Intent.createChooser(intent, resources.getText(R.string.app_share_message)))
         return intent
+    }
+
+    /** Route to preview */
+
+    private fun routeToPreview(ownerId: String, order: Int) {
+        // Navigate
+        val action = PortfolioDetailFragmentDirections.actionToPortfolioDetailScreenPreview(ownerId, order)
+        findNavController().navigate(action)
+        // Reset clicked screen shot
+        viewModel.setClickedScreenShot(null)
     }
 }

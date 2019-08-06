@@ -1,5 +1,7 @@
 package me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot
 
-class ScreenShotClickListener(val clickListener: (id: String, order: Int) -> Unit) {
-    fun onClick(id: String, order: Int) = clickListener(id, order)
+import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
+
+class ScreenShotClickListener(val clickListener: (model: ScreenShotModel) -> Unit) {
+    fun onClick(model: ScreenShotModel) = clickListener(model)
 }

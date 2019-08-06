@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="me.tumur.portfolio.repository.database.Converters"/>
+        <variable name="item"
+                  type="me.tumur.portfolio.repository.database.model.favorite.FavoriteModel"/>
+        <variable name="clickListener"
+                  type="me.tumur.portfolio.utils.adapters.listItemAdapters.favorite.FavoriteClickListener"/>
+    </data>
+
+    <!-- Card view -->
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/favorite_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:clickable="true"
+            android:onClick="@{() -> clickListener.onClick(item, false)}"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_2sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!-- Image -->
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/favorite_item_image"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@{item.imageDescription}"
+                    app:imageUrl="@{item.coverImage}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintWidth_percent="0.30"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Text content -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/favorite_item_text_content"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="@dimen/dimen_0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/favorite_item_delete_button"
+                    app:layout_constraintWidth_percent="0.55"
+                    app:layout_constraintStart_toEndOf="@+id/favorite_item_image"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Logo -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/favorite_item_logo"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:contentDescription="@{item.logoDescription}"
+                        app:imageUrl="@{item.logo}"
+                        app:layout_constraintBottom_toTopOf="@+id/favorite_item_text"
+                        app:layout_constraintEnd_toStartOf="@id/favorite_item_sub_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                <!-- Sub title -->
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/favorite_item_sub_title"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="true"
+                        android:textAppearance="?attr/textAppearanceHeadline5"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:textColor="@color/colorOnSurface"
+                        android:text="@{item.subTitle}"
+                        app:layout_constraintBottom_toBottomOf="@+id/favorite_item_logo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/favorite_item_logo"
+                        app:layout_constraintTop_toTopOf="@+id/favorite_item_logo"/>
+
+                <!-- Text -->
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/favorite_item_text"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:textAlignment="textStart"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textSize="@dimen/dimen_14sp"
+                        android:lineSpacingExtra="@dimen/_5sdp"
+                        android:text="@{item.text}"
+                        app:layout_constraintBottom_toTopOf="@+id/favorite_item_date_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/favorite_item_logo"/>
+
+                <!-- Calendar icon -->
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/favorite_item_date_icon"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/cd_calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/favorite_item_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/ic_date"
+                        app:tint="@color/colorOnSurfaceSecondary"/>
+
+                <!-- Period -->
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/favorite_item_date"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAlignment="textStart"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textSize="@dimen/dimen_12sp"
+                        app:dateConverter="@{item.date}"
+                        app:layout_constraintBottom_toBottomOf="@+id/favorite_item_date_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/favorite_item_date_icon"
+                        app:layout_constraintTop_toTopOf="@+id/favorite_item_date_icon"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Delete button -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/favorite_item_delete_button"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:layout_constraintWidth_percent="0.15"
+                    android:background="@color/colorSecondaryVariant"
+                    android:onClick="@{() -> clickListener.onClick(item, true)}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/favorite_item_delete_icon"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:padding="@dimen/dimen_0dp"
+                        android:contentDescription="@string/cd_delete"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_menu_delete"
+                        app:tint="@color/colorOnPrimary"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -10,8 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.PagerItemPreviewScreenBinding
+import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.screens.portfolio.detail.preview.PreviewFragmentViewModel
 import me.tumur.portfolio.utils.constants.Constants
+import me.tumur.portfolio.utils.state.PreviewImage
 
 /**
  * An fragment that inflates a preview layout.
@@ -36,6 +38,9 @@ class PreviewPagerFragment : Fragment() {
 
     /** Databinding */
     private lateinit var binding: PagerItemPreviewScreenBinding
+
+    /** Position */
+    private var position = -1
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -66,17 +71,26 @@ class PreviewPagerFragment : Fragment() {
         }
         /** Set data for ViewPager adapter */
         arguments?.takeIf { it.containsKey(Constants.POSITION) }?.apply {
-            viewModel.setPosition(this.getInt(Constants.POSITION))
+            position = this.getInt(Constants.POSITION)
+            if (position != -1) viewModel.setPosition(position)
         }
 
-        /** Observer for welcome screen's data -----------------------------------------------------------------------*/
-        val screenShotPositionObserver = Observer<Int> { position ->
-            position?.let {
-                viewModel.setScreenShotData(sharedViewModel.getScreenShot(it))
-            }
-        }
-        viewModel.position.observe(viewLifecycleOwner, screenShotPositionObserver)
+        /** Set observers */
+        setObservers()
 
         return binding.root
+    }
+
+    /** Set observers */
+    private fun setObservers() {
+        /** Observer for view pager's position -----------------------------------------------------------------------*/
+        val observerData = Observer<List<ScreenShotModel>> { list ->
+            list?.let {
+                val screenshot = it[position]
+                viewModel.setData(screenshot)
+                viewModel.setState(PreviewImage)
+            }
+        }
+        sharedViewModel.data.observe(viewLifecycleOwner, observerData)
     }
 }

@@ -1,9 +1,15 @@
 package me.tumur.portfolio.utils.adapters.bindingAdapters
 
+import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.viewpager.widget.ViewPager
+import me.tumur.portfolio.R
 import me.tumur.portfolio.screens.portfolio.detail.preview.PreviewFragmentViewModel
+import me.tumur.portfolio.utils.state.PreviewImage
+import me.tumur.portfolio.utils.state.PreviewState
+import me.tumur.portfolio.utils.state.ProgressBar
 
 /** BINDING ADAPTERS FOR PREVIEW SCREEN */
 
@@ -24,4 +30,38 @@ fun setPreviewViewPagerPageChangeListener(viewPager: ViewPager, viewModel: Previ
 @BindingAdapter("scrollToScreenShot", "smoothScrollScreenShot", requireAll = false)
 fun setPreviewViewPagerCurrentItem(viewPager: ViewPager, scrollToItem: LiveData<Int>?, smoothScroll: Boolean = false) {
     scrollToItem?.value?.let { viewPager.setCurrentItem(it, smoothScroll) }
+}
+
+/** Progress bar */
+@BindingAdapter("screenPreviewProgressBar")
+fun setPreviewProgressBar(view: View, state: PreviewState?) {
+    val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
+    val fadeOut = AnimationUtils.loadAnimation(view.context, R.anim.fade_out)
+    when (state != null && state is ProgressBar) {
+        true -> {
+            view.visibility = View.VISIBLE
+            view.startAnimation(fadeIn)
+        }
+        false -> {
+            view.visibility = View.GONE
+            view.startAnimation(fadeOut)
+        }
+    }
+}
+
+/** Preview image */
+@BindingAdapter("screenPreviewImage")
+fun setPreviewImage(view: View, state: PreviewState?) {
+    val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
+    val fadeOut = AnimationUtils.loadAnimation(view.context, R.anim.fade_out)
+    when (state != null && state is PreviewImage) {
+        true -> {
+            view.visibility = View.VISIBLE
+            view.startAnimation(fadeIn)
+        }
+        false -> {
+            view.visibility = View.GONE
+            view.startAnimation(fadeOut)
+        }
+    }
 }

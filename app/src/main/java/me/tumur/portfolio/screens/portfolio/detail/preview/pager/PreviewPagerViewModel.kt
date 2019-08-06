@@ -4,12 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
+import me.tumur.portfolio.utils.state.PreviewState
+import me.tumur.portfolio.utils.state.ProgressBar
+import org.koin.core.KoinComponent
 
-class PreviewPagerViewModel : ViewModel() {
+class PreviewPagerViewModel : ViewModel(), KoinComponent {
 
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /** Pager' position */
+    /** Position */
     private val _position = MutableLiveData<Int>()
     val position: LiveData<Int> = _position
 
@@ -17,21 +20,30 @@ class PreviewPagerViewModel : ViewModel() {
     private val _data = MutableLiveData<ScreenShotModel>()
     val data: LiveData<ScreenShotModel> = _data
 
+    /** State */
+    private val _state = MutableLiveData<PreviewState>().apply { value = ProgressBar }
+    val state: LiveData<PreviewState> = _state
+
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /**
-     * Set pager's position
+     * Set position
      * */
     fun setPosition(position: Int) {
         _position.value = position
     }
 
     /**
-     * Set screenshot
+     * Set position
      * */
-    fun setScreenShotData(item: ScreenShotModel?) {
-        item?.let {
-            _data.value = it
-        }
+    fun setData(screenshot: ScreenShotModel) {
+        _data.value = screenshot
+    }
+
+    /**
+     * Set state
+     * */
+    fun setState(state: PreviewState) {
+        _state.value = state
     }
 }

@@ -21,6 +21,13 @@
                     app:iconTint="@color/colorBottomSheetPrimaryText"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_refresh" />
+
+            <item
+                    android:id="@+id/menu_favorite"
+                    android:icon="@drawable/ic_menu_top_favorite"
+                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:showAsAction="collapseActionView|withText"
+                    android:title="@string/menu_favorite"/>
         </menu>
     </item>
 </menu>

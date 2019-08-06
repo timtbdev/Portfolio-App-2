@@ -1,6 +1,5 @@
 package me.tumur.portfolio.screens.portfolio.detail.preview
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -65,9 +64,6 @@ class PreviewFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        /** Lock fragment in portrait screen orientation */
-        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-
         /** Data binding */
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_preview, container, false)
 
@@ -78,6 +74,7 @@ class PreviewFragment : Fragment() {
 
         args.order.let {
             viewModel.setCurrentItem(it)
+            viewModel.setScrollToItem(it - 1)
         }
 
         binding.apply {
@@ -86,6 +83,9 @@ class PreviewFragment : Fragment() {
             // Set the viewmodel so layout can display data
             this.model = viewModel
         }
+
+        /** Set view pager */
+        setPreviewScreenViewPager()
 
         return binding.root
 
@@ -119,8 +119,8 @@ class PreviewFragment : Fragment() {
             if (currentItem != null && currentItem > 0) {
                 this.isEnabled = true
                 viewModel.setScrollToItem(currentItem - 1)
-            } else this.isEnabled = false
+                if (currentItem - 1 == 0) this.isEnabled = false
+            }
         }
-
     }
 }

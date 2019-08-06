@@ -147,7 +147,7 @@
 
     </fragment>
 
-    <!-- Video -->
+    <!-- Preview -->
     <fragment
             android:id="@+id/portfolio_detail_screen_preview"
             android:name="me.tumur.portfolio.screens.portfolio.detail.preview.PreviewFragment"
@@ -162,6 +162,32 @@
                 android:name="order"
                 android:defaultValue="1"
                 app:argType="integer"/>
+    </fragment>
+
+    <!-- Favorite screen -->
+    <fragment android:id="@+id/favorite_screen"
+              android:name="me.tumur.portfolio.screens.favorite.FavoriteFragment"
+              android:label="@string/menu_favorite"
+              tools:layout="@layout/fragment_favorite">
+
+        <!-- Action to portfolio detail screen -->
+        <action android:id="@+id/action_to_portfolio_detail_screen"
+                app:destination="@id/portfolio_detail_screen"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out">
+            <argument
+                    android:name="id"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+            <argument
+                    android:name="title"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+        </action>
     </fragment>
 
 

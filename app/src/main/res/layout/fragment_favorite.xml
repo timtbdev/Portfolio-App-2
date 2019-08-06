@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="model" type="me.tumur.portfolio.screens.favorite.FavoriteViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <!-- Empty screen -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/favorite_screen_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:screenFavoriteEmpty="@{model.state}">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/favorite_screen_empty_icon"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:tint="@color/colorOnSurfaceSecondary"
+                    app:layout_constraintBottom_toTopOf="@+id/favorite_screen_empty_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:srcCompat="@drawable/ic_empty"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/favorite_screen_empty_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@color/colorOnSurfaceSecondary"
+                    android:text="@string/empty"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/favorite_screen_empty_icon"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Favorite items -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favorite_screen_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:screenFavoriteNotEmpty="@{model.state}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

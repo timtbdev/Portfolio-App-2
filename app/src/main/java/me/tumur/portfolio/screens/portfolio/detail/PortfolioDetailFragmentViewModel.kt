@@ -40,11 +40,8 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     val buttonUrl: LiveData<String> = _buttonUrl
 
     /** Screenshot -> clicked */
-    private val _screenShotOwnerId = MutableLiveData<String>()
-    val screenShotOwnerId: LiveData<String> = _screenShotOwnerId
-
-    private val _screenShotOrder = MutableLiveData<Int>()
-    val screenShotOrder: LiveData<Int> = _screenShotOrder
+    private val _clickedScreenShot = MutableLiveData<ScreenShotModel>()
+    val clickedScreenShot: LiveData<ScreenShotModel> = _clickedScreenShot
 
     /** Video Url */
     private val _videoUrl = MutableLiveData<String>()
@@ -100,12 +97,9 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     /**
      * Set clicked screenshot
      * */
-    fun setScreenIdAndOrder(id: String?, order: Int?) {
-        order?.let {
-            _screenShotOrder.value = order
-        }
-        id?.let {
-            _screenShotOwnerId.value = id
+    fun setClickedScreenShot(model: ScreenShotModel?) {
+        model?.let {
+            _clickedScreenShot.value = model
         }
     }
 

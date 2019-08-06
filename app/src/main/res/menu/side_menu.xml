@@ -17,5 +17,9 @@
                 android:id="@+id/settings_screen"
                 android:icon="@drawable/ic_menu_settings_animation"
                 android:title="@string/menu_settings"/>
+        <item
+                android:id="@+id/favorite_screen"
+                android:icon="@drawable/ic_menu_favorite_animation"
+                android:title="@string/menu_favorite"/>
     </group>
 </menu>

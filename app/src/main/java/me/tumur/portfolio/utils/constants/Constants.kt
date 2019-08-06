@@ -8,6 +8,7 @@ object Constants {
     const val FRAGMENT_PORTFOLIO = "FragmentPortfolio"
     const val FRAGMENT_EXPERIENCE = "FragmentExperience"
     const val FRAGMENT_SETTINGS = "FragmentSettings"
+    const val FRAGMENT_FAVORITE = "FragmentFavorite"
     const val FRAGMENT_EMPTY = "FragmentEmpty"
 
     /** Shared Preference ------------------------------------------------------------------------------------------ */
