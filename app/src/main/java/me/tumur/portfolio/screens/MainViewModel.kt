@@ -38,7 +38,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     private val welcomeDao: WelcomeDao by inject()
 
     /** Shared preferences */
-    var isFirstRun by Preference(Constants.FIRST, true)
+    private var isFirstRun by Preference(Constants.FIRST, true)
 
     /** Check network and cache conditions */
     private val network = (isNetworkAvailable(context))
@@ -82,7 +82,6 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
             when (getSavedStateHandle()) {
                 Constants.FRAGMENT_EMPTY -> {
                     setScreenState(SplashScreen)
-                    viewModelScope.launch { setScreenStateWithDelay(LoaderScreen) }
                     if (network) fetch(MainScreen) else viewModelScope.launch { setScreenStateWithDelay(MainScreen) }
                 }
                 else -> setScreenState(MainScreen)

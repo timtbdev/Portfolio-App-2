@@ -2,17 +2,18 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
->
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="item" type="me.tumur.portfolio.repository.database.model.category.CategoryModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_2sdp"
             android:layout_marginEnd="@dimen/_2sdp">
 
-        <!-- Logo -->
+        <!-- Category icon -->
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/list_item_category_icon"
                 android:layout_width="@dimen/_15sdp"
@@ -26,9 +27,10 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed"/>
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:src="@drawable/ic_office"/>
 
-        <!-- Title -->
+        <!-- Category title -->
         <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/list_item_category_title"
                 android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/list_item_category_icon"/>
+                app:layout_constraintTop_toBottomOf="@id/list_item_category_icon"
+                tools:text="@string/cd_avatar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

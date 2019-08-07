@@ -1,5 +1,6 @@
 package me.tumur.portfolio.screens.portfolio.detail.preview
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -63,6 +64,9 @@ class PreviewFragment : Fragment() {
      */
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        /** Lock fragment in portrait screen orientation */
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         /** Data binding */
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_preview, container, false)

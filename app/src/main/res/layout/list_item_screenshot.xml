@@ -8,13 +8,15 @@
                   type="me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.screenshot.ScreenShotClickListener"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_screenshot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp">
 
+        <!-- Screenshot image -->
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/screenshot_image"
+                android:id="@+id/list_item_screenshot_image"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_130sdp"
                 android:background="?attr/selectableItemBackground"

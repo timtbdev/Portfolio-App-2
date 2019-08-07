@@ -18,6 +18,9 @@ import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.PortfolioAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.PortfolioClickListener
 import me.tumur.portfolio.utils.constants.Constants
+import me.tumur.portfolio.utils.state.ToastEmpty
+import me.tumur.portfolio.utils.state.ToastShow
+import me.tumur.portfolio.utils.state.ToastState
 
 
 /**
@@ -112,13 +115,13 @@ class PortfolioFragment : Fragment() {
         /** Options menu */
         setHasOptionsMenu(true)
 
-        /** Set observers */
-        setPortfolioAdapter(portfolioAdapter)
-        setRefreshObserver()
-
         /** Set listeners */
-        setPortfolioItemClickListener()
         setPullToRefreshListener()
+
+        /** Set observers */
+        setObservers(portfolioAdapter)
+
+
 
         return binding.root
     }
@@ -157,31 +160,58 @@ class PortfolioFragment : Fragment() {
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /**
-     * Observer for portfolio adapters data
-     * */
-    private fun setPortfolioAdapter(portfolioAdapter: PortfolioAdapter) {
-        val observer = Observer<PagedList<PortfolioModel>> { data ->
+    /** Set observers */
+    private fun setObservers(portfolioAdapter: PortfolioAdapter) {
+        /**
+         * Observer for portfolio adapters data
+         * */
+        val observerData = Observer<PagedList<PortfolioModel>> { data ->
             data?.let {
                 portfolioAdapter.submitList(it)
             }
         }
-        viewModel.data.observe(viewLifecycleOwner, observer)
-    }
+        viewModel.data.observe(viewLifecycleOwner, observerData)
 
-    /**
-     * Click listener for portfolio item
-     * */
-    private fun setPortfolioItemClickListener() {
-        val observer = Observer<PortfolioModel> {
+        /**
+         * Click listener for portfolio item
+         * */
+        val observerSelectedItem = Observer<PortfolioModel> {
             it?.let {
 
                 val menuAction = portfolioMenu.findItem(R.id.menu_search)
                 onOptionsItemSelected(menuAction)
             }
         }
-        viewModel.selectedItem.observe(viewLifecycleOwner, observer)
+        viewModel.selectedItem.observe(viewLifecycleOwner, observerSelectedItem)
+
+        /**
+         * Set observer for refresh status
+         * */
+        val observerRefresh = Observer<Boolean> { status ->
+            if (!pullToRefresh.isRefreshing && status) {
+                pullToRefresh.isRefreshing = status
+                viewModel.fetch()
+            } else if (pullToRefresh.isRefreshing && !status)
+                pullToRefresh.isRefreshing = status
+        }
+        viewModel.isRefreshing.observe(viewLifecycleOwner, observerRefresh)
+
+        /**
+         * Observer for show toast message from activity
+         * */
+        val observerShowToast = Observer<ToastState> { state ->
+            state?.let {
+                when (state) {
+                    ToastShow -> {
+                        sharedViewModel.setShowToast(state)
+                        viewModel.setShowToast(ToastEmpty)
+                    }
+                }
+            }
+        }
+        viewModel.showToast.observe(viewLifecycleOwner, observerShowToast)
     }
+
 
     /**
      * Sets up a SwipeRefreshLayout.OnRefreshListener that is invoked when the user
@@ -193,17 +223,4 @@ class PortfolioFragment : Fragment() {
         }
     }
 
-    /**
-     * Set observer for refresh status
-     * */
-    private fun setRefreshObserver() {
-        val observer = Observer<Boolean> { status ->
-            if (!pullToRefresh.isRefreshing && status) {
-                pullToRefresh.isRefreshing = status
-                viewModel.fetch()
-            } else if (pullToRefresh.isRefreshing && !status)
-                pullToRefresh.isRefreshing = status
-        }
-        viewModel.isRefreshing.observe(viewLifecycleOwner, observer)
-    }
 }

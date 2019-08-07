@@ -25,7 +25,6 @@ import me.tumur.portfolio.databinding.ActivityMainBinding
 import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.extensions.activityBinding
 import me.tumur.portfolio.utils.state.*
-import org.koin.android.ext.android.inject
 
 
 /**
@@ -73,16 +72,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-    /** Context */
-
-    private val context: Context by inject()
-
-    /** Parameters for toast message */
-    private val toastBg = ContextCompat.getColor(context, R.color.colorPrimary)
-    private val toastTextColor = ContextCompat.getColor(context, R.color.colorOnPrimary)
-    private val toastIcon = ContextCompat.getDrawable(context, R.drawable.ic_no_connection)
-    private val toastMessage = context.getString(R.string.toast_failed)
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -215,7 +204,14 @@ class MainActivity : AppCompatActivity() {
 
     /** Show toast message */
     private fun showToastMessage() {
+        /** Parameters for toast message */
+        val toastBg = ContextCompat.getColor(this, R.color.colorPrimary)
+        val toastTextColor = ContextCompat.getColor(this, R.color.colorOnPrimary)
+        val toastIcon = ContextCompat.getDrawable(this, R.drawable.ic_no_connection)
+        val toastMessage = this.getString(R.string.toast_failed)
+        /** Show toast message */
         Toasty.custom(this, toastMessage, toastIcon, toastBg, toastTextColor, Toasty.LENGTH_SHORT, true, true).show()
+        /** Reset toast message observer value */
         viewModel.setShowToast(ToastEmpty)
     }
 }

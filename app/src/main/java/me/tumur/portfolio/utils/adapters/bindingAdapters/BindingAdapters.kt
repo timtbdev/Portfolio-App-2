@@ -109,7 +109,8 @@ fun MaterialButton.setButtonIcon(type: String?) {
                 Constants.BUTTON_GOOGLE -> R.drawable.ic_play_store
                 Constants.BUTTON_WEB -> R.drawable.ic_category_web
                 Constants.BUTTON_YOUTUBE -> R.drawable.ic_youtube
-                else -> R.drawable.ic_twitter
+                Constants.BUTTON_TWITTER -> R.drawable.ic_twitter
+                else -> R.drawable.ic_pdf
             }
         )
     }
@@ -122,8 +123,8 @@ fun MaterialButton.setButtonBackground(type: String?) {
             Constants.BUTTON_GITHUB -> ContextCompat.getColorStateList(context, R.color.button_github_color)
             Constants.BUTTON_GOOGLE -> ContextCompat.getColorStateList(context, R.color.button_google_color)
             Constants.BUTTON_WEB -> ContextCompat.getColorStateList(context, R.color.button_web_color)
-            Constants.BUTTON_YOUTUBE -> ContextCompat.getColorStateList(context, R.color.button_youtube_color)
-            else -> ContextCompat.getColorStateList(context, R.color.button_twitter_color)
+            Constants.BUTTON_TWITTER -> ContextCompat.getColorStateList(context, R.color.button_twitter_color)
+            else -> ContextCompat.getColorStateList(context, R.color.button_youtube_color)
         }
     }
 }

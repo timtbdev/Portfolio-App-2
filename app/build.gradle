@@ -25,7 +25,7 @@ android {
         debug {
             buildConfigField "boolean", "LOGS", "true"
             buildConfigField "boolean", "DEV_ENVIRONMENT", "true"
-
+            resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
             versionNameSuffix "-debug"
         }
 
@@ -34,9 +34,10 @@ android {
             buildConfigField "boolean", "DEV_ENVIRONMENT", "false"
 
             zipAlignEnabled true
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
         }
     }
 
@@ -137,6 +138,7 @@ dependencies {
     implementation deps.utilities.ink_page_indicator
     implementation deps.utilities.chrome_custom_tab
     implementation deps.utilities.toasty
+    implementation deps.utilities.shape_view
     // Test
     testImplementation deps.test.junit
     androidTestImplementation deps.androidx.test

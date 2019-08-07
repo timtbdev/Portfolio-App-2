@@ -33,7 +33,45 @@
     <fragment android:id="@+id/experience_screen"
               android:name="me.tumur.portfolio.screens.experience.ExperienceFragment"
               android:label="@string/menu_experience"
-              tools:layout="@layout/fragment_experience"/>
+              tools:layout="@layout/fragment_experience">
+
+        <!-- Action to experience detail screen -->
+        <action android:id="@+id/action_to_experience_detail_screen"
+                app:destination="@id/experience_detail_screen"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out">
+            <argument
+                    android:name="id"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+            <argument
+                    android:name="company"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true"/>
+        </action>
+    </fragment>
+
+    <!-- Experience detail screen -->
+    <fragment android:id="@+id/experience_detail_screen"
+              android:name="me.tumur.portfolio.screens.experience.detail.ExperienceDetailFragment"
+              android:label="{company}"
+              tools:layout="@layout/fragment_experience_detail">
+
+        <argument
+                android:name="id"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+        <argument
+                android:name="company"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+    </fragment>
 
     <!-- Settings screen -->
     <fragment android:id="@+id/settings_screen"
@@ -189,6 +227,5 @@
                     app:nullable="true"/>
         </action>
     </fragment>
-
 
 </navigation>

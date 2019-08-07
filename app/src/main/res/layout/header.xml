@@ -16,30 +16,31 @@
                 android:id="@+id/header_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/cd_background"
-                app:srcCompat="@drawable/ic_header_bg"
-                android:alpha="0.1"/>
+                android:alpha="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_header_bg"/>
 
         <!-- Avatar -->
         <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/header_avatar"
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:contentDescription="@string/cd_avatar"
                 android:src="@drawable/profile"
-                android:layout_marginBottom="@dimen/_2sdp"
-                app:civ_border_width="@dimen/_1sdp"
+                android:scaleType="centerCrop"
                 app:civ_border_color="@color/colorBorder"
-                app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/header_name"/>
+                app:civ_border_width="@dimen/_1sdp"
+                app:layout_constraintBottom_toTopOf="@+id/header_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"/>
 
         <!-- Name -->
         <TextView
@@ -54,10 +55,10 @@
                 android:textAlignment="center"
                 android:textColor="?attr/colorOnPrimary"
                 android:text="@string/name"
-                app:layout_constraintTop_toBottomOf="@+id/header_avatar"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/header_title"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/header_title"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_avatar"/>
 
         <!-- Title -->
         <TextView
@@ -72,10 +73,10 @@
                 android:ellipsize="end"
                 android:textColor="?attr/colorOnPrimary"
                 android:text="@string/title"
-                app:layout_constraintTop_toBottomOf="@+id/header_name"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_name"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

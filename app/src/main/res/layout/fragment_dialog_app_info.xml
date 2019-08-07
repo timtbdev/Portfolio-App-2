@@ -23,7 +23,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/dialog_body"
                 android:alpha="0.9">
 
-            <!-- Logo -->
+            <!-- App logo -->
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/dialog_header_logo"
                     android:layout_width="@dimen/_40sdp"

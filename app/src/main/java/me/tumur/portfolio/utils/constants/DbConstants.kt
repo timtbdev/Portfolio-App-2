@@ -32,6 +32,7 @@ object DbConstants {
     const val CATEGORY = "category"
     const val SCREENSHOT = "screenshot"
     const val FAVORITE = "favorite"
+    const val RESOURCE = "resource"
 
     /** COLUMNS CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"

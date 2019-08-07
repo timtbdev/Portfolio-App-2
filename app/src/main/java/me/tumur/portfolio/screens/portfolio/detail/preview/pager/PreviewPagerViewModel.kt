@@ -34,7 +34,7 @@ class PreviewPagerViewModel : ViewModel(), KoinComponent {
     }
 
     /**
-     * Set position
+     * Set data
      * */
     fun setData(screenshot: ScreenShotModel) {
         _data.value = screenshot

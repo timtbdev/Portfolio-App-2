@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import me.tumur.portfolio.R
@@ -120,6 +121,11 @@ class ExperienceFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_search -> {
+                viewModel.selectedItem.value?.let {
+                    val action = ExperienceFragmentDirections.actionToExperienceDetailScreen(it.id, it.company)
+                    findNavController().navigate(action)
+                    viewModel.setSelectedItem(null)
+                }
             }
         }
         return true

@@ -1,8 +1,6 @@
 package me.tumur.portfolio.screens.portfolio
 
 import android.content.Context
-import android.view.Gravity
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,13 +10,15 @@ import androidx.paging.toLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import me.tumur.portfolio.R
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.network.Success
 import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.utils.constants.DbConstants
+import me.tumur.portfolio.utils.state.ToastEmpty
+import me.tumur.portfolio.utils.state.ToastShow
+import me.tumur.portfolio.utils.state.ToastState
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -41,8 +41,9 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
     private val _isRefreshing = MutableLiveData<Boolean>()
     val isRefreshing: LiveData<Boolean> = _isRefreshing
 
-    /** Toast messages */
-    private val msgFailed = context.getString(R.string.toast_failed)
+    /** Show toast message from activity  */
+    private val _showToast = MutableLiveData<ToastState>().apply { value = ToastEmpty }
+    val showToast: LiveData<ToastState> = _showToast
 
     /** Portfolio pager data */
     private val config = PagedList.Config.Builder()
@@ -66,7 +67,7 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
     fun fetch() = viewModelScope.launch {
         when (withContext(Dispatchers.IO) { repo.fetchAll() }) {
             is Failed -> {
-                showToastMessage(msgFailed)
+                setShowToast(ToastShow)
                 setRefreshStatus(false)
             }
             is Success -> {
@@ -75,11 +76,9 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
         }
     }
 
-    /** Show toast message */
-    private fun showToastMessage(message: String) {
-        val toast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
-        toast.setGravity(0, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL)
-        toast.show()
+    /** Set show toast message */
+    fun setShowToast(state: ToastState) {
+        _showToast.value = state
     }
 
     /** Set refresh status */

@@ -7,14 +7,15 @@
         <variable name="header" type="me.tumur.portfolio.utils.adapters.listItemAdapters.about.AboutItem.Header"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_about_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="@dimen/dimen_1dp"
             android:background="@color/colorPreferenceCategoryBackground">
 
-        <!-- Header -->
+        <!-- About header title -->
         <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/about_header_text"
+                android:id="@+id/about_list_item_header_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -32,7 +33,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textColor="@color/colorPreferenceCategoryTitle"
-                tools:text="@string/copy_right"/>
+                tools:text="@string/cd_avatar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

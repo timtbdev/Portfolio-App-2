@@ -12,84 +12,86 @@
 
     <!-- Card view -->
     <com.google.android.material.card.MaterialCardView
-            android:id="@+id/experience_item_content"
+            android:id="@+id/list_item_experience_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:clickable="true"
             android:onClick="@{() -> clickListener.onClick(item)}"
             android:focusable="true"
             app:cardCornerRadius="@dimen/_5sdp"
             app:cardElevation="@dimen/_2sdp">
 
+        <!-- Card view -->
         <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/list_item_experience"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <!-- Image -->
+            <!-- Experience image -->
             <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/experience_item_logo"
+                    android:id="@+id/list_item_experience_logo"
                     android:layout_width="@dimen/_80sdp"
                     android:layout_height="@dimen/_80sdp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@{item.logoDescription}"
                     app:imageUrl="@{item.logo}"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/experience_list_content"
+                    app:layout_constraintEnd_toStartOf="@+id/list_item_experience_text_content"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintHorizontal_weight="0.25"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@drawable/ic_person"/>
+                    tools:src="@drawable/profile"/>
 
-            <!-- Content -->
+            <!-- Experience text content -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/experience_list_content"
+                    android:id="@+id/list_item_experience_text_content"
                     android:layout_width="@dimen/dimen_0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_weight="0.75"
-                    app:layout_constraintStart_toEndOf="@+id/experience_item_logo"
+                    app:layout_constraintStart_toEndOf="@+id/list_item_experience_logo"
                     app:layout_constraintTop_toTopOf="parent">
 
-                <!-- Job -->
+                <!-- Job icon and title -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/experience_job"
+                        android:id="@+id/list_item_experience_job_title_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        app:layout_constraintBottom_toTopOf="@+id/experience_company"
+                        app:layout_constraintBottom_toTopOf="@+id/list_item_experience_company_name_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                    <!-- Icon -->
+                    <!-- Job title icon -->
                     <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/experience_icon_title"
+                            android:id="@+id/list_item_experience_job_title_icon"
                             android:layout_width="@dimen/_15sdp"
                             android:layout_height="@dimen/_15sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:contentDescription="@string/cd_avatar"
                             android:src="@drawable/profile"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/experience_job_title"
+                            app:layout_constraintEnd_toStartOf="@+id/list_item_experience_job_title"
                             app:layout_constraintHorizontal_chainStyle="packed"
                             app:layout_constraintHorizontal_weight="0.10"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:tint="@color/colorOnSurface"/>
 
-                    <!-- Title -->
+                    <!-- Job title -->
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/experience_job_title"
+                            android:id="@+id/list_item_experience_job_title"
                             android:layout_width="@dimen/dimen_0dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
@@ -102,33 +104,33 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_weight="0.90"
-                            app:layout_constraintStart_toEndOf="@+id/experience_icon_title"
+                            app:layout_constraintStart_toEndOf="@+id/list_item_experience_job_title_icon"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:text="Job title"/>
+                            tools:text="@string/cd_avatar"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Company -->
+                <!-- Company name and icon -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/experience_company"
+                        android:id="@+id/list_item_experience_company_name_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        app:layout_constraintBottom_toTopOf="@+id/experience_location"
+                        app:layout_constraintBottom_toTopOf="@+id/list_item_experience_location_icon_name_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/experience_job">
+                        app:layout_constraintTop_toBottomOf="@+id/list_item_experience_job_title_content">
 
-                    <!-- Icon -->
+                    <!-- Company icon -->
                     <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/experience_icon_company"
+                            android:id="@+id/list_item_experience_company_icon"
                             android:layout_width="@dimen/_10sdp"
                             android:layout_height="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:contentDescription="@string/cd_company"
                             app:layout_constraintHorizontal_weight="0.10"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/experience_company_name"
+                            app:layout_constraintEnd_toStartOf="@+id/list_item_experience_company_name"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_office"
@@ -136,7 +138,7 @@
 
                     <!-- Company name -->
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/experience_company_name"
+                            android:id="@+id/list_item_experience_company_name"
                             android:layout_width="@dimen/dimen_0dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
@@ -149,42 +151,42 @@
                             app:layout_constraintHorizontal_weight="0.90"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/experience_icon_company"
+                            app:layout_constraintStart_toEndOf="@+id/list_item_experience_company_icon"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:text="Company name"/>
+                            tools:text="@string/cd_avatar"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <!-- Location -->
+                <!-- Location icon and name -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/experience_location"
+                        android:id="@+id/list_item_experience_location_icon_name_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        app:layout_constraintBottom_toTopOf="@+id/experience_period"
+                        app:layout_constraintBottom_toTopOf="@+id/list_item_experience_date_icon_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/experience_company">
+                        app:layout_constraintTop_toBottomOf="@+id/list_item_experience_company_name_content">
 
-                    <!-- Icon -->
+                    <!-- Location icon -->
                     <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/experience_icon_location"
+                            android:id="@+id/list_item_experience_location_icon"
                             android:layout_width="@dimen/_10sdp"
                             android:layout_height="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:contentDescription="@string/cd_location"
                             app:layout_constraintHorizontal_weight="0.10"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/experience_company_location"
+                            app:layout_constraintEnd_toStartOf="@+id/list_item_experience_location_name"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_map"
                             app:tint="@color/colorOnSurfaceSecondary"/>
 
-                    <!-- Company location -->
+                    <!-- Location name -->
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/experience_company_location"
+                            android:id="@+id/list_item_experience_location_name"
                             android:layout_width="@dimen/dimen_0dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
@@ -197,33 +199,33 @@
                             app:layout_constraintHorizontal_weight="0.90"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/experience_icon_location"
+                            app:layout_constraintStart_toEndOf="@+id/list_item_experience_location_icon"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:text="Location"/>
+                            tools:text="@string/cd_avatar"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Period -->
+                <!-- Date icon and period -->
                 <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/experience_period"
+                        android:id="@+id/list_item_experience_date_icon_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_5sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/experience_location">
+                        app:layout_constraintTop_toBottomOf="@+id/list_item_experience_location_icon_name_content">
 
-                    <!-- Icon -->
+                    <!-- Date icon -->
                     <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/experience_icon_date"
+                            android:id="@+id/list_item_experience_date_icon"
                             android:layout_width="@dimen/_10sdp"
                             android:layout_height="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:contentDescription="@string/cd_calendar"
                             app:layout_constraintHorizontal_weight="0.10"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/experience_period_date"
+                            app:layout_constraintEnd_toStartOf="@+id/list_item_experience_date"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_date"
@@ -231,22 +233,22 @@
 
                     <!-- Date -->
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/experience_period_date"
+                            android:id="@+id/list_item_experience_date"
                             android:layout_width="@dimen/dimen_0dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:textAlignment="textStart"
                             android:textAppearance="?attr/textAppearanceBody1"
-                            android:textSize="@dimen/dimen_14sp"
+                            android:textSize="@dimen/dimen_12sp"
                             android:textColor="@color/colorOnSurfaceSecondary"
                             android:text="@{item.date}"
                             app:layout_constraintHorizontal_weight="0.90"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/experience_icon_date"
+                            app:layout_constraintStart_toEndOf="@+id/list_item_experience_date_icon"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:text="Date"/>
+                            tools:text="@string/cd_avatar"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

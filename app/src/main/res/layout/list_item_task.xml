@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="item" type="me.tumur.portfolio.repository.database.model.task.TaskModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+        <!-- Task icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/list_item_task_icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:contentDescription="@string/cd_task"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/list_item_task_text"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_weight="0.10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_check_white_24dp"
+                app:tint="@color/colorOnSurfaceSecondary"/>
+
+        <!-- Task text -->
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/list_item_task_text"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/dimen_14sp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textColor="@color/colorOnSurfaceSecondary"
+                android:text="@{item.task}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.90"
+                app:layout_constraintStart_toEndOf="@+id/list_item_task_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/cd_avatar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

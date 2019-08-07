@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="button"
                   type="me.tumur.portfolio.repository.database.model.button.ButtonModel"/>
@@ -9,12 +10,14 @@
                   type="me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonClickListener"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_button_outline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_5sdp">
 
+        <!-- Button outline -->
         <com.google.android.material.button.MaterialButton
-                android:id="@+id/portfolio_button"
+                android:id="@+id/list_item_material_button_outline"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,7 +39,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="@color/colorOnSurface"/>
+                app:strokeColor="@color/colorOnSurface"
+                tools:text="@string/cd_avatar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

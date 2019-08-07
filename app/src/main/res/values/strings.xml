@@ -40,6 +40,7 @@
 	<string name="cd_job_title">Job title</string>
 	<string name="cd_company">Company\'s name</string>
 	<string name="cd_location">Company\'s location</string>
+    <string name="cd_task">Task</string>
 	<string name="copy_right">You can get in touch with me \n ✉️ tumur.alex@gmail.com</string>
 	<string name="preference_key_display">display</string>
 	<string name="preference_key_dark_theme">dark_theme_mode</string>
@@ -86,6 +87,8 @@
     <string name="description">Description</string>
     <string name="preview">Preview</string>
     <string name="empty">Empty</string>
+    <string name="more_info">More information</string>
+    <string name="task">Tasks</string>
     <string name="transition_portfolio_item_image">portfolio_image</string>
     <string name="transition_portfolio_item_logo">portfolio_logo</string>
 </resources>
