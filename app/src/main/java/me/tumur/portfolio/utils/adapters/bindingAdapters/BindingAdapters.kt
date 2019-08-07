@@ -15,6 +15,8 @@ import com.google.android.material.button.MaterialButton
 import me.tumur.portfolio.R
 import me.tumur.portfolio.utils.constants.BsConstants
 import me.tumur.portfolio.utils.constants.Constants
+import java.text.DateFormat
+import java.util.*
 
 
 /** Load image from the network or cache with placeholder and error images */
@@ -54,9 +56,15 @@ fun setWebView(web: WebView, url: String?) {
 
 /** Date from and date to */
 @BindingAdapter("dateFrom", "dateTo", requireAll = true)
-fun TextView.setDateFromTo(dateFrom: String?, dateTo: String?) {
-    val date = "$dateFrom - $dateTo"
-    text = date
+fun TextView.setDateFromTo(dateFrom: Date?, dateTo: Date?) {
+    dateFrom?.let { dateFrom ->
+        dateTo?.let { dateTo ->
+            val from = DateFormat.getInstance().format(dateFrom)
+            val to = DateFormat.getInstance().format(dateTo)
+            val date = "$from - $to"
+            text = date
+        }
+    }
 }
 
 /** Social icon */

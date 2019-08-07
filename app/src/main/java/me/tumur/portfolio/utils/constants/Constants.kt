@@ -40,8 +40,6 @@ object Constants {
     const val BUTTON_WEB = "web"
     const val BUTTON_YOUTUBE = "youtube"
     const val BUTTON_TWITTER = "twitter"
-    const val BUTTON_STATEMENT = "statement"
-    const val BUTTON_REPORT = "report"
 
     /** BUNDLE * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"
