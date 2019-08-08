@@ -6,46 +6,84 @@
     <data>
         <variable name="item" type="me.tumur.portfolio.repository.database.model.task.TaskModel"/>
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
             android:id="@+id/list_item_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="vertical">
 
-        <!-- Task text -->
-        <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/list_item_task_text"
-                android:layout_width="@dimen/dimen_0dp"
+        <!-- Task number and text content -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/list_item_task_text_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:lineSpacingExtra="@dimen/dimen_10sp"
-                android:textSize="@dimen/dimen_14sp"
-                android:maxLines="3"
-                android:ellipsize="end"
-                android:textColor="@color/colorOnSurfaceSecondary"
-                android:text="@{item.task}"
-                app:layout_constraintBottom_toTopOf="@+id/list_item_task_decorator"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="0.90"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/cd_avatar"/>
+                android:layout_margin="@dimen/_5sdp">
+
+            <!-- Task number circle view -->
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/list_item_task_number_circle_view"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:elevation="@dimen/_1sdp"
+                    app:shape_roundRect_bottomLeftRadius="@dimen/_10sdp"
+                    app:shape_roundRect_bottomRightRadius="@dimen/_10sdp"
+                    app:shape_roundRect_topLeftRadius="@dimen/_10sdp"
+                    app:shape_roundRect_topRightRadius="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/list_item_task_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Task number -->
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/list_item_task_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@color/colorBottomSheetIndicator"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:text="@{String.valueOf(item.order)}"
+                        android:textSize="@dimen/dimen_22sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorOnSurfaceSecondary"
+                        tools:text="1"/>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <!-- Task text -->
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_task_text"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:lineSpacingExtra="@dimen/dimen_10sp"
+                    android:textAlignment="gravity"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:maxLines="5"
+                    android:minLines="3"
+                    android:ellipsize="end"
+                    android:textColor="@color/colorOnSurfaceSecondary"
+                    android:text="@{item.task}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/list_item_task_number_circle_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/cd_avatar"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Task decorator -->
         <View
                 android:id="@+id/list_item_task_decorator"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_1dp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@color/colorBottomSheetIndicator"
-                app:layout_constraintTop_toBottomOf="@+id/list_item_task_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:background="@color/colorBottomSheetIndicator"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

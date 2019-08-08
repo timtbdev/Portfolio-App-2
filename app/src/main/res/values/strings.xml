@@ -88,7 +88,7 @@
     <string name="preview">Preview</string>
     <string name="empty">Empty</string>
     <string name="more_info">More information</string>
-    <string name="task">What I\'ve accomplished</string>
+	<string name="task">Responsibilities</string>
     <string name="transition_portfolio_item_image">portfolio_image</string>
     <string name="transition_portfolio_item_logo">portfolio_logo</string>
 </resources>

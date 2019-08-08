@@ -114,7 +114,7 @@ class ExperienceFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         experienceMenu = menu
-        inflater.inflate(R.menu.portfolio_list_menu, menu)
+        inflater.inflate(R.menu.experience_list_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
