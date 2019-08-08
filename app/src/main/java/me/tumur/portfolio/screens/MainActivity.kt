@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
      * this Activity is created i.e.,after Activity.onCreate,
      * and access prior to that will result in IllegalArgumentException.
      * */
-    private val viewModel: MainViewModel by viewModels { SavedStateViewModelFactory(this) }
+    private val viewModel: MainViewModel by viewModels()
 
     /** Databinding */
     private val binding by activityBinding<ActivityMainBinding>(R.layout.activity_main)

@@ -44,9 +44,9 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
 
     /** Task data */
     private val configTask = PagedList.Config.Builder()
-        .setPageSize(5)
+        .setPageSize(10)
         .setEnablePlaceholders(true)
-        .setInitialLoadSizeHint(5)
+        .setInitialLoadSizeHint(10)
         .build()
 
     val task: LiveData<PagedList<TaskModel>> =

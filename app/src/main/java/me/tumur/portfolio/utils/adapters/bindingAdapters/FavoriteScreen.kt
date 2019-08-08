@@ -8,7 +8,7 @@ import me.tumur.portfolio.R
 import me.tumur.portfolio.utils.state.Empty
 import me.tumur.portfolio.utils.state.FavoriteState
 import me.tumur.portfolio.utils.state.NotEmpty
-import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
 /** Empty Screen */
@@ -49,6 +49,10 @@ fun setScreenFavoriteNotEmpty(view: View, screen: FavoriteState?) {
 @BindingAdapter("dateConverter")
 fun TextView.setDateConverter(date: Date?) {
     date?.let {
-        text = DateFormat.getInstance().format(it)
+        val outputFormat = SimpleDateFormat("MMMM yyyy", Locale.US)
+        val formattedDate = outputFormat.format(it)
+        formattedDate?.let { result ->
+            text = result
+        }
     }
 }

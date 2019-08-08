@@ -15,7 +15,10 @@ import com.google.android.material.button.MaterialButton
 import me.tumur.portfolio.R
 import me.tumur.portfolio.utils.constants.BsConstants
 import me.tumur.portfolio.utils.constants.Constants
-import java.text.DateFormat
+import org.threeten.bp.LocalDate
+import org.threeten.bp.format.DateTimeFormatter
+import org.threeten.bp.temporal.ChronoUnit
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -54,15 +57,31 @@ fun setWebView(web: WebView, url: String?) {
     }
 }
 
+
 /** Date from and date to */
 @BindingAdapter("dateFrom", "dateTo", requireAll = true)
 fun TextView.setDateFromTo(dateFrom: Date?, dateTo: Date?) {
-    dateFrom?.let { dateFrom ->
-        dateTo?.let { dateTo ->
-            val from = DateFormat.getInstance().format(dateFrom)
-            val to = DateFormat.getInstance().format(dateTo)
-            val date = "$from - $to"
-            text = date
+    if (dateFrom != null && dateTo != null) {
+        val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
+        val a = outputFormat.format(dateFrom)
+        val b = outputFormat.format(dateTo)
+
+        val outputFormatC = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val ac = outputFormatC.format(dateFrom)
+        val bc = outputFormatC.format(dateTo)
+
+        val dateFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val start = LocalDate.parse(ac, dateFormatter)
+        val end = LocalDate.parse(bc, dateFormatter)
+
+        if (start != null && end != null) {
+            val diff: Long = ChronoUnit.MONTHS.between(start, end)
+            val diffYear = diff / 12
+            val diffMonth = diff % 12
+            val d = if (diffYear > 0) "$diffYear.$diffMonth year(s)" else "$diffMonth month(s)"
+
+            val result = "$a - $b | $d"
+            text = result
         }
     }
 }

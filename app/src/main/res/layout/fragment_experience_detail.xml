@@ -31,11 +31,11 @@
                         android:id="@+id/experience_item_detail_cover_image_arch_view"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
-                        app:layout_constraintVertical_chainStyle="packed"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_header_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"
                         app:shape_arc_height="@dimen/_20sdp"
                         app:shape_arc_position="bottom">
 
@@ -53,12 +53,12 @@
                 <!-- Header content -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/experience_item_detail_header_content"
-                        android:layout_width="match_parent"
+                        android:layout_width="@dimen/dimen_0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_button"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -69,16 +69,16 @@
                             android:id="@+id/experience_item_detail_logo_frame"
                             android:layout_width="@dimen/_80sdp"
                             android:layout_height="@dimen/_80sdp"
-                            app:shape_roundRect_bottomLeftRadius="@dimen/_5sdp"
-                            app:shape_roundRect_bottomRightRadius="@dimen/_5sdp"
-                            app:shape_roundRect_topLeftRadius="@dimen/_5sdp"
-                            app:shape_roundRect_topRightRadius="@dimen/_5sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/experience_item_detail_job_company_content"
                             app:layout_constraintHorizontal_chainStyle="packed"
                             app:layout_constraintHorizontal_weight="0.25"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shape_roundRect_bottomLeftRadius="@dimen/_5sdp"
+                            app:shape_roundRect_bottomRightRadius="@dimen/_5sdp"
+                            app:shape_roundRect_topLeftRadius="@dimen/_5sdp"
+                            app:shape_roundRect_topRightRadius="@dimen/_5sdp">
                         <!-- Logo -->
                         <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/experience_item_detail_logo"
@@ -316,8 +316,8 @@
                         android:id="@+id/experience_item_detail_section_task"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:elevation="@dimen/dimen_1dp"
                         android:background="@color/colorPreferenceCategoryBackground"
+                        android:elevation="@dimen/dimen_1dp"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_task"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -337,12 +337,12 @@
                             android:textSize="@dimen/dimen_14sp"
                             android:maxLines="1"
                             android:ellipsize="end"
+                            android:textColor="@color/colorPreferenceCategoryTitle"
                             android:text="@string/task"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:textColor="@color/colorPreferenceCategoryTitle"/>
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -353,12 +353,48 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:orientation="vertical"
                         android:scrollbars="none"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_resource"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_section_task"/>
+
+                <!-- Section task -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/experience_item_detail_section_resource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:elevation="@dimen/dimen_1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_task">
+
+                    <!-- Section task title -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/experience_item_detail_section_resource_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAllCaps="true"
+                            android:textSize="@dimen/dimen_14sp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:text="@string/task"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
