@@ -1,6 +1,7 @@
 package me.tumur.portfolio.repository.database.model.all
 
 import com.squareup.moshi.Json
+import me.tumur.portfolio.repository.database.model.LocationModel
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.category.CategoryModel
 import me.tumur.portfolio.repository.database.model.experience.ExperienceModel
@@ -47,5 +48,8 @@ data class RequestAll (
     val category: List<CategoryModel>,
 
     @Json(name = DbConstants.SCREENSHOT)
-    val screenshot: List<ScreenShotModel>
+    val screenshot: List<ScreenShotModel>,
+
+    @Json(name = DbConstants.LOCATION)
+    val location: List<LocationModel>
 )

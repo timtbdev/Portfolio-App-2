@@ -6,6 +6,7 @@ import androidx.paging.toLiveData
 import kotlinx.coroutines.Dispatchers
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
+import me.tumur.portfolio.repository.database.dao.location.LocationDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
@@ -20,6 +21,7 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
     private val experienceDao: ExperienceDao by inject()
     private val buttonDao: ButtonDao by inject()
     private val taskDao: TaskDao by inject()
+    private val locationDao: LocationDao by inject()
 
     /** Experience item id */
     private val _id = MutableLiveData<String>()
@@ -51,6 +53,13 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
 
     val task: LiveData<PagedList<TaskModel>> =
         id.switchMap { id -> taskDao.getListItems(id).toLiveData(configTask) }
+
+    /** Location data */
+    val location = id.switchMap { id ->
+        liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
+            emitSource(locationDao.getSingleItem(id))
+        }
+    }
 
     /** Url -> clicked */
     private val _url = MutableLiveData<String>()

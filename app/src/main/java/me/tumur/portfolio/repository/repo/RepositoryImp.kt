@@ -3,6 +3,7 @@ package me.tumur.portfolio.repository.repo
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
+import me.tumur.portfolio.repository.database.dao.location.LocationDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
@@ -35,6 +36,7 @@ class RepositoryImp : Repository, KoinComponent {
     private val taskDao: TaskDao by inject()
     private val categoryDao: CategoryDao by inject()
     private val screenShotDao: ScreenShotDao by inject()
+    private val locationDao: LocationDao by inject()
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
@@ -107,6 +109,12 @@ class RepositoryImp : Repository, KoinComponent {
                 httpResponseAll.body()?.screenshot?.let {
                     screenShotDao.update(it)
                 }
+
+                /** Update location table */
+                httpResponseAll.body()?.location?.let {
+                    locationDao.update(it)
+                }
+
                 Success
             } else Failed
         } catch (exception: IOException) {

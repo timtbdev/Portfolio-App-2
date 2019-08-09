@@ -6,6 +6,7 @@ import androidx.work.WorkerParameters
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
+import me.tumur.portfolio.repository.database.dao.location.LocationDao
 import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
@@ -34,6 +35,7 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
     private val taskDao: TaskDao by inject()
     private val categoryDao: CategoryDao by inject()
     private val screenShotDao: ScreenShotDao by inject()
+    private val locationDao: LocationDao by inject()
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
@@ -101,6 +103,11 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
                 /** Update screenshot table */
                 httpResponseAll.body()?.screenshot?.let {
                     screenShotDao.update(it)
+                }
+
+                /** Update location table */
+                httpResponseAll.body()?.location?.let {
+                    locationDao.update(it)
                 }
 
                 Result.success()

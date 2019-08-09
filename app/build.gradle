@@ -76,6 +76,7 @@ dependencies {
     implementation deps.kotlin.stdlib
     // Google
     implementation deps.google.material
+    implementation deps.google.map
     implementation deps.google.guava
     // AndroidX Foundation
     implementation deps.androidx.core

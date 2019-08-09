@@ -17,6 +17,7 @@ object DbConstants {
     const val EXPERIENCE_JSON = "experience.json"
     const val CATEGORY_JSON = "category.json"
     const val SCREENSHOT_JSON = "screenshot.json"
+    const val LOCATION_JSON = "location.json"
     const val APP_JSON = "app.json"
 
     /** TABLE CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -66,6 +67,8 @@ object DbConstants {
     const val VIDEO_URL = "video_url"
     const val QUERY = "query"
     const val LINK_TO_SHARE = "link_to_share"
+    const val LATITUDE = "latitude"
+    const val LONGITUDE = "longitude"
 
     /** QUERIES'S CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -127,4 +130,8 @@ object DbConstants {
     const val FAVORITE_EXIST_SINGLE_ITEM = "SELECT COUNT($ID) FROM $FAVORITE WHERE $ID=:$ID"
     const val FAVORITE_GET_MAX_ORDER = "SELECT * FROM $FAVORITE ORDER BY $ORDERS DESC LIMIT 1"
     const val FAVORITE_CHECK = "SELECT COUNT($ID) FROM $FAVORITE"
+
+    /** LOCATION QUERIES ------------------------------------------------------------------------------------------------ */
+    const val LOCATION_DELETE = "DELETE FROM $LOCATION"
+    const val LOCATION_GET_SINGLE_ITEM = "SELECT * FROM $LOCATION WHERE $OWNER_ID=:$ID"
 }

@@ -1,8 +1,12 @@
 package me.tumur.portfolio.screens.experience.detail
 
+import android.content.Context
 import android.content.pm.ActivityInfo
+import android.location.Address
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,26 +21,40 @@ import androidx.navigation.fragment.navArgs
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentExperienceDetailBinding
+import me.tumur.portfolio.repository.database.model.LocationModel
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.task.TaskAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonClickListener
+import me.tumur.portfolio.utils.constants.Constants
+import org.koin.android.ext.android.inject
+import java.io.IOException
 
 /**
  * An fragment that inflates a portfolio detail layout.
  */
-class ExperienceDetailFragment : Fragment() {
-
+class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     /** VARIABLES * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /** Create a new instance */
     companion object {
         fun newInstance() = ExperienceDetailFragment()
     }
+
+    /** Context */
+
+    private val ctx: Context by inject()
 
     /** ViewModel */
 
@@ -63,6 +81,9 @@ class ExperienceDetailFragment : Fragment() {
 
     /** Safe args */
     private val args: ExperienceDetailFragmentArgs by navArgs()
+
+    /** Map */
+    private lateinit var mMap: GoogleMap
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -96,6 +117,11 @@ class ExperienceDetailFragment : Fragment() {
             viewModel.setExperienceItemId(it)
         }
 
+        /** Set map fragment */
+        val mapFragment = childFragmentManager.findFragmentById(R.id.experience_item_detail_map) as SupportMapFragment?
+        mapFragment?.getMapAsync(this)
+
+
         /** Set observers and adapters */
         setAdapters()
 
@@ -105,6 +131,16 @@ class ExperienceDetailFragment : Fragment() {
         }
         return binding.root
     }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        googleMap?.let {
+            mMap = it
+            mMap.uiSettings.isZoomControlsEnabled = true
+            mMap.setOnMarkerClickListener(this)
+        }
+    }
+
+    override fun onMarkerClick(marker: Marker?) = false
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -164,6 +200,22 @@ class ExperienceDetailFragment : Fragment() {
             }
         }
         viewModel.url.observe(viewLifecycleOwner, observerUrl)
+
+        /** Set observer for location */
+        val observerLocation = Observer<LocationModel> {
+            it?.let { location ->
+                location.latitude?.let { lat ->
+                    location.longitude?.let { long ->
+
+                        val currentLatLng = LatLng(lat, long)
+                        val title = getAddress(currentLatLng)
+                        placeMarkerOnMap(title, currentLatLng)
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
+                    }
+                }
+            }
+        }
+        viewModel.location.observe(viewLifecycleOwner, observerLocation)
     }
 
     /**
@@ -180,5 +232,37 @@ class ExperienceDetailFragment : Fragment() {
             }
             builder.build().launchUrl(context, (Uri.parse(url)))
         }
+    }
+
+    /** Place market on a map */
+    private fun placeMarkerOnMap(title: String, location: LatLng) {
+        val markerOptions = MarkerOptions().position(location)
+        markerOptions.title(title)
+        mMap.addMarker(markerOptions)
+    }
+
+    /** Get address */
+    private fun getAddress(latLng: LatLng): String {
+        // 1
+        val geocoder = Geocoder(ctx)
+        val addresses: List<Address>?
+        val address: Address?
+        var addressText = ""
+
+        try {
+            // 2
+            addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
+            // 3
+            if (null != addresses && !addresses.isEmpty()) {
+                address = addresses[0]
+                for (i in 0 until address.maxAddressLineIndex) {
+                    addressText += if (i == 0) address.getAddressLine(i) else "\n" + address.getAddressLine(i)
+                }
+            }
+        } catch (e: IOException) {
+            Log.e(Constants.FRAGMENT_EXPERIENCE, e.localizedMessage)
+        }
+
+        return addressText
     }
 }

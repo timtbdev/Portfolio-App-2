@@ -1,6 +1,5 @@
 package me.tumur.portfolio.screens.portfolio
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -29,9 +28,6 @@ class PortfolioViewModel : ViewModel(), KoinComponent {
     /** Repository */
     private val dao: PortfolioDao by inject()
     private val repo: Repository by inject()
-
-    /** Saved state */
-    private val context: Context by inject()
 
     /** Selected item id */
     private val _selectedItem = MutableLiveData<PortfolioModel>()
