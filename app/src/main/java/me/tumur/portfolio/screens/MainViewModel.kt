@@ -76,13 +76,19 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
             val job = populateDb()
             job.isCompleted.let {
                 if (network) fetch(WelcomeScreen)
-                else viewModelScope.launch { setScreenStateWithDelay(WelcomeScreen) }
+                else viewModelScope.launch {
+                    setScreenStateWithDelay(WelcomeScreen)
+                    setShowToast(ToastShow)
+                }
             }
         } else {
             when (getSavedStateHandle()) {
                 Constants.FRAGMENT_EMPTY -> {
                     setScreenState(SplashScreen)
-                    if (network) fetch(MainScreen) else viewModelScope.launch { setScreenStateWithDelay(MainScreen) }
+                    if (network) fetch(MainScreen) else viewModelScope.launch {
+                        setScreenStateWithDelay(MainScreen)
+                        setShowToast(ToastShow)
+                    }
                 }
                 else -> setScreenState(MainScreen)
             }
