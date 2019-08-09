@@ -18,6 +18,8 @@ import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.adapters.listItemAdapters.favorite.FavoriteAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.favorite.FavoriteClickListener
 import me.tumur.portfolio.utils.constants.Constants
+import me.tumur.portfolio.utils.state.Empty
+import me.tumur.portfolio.utils.state.NotEmpty
 
 /**
  * An fragment that inflates a portfolio layout.
@@ -130,7 +132,6 @@ class FavoriteFragment : Fragment() {
                     viewModel.setSelectedItem(null, false)
                 } else {
                     viewModel.deleteAllItems()
-                    viewModel.checkEmptyTable()
                 }
             }
         }
@@ -163,13 +164,22 @@ class FavoriteFragment : Fragment() {
         viewModel.selectedItem.observe(viewLifecycleOwner, observerClickListener)
 
         /**
+         * Observer for table
+         * */
+        val observerTable = Observer<Int> {
+            it?.let {
+                if (it > 0) viewModel.setState(NotEmpty) else viewModel.setState(Empty)
+            }
+        }
+        viewModel.table.observe(viewLifecycleOwner, observerTable)
+
+        /**
          * Observer for delete item id
          * */
         val observerDeleteItemId = Observer<String> {
             it?.let {
                 viewModel.deleteSingleItem(it)
                 viewModel.setDeleteItemId(null)
-                viewModel.checkEmptyTable()
             }
         }
         viewModel.deleteItemId.observe(viewLifecycleOwner, observerDeleteItemId)

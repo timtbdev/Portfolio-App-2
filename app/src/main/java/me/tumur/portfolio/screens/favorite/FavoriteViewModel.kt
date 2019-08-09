@@ -1,9 +1,6 @@
 package me.tumur.portfolio.screens.favorite
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import androidx.paging.PagedList
 import androidx.paging.toLiveData
 import kotlinx.coroutines.Dispatchers
@@ -11,9 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.tumur.portfolio.repository.database.dao.favorite.FavoriteDao
 import me.tumur.portfolio.repository.database.model.favorite.FavoriteModel
-import me.tumur.portfolio.utils.state.Empty
 import me.tumur.portfolio.utils.state.FavoriteState
-import me.tumur.portfolio.utils.state.NotEmpty
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -45,10 +40,9 @@ class FavoriteViewModel : ViewModel(), KoinComponent {
 
     val data: LiveData<PagedList<FavoriteModel>> = favoriteDao.getListItems().toLiveData(config)
 
-
-    /** INITIALIZATIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    init {
-        checkEmptyTable()
+    /** Check table */
+    val table = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
+        emitSource(favoriteDao.check())
     }
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -74,7 +68,7 @@ class FavoriteViewModel : ViewModel(), KoinComponent {
     /**
      * Set state
      * */
-    private fun setState(state: FavoriteState) {
+    fun setState(state: FavoriteState) {
         _state.value = state
     }
 
@@ -99,18 +93,6 @@ class FavoriteViewModel : ViewModel(), KoinComponent {
                     favoriteDao.deleteSingleItem(it)
                 }
             }
-        }
-    }
-
-    /**
-     * Check for empty table
-     * */
-    fun checkEmptyTable() {
-        viewModelScope.launch {
-            val isEmpty = withContext(Dispatchers.IO) {
-                favoriteDao.check()
-            }
-            if (isEmpty > 0) setState(NotEmpty) else setState(Empty)
         }
     }
 }

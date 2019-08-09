@@ -46,5 +46,5 @@ abstract class FavoriteDao {
 
     /** Check table */
     @Query(DbConstants.FAVORITE_CHECK)
-    abstract suspend fun check(): Int
+    abstract fun check(): LiveData<Int>
 }
