@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentPreviewBinding
@@ -33,7 +33,7 @@ class PreviewFragment : Fragment() {
      * this Fragment is attached i.e.,after Fragment.onAttach,
      * and access prior to that will result in IllegalArgumentException.
      * */
-    private val viewModel by lazy { ViewModelProviders.of(this).get(PreviewFragmentViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(PreviewFragmentViewModel::class.java) }
 
     /** Databinding */
     private lateinit var binding: FragmentPreviewBinding

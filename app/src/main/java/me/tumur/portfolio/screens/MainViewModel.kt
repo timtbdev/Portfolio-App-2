@@ -51,6 +51,9 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     private val _fragmentState = MutableLiveData<String>()
     val fragmentState: LiveData<String> = _fragmentState
 
+    private val _fragmentStateHolder = MutableLiveData<String>()
+    val fragmentStateHolder: LiveData<String> = _fragmentStateHolder
+
     /** Routed to saved Fragment state */
     private val _routed = MutableLiveData<Boolean>().apply { value = false }
     val routed: LiveData<Boolean> = _routed
@@ -82,7 +85,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
                 }
             }
         } else {
-            when (getSavedStateHandle()) {
+            when (val savedState = getSavedStateHandle()) {
                 Constants.FRAGMENT_EMPTY -> {
                     setScreenState(SplashScreen)
                     if (network) fetch(MainScreen) else viewModelScope.launch {
@@ -90,29 +93,30 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
                         setShowToast(ToastShow)
                     }
                 }
-                else -> setScreenState(MainScreen)
+                else -> {
+                    setFragmentState(savedState)
+                    setScreenState(MainScreen)
+                }
             }
         }
     }
 
     override fun onCleared() {
-        setSavedStateHandle(fragmentState.value)
+        setSavedStateHandle()
         super.onCleared()
     }
 
     /** FUNCTIONS  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-
     /** Set saved state handle */
-    private fun setSavedStateHandle(state: String?) {
+    private fun setSavedStateHandle() {
         // Sets a new value for the object associated to the key.
-        state?.let {
-            savedStateHandle.set(Constants.FRAGMENT_STATE, it)
+        fragmentStateHolder.value?.let { state ->
+            savedStateHandle.set(Constants.FRAGMENT_STATE, state)
         }
-
     }
 
-    /** Get saved state handle */
+    /** Get saved state handle  */
     private fun getSavedStateHandle(): String {
         // Gets the current value of the user id from the saved state handle
         return savedStateHandle.get(Constants.FRAGMENT_STATE) ?: Constants.FRAGMENT_EMPTY
@@ -152,7 +156,13 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     /** Set saved state handle for fragment state */
     fun setFragmentState(state: String) {
         // Sets a new value for the object associated to the key.
-        if (state != fragmentState.value) _fragmentState.value = state
+        _fragmentState.value = state
+    }
+
+    /** Set saved state handle for fragment state holder */
+    fun setFragmentStateHolder(stateHolder: String) {
+        // Sets a new value for the object associated to the key.
+        _fragmentStateHolder.value = stateHolder
     }
 
     /** Set routed fragment state for saved state handle */

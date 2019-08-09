@@ -87,7 +87,7 @@ class FavoriteFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorite, container, false)
 
         /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_FAVORITE)
+        sharedViewModel.setFragmentStateHolder(Constants.FRAGMENT_FAVORITE)
 
         /** Favorite items */
         val favoriteAdapter = FavoriteAdapter(FavoriteClickListener(viewModel::setSelectedItem))

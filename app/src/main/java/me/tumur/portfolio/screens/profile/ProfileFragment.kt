@@ -103,7 +103,7 @@ class ProfileFragment : Fragment() {
         setHasOptionsMenu(true)
 
         /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_PROFILE)
+        sharedViewModel.setFragmentStateHolder(Constants.FRAGMENT_PROFILE)
 
         /** Set observers */
         setObservers(aboutAdapter)

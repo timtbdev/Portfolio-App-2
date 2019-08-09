@@ -9,7 +9,7 @@ import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.button_welcome_screen.view.*
@@ -45,7 +45,7 @@ class WelcomeFragment : Fragment() {
      * Lazily create a ViewModel the first time the system calls an activity's onCreate() method.
      * Re-created fragments receive the same ViewModel instance created by the parent fragment.
      * */
-    private val viewModel by lazy { ViewModelProviders.of(this).get(WelcomeViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(WelcomeViewModel::class.java) }
 
     /** Databinding */
     private lateinit var binding: FragmentWelcomeBinding

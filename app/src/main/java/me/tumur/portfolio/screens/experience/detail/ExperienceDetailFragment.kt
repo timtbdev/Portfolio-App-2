@@ -14,7 +14,6 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
@@ -33,7 +32,6 @@ import me.tumur.portfolio.databinding.FragmentExperienceDetailBinding
 import me.tumur.portfolio.repository.database.model.LocationModel
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
-import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.task.TaskAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonClickListener
@@ -57,16 +55,6 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     private val ctx: Context by inject()
 
     /** ViewModel */
-
-    /**
-     * Returns a property delegate to access ViewModel
-     * by default scoped to this Fragment:
-     * Default scope may be overridden with parameter ownerProducer:
-     * This property can be accessed only after
-     * this Fragment is attached i.e.,after Fragment.onAttach,
-     * and access prior to that will result in IllegalArgumentException.
-     * */
-    private val sharedViewModel: MainViewModel by activityViewModels()
 
     /**
      * Lazily create a ViewModel the first time the system calls an activity's onCreate() method.

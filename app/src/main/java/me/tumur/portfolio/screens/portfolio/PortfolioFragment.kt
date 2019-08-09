@@ -93,7 +93,7 @@ class PortfolioFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_portfolio, container, false)
 
         /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_PORTFOLIO)
+        sharedViewModel.setFragmentStateHolder(Constants.FRAGMENT_PORTFOLIO)
 
         /** Portfolio items */
         val portfolioAdapter = PortfolioAdapter(PortfolioClickListener { viewModel.setSelectedItem(it) })

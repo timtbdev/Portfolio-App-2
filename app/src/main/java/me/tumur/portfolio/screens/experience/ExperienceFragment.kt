@@ -84,7 +84,7 @@ class ExperienceFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_experience, container, false)
 
         /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_EXPERIENCE)
+        sharedViewModel.setFragmentStateHolder(Constants.FRAGMENT_EXPERIENCE)
 
         /** Experience items */
         val experienceAdapter = ExperienceAdapter(ExperienceClickListener(viewModel::setSelectedItem))

@@ -144,7 +144,6 @@ class MainActivity : AppCompatActivity() {
 
         /** Setup fragment state observer  */
         val fragmentStateObserver = Observer<String> { state ->
-            if(viewModel.routed.value == false){
                 when(state){
                     Constants.FRAGMENT_PROFILE -> navController.navigate(R.id.profile_screen)
                     Constants.FRAGMENT_PORTFOLIO -> navController.navigate(R.id.portfolio_screen)
@@ -152,8 +151,6 @@ class MainActivity : AppCompatActivity() {
                     Constants.FRAGMENT_SETTINGS -> navController.navigate(R.id.settings_screen)
                     Constants.FRAGMENT_FAVORITE -> navController.navigate(R.id.favorite_screen)
                 }
-                viewModel.setRouted(true)
-            }
         }
         viewModel.fragmentState.observe(this, fragmentStateObserver)
 
