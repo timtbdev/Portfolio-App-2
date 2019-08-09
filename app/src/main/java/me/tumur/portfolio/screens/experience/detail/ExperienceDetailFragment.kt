@@ -31,11 +31,15 @@ import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentExperienceDetailBinding
 import me.tumur.portfolio.repository.database.model.LocationModel
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
+import me.tumur.portfolio.repository.database.model.resource.ResourceModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
+import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.resource.ResourceAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.experience.task.TaskAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonAdapter
 import me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonClickListener
 import me.tumur.portfolio.utils.constants.Constants
+import me.tumur.portfolio.utils.state.Empty
+import me.tumur.portfolio.utils.state.NotEmpty
 import org.koin.android.ext.android.inject
 import java.io.IOException
 
@@ -158,12 +162,24 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
             this.adapter = taskAdapter
         }
 
+        /** Set Resource Adapter */
+        val resourceAdapter = ResourceAdapter(ButtonClickListener(viewModel::setUrl))
+        val layoutManagerResource = LinearLayoutManager(context)
+        layoutManagerResource.orientation = LinearLayoutManager.HORIZONTAL
+        val resourceList = binding.experienceItemDetailResource
+
+        resourceList.apply {
+            this.layoutManager = layoutManagerResource
+            this.hasFixedSize()
+            this.adapter = resourceAdapter
+        }
+
         /** Set observers */
-        setObservers(buttonAdapter, taskAdapter)
+        setObservers(buttonAdapter, taskAdapter, resourceAdapter)
     }
 
     /** Observers */
-    private fun setObservers(buttonAdapter: ButtonAdapter, taskAdapter: TaskAdapter) {
+    private fun setObservers(buttonAdapter: ButtonAdapter, taskAdapter: TaskAdapter, resourceAdapter: ResourceAdapter) {
 
         /** Set observer for button */
         val observerButton = Observer<PagedList<ButtonModel>> { button ->
@@ -180,6 +196,22 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
             }
         }
         viewModel.task.observe(viewLifecycleOwner, observerTask)
+
+        /** Set observer for resource */
+        val observerResource = Observer<PagedList<ResourceModel>> { task ->
+            task?.let {
+                resourceAdapter.submitList(it)
+            }
+        }
+        viewModel.resource.observe(viewLifecycleOwner, observerResource)
+
+        /** Set observer for check resource table */
+        val observerCheckResourceTable = Observer<Int> { task ->
+            task?.let {
+                if (it > 0) viewModel.setResourceState(NotEmpty) else viewModel.setResourceState(Empty)
+            }
+        }
+        viewModel.checkResourceTable.observe(viewLifecycleOwner, observerCheckResourceTable)
 
         /** Set observer for url */
         val observerUrl = Observer<String> {

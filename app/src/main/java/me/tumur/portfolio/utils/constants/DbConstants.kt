@@ -18,6 +18,7 @@ object DbConstants {
     const val CATEGORY_JSON = "category.json"
     const val SCREENSHOT_JSON = "screenshot.json"
     const val LOCATION_JSON = "location.json"
+    const val RESOURCE_JSON = "resource.json"
     const val APP_JSON = "app.json"
 
     /** TABLE CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -134,4 +135,9 @@ object DbConstants {
     /** LOCATION QUERIES ------------------------------------------------------------------------------------------------ */
     const val LOCATION_DELETE = "DELETE FROM $LOCATION"
     const val LOCATION_GET_SINGLE_ITEM = "SELECT * FROM $LOCATION WHERE $OWNER_ID=:$ID"
+
+    /** RESOURCE QUERIES ------------------------------------------------------------------------------------------------ */
+    const val RESOURCE_DELETE = "DELETE FROM $RESOURCE"
+    const val RESOURCE_GET_LIST_ITEMS = "SELECT * FROM $RESOURCE WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
+    const val RESOURCE_CHECK = "SELECT COUNT($ID) FROM $RESOURCE"
 }

@@ -12,6 +12,7 @@ import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
 import me.tumur.portfolio.repository.database.dao.profile.SocialDao
+import me.tumur.portfolio.repository.database.dao.resource.ResourceDao
 import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
@@ -25,14 +26,15 @@ import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.profile.AboutModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
 import me.tumur.portfolio.repository.database.model.profile.SocialModel
+import me.tumur.portfolio.repository.database.model.resource.ResourceModel
 import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.database.model.settings.AppModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
 
 @Database(
-    version = 52,
-    entities = [WelcomeModel::class, ProfileModel::class, SocialModel::class, AboutModel::class, AppModel::class, PortfolioModel::class, ExperienceModel::class, TaskModel::class, ButtonModel::class, CategoryModel::class, ScreenShotModel::class, FavoriteModel::class, LocationModel::class],
+    version = 53,
+    entities = [WelcomeModel::class, ProfileModel::class, SocialModel::class, AboutModel::class, AppModel::class, PortfolioModel::class, ExperienceModel::class, TaskModel::class, ButtonModel::class, CategoryModel::class, ScreenShotModel::class, FavoriteModel::class, LocationModel::class, ResourceModel::class],
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -50,4 +52,5 @@ abstract class AppDatabase : RoomDatabase() {
     abstract val screenShotDao: ScreenShotDao
     abstract val favoriteDao: FavoriteDao
     abstract val locationDao: LocationDao
+    abstract val resourceDao: ResourceDao
 }

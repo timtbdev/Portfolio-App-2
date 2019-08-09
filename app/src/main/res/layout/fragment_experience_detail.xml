@@ -417,7 +417,60 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_section_task"/>
 
-                <!-- Section task -->
+
+                <!-- Section resource -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/experience_item_detail_section_resource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:elevation="@dimen/dimen_1dp"
+                        app:screenFavoriteNotEmpty="@{model.resourceState}"
+                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_map"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_task">
+
+                    <!-- Section resource title -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/experience_item_detail_section_resource_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAllCaps="true"
+                            android:textSize="@dimen/dimen_14sp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:text="@string/resource"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Resource -->
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/experience_item_detail_resource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:scrollbars="none"
+                        app:screenFavoriteNotEmpty="@{model.resourceState}"
+                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_map"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_section_resource"/>
+
+                <!-- Section map -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/experience_item_detail_section_map"
                         android:layout_width="match_parent"
@@ -427,11 +480,11 @@
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_map"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_task">
+                        app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_resource">
 
-                    <!-- Section task title -->
+                    <!-- Section map title -->
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/experience_item_detail_section_resource_title"
+                            android:id="@+id/experience_item_detail_section_map_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"

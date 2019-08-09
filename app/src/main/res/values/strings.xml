@@ -91,6 +91,7 @@
 	<string name="task">Responsibilities</string>
     <string name="map">Map</string>
     <string name="info">Info</string>
+    <string name="resource">Resource</string>
     <string name="transition_portfolio_item_image">portfolio_image</string>
     <string name="transition_portfolio_item_logo">portfolio_logo</string>
 </resources>

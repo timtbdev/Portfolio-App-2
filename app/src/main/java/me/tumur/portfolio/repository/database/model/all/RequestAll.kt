@@ -9,6 +9,7 @@ import me.tumur.portfolio.repository.database.model.portfolio.PortfolioModel
 import me.tumur.portfolio.repository.database.model.profile.AboutModel
 import me.tumur.portfolio.repository.database.model.profile.ProfileModel
 import me.tumur.portfolio.repository.database.model.profile.SocialModel
+import me.tumur.portfolio.repository.database.model.resource.ResourceModel
 import me.tumur.portfolio.repository.database.model.screenshot.ScreenShotModel
 import me.tumur.portfolio.repository.database.model.settings.AppModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
@@ -51,5 +52,8 @@ data class RequestAll (
     val screenshot: List<ScreenShotModel>,
 
     @Json(name = DbConstants.LOCATION)
-    val location: List<LocationModel>
+    val location: List<LocationModel>,
+
+    @Json(name = DbConstants.RESOURCE)
+    val resource: List<ResourceModel>
 )

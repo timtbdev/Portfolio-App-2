@@ -4,19 +4,12 @@ object Constants {
 
     /** Saved state * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val FRAGMENT_STATE = "FragmentState"
-    const val FRAGMENT_STATE_ID = "FragmentStateId"
-    const val FRAGMENT_STATE_ID_OF_TITLE = "FragmentStateIdofTitle"
     const val FRAGMENT_PROFILE = "FragmentProfile"
     const val FRAGMENT_PORTFOLIO = "FragmentPortfolio"
-    const val FRAGMENT_PORTFOLIO_DETAIL = "FragmentPortfolioDetail"
     const val FRAGMENT_EXPERIENCE = "FragmentExperience"
-    const val FRAGMENT_EXPERIENCE_DETAIL = "FragmentExperienceDetail"
     const val FRAGMENT_SETTINGS = "FragmentSettings"
     const val FRAGMENT_FAVORITE = "FragmentFavorite"
     const val FRAGMENT_EMPTY = "FragmentEmpty"
-    const val FRAGMENT_STATE_ID_EMPTY = "FragmentStateIdEmpty"
-    const val FRAGMENT_STATE_ID_OF_TITLE_EMPTY = "FragmentStateIdofTitleEmpty"
-    const val FRAGMENT_DETAIL_ID = "FragmentDetailId"
 
     /** Shared Preference ------------------------------------------------------------------------------------------ */
     const val APP = "Portfolio"

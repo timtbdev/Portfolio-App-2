@@ -7,9 +7,12 @@ import kotlinx.coroutines.Dispatchers
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.experience.ExperienceDao
 import me.tumur.portfolio.repository.database.dao.location.LocationDao
+import me.tumur.portfolio.repository.database.dao.resource.ResourceDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
 import me.tumur.portfolio.repository.database.model.button.ButtonModel
+import me.tumur.portfolio.repository.database.model.resource.ResourceModel
 import me.tumur.portfolio.repository.database.model.task.TaskModel
+import me.tumur.portfolio.utils.state.FavoriteState
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -22,6 +25,7 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
     private val buttonDao: ButtonDao by inject()
     private val taskDao: TaskDao by inject()
     private val locationDao: LocationDao by inject()
+    private val resourceDao: ResourceDao by inject()
 
     /** Experience item id */
     private val _id = MutableLiveData<String>()
@@ -54,6 +58,25 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
     val task: LiveData<PagedList<TaskModel>> =
         id.switchMap { id -> taskDao.getListItems(id).toLiveData(configTask) }
 
+    /** Resource data */
+    private val configResource = PagedList.Config.Builder()
+        .setPageSize(5)
+        .setEnablePlaceholders(true)
+        .setInitialLoadSizeHint(5)
+        .build()
+
+    val resource: LiveData<PagedList<ResourceModel>> =
+        id.switchMap { id -> resourceDao.getListItems(id).toLiveData(configTask) }
+
+    /** Resource state */
+    private val _resourceState = MutableLiveData<FavoriteState>()
+    val resourceState: LiveData<FavoriteState> = _resourceState
+
+    /** Check resource table */
+    val checkResourceTable = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
+        emitSource(resourceDao.check())
+    }
+
     /** Location data */
     val location = id.switchMap { id ->
         liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
@@ -79,5 +102,12 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
      * */
     fun setUrl(url: String) {
         _url.value = url
+    }
+
+    /**
+     * Set resource state
+     * */
+    fun setResourceState(state: FavoriteState) {
+        _resourceState.value = state
     }
 }

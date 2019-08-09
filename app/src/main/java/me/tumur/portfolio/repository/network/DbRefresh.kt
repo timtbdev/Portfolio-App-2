@@ -11,6 +11,7 @@ import me.tumur.portfolio.repository.database.dao.portfolio.PortfolioDao
 import me.tumur.portfolio.repository.database.dao.profile.AboutDao
 import me.tumur.portfolio.repository.database.dao.profile.ProfileDao
 import me.tumur.portfolio.repository.database.dao.profile.SocialDao
+import me.tumur.portfolio.repository.database.dao.resource.ResourceDao
 import me.tumur.portfolio.repository.database.dao.screenshot.ScreenShotDao
 import me.tumur.portfolio.repository.database.dao.settings.AppDao
 import me.tumur.portfolio.repository.database.dao.task.TaskDao
@@ -36,6 +37,7 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
     private val categoryDao: CategoryDao by inject()
     private val screenShotDao: ScreenShotDao by inject()
     private val locationDao: LocationDao by inject()
+    private val resourceDao: ResourceDao by inject()
 
     /** NETWORK API ------------------------------------------------------------------------------------------------- */
     private val api: RestApi by inject()
@@ -108,6 +110,11 @@ class DbRefresh(context: Context, params: WorkerParameters): CoroutineWorker(con
                 /** Update location table */
                 httpResponseAll.body()?.location?.let {
                     locationDao.update(it)
+                }
+
+                /** Update resource table */
+                httpResponseAll.body()?.resource?.let {
+                    resourceDao.update(it)
                 }
 
                 Result.success()

@@ -86,6 +86,16 @@ fun TextView.setDateFromTo(dateFrom: Date?, dateTo: Date?) {
     }
 }
 
+/** Single date */
+@BindingAdapter("singleDate")
+fun TextView.setSingleDate(date: Date?) {
+    if (date != null) {
+        val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
+        val a = outputFormat.format(date)
+        text = a
+    }
+}
+
 /** Social icon */
 @BindingAdapter("socialIcon")
 fun ImageView.setSocialIcon(name: String?) {

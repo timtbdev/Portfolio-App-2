@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="item" type="me.tumur.portfolio.repository.database.model.resource.ResourceModel"/>
+        <variable name="clickListener"
+                  type="me.tumur.portfolio.utils.adapters.listItemAdapters.portfolio.button.ButtonClickListener"/>
+    </data>
+
+    <!-- Card view -->
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/list_item_resource_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:clickable="true"
+            android:onClick="@{() -> clickListener.onClick(item.url)}"
+            android:focusable="true"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_2sdp">
+
+        <!-- Resource item -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/list_item_resource"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!-- Resource image -->
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/list_item_resource_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@{item.imageDescription}"
+                    app:imageUrl="@{item.image}"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_resource_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/profile"/>
+
+            <!-- Resource title -->
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_resource_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:textColor="@color/colorOnSurface"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@{item.title}"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_resource_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_resource_image"
+                    tools:text="@string/cd_avatar"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/list_item_resource_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="start"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/colorOnSurfaceSecondary"
+                    android:text="@{item.text}"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_resource_date_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_resource_title"
+                    tools:text="@string/cd_avatar"/>
+
+            <!-- Resource date content -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/list_item_resource_date_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_resource_text">
+
+                <!-- Resource date icon -->
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/list_item_resource_date_icon"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:contentDescription="@string/cd_calendar"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/list_item_resource_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_date"
+                        app:tint="@color/colorOnSurfaceSecondary"/>
+
+                <!-- Resource date -->
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/list_item_resource_date"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:textSize="@dimen/dimen_12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/colorOnSurfaceSecondary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/list_item_resource_date_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:singleDate="@{item.date}"
+                        tools:text="@string/cd_avatar"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

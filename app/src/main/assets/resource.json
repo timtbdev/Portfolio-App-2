@@ -1,0 +1,156 @@
+[
+  {
+    "id": "NkFWzri7iDOp4kZoNKuX",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "Portfolio Page 2.0",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/tumurme.jpg?alt=media&token=17d4a9fb-b721-4633-a1bc-81f41781f36c",
+    "image_description": "home page",
+    "text": "Updated version of my personal portfolio page",
+    "date": "2019-08-09T07:00:00.000Z",
+    "order": 5,
+    "url": "https://tumur.me"
+  },
+  {
+    "id": "eoeta2RR7RUM3lCZvcqZ",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "vCard",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/web03.jpg?alt=media&token=9f2c0143-4225-46b5-b5dc-cf5936631462",
+    "image_description": "vcard",
+    "text": "Custom online virtual business card",
+    "date": "2017-01-06T08:00:00.000Z",
+    "order": 6,
+    "url": "http://www.tumur.info/assets/web/tumur/"
+  },
+  {
+    "id": "is0EbYC7u8pf8zaANPwB",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "Personal Portfolio 1.0",
+    "image": "https://tumur.me/img/resume_screen.jpg",
+    "image_description": "profile screen",
+    "text": "Initial version of my personal portfolio app",
+    "date": "2019-02-03T08:00:00.000Z",
+    "order": 3,
+    "url": "http://tumur.info/"
+  },
+  {
+    "id": "mxgzw5hlgJv8z8wU6Qt3",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "Ponda",
+    "image": "https://tumur.me/img/ponda_screen.jpg",
+    "image_description": "home screen",
+    "text": "This is online personal blog where I want to share my thoughts about personal development",
+    "date": "2019-08-09T07:00:00.000Z",
+    "order": 2,
+    "url": "https://8io.co/po/"
+  },
+  {
+    "id": "uuUE4GYfJyjBirrVlEpr",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "Personal Portfolio 2.0",
+    "image": "https://tumur.me/img/portfolio_screen.jpg",
+    "image_description": "profile screen",
+    "text": "Updated version of my personal portfolio app",
+    "date": "2019-08-09T07:00:00.000Z",
+    "order": 1,
+    "url": "https://8io.co/pro/"
+  },
+  {
+    "id": "xCGAqExR4ldhvHHwG9JD",
+    "owner_id": "Sx6KYg7RpQZh5YZL8YH7",
+    "title": "Portfolio Page 1.0",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/web01.jpg?alt=media&token=50530d93-1bf2-4c3c-857b-50aa5c453ba3",
+    "image_description": "home page",
+    "text": "Initial version of my personal portfolio page",
+    "date": "2018-05-01T07:00:00.000Z",
+    "order": 4,
+    "url": "http://tumur.info"
+  },
+  {
+    "id": "giIYQrDvLdJ5sTbTJG2h",
+    "owner_id": "ZdCDU7XfCgmwZ05foSto",
+    "title": "T-shirt app",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/ido.jpg?alt=media&token=3a666d38-aa89-45df-819c-bb52c18800d8",
+    "image_description": "splash screen",
+    "text": "This is an fully offline portfolio app for Tshirt's designs. It's my first Android app which was developed during my study of Android development.",
+    "date": "2012-03-01T08:00:00.000Z",
+    "order": 2,
+    "url": "https://8io.co/co/"
+  },
+  {
+    "id": "sNSlDmM4MXpzWsoc8Rp8",
+    "owner_id": "ZdCDU7XfCgmwZ05foSto",
+    "title": "Online Shop",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/class.jpg?alt=media&token=fcf39c47-3d59-4f3f-ad59-847d23a05e88",
+    "image_description": "splash screen",
+    "text": "The app synchronizes with the multiple online platforms and allowing viewing and creation of items for sale on the go. This is one of my first Android apps and it's based on Ushashide open-source platform. Almost, 90% of the code is adopted from Ushahidi android app.",
+    "date": "2012-10-01T07:00:00.000Z",
+    "order": 1,
+    "url": "https://8io.co/co/"
+  },
+  {
+    "id": "0HQdvdj63oS8s0CnSIan",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Project website",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/web02.jpg?alt=media&token=58998ed3-fada-41e0-a1c4-75441ebb20b1",
+    "image_description": "Home page",
+    "text": "Designed and developed official project's website",
+    "date": "2014-01-10T08:00:00.000Z",
+    "order": 2,
+    "url": "https://8io.co/eg/"
+  },
+  {
+    "id": "M4aljtqbSgB1X5MpCUuY",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Forbes",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/dam2.jpg?alt=media&token=cc201ec7-69e5-459d-94b6-5726523cb3d4",
+    "image_description": "dam",
+    "text": "In Russia, The World's Largest Lake Takes On The World Bank and Mongolian Power Build-Up",
+    "date": "2017-04-07T07:00:00.000Z",
+    "order": 6,
+    "url": "https://www.forbes.com/sites/kenrapoza/2017/04/07/in-russia-the-worlds-largest-lake-takes-on-the-world-bank-and-mongolian-power-build-up/#2e895e104df5"
+  },
+  {
+    "id": "MU8rdcy7usa8wfBG6Zr5",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Project Brochure",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/mm-cover.jpg?alt=media&token=0e4a76cd-5ee5-4a3d-a946-bab908363398",
+    "image_description": "Marketing material's cover",
+    "text": "Designed project marketing material",
+    "date": "2014-04-03T07:00:00.000Z",
+    "order": 4,
+    "url": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/dm.pdf?alt=media&token=13543d37-7a45-4d03-9754-290be2188c8e"
+  },
+  {
+    "id": "iWGdVFgEmpDXxLoSGoIo",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Project presentation",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/pp-cover.jpg?alt=media&token=16457ccb-2b5a-4c61-8e63-6310c9376260",
+    "image_description": "presentation cover",
+    "text": "Designed project presentation",
+    "date": "2014-04-03T07:00:00.000Z",
+    "order": 3,
+    "url": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/pp.pdf?alt=media&token=87623421-326d-41bd-b201-1799aae806b3"
+  },
+  {
+    "id": "jD3z2TgrAMfsY9rZnVon",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Bloomberg",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/dam.jpg?alt=media&token=8e02fcd0-ea4e-46d9-bc74-f5455b18ac2e",
+    "image_description": "Dam",
+    "text": "Mongolia Seeks $828 Million From China for Largest Hydro Project",
+    "date": "2015-03-23T07:00:00.000Z",
+    "order": 5,
+    "url": "https://www.bloomberg.com/news/articles/2015-03-23/mongolia-seeks-828-million-from-china-for-largest-hydro-project"
+  },
+  {
+    "id": "y0l9HmjHWgGbvlpOgnAe",
+    "owner_id": "tFpJvi3h5S1x7mya0unV",
+    "title": "Feasibility study",
+    "image": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/fs-cover.jpg?alt=media&token=00a25920-2b20-47bd-aa15-a69fce8272e1",
+    "image_description": "Cover of feasibility study",
+    "text": "Content of conducted Feasibility study",
+    "date": "2014-06-25T07:00:00.000Z",
+    "order": 1,
+    "url": "https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/fs.pdf?alt=media&token=4ddf5b5e-6b0f-4e8e-9304-ced35f2734ef"
+  }
+]

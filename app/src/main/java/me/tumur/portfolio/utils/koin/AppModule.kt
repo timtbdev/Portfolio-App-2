@@ -81,6 +81,9 @@ val databaseModule = module {
 
     /** Location DAO */
     factory { get<AppDatabase>().locationDao }
+
+    /** Resource DAO */
+    factory { get<AppDatabase>().resourceDao }
 }
 
 /** NETWORK MODULES ------------------------------------------------------------------------------------------------- */
