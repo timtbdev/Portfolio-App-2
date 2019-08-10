@@ -44,17 +44,12 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 | **Intelligent sync**                            | Intelligent hybrid syncing logic makes sure your Android app does not make repeated calls to the same back-end API for the same data in a particular time period.|
 | **Feature based packaging**                     | This screen-wise / feature-wise packaging makes code really easy to read and debug.|
 
-
 ## 📦 DOWNLOAD APK
-
 You can download the apk from: 
-
 1. [Google Playstore](https://play.google.com/store/apps/details?id=info.tumur.resume.app)
 2. [Github Release](https://github.com/tumurb/Personal-Resume-Android/blob/master/app/release/Resume%201.2.apk)
 
-
 ## 📝 REQUIREMENTS
-
 * JDK Version 1.7 & above
 * [Android SDK.](http://developer.android.com/sdk/index.html)
 * Android SDK Tools
@@ -67,7 +62,6 @@ I used Firebase Cloud Storage as a backend server and Firebase Cloud Hosting and
 You can find the Firebase Cloud Functions code in TypeScript <a href="https://github.com/tumurb/Portfolio-App-Api">here</a>.
 
 ## 🔥 FIREBASE SETUP
-
 This project uses Firebases Analytics and Crashlytics, Cloud Firestore, Remote Config, etc. You will need to generate the configuration file (`google-services.json`) and copy it to your `/app` dir. See links below
 
 1. [Setup Firebase setup](https://firebase.google.com/docs/android/setup)
@@ -82,7 +76,6 @@ This project uses Firebases Analytics and Crashlytics, Cloud Firestore, Remote C
 
 
 ## ⚙️ PROJECT SETUP
-
 This project is built with Gradle, the [Android Gradle plugin](http://tools.android.com/tech-docs/new-build-system/user-guide) Clone this repository inside your working folder. Import the `settings.gradle` file in the root folder into e.g. Android Studio. (You can also have a look at the `build.gradle` files on how the projects depend on another.)
 
 * Start Android Studio
@@ -94,7 +87,6 @@ the option to use the gradle wrapper
 
 
 ## 🤝 CONTRIBUTING
-
 ### Would you like to contribute code?
 1. [Fork Portfolio](https://github.com/tumurb/Portfolio/).
 2. Create a new branch ([using GitHub](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)) or the command `git checkout -b branch-name develop`).
@@ -105,7 +97,6 @@ the option to use the gradle wrapper
 
 
 ## 🚀 ANDROID JETPACK COMPONENTS
-
 | Android Foundation | Architecture Components | Behavior | UI |
 |:-------------------|:------------------------|:---------|:---------|
 |[Appcompat](https://bit.ly/2NuMMK8)|[Data Binding](https://bit.ly/2GIx8KE)|[Media & Playback](https://bit.ly/2IAx3tY)|[Animations and Transitions](https://bit.ly/2N029tx)|
@@ -120,7 +111,6 @@ the option to use the gradle wrapper
 ||||[Google Play Instant App](https://bit.ly/2OEkwVy)|
 
 ## 📦 THIRD PARTY LIBRARIES
-
 | Third party libraries | Firebase | Design tools |
 |:-------------------|:------------------------|:------------------------|
 |[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)|
@@ -139,11 +129,10 @@ the option to use the gradle wrapper
 |[Moshi](https://bit.ly/2TLu7za)|||
 |[InkPageIndicator](http://bit.ly/2CKlcnW)|||
 |[ShapeOfView](http://bit.ly/2MQdFtD)|||
+|[Toasty](http://bit.ly/2McNZYu)|||
 
 ## 📚 RESSOURCES
-
 <em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
-
 
 ### Android & Kotlin
 1. <a href="http://bit.ly/2ZTBbK8" target="_blank">Developing Android Apps with Kotlin by Google</a> 🔥🔥🔥
@@ -364,7 +353,6 @@ the option to use the gradle wrapper
 7. <a href="http://bit.ly/2yWqqKN" target="_blank">Introduction to Google Maps API for Android with Kotlin</a>
 
 ## Project Maintained By
-
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/pro.png?alt=media&token=f10a1d13-5ffb-46ed-9460-1bdb966365fe" align="left" width="60" hspace="10" vspace="10">
 <b>Tumur.B (Alex)</b><br/>
 Android Developer
