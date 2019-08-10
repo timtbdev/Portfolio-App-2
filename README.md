@@ -21,7 +21,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 </div>
 
 ## 📽️ VIDEO
-[![Little red ridning hood](http://i.imgur.com/7YTMFQp.png)](https://vimeo.com/3514904 "Little red riding hood - Click to Watch!")
+[![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2FScreen%20Shot%202019-08-10%20at%203.29.38%20PM.png?alt=media&token=9695ccf8-a35a-473e-a9bb-b9eb44846d9e)](https://youtu.be/oygCoirWDpk "Portfolio App 2.0 - Click to Watch!")
 
 ## 📸 SCREENSHOTS
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-01.jpg?alt=media&token=dec5b593-990b-4aa8-9453-a3d708e845d8" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-02.jpg?alt=media&token=7d6ebea0-5e1a-4801-b1e7-1019ca03538c" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-03.jpg?alt=media&token=58f21a26-89be-4dac-ae9c-e71942834652" width="250"/>
