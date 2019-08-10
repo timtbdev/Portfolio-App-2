@@ -3,7 +3,7 @@
 
 ## 📱 PORTFOLIO APP
 
-<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/app_icon_new.png?alt=media&token=2ccaa4c8-081d-40e4-9de9-cf08486b6c13" align="left" width="200" hspace="10" vspace="10">
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/app_icon_new.png?alt=media&token=2ccaa4c8-081d-40e4-9de9-cf08486b6c13" align="left" width="150" hspace="10" vspace="10">
 👋Hello, My name is Tumur Bazarragchaa and you can call me Alex. 
 I'm an Android Developer, specializing in the user interface, and with three years of experience in Kotlin, Java. 
 I've published two Kotlin Android apps and up to date with the latest technologies such as Android Jetpack Components and Kotlin Coroutines. I built this app to show my skills and passion for design and development. </br>
