@@ -139,5 +139,5 @@ object DbConstants {
     /** RESOURCE QUERIES ------------------------------------------------------------------------------------------------ */
     const val RESOURCE_DELETE = "DELETE FROM $RESOURCE"
     const val RESOURCE_GET_LIST_ITEMS = "SELECT * FROM $RESOURCE WHERE $OWNER_ID=:$ID ORDER BY $ORDERS"
-    const val RESOURCE_CHECK = "SELECT COUNT($ID) FROM $RESOURCE"
+    const val RESOURCE_CHECK = "SELECT COUNT($ID) FROM $RESOURCE WHERE $OWNER_ID=:$ID"
 }

@@ -13,6 +13,7 @@ import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentDialogAppInfoBinding
 import me.tumur.portfolio.repository.database.model.settings.AppModel
 import me.tumur.portfolio.utils.adapters.listItemAdapters.app.AppAdapter
+import timber.log.Timber
 
 class AppDialogFragment : DialogFragment() {
 
@@ -86,6 +87,7 @@ class AppDialogFragment : DialogFragment() {
 
         /** Observer for social adapter */
         val appInfoAdapterObserver = Observer<List<AppModel>> { data ->
+            Timber.tag("AppInfo").d(data.toString())
             data?.let {
                 appInfoAdapter.submitList(data)
             }

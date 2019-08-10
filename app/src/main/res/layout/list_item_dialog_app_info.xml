@@ -5,9 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type="android.view.View"/>
-        <variable
-                name="model"
-                type="me.tumur.portfolio.repository.database.model.settings.AppModel"/>
+        <variable name="item" type="me.tumur.portfolio.repository.database.model.settings.AppModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/list_item_dialog_app_info"
@@ -16,46 +14,22 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp">
 
-        <!-- App info dialog list item icon -->
-        <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/list_item_dialog_app_info_icon"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                app:appIcon="@{model.order}"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintHorizontal_weight="0.10"
-                app:layout_constraintBottom_toTopOf="@+id/list_item_dialog_app_info_divider"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/list_item_dialog_app_info_text_content"
-                tools:src="@drawable/ic_office"/>
-
-        <!-- App info dialog list item text content -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list_item_dialog_app_info_text_content"
-                android:layout_width="@dimen/dimen_0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                app:layout_constraintHorizontal_weight="0.90"
-                app:layout_constraintBottom_toTopOf="@+id/list_item_dialog_app_info_divider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/list_item_dialog_app_info_icon"
-                app:layout_constraintTop_toTopOf="parent">
-
             <!-- App info dialog list item title -->
             <TextView
                     android:id="@+id/list_item_dialog_app_info_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:textSize="@dimen/_12sdp"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textColor="@color/colorOnSurface"
-                    android:text="@{model.title}"
+                    android:text="@{item.title}"
+                    android:textAlignment="gravity"
+                    android:gravity="start"
                     app:layout_constraintBottom_toTopOf="@+id/list_item_dialog_app_info_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,20 +41,22 @@
                     android:id="@+id/list_item_dialog_app_info_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:textSize="@dimen/_10sdp"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textColor="@color/colorOnSurfaceSecondary"
-                    android:text="@{model.text}"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@{item.text}"
+                    android:textAlignment="gravity"
+                    android:gravity="start"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_dialog_app_info_divider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/list_item_dialog_app_info_title"
                     tools:text="@string/cd_avatar"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- App info dialog list item divider -->
         <View
@@ -91,7 +67,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/list_item_dialog_app_info_text_content"/>
+                app:layout_constraintTop_toBottomOf="@+id/list_item_dialog_app_info_text"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

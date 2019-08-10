@@ -412,11 +412,10 @@
                         android:orientation="vertical"
                         android:scrollbars="none"
                         android:nestedScrollingEnabled="false"
-                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_map"
+                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_resource"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_section_task"/>
-
 
                 <!-- Section resource -->
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -426,7 +425,7 @@
                         android:background="@color/colorPreferenceCategoryBackground"
                         android:elevation="@dimen/dimen_1dp"
                         app:screenFavoriteNotEmpty="@{model.resourceState}"
-                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_map"
+                        app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_resource"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/experience_item_detail_task">
@@ -462,6 +461,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:orientation="horizontal"
                         android:scrollbars="none"
                         app:screenFavoriteNotEmpty="@{model.resourceState}"

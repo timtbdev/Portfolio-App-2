@@ -13,7 +13,7 @@ class AppViewHolder private constructor(val binding: ListItemDialogAppInfoBindin
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(appInfoItem: AppModel){
-        binding.model = appInfoItem
+        binding.item = appInfoItem
         binding.executePendingBindings()
     }
 

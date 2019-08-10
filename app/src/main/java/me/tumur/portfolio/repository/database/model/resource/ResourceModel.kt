@@ -21,8 +21,8 @@ data class ResourceModel(
     @Json(name = DbConstants.TITLE) @ColumnInfo(name = DbConstants.TITLE) var title: String,
     @Json(name = DbConstants.IMAGE) @ColumnInfo(name = DbConstants.IMAGE) var image: String,
     @Json(name = DbConstants.IMAGE_DESCRIPTION) @ColumnInfo(name = DbConstants.IMAGE_DESCRIPTION) var imageDescription: String,
-    @Json(name = DbConstants.TEXT) @ColumnInfo(name = DbConstants.TEXT) var text: String,
-    @Json(name = DbConstants.DATE) @ColumnInfo(name = DbConstants.DATE) var date: Date,
+    @Json(name = DbConstants.DATE_FROM) @ColumnInfo(name = DbConstants.DATE_FROM) var dateFrom: Date,
+    @Json(name = DbConstants.DATE_TO) @ColumnInfo(name = DbConstants.DATE_TO) var dateTo: Date,
     @Json(name = DbConstants.URL) @ColumnInfo(name = DbConstants.URL) var url: String?,
     @Json(name = DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
 ) : Parcelable

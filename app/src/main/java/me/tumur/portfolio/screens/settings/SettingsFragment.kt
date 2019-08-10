@@ -42,6 +42,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
         /** Lock fragment in portrait screen orientation */
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
+        /** Set fragment state in shared view model */
+        sharedViewModel.setFragmentStateHolder(Constants.FRAGMENT_SETTINGS)
+
         /** Set name for shared preference */
         preferenceManager.sharedPreferencesName = Constants.APP
 
@@ -50,9 +53,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         /** Update summary and intent data of some preferences*/
         updatePreferenceSummary()
-
-        /** Set fragment state in shared view model */
-        sharedViewModel.setFragmentState(Constants.FRAGMENT_SETTINGS)
 
     }
 

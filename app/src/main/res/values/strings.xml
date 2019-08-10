@@ -41,6 +41,7 @@
 	<string name="cd_company">Company\'s name</string>
 	<string name="cd_location">Company\'s location</string>
     <string name="cd_task">Task</string>
+    <string name="cd_external_link">External link</string>
 	<string name="copy_right">You can get in touch with me \n ✉️ tumur.alex@gmail.com</string>
 	<string name="preference_key_display">display</string>
 	<string name="preference_key_dark_theme">dark_theme_mode</string>
@@ -91,7 +92,7 @@
 	<string name="task">Responsibilities</string>
     <string name="map">Map</string>
     <string name="info">Info</string>
-    <string name="resource">Resource</string>
+    <string name="resource">Links</string>
     <string name="transition_portfolio_item_image">portfolio_image</string>
     <string name="transition_portfolio_item_logo">portfolio_logo</string>
 </resources>

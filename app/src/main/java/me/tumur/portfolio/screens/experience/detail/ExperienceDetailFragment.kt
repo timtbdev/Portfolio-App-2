@@ -75,7 +75,7 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     private val args: ExperienceDetailFragmentArgs by navArgs()
 
     /** Map */
-    private lateinit var mMap: GoogleMap
+    private var mMap: GoogleMap? = null
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -127,8 +127,10 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     override fun onMapReady(googleMap: GoogleMap?) {
         googleMap?.let {
             mMap = it
-            mMap.uiSettings.isZoomControlsEnabled = true
-            mMap.setOnMarkerClickListener(this)
+            mMap?.let { map ->
+                map.uiSettings.isZoomControlsEnabled = true
+                map.setOnMarkerClickListener(this)
+            }
         }
     }
 
@@ -230,7 +232,9 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
                         val currentLatLng = LatLng(lat, long)
                         val title = getAddress(currentLatLng)
                         placeMarkerOnMap(title, currentLatLng)
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
+                        mMap?.let { map ->
+                            map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
+                        }
                     }
                 }
             }
@@ -258,7 +262,9 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     private fun placeMarkerOnMap(title: String, location: LatLng) {
         val markerOptions = MarkerOptions().position(location)
         markerOptions.title(title)
-        mMap.addMarker(markerOptions)
+        mMap?.let {
+            it.addMarker(markerOptions)
+        }
     }
 
     /** Get address */

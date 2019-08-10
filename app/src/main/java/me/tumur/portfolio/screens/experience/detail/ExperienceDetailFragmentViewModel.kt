@@ -72,9 +72,11 @@ class ExperienceDetailFragmentViewModel : ViewModel(), KoinComponent {
     private val _resourceState = MutableLiveData<FavoriteState>()
     val resourceState: LiveData<FavoriteState> = _resourceState
 
-    /** Check resource table */
-    val checkResourceTable = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
-        emitSource(resourceDao.check())
+    /** Experience item data */
+    val checkResourceTable = id.switchMap { id ->
+        liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
+            emitSource(resourceDao.check(id))
+        }
     }
 
     /** Location data */

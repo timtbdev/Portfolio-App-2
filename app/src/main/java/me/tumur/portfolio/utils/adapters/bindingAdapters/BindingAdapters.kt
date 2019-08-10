@@ -62,37 +62,35 @@ fun setWebView(web: WebView, url: String?) {
 @BindingAdapter("dateFrom", "dateTo", requireAll = true)
 fun TextView.setDateFromTo(dateFrom: Date?, dateTo: Date?) {
     if (dateFrom != null && dateTo != null) {
-        val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
-        val a = outputFormat.format(dateFrom)
-        val b = outputFormat.format(dateTo)
 
-        val outputFormatC = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val ac = outputFormatC.format(dateFrom)
-        val bc = outputFormatC.format(dateTo)
+        if (dateFrom.compareTo(dateTo) == 0) {
+            val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
+            val a = outputFormat.format(dateFrom)
+            text = a
+        } else {
 
-        val dateFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-        val start = LocalDate.parse(ac, dateFormatter)
-        val end = LocalDate.parse(bc, dateFormatter)
+            val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
+            val a = outputFormat.format(dateFrom)
+            val b = outputFormat.format(dateTo)
 
-        if (start != null && end != null) {
-            val diff: Long = ChronoUnit.MONTHS.between(start, end)
-            val diffYear = diff / 12
-            val diffMonth = diff % 12
-            val d = if (diffYear > 0) "$diffYear.$diffMonth year(s)" else "$diffMonth month(s)"
+            val outputFormatC = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+            val ac = outputFormatC.format(dateFrom)
+            val bc = outputFormatC.format(dateTo)
 
-            val result = "$a - $b | $d"
-            text = result
+            val dateFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val start = LocalDate.parse(ac, dateFormatter)
+            val end = LocalDate.parse(bc, dateFormatter)
+
+            if (start != null && end != null) {
+                val diff: Long = ChronoUnit.MONTHS.between(start, end)
+                val diffYear = diff / 12
+                val diffMonth = diff % 12
+                val d = if (diffYear > 0) "$diffYear.$diffMonth year(s)" else "$diffMonth month(s)"
+
+                val result = "$a - $b | $d"
+                text = result
+            }
         }
-    }
-}
-
-/** Single date */
-@BindingAdapter("singleDate")
-fun TextView.setSingleDate(date: Date?) {
-    if (date != null) {
-        val outputFormat = SimpleDateFormat("MMM yyyy", Locale.US)
-        val a = outputFormat.format(date)
-        text = a
     }
 }
 
@@ -122,18 +120,6 @@ fun ImageView.setCategoryIcon(icon: String?) {
                 else -> R.drawable.ic_category_structure
             }
         )
-    }
-}
-
-/** App icon */
-@BindingAdapter("appIcon")
-fun ImageView.setAppIcon(order: Int?) {
-    order?.let {
-        setImageResource( when(order){
-            1 -> R.drawable.ic_app_info_current
-            2 -> R.drawable.ic_app_info_update
-            else -> R.drawable.ic_app_info_date
-        })
     }
 }
 

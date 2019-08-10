@@ -30,7 +30,7 @@ abstract class ResourceDao {
 
     /** Check table */
     @Query(DbConstants.RESOURCE_CHECK)
-    abstract fun check(): LiveData<Int>
+    abstract fun check(id: String): LiveData<Int>
 
 
 }
