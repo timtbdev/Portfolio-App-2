@@ -51,13 +51,13 @@
                     android:id="@+id/list_item_portfolio_text_content"
                     android:layout_width="@dimen/dimen_0dp"
                     android:layout_height="@dimen/dimen_0dp"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/list_item_portfolio_image"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintWidth_percent="0.70">
+                    app:layout_constraintWidth_percent="0.68">
 
                 <!-- Portfolio logo and sub title -->
                 <androidx.constraintlayout.widget.ConstraintLayout

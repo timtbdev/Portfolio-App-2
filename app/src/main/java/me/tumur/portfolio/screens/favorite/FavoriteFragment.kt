@@ -57,7 +57,7 @@ class FavoriteFragment : Fragment() {
     private lateinit var binding: FragmentFavoriteBinding
 
     /** Action bar menu */
-    private lateinit var favoriteMenu: Menu
+    private var favoriteMenu: Menu? = null
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -156,9 +156,14 @@ class FavoriteFragment : Fragment() {
          * */
         val observerClickListener = Observer<FavoriteModel> {
             it?.let {
+                favoriteMenu?.let { menu ->
+                    val menuAction = menu.findItem(R.id.menu_delete_all)
+                    menuAction?.let { action ->
+                        onOptionsItemSelected(action)
+                    }
 
-                val menuAction = favoriteMenu.findItem(R.id.menu_delete_all)
-                onOptionsItemSelected(menuAction)
+                }
+
             }
         }
         viewModel.selectedItem.observe(viewLifecycleOwner, observerClickListener)

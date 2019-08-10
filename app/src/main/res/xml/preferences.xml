@@ -4,21 +4,6 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-            app:key="@string/preference_key_display"
-            app:title="@string/category_display_options"
-            app:layout="@layout/preference_category_title">
-
-        <SwitchPreferenceCompat
-                app:key="@string/preference_key_dark_theme"
-                app:title="@string/title_dark_theme"
-                app:summary="@string/summary_dark_theme"
-                app:icon="@drawable/ic_dark_theme"
-                app:defaultValue="false"
-                app:layout="@layout/preference_item_switch"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
             app:key="@string/preference_key_data"
             app:title="@string/category_data_options"
             app:layout="@layout/preference_category_title">

@@ -239,8 +239,6 @@
                         android:id="@+id/portfolio_item_detail_screenshot"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginEnd="@dimen/_10sdp"
                         android:orientation="horizontal"
                         android:scrollbars="none"
                         app:layout_constraintBottom_toTopOf="@id/section_text"
