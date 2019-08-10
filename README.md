@@ -33,9 +33,8 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 
 ## 📸 SCREENSHOTS
 
-<img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> 
-<img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/>
-<img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/github_placeholder.jpg?alt=media&token=0f502370-ca66-410d-89dc-1c0992774a43" width="200"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="400"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="400"/>
 
 ## 📐 ARCHITECTURE (MVVM)
 <img src="https://firebasestorage.googleapis.com/v0/b/personal-website-76368.appspot.com/o/architecture.png?alt=media&token=c66d207c-c9c4-4c17-9aaa-f78ca2c4e844"/>
