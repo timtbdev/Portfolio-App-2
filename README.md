@@ -1,6 +1,5 @@
 # Portfolio <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/kotlin.png?alt=media&token=7e4e5ac0-d101-4f97-9f20-c5e1cb36eafe" height="20"> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/jetpack.png?alt=media&token=da5e9d49-7495-4fe1-8e0d-43894e99f5d2" width="25"> [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 
-
 ## 📱 PORTFOLIO APP
 
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/app_icon_new.png?alt=media&token=2ccaa4c8-081d-40e4-9de9-cf08486b6c13" align="left" width="150" hspace="10" vspace="10">
@@ -8,7 +7,7 @@
 I'm an Android Developer, specializing in the user interface, and with three years of experience in Kotlin, Java. 
 I've published two Kotlin Android apps and up to date with the latest technologies such as Android Jetpack Components and Kotlin Coroutines. I built this app to show my skills and passion for design and development. </br>
 <a href="https://tumur.me/about.html" taget="_blank">You can read more about me here</a><br/></br>
-<i hspace="10">Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
+<i>Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
 
 <br/>
 <div style="display:flex;" >
