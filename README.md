@@ -6,7 +6,6 @@ I'm an Android Developer, specializing in the user interface, and with three yea
 I've published two Kotlin Android apps and up to date with the latest technologies such as Android Jetpack Components and Kotlin Coroutines. I built this app to show my skills and passion for design and development. </br>
 <a href="https://tumur.me/about.html" taget="_blank">You can read more about me here</a><br/></br>
 <i>Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
-
 <br/>
 <div style="display:flex;" >
 <a target="_blank" href="#">
@@ -20,7 +19,6 @@ I've published two Kotlin Android apps and up to date with the latest technologi
         src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/visit_web.png?alt=media&token=c2c56c2e-f891-4761-b430-731840eda9a0" />
 </a>
 </div>
-</br>
 
 ## 📽️ VIDEO
 [![Little red ridning hood](http://i.imgur.com/7YTMFQp.png)](https://vimeo.com/3514904 "Little red riding hood - Click to Watch!")
@@ -29,7 +27,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/>
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/s-01.jpg?alt=media&token=4116e8ed-8cb9-4e41-8f3b-1af8c6bfb89f" width="250"/>
 
-## 📐 ARCHITECTURE (MVVM)
+## 📐 ARCHITECTURE (MVVM + Single Activity + Single Soure Of Truth)
 <img src="https://firebasestorage.googleapis.com/v0/b/personal-website-76368.appspot.com/o/architecture.png?alt=media&token=c66d207c-c9c4-4c17-9aaa-f78ca2c4e844"/>
 
 ## 📊 FEATURES
