@@ -58,13 +58,13 @@ You can download the apk from:
 * JDK Version 1.7 & above
 * [Android SDK.](http://developer.android.com/sdk/index.html)
 * Android SDK Tools
-* Android SDK Build tools 28
+* Android SDK Build tools 29
 * Android Support Repository
 * Android Support library
 
 ## 🌐 BACKEND
 I used Firebase Cloud Storage as a backend server and Firebase Cloud Hosting and Functions for API.
-You can find the Firebase Cloud Functions code in TypeScript here.
+You can find the Firebase Cloud Functions code in TypeScript <a href="https://github.com/tumurb/Portfolio-App-Api">here</a>.
 
 ## 🔥 FIREBASE SETUP
 
@@ -138,230 +138,230 @@ the option to use the gradle wrapper
 |[Gradle Versions Plugin](https://bit.ly/1FtgBgA)|||
 |[Moshi](https://bit.ly/2TLu7za)|||
 |[InkPageIndicator](http://bit.ly/2CKlcnW)|||
-|[Android Youtube Player](http://bit.ly/2JGdO0E)|||
+|[ShapeOfView](http://bit.ly/2MQdFtD)|||
 
 ## 📚 RESSOURCES
 
-<em>A special thanks to the authors who shared following posts, they were a great resource during my learning 🙌🏻</em>
+<em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
 
 
 ### Android & Kotlin
-* <a href="http://bit.ly/2PFfPeS" target="_blank">Kotlin Bootcamp for Programmers by Google</a> 🔥
-* <a href="http://bit.ly/2USby97" target="_blank">Kotlin for Android Developers</a> 🔥
-* <a href="http://bit.ly/2ZTBbK8" target="_blank">Developing Android Apps with Kotlin by Google</a> 🔥🔥🔥
-* <a href="https://developer.android.com/guide" target="_blank">Android Documentation & Guides | All in one Place</a> 🔥🔥🔥
-* <a href="https://bit.ly/2Stik3R" target="_blank">Kotlin Null Safety Best Practices</a>
-* <a href="https://youtu.be/AiFBEH54Xpw" target="_blank">Scope Functions in Kotlin - let run apply also with</a>
+1. <a href="http://bit.ly/2ZTBbK8" target="_blank">Developing Android Apps with Kotlin by Google</a> 🔥🔥🔥
+2. <a href="https://developer.android.com/guide" target="_blank">Android Documentation & Guides | All in one Place</a> 🔥🔥🔥
+3. <a href="http://bit.ly/2PFfPeS" target="_blank">Kotlin Bootcamp for Programmers by Google</a> 🔥
+4. <a href="http://bit.ly/2USby97" target="_blank">Kotlin for Android Developers</a> 🔥
+5. <a href="https://bit.ly/2Stik3R" target="_blank">Kotlin Null Safety Best Practices</a>
+6. <a href="https://youtu.be/AiFBEH54Xpw" target="_blank">Scope Functions in Kotlin - let run apply also with</a>
 
 ### Architecture
-* <a href="http://bit.ly/2Gm8WuJ" target="_blank">Android Architecture: A Journey Looking For The Perfect Design</a>
-* <a href="https://youtu.be/cpLUVOx-4u8" target="_blank">Best practices for a modularized app</a> 🔥
+1. <a href="https://youtu.be/cpLUVOx-4u8" target="_blank">Best practices for a modularized app</a> 🔥
+2. <a href="http://bit.ly/2Gm8WuJ" target="_blank">Android Architecture: A Journey Looking For The Perfect Design</a>
 
 ### Navigation Controller: Single Activity
-* <a href="http://bit.ly/2GjyR6o" target="_blank">Principles of navigation</a>
-* <a href="http://bit.ly/2DmD5JF" target="_blank">Update UI components with NavigationUI</a>
-* <a href="http://bit.ly/2ZkepLl" target="_blank">Migrate to the Navigation component</a>
-* <a href="http://bit.ly/2JmrvDM" target="_blank">Android Jetpack: manage UI navigation with Navigation Controller (Google I/O '18)</a>
-* <a href="https://bit.ly/2Sz8mOu" target="_blank">Single Activity: Why, When, and How (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2TCJHhh" target="_blank">Advanced Navigation Sample</a>
-* <a href="http://bit.ly/2u6JFim" target="_blank">Master-Detail views with Navigation Components</a>
-* <a href="http://bit.ly/2ZHYCWU" target="_blank">Scroll your Bottom Navigation View away with 10 lines of code</a>
-* <a href="http://bit.ly/2FB4dWJ" target="_blank">Jetpack Navigation (Google I/O'19)</a> 🔥
-* <a href="http://bit.ly/2Y4x5gb" target="_blank">Add Shared Element Transitions between destinations</a> 🔥
+1. <a href="http://bit.ly/2FB4dWJ" target="_blank">Jetpack Navigation (Google I/O'19)</a> 🔥
+2. <a href="http://bit.ly/2Y4x5gb" target="_blank">Add Shared Element Transitions between destinations</a> 🔥
+3. <a href="http://bit.ly/2GjyR6o" target="_blank">Principles of navigation</a>
+4. <a href="http://bit.ly/2DmD5JF" target="_blank">Update UI components with NavigationUI</a>
+5. <a href="http://bit.ly/2ZkepLl" target="_blank">Migrate to the Navigation component</a>
+6. <a href="http://bit.ly/2JmrvDM" target="_blank">Android Jetpack: manage UI navigation with Navigation Controller (Google I/O '18)</a>
+7. <a href="https://bit.ly/2Sz8mOu" target="_blank">Single Activity: Why, When, and How (Android Dev Summit '18)</a>
+8. <a href="http://bit.ly/2TCJHhh" target="_blank">Advanced Navigation Sample</a>
+9. <a href="http://bit.ly/2u6JFim" target="_blank">Master-Detail views with Navigation Components</a>
+10. <a href="http://bit.ly/2ZHYCWU" target="_blank">Scroll your Bottom Navigation View away with 10 lines of code</a>
 
 ### Live Data & ViewModel
-* <a href="https://bit.ly/2To47cV" target="_blank">Fun with LiveData (Android Dev Summit '18)</a>
-* <a href="https://bit.ly/2Iy0psU" target="_blank">ViewModels and LiveData: Patterns + AntiPatterns</a>
-* <a href="https://bit.ly/2QslbgB" target="_blank">LiveData with SnackBar, Navigation and other events</a>
-* <a href="https://bit.ly/2H133oY" target="_blank">LiveData beyond the ViewModel</a>
-* <a href="http://bit.ly/2HmgTm0" target="_blank">LiveData with single events</a>
-* <a href="http://bit.ly/2HlOhtY" target="_blank">An Early Look at ViewModel SavedState</a>
-* <a href="http://bit.ly/2KP8MBx" target="_blank">Locale changes and the AndroidViewModel antipattern</a>
-* <a href="http://bit.ly/2xpufYx" target="_blank">ViewModels with Saved State, Jetpack Navigation, Data Binding and Coroutines</a> 🔥🔥🔥
-* <a href="http://bit.ly/302cv1v" target="_blank">Use Kotlin coroutines with Architecture components</a> 🔥🔥🔥
+1. <a href="http://bit.ly/2xpufYx" target="_blank">ViewModels with Saved State, Jetpack Navigation, Data Binding and Coroutines</a> 🔥🔥🔥
+2. <a href="http://bit.ly/302cv1v" target="_blank">Use Kotlin coroutines with Architecture components</a> 🔥🔥🔥
+3. <a href="https://bit.ly/2To47cV" target="_blank">Fun with LiveData (Android Dev Summit '18)</a>
+4. <a href="https://bit.ly/2Iy0psU" target="_blank">ViewModels and LiveData: Patterns + AntiPatterns</a>
+5. <a href="https://bit.ly/2QslbgB" target="_blank">LiveData with SnackBar, Navigation and other events</a>
+6. <a href="https://bit.ly/2H133oY" target="_blank">LiveData beyond the ViewModel</a>
+7. <a href="http://bit.ly/2HmgTm0" target="_blank">LiveData with single events</a>
+8. <a href="http://bit.ly/2HlOhtY" target="_blank">An Early Look at ViewModel SavedState</a>
+9. <a href="http://bit.ly/2KP8MBx" target="_blank">Locale changes and the AndroidViewModel antipattern</a>
 
 ### Room
-* <a href="https://bit.ly/2EjIbGp" target="_blank">The Room in the House (Android Dev Summit '18)</a>
-* <a href="https://bit.ly/2VskVgi" target="_blank">Course: Storing Data in Android with Room(Caster.io)</a> 🔥🔥🔥
-* <a href="https://bit.ly/2E8o51R" target="_blank">7 Pro-tips for Room</a> 🔥🔥🔥
-* <a href="https://bit.ly/2VhVU7g" target="_blank">Room 🔗 Coroutines</a> 🔥🔥🔥
-* <a href="http://bit.ly/2XuIHtW" target="_blank">Populating Room Database with WorkManager sample app</a>
-* <a href="http://bit.ly/2NA5ShV" target="_blank">Room Persistence Library with Coroutines</a>
-* <a href="http://bit.ly/2EFtKhd" target="_blank">Dependency Injection with KOIN to Androidx Jetpack</a>
-* <a href="http://bit.ly/2VZWOWp" target="_blank">Upgrade to Room 2.1.0-alpha05, use withTransaction</a>
-* <a href="http://bit.ly/2Gosajl" target="_blank">Defining data using Room entities</a>
-* <a href="http://bit.ly/2NdnpzV" target="_blank">Android Room Library Relations</a>
-* <a href="http://bit.ly/2IQEH1G" target="_blank">Android Room with nested relationships</a>
-* <a href="http://bit.ly/2Lnj2Qe" target="_blank">Room Persistence Library Part 2: Room Relationships</a>
+1. <a href="https://bit.ly/2VskVgi" target="_blank">Course: Storing Data in Android with Room(Caster.io)</a> 🔥🔥🔥
+2. <a href="https://bit.ly/2E8o51R" target="_blank">7 Pro-tips for Room</a> 🔥🔥🔥
+3. <a href="https://bit.ly/2VhVU7g" target="_blank">Room 🔗 Coroutines</a> 🔥🔥🔥
+4. <a href="https://bit.ly/2EjIbGp" target="_blank">The Room in the House (Android Dev Summit '18)</a>
+5. <a href="http://bit.ly/2XuIHtW" target="_blank">Populating Room Database with WorkManager sample app</a>
+6. <a href="http://bit.ly/2NA5ShV" target="_blank">Room Persistence Library with Coroutines</a>
+7. <a href="http://bit.ly/2EFtKhd" target="_blank">Dependency Injection with KOIN to Androidx Jetpack</a>
+8. <a href="http://bit.ly/2VZWOWp" target="_blank">Upgrade to Room 2.1.0-alpha05, use withTransaction</a>
+9. <a href="http://bit.ly/2Gosajl" target="_blank">Defining data using Room entities</a>
+10. <a href="http://bit.ly/2NdnpzV" target="_blank">Android Room Library Relations</a>
+11. <a href="http://bit.ly/2IQEH1G" target="_blank">Android Room with nested relationships</a>
+12. <a href="http://bit.ly/2Lnj2Qe" target="_blank">Room Persistence Library Part 2: Room Relationships</a>
 
 ### DataBinding
-* <a href="https://bit.ly/2ISEooO" target="_blank">Modern Data Binding(Droidcon Italy 2018)</a>
-* <a href="https://bit.ly/2EBBP6s" target="_blank">Level Up with Data Binding</a>
-* <a href="https://bit.ly/2SmwyUc" target="_blank">Data Binding — Lessons Learnt</a>
-* <a href="https://bit.ly/2UepFpM" target="_blank">Databinding in Kotlin World (Video)</a>
-* <a href="https://bit.ly/2BWoSCI" target="_blank">Databinding in Kotlin World (Slides)</a>
-* <a href="https://bit.ly/2VllLLQ" target="_blank">Leveraging Android Data Binding with Kotlin</a>
-* <a href="http://bit.ly/2SMq8he" target="_blank">Simplifying UI States with Kotlin Sealed Classes and Data Binding</a>
-* <a href="https://youtu.be/Iix75JjIbyI" target="_blank">Advanced Data Binding</a>
+1. <a href="https://bit.ly/2ISEooO" target="_blank">Modern Data Binding(Droidcon Italy 2018)</a>
+2. <a href="https://bit.ly/2EBBP6s" target="_blank">Level Up with Data Binding</a>
+3. <a href="https://bit.ly/2SmwyUc" target="_blank">Data Binding — Lessons Learnt</a>
+4. <a href="https://bit.ly/2UepFpM" target="_blank">Databinding in Kotlin World (Video)</a>
+5. <a href="https://bit.ly/2BWoSCI" target="_blank">Databinding in Kotlin World (Slides)</a>
+6. <a href="https://bit.ly/2VllLLQ" target="_blank">Leveraging Android Data Binding with Kotlin</a>
+7. <a href="http://bit.ly/2SMq8he" target="_blank">Simplifying UI States with Kotlin Sealed Classes and Data Binding</a>
+8. <a href="https://youtu.be/Iix75JjIbyI" target="_blank">Advanced Data Binding</a>
 
 ### Constraintlayouts & Motionlayout
-* <a href="http://bit.ly/2HRtAWJ" target="_blank">Introduction to MotionLayout (part I)</a> 🔥
-* <a href="http://bit.ly/2Uo9WHP" target="_blank">Introduction to MotionLayout (part II)</a> 🔥
-* <a href="http://bit.ly/2YMRY1c" target="_blank">Introduction to MotionLayout (part III)</a> 🔥
-* <a href="http://bit.ly/2FEjDsr" target="_blank">Introduction to MotionLayout (part IV)</a> 🔥
-* <a href="http://bit.ly/2IRbi7q" target="_blank">What's New in ConstraintLayout (Google I/O'19)</a> 🔥
-* <a href="https://bit.ly/2IJbBmD" target="_blank">ConstraintLayout Deep Dive (Android Dev Summit '18)</a>
-* <a href="https://bit.ly/2HybEj5" target="_blank">MotionLayout & ConstraintLayout 2.0 (Droidcon SF 2018)</a>
-* <a href="https://bit.ly/2HdY5Fx" target="_blank">Deep dive into MotionLayout (DroidKaigi 2019)</a>
-* <a href="https://bit.ly/2Sx8Cxl" target="_blank">MotionLayout / Constraint Layout Samples</a>
-* <a href="http://bit.ly/2IyzWLl" target="_blank">Pull the KeyTrigger with MotionLayout</a>
-* <a href="https://bit.ly/2tRcGPj" target="_blank">Android Fundamentals: ConstraintLayout(Pluralsight)</a> 🔥
-* <a href="https://bit.ly/2BXPQtE" target="_blank">Android Motion Layout tutorial – Collapsing view</a>
-* <a href="http://bit.ly/2TMqkBx" target="_blank">MotionLayout Tutorial For Android: Getting Started</a> 🔥
-* <a href="http://bit.ly/2ULnsRO" target="_blank">Say goodbye to LinearLayout with Flow</a>
-* <a href="http://bit.ly/2DG8DdL" target="_blank">Exploring MotionLayout: Touch Regions</a>
-* <a href="http://bit.ly/2Y19ZaR" target="_blank">ConstraintLayout 2.0</a>
-* <a href="http://bit.ly/2VIjChe" target="_blank">ConstraintLayout 2.0.0 alpha 5</a>
+1. <a href="http://bit.ly/2HRtAWJ" target="_blank">Introduction to MotionLayout (part I)</a> 🔥
+2. <a href="http://bit.ly/2Uo9WHP" target="_blank">Introduction to MotionLayout (part II)</a> 🔥
+3. <a href="http://bit.ly/2YMRY1c" target="_blank">Introduction to MotionLayout (part III)</a> 🔥
+4. <a href="http://bit.ly/2FEjDsr" target="_blank">Introduction to MotionLayout (part IV)</a> 🔥
+5. <a href="http://bit.ly/2IRbi7q" target="_blank">What's New in ConstraintLayout (Google I/O'19)</a> 🔥
+6. <a href="https://bit.ly/2tRcGPj" target="_blank">Android Fundamentals: ConstraintLayout(Pluralsight)</a> 🔥
+7. <a href="http://bit.ly/2TMqkBx" target="_blank">MotionLayout Tutorial For Android: Getting Started</a> 🔥
+8. <a href="https://bit.ly/2IJbBmD" target="_blank">ConstraintLayout Deep Dive (Android Dev Summit '18)</a>
+9. <a href="https://bit.ly/2HybEj5" target="_blank">MotionLayout & ConstraintLayout 2.0 (Droidcon SF 2018)</a>
+10. <a href="https://bit.ly/2HdY5Fx" target="_blank">Deep dive into MotionLayout (DroidKaigi 2019)</a>
+11. <a href="https://bit.ly/2Sx8Cxl" target="_blank">MotionLayout / Constraint Layout Samples</a>
+12. <a href="http://bit.ly/2IyzWLl" target="_blank">Pull the KeyTrigger with MotionLayout</a>
+13. <a href="https://bit.ly/2BXPQtE" target="_blank">Android Motion Layout tutorial – Collapsing view</a>
+14. <a href="http://bit.ly/2ULnsRO" target="_blank">Say goodbye to LinearLayout with Flow</a>
+15. <a href="http://bit.ly/2DG8DdL" target="_blank">Exploring MotionLayout: Touch Regions</a>
+16. <a href="http://bit.ly/2Y19ZaR" target="_blank">ConstraintLayout 2.0</a>
+17. <a href="http://bit.ly/2VIjChe" target="_blank">ConstraintLayout 2.0.0 alpha 5</a>
 
 ### Koin
-* <a href="https://bit.ly/2E7w3YP" target="_blank">Painless Android testing with Room & Koin</a>
-* <a href="https://bit.ly/2Nrr1e7" target="_blank">Unlock your Android ViewModel power with Koin</a>
-* <a href="https://bit.ly/2Vsvlwe" target="_blank">Course: Koin(Caster.io)</a> 🔥🔥🔥
+1. <a href="https://bit.ly/2Vsvlwe" target="_blank">Course: Koin(Caster.io)</a> 🔥🔥🔥
+2. <a href="https://bit.ly/2E7w3YP" target="_blank">Painless Android testing with Room & Koin</a>
+3. <a href="https://bit.ly/2Nrr1e7" target="_blank">Unlock your Android ViewModel power with Koin</a>
 
 ### Kotlin Coroutines
-* <a href="http://bit.ly/2Lec0yT" target="_blank">Coroutines on Android (part I): Getting the background</a> 🔥🔥🔥
-* <a href="http://bit.ly/2DM0VPe" target="_blank">Coroutines on Android (part II): Getting the background</a> 🔥🔥🔥
-* <a href="http://bit.ly/2YfQA6x" target="_blank">Coroutines on Android (part III): Getting the background</a> 🔥🔥🔥
-* <a href="https://bit.ly/2TpQ06Q" target="_blank">Android Suspenders (Android Dev Summit '18)</a>
-* <a href="https://bit.ly/2UdlyKy" target="_blank">Kotlin Coroutines: Beyond async/await (Droidcon NYC 2018)</a>
-* <a href="https://bit.ly/2XlDiW8" target="_blank">Android Coroutine Recipes</a>
-* <a href="https://bit.ly/2SrVt8Y" target="_blank">Kotlin Coroutines patterns & anti-patterns</a>
-* <a href="https://bit.ly/2SoioSe" target="_blank">Android Networking in 2019 — Retrofit with Kotlin’s Coroutines</a>
-* <a href="https://bit.ly/2EeC7Pg" target="_blank">The reason to avoid GlobalScope</a>
-* <a href="https://bit.ly/2BZIs0G" target="_blank">Launching a Kotlin Coroutine for immediate execution on the Main thread</a>
-* <a href="http://bit.ly/2tPu7zB" target="_blank">Coroutine Support in ViewModels</a>
-* <a href="http://bit.ly/2Ulwghe" target="_blank">Managing exceptions in nested coroutine scopes</a>
-* <a href="http://bit.ly/2PhfuPh" target="_blank">Cold flows, hot channels</a>
-* <a href="http://bit.ly/2NdFPjT" target="_blank">Understand Kotlin Coroutines on Android (Google I/O'19)</a> 🔥🔥🔥
+1. <a href="http://bit.ly/2Lec0yT" target="_blank">Coroutines on Android (part I): Getting the background</a> 🔥🔥🔥
+2. <a href="http://bit.ly/2DM0VPe" target="_blank">Coroutines on Android (part II): Getting the background</a> 🔥🔥🔥
+3. <a href="http://bit.ly/2YfQA6x" target="_blank">Coroutines on Android (part III): Getting the background</a> 🔥🔥🔥
+4. <a href="http://bit.ly/2NdFPjT" target="_blank">Understand Kotlin Coroutines on Android (Google I/O'19)</a> 🔥🔥🔥
+5. <a href="https://bit.ly/2TpQ06Q" target="_blank">Android Suspenders (Android Dev Summit '18)</a>
+6. <a href="https://bit.ly/2UdlyKy" target="_blank">Kotlin Coroutines: Beyond async/await (Droidcon NYC 2018)</a>
+7. <a href="https://bit.ly/2XlDiW8" target="_blank">Android Coroutine Recipes</a>
+8. <a href="https://bit.ly/2SrVt8Y" target="_blank">Kotlin Coroutines patterns & anti-patterns</a>
+9. <a href="https://bit.ly/2SoioSe" target="_blank">Android Networking in 2019 — Retrofit with Kotlin’s Coroutines</a>
+10. <a href="https://bit.ly/2EeC7Pg" target="_blank">The reason to avoid GlobalScope</a>
+11. <a href="https://bit.ly/2BZIs0G" target="_blank">Launching a Kotlin Coroutine for immediate execution on the Main thread</a>
+12. <a href="http://bit.ly/2tPu7zB" target="_blank">Coroutine Support in ViewModels</a>
+13. <a href="http://bit.ly/2Ulwghe" target="_blank">Managing exceptions in nested coroutine scopes</a>
+14. <a href="http://bit.ly/2PhfuPh" target="_blank">Cold flows, hot channels</a>
 
 ### WorkManager
-* <a href="http://bit.ly/2EkJyEF" target="_blank">Working with WorkManager (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2C7zRcw" target="_blank">Introducing WorkManager</a>
-* <a href="http://bit.ly/2EOKlxQ" target="_blank">WorkManager Basics</a>
-* <a href="http://bit.ly/2J8KuBA" target="_blank">Android Jetpack WorkManager Stable Release</a>
-* <a href="http://bit.ly/2ZQPBeb" target="_blank">Working With WorkManager in Android Like A Pro</a>
-* <a href="http://bit.ly/31OynPw" target="_blank">WorkManager meets Kotlin</a> 🔥
-* <a href="http://bit.ly/31OyF94" target="_blank">WorkManager Periodicity</a> 🔥
-* <a href="http://bit.ly/30IUxkW" target="_blank">Workout your tasks with WorkManager — Basics</a> 🔥
+1. <a href="http://bit.ly/31OynPw" target="_blank">WorkManager meets Kotlin</a> 🔥
+2. <a href="http://bit.ly/31OyF94" target="_blank">WorkManager Periodicity</a> 🔥
+3. <a href="http://bit.ly/30IUxkW" target="_blank">Workout your tasks with WorkManager — Basics</a> 🔥
+4. <a href="http://bit.ly/2EkJyEF" target="_blank">Working with WorkManager (Android Dev Summit '18)</a>
+5. <a href="http://bit.ly/2C7zRcw" target="_blank">Introducing WorkManager</a>
+6. <a href="http://bit.ly/2EOKlxQ" target="_blank">WorkManager Basics</a>
+7. <a href="http://bit.ly/2J8KuBA" target="_blank">Android Jetpack WorkManager Stable Release</a>
+8. <a href="http://bit.ly/2ZQPBeb" target="_blank">Working With WorkManager in Android Like A Pro</a>
 
 ### Animation
-* <a href="https://bit.ly/2VgM9WZ" target="_blank">Re-animation</a>
-* <a href="https://bit.ly/2E3z1NW" target="_blank">Using vector assets in Android apps</a>
-* <a href="https://bit.ly/2XjlQRW" target="_blank">Creating AnimatedVectorDrawables with Shape Shifter</a>
-* <a href="https://bit.ly/2m8PVCy" target="_blank">Introduction to MotionLayout</a>
-* <a href="https://bit.ly/2tAzToD" target="_blank">Defining motion paths in MotionLayout</a>
-* <a href="http://bit.ly/2XyB74m" target="_blank">Motional Intelligence: Build Smarter Animations (Google I/O'19)</a> 🔥
+1. <a href="http://bit.ly/2XyB74m" target="_blank">Motional Intelligence: Build Smarter Animations (Google I/O'19)</a> 🔥
+2. <a href="https://bit.ly/2VgM9WZ" target="_blank">Re-animation</a>
+3. <a href="https://bit.ly/2E3z1NW" target="_blank">Using vector assets in Android apps</a>
+4. <a href="https://bit.ly/2XjlQRW" target="_blank">Creating AnimatedVectorDrawables with Shape Shifter</a>
+5. <a href="https://bit.ly/2m8PVCy" target="_blank">Introduction to MotionLayout</a>
+6. <a href="https://bit.ly/2tAzToD" target="_blank">Defining motion paths in MotionLayout</a>
 
 ### Paging
-* <a href="https://bit.ly/2ElLa17" target="_blank">Android Jetpack: manage infinite lists with RecyclerView and Paging (Google I/O '18)</a> 🔥
-* <a href="https://bit.ly/2ThdlHV" target="_blank">Playing with Paging Library, Retrofit, Coroutines, Koin & Testing.</a>
-* <a href="http://bit.ly/2NylGBG" target="_blank">7 steps to implement Paging library in Android</a> 
-* <a href="http://bit.ly/2tEZ0qq" target="_blank">Simple intro for Rest-Api loading of json data into recyclerview using Kotlin</a>
-* <a href="http://bit.ly/2T2SU22" target="_blank">First Java MVVM project that includes: Paging library, ViewModel, LiveData, Room and Retrofit</a> 🔥
-* <a href="http://bit.ly/2JFSJTY" target="_blank">Paging Library for Android With Kotlin: Creating Infinite Lists</a> 🔥
-* <a href="http://bit.ly/2IIxaUC" target="_blank">The Movie Datbase</a>
-* <a href="http://bit.ly/2F1E16p" target="_blank">Android RecyclerView Tutorial with Kotlin</a>
-* <a href="https://youtu.be/8DPgwrV_9-g" target="_blank">Migrating to Paging library</a>
-* <a href="http://bit.ly/2XDtwRW" target="_blank">Android Data Binding + ListAdapter</a>
-* <a href="http://bit.ly/2KGTVsa" target="_blank">Android Data Binding + RecyclerView + Multiple View Type</a>
-* <a href="http://bit.ly/2xiJ1zS" target="_blank">Android Data Binding for RecyclerView With LiveData (Kotlin)</a>
-* <a href="http://bit.ly/2X94gDW" target="_blank">Android Paging Library with multiple view types</a> 
+1. <a href="https://bit.ly/2ElLa17" target="_blank">Android Jetpack: manage infinite lists with RecyclerView and Paging (Google I/O '18)</a> 🔥
+2. <a href="http://bit.ly/2T2SU22" target="_blank">First Java MVVM project that includes: Paging library, ViewModel, LiveData, Room and Retrofit</a> 🔥
+3. <a href="http://bit.ly/2JFSJTY" target="_blank">Paging Library for Android With Kotlin: Creating Infinite Lists</a> 🔥
+4. <a href="https://bit.ly/2ThdlHV" target="_blank">Playing with Paging Library, Retrofit, Coroutines, Koin & Testing.</a>
+5. <a href="http://bit.ly/2NylGBG" target="_blank">7 steps to implement Paging library in Android</a> 
+6. <a href="http://bit.ly/2tEZ0qq" target="_blank">Simple intro for Rest-Api loading of json data into recyclerview using Kotlin</a>
+7. <a href="http://bit.ly/2IIxaUC" target="_blank">The Movie Datbase</a>
+8. <a href="http://bit.ly/2F1E16p" target="_blank">Android RecyclerView Tutorial with Kotlin</a>
+9. <a href="https://youtu.be/8DPgwrV_9-g" target="_blank">Migrating to Paging library</a>
+10. <a href="http://bit.ly/2XDtwRW" target="_blank">Android Data Binding + ListAdapter</a>
+11. <a href="http://bit.ly/2KGTVsa" target="_blank">Android Data Binding + RecyclerView + Multiple View Type</a>
+12. <a href="http://bit.ly/2xiJ1zS" target="_blank">Android Data Binding for RecyclerView With LiveData (Kotlin)</a>
+13. <a href="http://bit.ly/2X94gDW" target="_blank">Android Paging Library with multiple view types</a> 
 
 ### ViewPager
-* <a href="http://bit.ly/2CoFJhD" target="_blank">ViewPager Tutorial: Getting Started in Kotlin</a>
-* <a href="http://bit.ly/2TM38n7" target="_blank">Exploring the View Pager 2</a>
+1. <a href="http://bit.ly/2CoFJhD" target="_blank">ViewPager Tutorial: Getting Started in Kotlin</a>
+2. <a href="http://bit.ly/2TM38n7" target="_blank">Exploring the View Pager 2</a>
 
 ### Android Accessibility
-* <a href="https://bit.ly/2Vu4RL3" target="_blank">Course: Android App Development: Accessibility(LinkedIn Learning)</a> 🔥🔥🔥
-* <a href="http://bit.ly/2H3QNUF" target="_blank">Making Android Accessibility Easy (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2J2xYAk" target="_blank">Demystifying Android Accessibility Development (Google I/O'19)</a>
+1. <a href="https://bit.ly/2Vu4RL3" target="_blank">Course: Android App Development: Accessibility(LinkedIn Learning)</a> 🔥🔥🔥
+2. <a href="http://bit.ly/2H3QNUF" target="_blank">Making Android Accessibility Easy (Android Dev Summit '18)</a>
+3. <a href="http://bit.ly/2J2xYAk" target="_blank">Demystifying Android Accessibility Development (Google I/O'19)</a>
 
 ### Preferences
-* <a href="http://bit.ly/2EnwVbQ" target="_blank">Preferential Practices for Preferences (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2Ne4yVm" target="_blank">How to Code a Settings Screen in an Android App</a>
+1. <a href="http://bit.ly/2EnwVbQ" target="_blank">Preferential Practices for Preferences (Android Dev Summit '18)</a>
+2. <a href="http://bit.ly/2Ne4yVm" target="_blank">How to Code a Settings Screen in an Android App</a>
 
 ### Material Design & Theme
-* <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
-* <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
-* <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
-* <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-* <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
-* <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
-* <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-* <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
-* <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
-* <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
-* <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
-* <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
-* <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
-* <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
-* <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
-* <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
-* <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
-* <a href="http://bit.ly/2KEbl8H" target="_blank">Dark Theme & Gesture Navigation (Google I/O'19)</a> 🔥
+1. <a href="http://bit.ly/2KEbl8H" target="_blank">Dark Theme & Gesture Navigation (Google I/O'19)</a> 🔥
+2. <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
+3. <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
+4. <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
+5. <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
+6. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
+7. <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+8. <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
+9. <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
+10. <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+11. <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
+12. <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
+13. <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
+14. <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
+15. <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
+16. <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
+17. <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
+18. <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
+19. <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
+20. <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
 
 ### Sample Data
-* <a href="http://bit.ly/2FfK7kS" target="_blank">What's new with ConstraintLayout and Android Studio design tools</a>
-* <a href="http://bit.ly/2O4z28Y" target="_blank">Tool Time – Part 1</a>
-* <a href="http://bit.ly/2O8fu3z" target="_blank">Tool Time – Part 2</a>
+1. <a href="http://bit.ly/2FfK7kS" target="_blank">What's new with ConstraintLayout and Android Studio design tools</a>
+2. <a href="http://bit.ly/2O4z28Y" target="_blank">Tool Time – Part 1</a>
+3. <a href="http://bit.ly/2O8fu3z" target="_blank">Tool Time – Part 2</a>
 
 ### Instant App
-* <a href="http://bit.ly/2Un8z8k" target="_blank">A simpler experience for instant apps</a>
-* <a href="http://bit.ly/2GlM4f6" target="_blank">5 tips for using showInstallPrompt in your instant experience</a>
+1. <a href="http://bit.ly/2Un8z8k" target="_blank">A simpler experience for instant apps</a>
+2. <a href="http://bit.ly/2GlM4f6" target="_blank">5 tips for using showInstallPrompt in your instant experience</a>
 
 ### Test
-* <a href="http://bit.ly/2Dj9YXW" target="_blank">Leveling Up Your UI Tests With MockWebServer</a>
+1. <a href="http://bit.ly/2Dj9YXW" target="_blank">Leveling Up Your UI Tests With MockWebServer</a>
 
 ### Firebase
-* <a href="http://bit.ly/2IHK8Ad" target="_blank">Building a “Serverless” RESTful API with Cloud Functions</a>
-* <a href="http://bit.ly/2IHKs1T" target="_blank">Build a Serverless full stack app using firebase cloud functions</a>
-* <a href="https://youtu.be/c93iGKyvh3o" target="_blank">How Firebase Cloud Functions support custom domains</a>
-* <a href="http://bit.ly/2KT4A3Z" target="_blank">Serve dynamic content and host microservices with Cloud Functions</a>
+1. <a href="http://bit.ly/2IHK8Ad" target="_blank">Building a “Serverless” RESTful API with Cloud Functions</a>
+2. <a href="http://bit.ly/2IHKs1T" target="_blank">Build a Serverless full stack app using firebase cloud functions</a>
+3. <a href="https://youtu.be/c93iGKyvh3o" target="_blank">How Firebase Cloud Functions support custom domains</a>
+4. <a href="http://bit.ly/2KT4A3Z" target="_blank">Serve dynamic content and host microservices with Cloud Functions</a>
 
 ### Network
-* <a href="http://bit.ly/2Zl30Lr" target="_blank">Making Android Networking Pretty with Kotlin Coroutines</a>
-* <a href="http://bit.ly/2Goeq8k" target="_blank">Improving App Network Architecture With Retrofit And Kotlin Coroutine Call Adapter</a>
-* <a href="http://bit.ly/2DozXgu" target="_blank">Sealed Classes Instead of Exceptions in Kotlin</a>
-* <a href="http://bit.ly/2XWnIUE" target="_blank">Suspend what you’re doing: Retrofit has now Coroutines support!</a>
+1. <a href="http://bit.ly/2Zl30Lr" target="_blank">Making Android Networking Pretty with Kotlin Coroutines</a>
+2. <a href="http://bit.ly/2Goeq8k" target="_blank">Improving App Network Architecture With Retrofit And Kotlin Coroutine Call Adapter</a>
+3. <a href="http://bit.ly/2DozXgu" target="_blank">Sealed Classes Instead of Exceptions in Kotlin</a>
+4. <a href="http://bit.ly/2XWnIUE" target="_blank">Suspend what you’re doing: Retrofit has now Coroutines support!</a>
 
 ### Retrofit & OkHttp, Moshi, ThreeTenABP
-* <a href="http://bit.ly/2UveUys" target="_blank">Android Networking with Coroutines and Retrofit</a>
-* <a href="http://bit.ly/2PlhtSH" target="_blank">Handle Complex Network Call with Kotlin Coroutine + Retrofit 2</a>
-* <a href="http://bit.ly/2GxfdVU" target="_blank">Retrofit Kotlin coroutines</a>
-* <a href="http://bit.ly/2DodcZW" target="_blank">Kotlin Coroutines—Handling concurrency like a pro (Retrofit2+Coroutines)</a>
-* <a href="http://bit.ly/2Vjj94w" target="_blank">Modern concurrency on Android with Kotlin</a>
-* <a href="https://youtu.be/jOeofbFWbsA" target="_blank">Networking the Kotlin way: Retrofit + Coroutines</a>
-* <a href="http://bit.ly/2SXOm8e" target="_blank">Migrate from GSON to Moshi in Android</a>
-* <a href="http://bit.ly/2GAXgG4" target="_blank">Modern DateTimes on Android</a>
+1. <a href="http://bit.ly/2UveUys" target="_blank">Android Networking with Coroutines and Retrofit</a>
+2. <a href="http://bit.ly/2PlhtSH" target="_blank">Handle Complex Network Call with Kotlin Coroutine + Retrofit 2</a>
+3. <a href="http://bit.ly/2GxfdVU" target="_blank">Retrofit Kotlin coroutines</a>
+4. <a href="http://bit.ly/2DodcZW" target="_blank">Kotlin Coroutines—Handling concurrency like a pro (Retrofit2+Coroutines)</a>
+5. <a href="http://bit.ly/2Vjj94w" target="_blank">Modern concurrency on Android with Kotlin</a>
+6. <a href="https://youtu.be/jOeofbFWbsA" target="_blank">Networking the Kotlin way: Retrofit + Coroutines</a>
+7. <a href="http://bit.ly/2SXOm8e" target="_blank">Migrate from GSON to Moshi in Android</a>
+8. <a href="http://bit.ly/2GAXgG4" target="_blank">Modern DateTimes on Android</a>
 
 ### Firebase
-* <a href="http://bit.ly/2YBre39" target="_blank">Perform simple and compound queries in Cloud Firestore</a>
-* <a href="http://bit.ly/30aPlGi" target="_blank">Firebase Auth REST API</a>
-* <a href="http://bit.ly/2FXvLW9" target="_blank">Writing conditions for Cloud Firestore Security Rules</a>
-* <a href="http://bit.ly/2xAjbYm" target="_blank">Five tips to secure your app (Firebase Summit 2018)</a>
-* <a href="http://bit.ly/2LDq3MU" target="_blank">Firestore Security Rules</a>
-* <a href="https://youtu.be/QEuu9X9L-MU" target="_blank">Introduction to Firebase security rules (Firecasts)</a> 🔥
+1. <a href="https://youtu.be/QEuu9X9L-MU" target="_blank">Introduction to Firebase security rules (Firecasts)</a> 🔥
+2. <a href="http://bit.ly/2YBre39" target="_blank">Perform simple and compound queries in Cloud Firestore</a>
+3. <a href="http://bit.ly/30aPlGi" target="_blank">Firebase Auth REST API</a>
+4. <a href="http://bit.ly/2FXvLW9" target="_blank">Writing conditions for Cloud Firestore Security Rules</a>
+5. <a href="http://bit.ly/2xAjbYm" target="_blank">Five tips to secure your app (Firebase Summit 2018)</a>
+6. <a href="http://bit.ly/2LDq3MU" target="_blank">Firestore Security Rules</a>
 
 ### Other
-* <a href="https://bit.ly/2H1f1yE" target="_blank">Kotlin + buildSrc for Better Gradle Dependency Management</a>
-* <a href="http://bit.ly/2TPA0LH" target="_blank">Sharing Gradle Configuration in Multi-Module Android Projects</a>
-* <a href="http://bit.ly/32FalXF" target="_blank">android-youtube-player, an open source alternative to the official YouTube Player API</a>
-* <a href="http://bit.ly/2GkcaQo" target="_blank">Android RecyclerView adding Search Filter</a>
-* <a href="http://bit.ly/2YeFPEQ" target="_blank">Responding to a Refresh Request</a>
-* <a href="http://bit.ly/32Iq0po" target="_blank">Create swipe views with tabs</a>
-* <a href="" target="_blank"></a>
+1. <a href="https://bit.ly/2H1f1yE" target="_blank">Kotlin + buildSrc for Better Gradle Dependency Management</a>
+2. <a href="http://bit.ly/2TPA0LH" target="_blank">Sharing Gradle Configuration in Multi-Module Android Projects</a>
+3. <a href="http://bit.ly/32FalXF" target="_blank">android-youtube-player, an open source alternative to the official YouTube Player API</a>
+4. <a href="http://bit.ly/2GkcaQo" target="_blank">Android RecyclerView adding Search Filter</a>
+5. <a href="http://bit.ly/2YeFPEQ" target="_blank">Responding to a Refresh Request</a>
+6. <a href="http://bit.ly/32Iq0po" target="_blank">Create swipe views with tabs</a>
+7. <a href="http://bit.ly/2yWqqKN" target="_blank">Introduction to Google Maps API for Android with Kotlin</a>
 
 ## Project Maintained By
 
