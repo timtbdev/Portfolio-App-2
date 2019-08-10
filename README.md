@@ -8,7 +8,7 @@
 I'm an Android Developer, specializing in the user interface, and with three years of experience in Kotlin, Java. 
 I've published two Kotlin Android apps and up to date with the latest technologies such as Android Jetpack Components and Kotlin Coroutines. I built this app to show my skills and passion for design and development. </br>
 <a href="https://tumur.me/about.html" taget="_blank">You can read more about me here</a><br/></br>
-<i>Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
+<i hspace="10">Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
 
 <br/>
 <div style="display:flex;" >
