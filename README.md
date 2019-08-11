@@ -59,7 +59,7 @@ You can download the apk from:
 
 ## 🌐 BACKEND
 I used Firebase Cloud Storage as a backend server and Firebase Cloud Hosting and Functions for API.
-You can find the Firebase Cloud Functions code in TypeScript <a href="https://github.com/tumurb/Portfolio-App-Api">here</a>.
+You can find the Firebase Cloud Functions code in TypeScript <a href="https://github.com/tumurb/Personal-Portoflio-API-Version-2.0">here</a>.
 
 ## 🔥 FIREBASE SETUP
 This project uses Firebases Analytics and Crashlytics, Cloud Firestore, Remote Config, etc. You will need to generate the configuration file (`google-services.json`) and copy it to your `/app` dir. See links below
