@@ -281,25 +281,31 @@ the option to use the gradle wrapper
 
 ### Material Design & Theme
 1. <a href="http://bit.ly/2KEbl8H" target="_blank">Dark Theme & Gesture Navigation (Google I/O'19)</a> 🔥
-2. <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
-3. <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
-4. <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
-5. <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
-6. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
-7. <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-8. <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
-9. <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
-10. <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-11. <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
-12. <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
-13. <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
-14. <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
-15. <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
-16. <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
-17. <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
-18. <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
-19. <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
-20. <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
+2. <a href="http://bit.ly/33rtvAG" target="_blank">Moving to the Dark Side: Dark Theme Recap</a> 🔥
+3. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a> 🔥
+4. <a href="http://bit.ly/2N8eHBv" target="_blank">Gesture Navigation: Going edge-to-edge</a> 🔥
+5. <a href="http://bit.ly/2Z32PTq" target="_blank">Gesture Navigation: Handling visual overlaps</a> 🔥
+6. <a href="http://bit.ly/2YKLbIZ" target="_blank">Gesture Navigation: A Backstory</a> 🔥
+7. <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
+8. <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
+9. <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
+10. <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
+11. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
+12. <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+13. <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
+14. <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
+15. <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+16. <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
+17. <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
+18. <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
+19. <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
+20. <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
+21. <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
+22. <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
+23. <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
+24. <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
+25. <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
+26. <a href="http://bit.ly/2Z4ARe3" target="_blank">Android: An Introduction to Material Design with Kotlin</a>
 
 ### Sample Data
 1. <a href="http://bit.ly/2FfK7kS" target="_blank">What's new with ConstraintLayout and Android Studio design tools</a>
