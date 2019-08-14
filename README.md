@@ -1,4 +1,4 @@
-# Portfolio <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/kotlin.png?alt=media&token=7e4e5ac0-d101-4f97-9f20-c5e1cb36eafe" height="20"> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/jetpack.png?alt=media&token=da5e9d49-7495-4fe1-8e0d-43894e99f5d2" width="25"> [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+# Portfolio <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/kotlin.png?alt=media&token=7e4e5ac0-d101-4f97-9f20-c5e1cb36eafe" height="20"> <img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/jetpack.png?alt=media&token=da5e9d49-7495-4fe1-8e0d-43894e99f5d2" width="25"> [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21) [![Ktlint](https://camo.githubusercontent.com/5652fd33142bf88d0f46018325126931fe65d01d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d2545322539442541342d4646343038312e737667)](https://github.com/pinterest/ktlint)
 
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/app_icon_new.png?alt=media&token=2ccaa4c8-081d-40e4-9de9-cf08486b6c13" align="left" width="150" hspace="10" vspace="10">
 👋Hello, My name is Tumur Bazarragchaa and you can call me Alex. 
@@ -130,6 +130,7 @@ the option to use the gradle wrapper
 |[InkPageIndicator](http://bit.ly/2CKlcnW)|||
 |[ShapeOfView](http://bit.ly/2MQdFtD)|||
 |[Toasty](http://bit.ly/2McNZYu)|||
+|[COIL](http://bit.ly/2MZRhy1)|||
 
 ## 📚 RESSOURCES
 <em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
@@ -173,15 +174,16 @@ the option to use the gradle wrapper
 1. <a href="https://bit.ly/2VskVgi" target="_blank">Course: Storing Data in Android with Room(Caster.io)</a> 🔥🔥🔥
 2. <a href="https://bit.ly/2E8o51R" target="_blank">7 Pro-tips for Room</a> 🔥🔥🔥
 3. <a href="https://bit.ly/2VhVU7g" target="_blank">Room 🔗 Coroutines</a> 🔥🔥🔥
-4. <a href="https://bit.ly/2EjIbGp" target="_blank">The Room in the House (Android Dev Summit '18)</a>
-5. <a href="http://bit.ly/2XuIHtW" target="_blank">Populating Room Database with WorkManager sample app</a>
-6. <a href="http://bit.ly/2NA5ShV" target="_blank">Room Persistence Library with Coroutines</a>
-7. <a href="http://bit.ly/2EFtKhd" target="_blank">Dependency Injection with KOIN to Androidx Jetpack</a>
-8. <a href="http://bit.ly/2VZWOWp" target="_blank">Upgrade to Room 2.1.0-alpha05, use withTransaction</a>
-9. <a href="http://bit.ly/2Gosajl" target="_blank">Defining data using Room entities</a>
-10. <a href="http://bit.ly/2NdnpzV" target="_blank">Android Room Library Relations</a>
-11. <a href="http://bit.ly/2IQEH1G" target="_blank">Android Room with nested relationships</a>
-12. <a href="http://bit.ly/2Lnj2Qe" target="_blank">Room Persistence Library Part 2: Room Relationships</a>
+4. <a href="http://bit.ly/2Z2rT10" target="_blank">Packing the Room: Pre-populate your database with this one method</a> 🔥🔥🔥
+5. <a href="https://bit.ly/2EjIbGp" target="_blank">The Room in the House (Android Dev Summit '18)</a>
+6. <a href="http://bit.ly/2XuIHtW" target="_blank">Populating Room Database with WorkManager sample app</a>
+7. <a href="http://bit.ly/2NA5ShV" target="_blank">Room Persistence Library with Coroutines</a>
+8. <a href="http://bit.ly/2EFtKhd" target="_blank">Dependency Injection with KOIN to Androidx Jetpack</a>
+9. <a href="http://bit.ly/2VZWOWp" target="_blank">Upgrade to Room 2.1.0-alpha05, use withTransaction</a>
+10. <a href="http://bit.ly/2Gosajl" target="_blank">Defining data using Room entities</a>
+11. <a href="http://bit.ly/2NdnpzV" target="_blank">Android Room Library Relations</a>
+12. <a href="http://bit.ly/2IQEH1G" target="_blank">Android Room with nested relationships</a>
+13. <a href="http://bit.ly/2Lnj2Qe" target="_blank">Room Persistence Library Part 2: Room Relationships</a>
 
 ### DataBinding
 1. <a href="https://bit.ly/2ISEooO" target="_blank">Modern Data Binding(Droidcon Italy 2018)</a>
@@ -281,25 +283,31 @@ the option to use the gradle wrapper
 
 ### Material Design & Theme
 1. <a href="http://bit.ly/2KEbl8H" target="_blank">Dark Theme & Gesture Navigation (Google I/O'19)</a> 🔥
-2. <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
-3. <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
-4. <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
-5. <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
-6. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
-7. <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-8. <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
-9. <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
-10. <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
-11. <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
-12. <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
-13. <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
-14. <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
-15. <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
-16. <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
-17. <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
-18. <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
-19. <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
-20. <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
+2. <a href="http://bit.ly/33rtvAG" target="_blank">Moving to the Dark Side: Dark Theme Recap</a> 🔥
+3. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a> 🔥
+4. <a href="http://bit.ly/2N8eHBv" target="_blank">Gesture Navigation: Going edge-to-edge</a> 🔥
+5. <a href="http://bit.ly/2Z32PTq" target="_blank">Gesture Navigation: Handling visual overlaps</a> 🔥
+6. <a href="http://bit.ly/2YKLbIZ" target="_blank">Gesture Navigation: A Backstory</a> 🔥
+7. <a href="http://bit.ly/2V7ZXGT" target="_blank">Material Design: Getting started</a>
+8. <a href="http://bit.ly/2Ej7Wqh" target="_blank">The Components of Material Design (Android Dev Summit '18)</a>
+9. <a href="http://bit.ly/2NAhzFb" target="_blank">Best Practices for Themes and Styles (Android Dev Summit '18)</a>
+10. <a href="http://bit.ly/2H5WXDD" target="_blank">Use Android Text Like a Pro (Android Dev Summit '18)</a>
+11. <a href="http://bit.ly/2JgPFj8" target="_blank">DayNight — Adding a dark theme to your app</a>
+12. <a href="http://bit.ly/2GlQaUn" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+13. <a href="http://bit.ly/2Gl4PiA" target="_blank">Seven best practices for inclusive product design</a>
+14. <a href="http://bit.ly/2Gwv2w6" target="_blank">WindowInsets — Listeners to layouts</a>
+15. <a href="https://youtu.be/92DL3-IQ_K0" target="_blank">Styles, Themes, Material Theming, Oh My!</a>
+16. <a href="http://bit.ly/2XPExfB" target="_blank">Playing with Material Design Transitions</a>
+17. <a href="http://bit.ly/2GPSJQ2" target="_blank">Mastering the Coordinator Layout</a>
+18. <a href="http://bit.ly/2J0Daq8" target="_blank">Integrate CoordinatorLayout + BottomNavigationView + Toolbar + TabLayout + ViewPager + Fragment + DrawerLayout</a>
+19. <a href="http://bit.ly/2PB0JqM" target="_blank">Google+ Android Sample App demo</a>
+20. <a href="http://bit.ly/2DFdagB" target="_blank">Android Design — Collapsing Toolbar: ScrollFlags Illustrated</a>
+21. <a href="http://bit.ly/2WfmVJt" target="_blank">AppBarLayout scroll behavior with layout_scrollFlags</a>
+22. <a href="http://bit.ly/2XXiHH6" target="_blank">Hands-on with Material Components for Android: Bottom Sheets</a>
+23. <a href="http://bit.ly/2PB6Kni" target="_blank">Full-screen BottomSheetDialog DIY</a>
+24. <a href="http://bit.ly/2PGo3Ub" target="_blank">Hands-on with Material Components for Android: Buttons</a>
+25. <a href="http://bit.ly/2DCT5ra" target="_blank">Android P — What’s New in Material Design</a>
+26. <a href="http://bit.ly/2Z4ARe3" target="_blank">Android: An Introduction to Material Design with Kotlin</a>
 
 ### Sample Data
 1. <a href="http://bit.ly/2FfK7kS" target="_blank">What's new with ConstraintLayout and Android Studio design tools</a>
