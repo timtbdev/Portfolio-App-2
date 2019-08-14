@@ -130,6 +130,7 @@ the option to use the gradle wrapper
 |[InkPageIndicator](http://bit.ly/2CKlcnW)|||
 |[ShapeOfView](http://bit.ly/2MQdFtD)|||
 |[Toasty](http://bit.ly/2McNZYu)|||
+|[COIL](http://bit.ly/2MZRhy1)|||
 
 ## 📚 RESSOURCES
 <em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
