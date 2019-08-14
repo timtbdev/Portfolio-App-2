@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:state_checked="true"
-            android:color="?attr/colorOnSurface" />
+            android:color="?attr/colorOnPrimarySurface"/>
     <item
             android:state_checked="false"
-            android:color="?attr/actionMenuTextColor" />
+            android:color="?attr/colorOnSurface"/>
 </selector>

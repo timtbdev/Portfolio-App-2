@@ -28,18 +28,18 @@
                 android:ellipsize="end"
                 android:textSize="@dimen/dimen_14sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorOnSurface"
+                android:textColor="?attr/colorOnPrimarySurface"
                 android:text="@{button.title}"
                 app:buttonIcon="@{button.type}"
                 app:cornerRadius="@dimen/_2sdp"
                 app:iconGravity="textStart"
                 app:iconSize="@dimen/_10sdp"
-                app:iconTint="@color/colorOnSurface"
+                app:iconTint="?attr/colorOnPrimarySurface"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="@color/colorOnSurface"
+                app:strokeColor="?attr/colorOnPrimarySurface"
                 tools:text="@string/cd_avatar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

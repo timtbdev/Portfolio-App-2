@@ -8,62 +8,62 @@
             android:strokeLineJoin="miter"
             android:strokeWidth="1"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M23,10L23,17"
             android:strokeLineJoin="miter"
             android:strokeWidth="1"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M7,4L4,1"
             android:strokeLineJoin="miter"
             android:strokeWidth="1"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M17,4L20,1"
             android:strokeLineJoin="miter"
             android:strokeWidth="1"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M8,20L8,23"
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M16,20L16,23"
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M12,2C8.134,2 5,5.134 5,9v11h14V9C19,5.134 15.866,2 12,2z"
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M9,7m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0"
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
-            android:fillColor="@color/colorOnSurfaceSecondary"
+            android:fillColor="?attr/colorOnSurface"
             android:strokeColor="#00000000"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M15,7m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0"
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
-            android:fillColor="@color/colorOnSurfaceSecondary"
+            android:fillColor="?attr/colorOnSurface"
             android:strokeColor="#00000000"
             android:strokeLineCap="square"/>
     <path
@@ -71,6 +71,6 @@
             android:strokeLineJoin="miter"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
 </vector>

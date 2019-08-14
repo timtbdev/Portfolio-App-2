@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
-            android:background="?attr/colorPrimaryVariant">
+            android:background="?attr/colorPrimary">
 
         <!-- Background-->
         <ImageView
@@ -34,7 +34,7 @@
                 android:contentDescription="@string/cd_avatar"
                 android:src="@drawable/profile"
                 android:scaleType="centerCrop"
-                app:civ_border_color="@color/colorBorder"
+                app:civ_border_color="?attr/colorOnSecondary"
                 app:civ_border_width="@dimen/_1sdp"
                 app:layout_constraintBottom_toTopOf="@+id/header_name"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_2sdp"
                 android:paddingTop="@dimen/_4sdp"
-                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textAppearance="?attr/textAppearanceHeadline1"
                 android:textSize="@dimen/dimen_16sp"
                 android:letterSpacing="0.05"
                 android:textAlignment="center"

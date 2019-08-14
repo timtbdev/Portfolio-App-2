@@ -37,8 +37,7 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:contentDescription="@{model.profile.imageDescription}"
-                app:imageUrl="@{model.profile.image}"
-                app:placeholder="@{@drawable/ic_profile_placeholder}"
+                app:imageLoad="@{model.profile.image}"
                 app:civ_border_width="@dimen/_1sdp"
                 app:civ_border_color="?attr/colorOnPrimary"
                 app:layout_constraintTop_toBottomOf="@+id/profile_bs_top_indicator"
@@ -53,14 +52,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textAppearance="?attr/textAppearanceHeadline1"
                 android:textSize="@dimen/dimen_16sp"
-                android:maxLines="1"
-                android:ellipsize="end"
                 app:layout_constraintTop_toTopOf="@+id/profile_bs_avatar"
                 app:layout_constraintStart_toEndOf="@+id/profile_bs_avatar"
                 app:layout_constraintBottom_toTopOf="@+id/profile_bs_email"
-                android:textColor="@color/colorBottomSheetPrimaryText"
+                android:textColor="?attr/colorOnPrimarySurface"
                 android:text="@{model.profile.name}"
                 tools:text="@tools:sample/full_names"/>
 
@@ -77,7 +74,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/profile_bs_name"
                 app:layout_constraintStart_toEndOf="@+id/profile_bs_avatar"
                 app:layout_constraintBottom_toBottomOf="@+id/profile_bs_avatar"
-                android:textColor="@color/colorBottomSheetSecondaryText"
+                android:textColor="?attr/colorOnSurface"
                 android:text="@{model.profile.email}"
                 tools:text="@tools:sample/full_names"/>
 
@@ -88,7 +85,7 @@
                 android:layout_height="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@color/colorBottomSheetBorder"
+                android:background="?attr/colorOnSecondary"
                 app:layout_constraintTop_toBottomOf="@+id/profile_bs_avatar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="@color/colorBottomSheetBorder"
+                    android:background="?attr/colorOnSecondary"
                     app:layout_constraintVertical_chainStyle="packed"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +147,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:textColor="@color/colorBottomSheetSecondaryText"
+                    android:textColor="?attr/colorOnSurface"
                     android:text="@string/copy_right"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

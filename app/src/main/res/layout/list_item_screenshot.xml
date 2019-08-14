@@ -24,7 +24,7 @@
                 android:focusable="true"
                 android:onClick="@{() -> clickListener.onClick(item)}"
                 android:contentDescription="@{item.imageDescription}"
-                app:imageUrl="@{item.url}"
+                app:imageLoad="@{item.url}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

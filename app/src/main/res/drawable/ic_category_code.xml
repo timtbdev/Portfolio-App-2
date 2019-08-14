@@ -7,30 +7,30 @@
             android:pathData="M15,3l8,0l0,18l-7,1l-8,-3l-7,2l0,-18l8,0"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M9,1h6v4h-6z"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M8,10l-2,2l2,2"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M16,10l2,2l-2,2"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
     <path
             android:pathData="M11,16L13,8"
             android:strokeWidth="2"
             android:fillColor="#00000000"
-            android:strokeColor="@color/colorOnSurfaceSecondary"
+            android:strokeColor="?attr/colorOnSurface"
             android:strokeLineCap="square"/>
 </vector>

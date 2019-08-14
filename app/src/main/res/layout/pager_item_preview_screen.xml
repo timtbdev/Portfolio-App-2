@@ -27,8 +27,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:progressTint="@color/progressBar"
-                android:indeterminateTint="@color/colorOnSurfaceSecondary"
+                android:progressTint="?attr/colorOnPrimarySurface"
+                android:indeterminateTint="?attr/colorOnPrimary"
                 android:indeterminate="true"/>
 
         <!-- Image -->
@@ -39,7 +39,7 @@
                 android:scaleType="centerCrop"
                 app:screenPreviewImage="@{model.state}"
                 android:contentDescription="@{model.data.imageDescription}"
-                app:imageUrl="@{model.data.url}"
+                app:imageLoad="@{model.data.url}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

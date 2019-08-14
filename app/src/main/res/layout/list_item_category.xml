@@ -41,7 +41,7 @@
                 android:textSize="@dimen/dimen_14sp"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:textColor="@color/colorOnSurfaceSecondary"
+                android:textColor="?attr/colorOnSurface"
                 android:text="@{item.title}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

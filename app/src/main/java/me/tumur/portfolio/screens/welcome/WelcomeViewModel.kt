@@ -1,7 +1,9 @@
 package me.tumur.portfolio.screens.welcome
 
+import android.content.Context
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
+import me.tumur.portfolio.R
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
 import me.tumur.portfolio.utils.constants.Constants
@@ -22,6 +24,7 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
 
     /** Repository */
     private val welcomeDao: WelcomeDao by inject()
+    private val context: Context by inject()
 
     /** Shared preferences */
     private var isFirstRun by Preference(Constants.FIRST, true)
@@ -42,6 +45,10 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
     /** Skip and next button clicked  */
     private val _onClicked = MutableLiveData<Boolean>().apply { value = false }
     val onClicked : LiveData<Boolean> = _onClicked
+
+    /** Skip and get started button text  */
+    private val _buttonText = MutableLiveData<String>().apply { value = context.getString(R.string.button_skip) }
+    val buttonText: LiveData<String> = _buttonText
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -79,5 +86,12 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
      */
     fun setOnClicked(status: Boolean) {
         _onClicked.apply { value = status }
+    }
+
+    /**
+     * Set skip and get started button text
+     */
+    fun setButtonText(text: String) {
+        _buttonText.apply { value = text }
     }
 }

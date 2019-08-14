@@ -84,7 +84,7 @@
 
             <CustomAttribute
                     motion:attributeName="textSize"
-                    motion:customFloatValue="18.0"/>
+                    motion:customFloatValue="20.0"/>
 
         </Constraint>
 

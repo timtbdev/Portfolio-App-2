@@ -18,6 +18,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|start"
                 android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/dimen_18sp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
                 android:paddingStart="@dimen/_10sdp"
@@ -25,22 +26,10 @@
                 android:lineSpacingExtra="@dimen/dimen_12sp"
                 android:text="@{item.about.text}"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/about_item_decorator"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="@string/cd_avatar"/>
-
-        <!-- About decorator -->
-        <View
-                android:id="@+id/about_item_decorator"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_1dp"
-                android:background="@color/colorBottomSheetIndicator"
-                android:elevation="@dimen/_5sdp"
-                app:layout_constraintTop_toBottomOf="@+id/about_list_item_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

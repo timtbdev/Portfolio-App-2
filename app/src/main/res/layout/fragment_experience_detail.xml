@@ -46,7 +46,7 @@
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
                             android:contentDescription="@{model.data.imageDescription}"
-                            app:imageUrl="@{model.data.coverImage}"/>
+                            app:imageLoad="@{model.data.coverImage}"/>
 
                 </com.github.florent37.shapeofview.shapes.ArcView>
 
@@ -86,7 +86,7 @@
                                 android:layout_height="match_parent"
                                 android:scaleType="centerCrop"
                                 android:contentDescription="@{model.data.logoDescription}"
-                                app:imageUrl="@{model.data.logo}"/>
+                                app:imageLoad="@{model.data.logo}"/>
                     </com.github.florent37.shapeofview.shapes.RoundRectView>
 
 
@@ -130,18 +130,16 @@
                                     app:layout_constraintHorizontal_weight="0.10"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:tint="@color/colorOnSurface"/>
+                                    app:tint="?attr/colorOnPrimarySurface"/>
 
                             <!-- Job title -->
                             <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/experience_item_detail_job_title"
                                     android:layout_width="@dimen/dimen_0dp"
                                     android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:textAppearance="?attr/textAppearanceHeadline5"
+                                    android:textAppearance="?attr/textAppearanceHeadline1"
                                     android:textSize="@dimen/dimen_14sp"
-                                    android:textColor="@color/colorOnSurface"
+                                    android:textColor="?attr/colorOnPrimarySurface"
                                     android:text="@{model.data.title}"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -175,7 +173,7 @@
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:srcCompat="@drawable/ic_office"
-                                    app:tint="@color/colorOnSurfaceSecondary"/>
+                                    app:tint="?attr/colorOnSurface"/>
 
                             <!-- Company name -->
                             <androidx.appcompat.widget.AppCompatTextView
@@ -187,7 +185,7 @@
                                     android:textAlignment="textStart"
                                     android:textAppearance="?attr/textAppearanceBody1"
                                     android:textSize="@dimen/dimen_14sp"
-                                    android:textColor="@color/colorOnSurfaceSecondary"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:text="@{model.data.company}"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -222,7 +220,7 @@
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:srcCompat="@drawable/ic_map"
-                                    app:tint="@color/colorOnSurfaceSecondary"/>
+                                    app:tint="?attr/colorOnSurface"/>
 
                             <!-- Location name -->
                             <androidx.appcompat.widget.AppCompatTextView
@@ -234,7 +232,7 @@
                                     android:textAlignment="textStart"
                                     android:textAppearance="?attr/textAppearanceBody1"
                                     android:textSize="@dimen/dimen_14sp"
-                                    android:textColor="@color/colorOnSurfaceSecondary"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:text="@{model.data.location}"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -268,7 +266,7 @@
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:srcCompat="@drawable/ic_date"
-                                    app:tint="@color/colorOnSurfaceSecondary"/>
+                                    app:tint="?attr/colorOnSurface"/>
 
                             <!-- Period -->
                             <androidx.appcompat.widget.AppCompatTextView
@@ -280,7 +278,7 @@
                                     android:textAlignment="textStart"
                                     android:textAppearance="?attr/textAppearanceBody1"
                                     android:textSize="@dimen/dimen_14sp"
-                                    android:textColor="@color/colorOnSurfaceSecondary"
+                                    android:textColor="?attr/colorOnSurface"
                                     app:dateFrom="@{model.data.dateFrom}"
                                     app:dateTo="@{model.data.dateTo}"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -316,7 +314,7 @@
                         android:id="@+id/experience_item_detail_section_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:background="@color/colorHeaderBackground"
                         android:elevation="@dimen/dimen_1dp"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_info"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -332,12 +330,10 @@
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_10sdp"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textAllCaps="true"
                             android:textSize="@dimen/dimen_14sp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@string/info"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -359,7 +355,7 @@
                         android:textSize="@dimen/dimen_14sp"
                         android:maxLines="1"
                         android:ellipsize="end"
-                        android:textColor="@color/colorPreferenceCategoryTitle"
+                        android:textColor="?attr/colorOnPrimarySurface"
                         android:text="@{model.data.info}"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_section_task"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -371,7 +367,7 @@
                         android:id="@+id/experience_item_detail_section_task"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:background="@color/colorHeaderBackground"
                         android:elevation="@dimen/dimen_1dp"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_task"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -387,12 +383,10 @@
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_10sdp"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textAllCaps="true"
                             android:textSize="@dimen/dimen_14sp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@string/task"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -422,7 +416,7 @@
                         android:id="@+id/experience_item_detail_section_resource"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:background="@color/colorHeaderBackground"
                         android:elevation="@dimen/dimen_1dp"
                         app:screenFavoriteNotEmpty="@{model.resourceState}"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_resource"
@@ -439,12 +433,10 @@
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_10sdp"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textAllCaps="true"
                             android:textSize="@dimen/dimen_14sp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@string/resource"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -473,7 +465,7 @@
                         android:id="@+id/experience_item_detail_section_map"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorPreferenceCategoryBackground"
+                        android:background="@color/colorHeaderBackground"
                         android:elevation="@dimen/dimen_1dp"
                         app:layout_constraintBottom_toTopOf="@+id/experience_item_detail_map"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -489,12 +481,10 @@
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingEnd="@dimen/_10sdp"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textAllCaps="true"
                             android:textSize="@dimen/dimen_14sp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textColor="@color/colorPreferenceCategoryTitle"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@string/map"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"

@@ -11,21 +11,21 @@
             <item
                     android:id="@+id/menu_search"
                     android:icon="@drawable/ic_menu_search"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_search" />
 
             <item
                     android:id="@+id/menu_refresh"
                     android:icon="@drawable/ic_menu_refresh"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_refresh" />
 
             <item
                     android:id="@+id/menu_favorite"
                     android:icon="@drawable/ic_menu_top_favorite"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_favorite"/>
         </menu>

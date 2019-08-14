@@ -1,16 +1,12 @@
 package me.tumur.portfolio.utils.adapters.bindingAdapters
 
-import android.graphics.drawable.Drawable
-import android.webkit.WebView
+import android.content.res.Configuration
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
-import androidx.core.view.doOnLayout
 import androidx.databinding.BindingAdapter
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
+import coil.api.load
+import coil.transform.GrayscaleTransformation
+import coil.transform.RoundedCornersTransformation
 import com.google.android.material.button.MaterialButton
 import me.tumur.portfolio.R
 import me.tumur.portfolio.utils.constants.BsConstants
@@ -23,40 +19,24 @@ import java.util.*
 
 
 /** Load image from the network or cache with placeholder and error images */
-@BindingAdapter("imageUrl", "placeholder", requireAll = false)
-fun setImage(imageView: ImageView, url: String?, placeholderDrawable: Drawable?) {
-
-    // Build requestOptions for Glide
-    val requestOptions = RequestOptions()
-    if (placeholderDrawable != null) requestOptions.placeholder(placeholderDrawable)
-
-    // Load image into imageView
-    if (url != null)
-        imageView.doOnLayout {
-            Glide.with(imageView.context)
-                .load(url)
-                .centerCrop()
-                .placeholder(R.color.colorPreferenceItemBorder)
-                .fitCenter()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imageView)
-        }
-}
-
-/** SVG Icon */
-@BindingAdapter("icon")
-fun setSvgIcon(view: ImageView, @DrawableRes icon: Int) {
-    view.setImageResource(icon)
-}
-
-/** Load web view url */
-@BindingAdapter("webUrl")
-fun setWebView(web: WebView, url: String?) {
+@BindingAdapter("imageLoad")
+fun loadImage(imageView: ImageView, url: String?) {
     url?.let {
-        web.loadUrl(url)
+        imageView.load(it) {
+            crossfade(true)
+            placeholder(R.color.colorBorder)
+            when (imageView.context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+                Configuration.UI_MODE_NIGHT_NO -> {
+                    transformations(RoundedCornersTransformation(0.0F))
+                } // Night mode is not active, we're using the light theme
+                Configuration.UI_MODE_NIGHT_YES -> {
+                    transformations(GrayscaleTransformation())
+                } // Night mode is active, we're using dark theme
+            }
+        }
     }
-}
 
+}
 
 /** Date from and date to */
 @BindingAdapter("dateFrom", "dateTo", requireAll = true)
@@ -136,18 +116,5 @@ fun MaterialButton.setButtonIcon(type: String?) {
                 else -> R.drawable.ic_pdf
             }
         )
-    }
-}
-
-@BindingAdapter("buttonBackground")
-fun MaterialButton.setButtonBackground(type: String?) {
-    type?.let {
-        backgroundTintList = when (type) {
-            Constants.BUTTON_GITHUB -> ContextCompat.getColorStateList(context, R.color.button_github_color)
-            Constants.BUTTON_GOOGLE -> ContextCompat.getColorStateList(context, R.color.button_google_color)
-            Constants.BUTTON_WEB -> ContextCompat.getColorStateList(context, R.color.button_web_color)
-            Constants.BUTTON_TWITTER -> ContextCompat.getColorStateList(context, R.color.button_twitter_color)
-            else -> ContextCompat.getColorStateList(context, R.color.button_youtube_color)
-        }
     }
 }

@@ -5,7 +5,7 @@
             android:id="@+id/menu_search"
             android:icon="@drawable/ic_menu_search"
             android:visible="false"
-            app:iconTint="@color/colorBottomSheetPrimaryText"
+            app:iconTint="?attr/colorOnPrimarySurface"
             app:showAsAction="collapseActionView|withText"
             android:title="@string/menu_search"/>
 </menu>

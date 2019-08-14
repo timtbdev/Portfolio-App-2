@@ -29,14 +29,14 @@
             <item
                     android:id="@+id/menu_share"
                     android:icon="@drawable/ic_menu_share"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView"
                     android:title="@string/menu_share"/>
 
             <item
                     android:id="@+id/menu_rate"
                     android:icon="@drawable/ic_menu_rate"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView"
                     android:title="@string/menu_rate"/>
         </menu>

@@ -11,8 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager.widget.ViewPager
-import kotlinx.android.synthetic.main.button_welcome_screen.view.*
 import kotlinx.android.synthetic.main.screen_welcome.view.*
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentWelcomeBinding
@@ -85,7 +83,18 @@ class WelcomeFragment : Fragment() {
             this.model = viewModel
         }
 
+        /** Set observer */
+        setObservers()
 
+        /** Set view pager */
+        setWelcomeScreenViewPager()
+
+        return binding.root
+    }
+
+    /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    private fun setObservers() {
         /** Observer for skip and next button onClick ---------------------------------------------------------------*/
         val buttonStateObserver = Observer<Boolean> { state ->
             if(state){
@@ -106,13 +115,18 @@ class WelcomeFragment : Fragment() {
         }
         viewModel.onClicked.observe(viewLifecycleOwner, buttonStateObserver)
 
-        /** Set view pager */
-        setWelcomeScreenViewPager()
-
-        return binding.root
+        /** Observer for skip and next button text ---------------------------------------------------------------*/
+        val observerCurrentItem = Observer<Int> { current ->
+            val textGetStarted = this.getString(R.string.button_get_started)
+            val textSkip = this.getString(R.string.button_skip)
+            if (current == welcomePagerAdapter.count - 1) {
+                viewModel.setButtonText(textGetStarted)
+            } else if (viewModel.buttonText.value != textSkip) {
+                viewModel.setButtonText(textSkip)
+            }
+        }
+        viewModel.currentItem.observe(viewLifecycleOwner, observerCurrentItem)
     }
-
-    /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /**
      * Setup welcome screen's view pager with adapter
@@ -121,8 +135,6 @@ class WelcomeFragment : Fragment() {
 
         /** View pager */
         val viewPager = binding.welcomeScreen.welcome_screen_view_pager
-        /** Skip button */
-        val skipButton = binding.welcomeScreen.welcome_screen_btn
         /** View pager's indicator */
         val viewPagerIndicator = binding.welcomeScreen.welcome_screen_page_indicator
 
@@ -131,8 +143,6 @@ class WelcomeFragment : Fragment() {
         viewPager.adapter = welcomePagerAdapter
         /** Set view pager' indicator */
         viewPagerIndicator.setViewPager(viewPager)
-        /** Setup button as Viewpager change listener to motion layout */
-        viewPager.addOnPageChangeListener(skipButton as ViewPager.OnPageChangeListener)
 
         /**
          * Setup view pager's back button

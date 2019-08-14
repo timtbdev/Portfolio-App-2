@@ -44,8 +44,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/splash_screen_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:progressTint="@color/progressBar"
-                android:indeterminateTint="@color/colorOnSurfaceSecondary"
+                android:progressTint="@color/colorHeaderBackground"
+                android:indeterminateTint="?attr/colorOnSurface"
                 android:indeterminate="true"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

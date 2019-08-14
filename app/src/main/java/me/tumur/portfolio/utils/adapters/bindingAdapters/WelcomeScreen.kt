@@ -1,7 +1,5 @@
 package me.tumur.portfolio.utils.adapters.bindingAdapters
 
-import android.view.View
-import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
@@ -9,27 +7,8 @@ import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import androidx.viewpager.widget.ViewPager
 import me.tumur.portfolio.R
 import me.tumur.portfolio.screens.welcome.WelcomeViewModel
-import me.tumur.portfolio.utils.state.ScreenState
-import me.tumur.portfolio.utils.state.WelcomeScreen
 
 /** BINDING ADAPTERS FOR WELCOME SCREEN */
-
-/** Welcome Screen */
-@BindingAdapter("screenWelcome")
-fun setScreenWelcome(view: View, screen : ScreenState?) {
-    val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
-    val fadeOut = AnimationUtils.loadAnimation(view.context, R.anim.fade_out)
-    when(screen != null && screen is WelcomeScreen){
-        true -> {
-            view.visibility = View.VISIBLE
-            view.startAnimation(fadeIn)
-        }
-        false -> {
-            view.visibility = View.GONE
-            view.startAnimation(fadeOut)
-        }
-    }
-}
 
 /** Pager Adapter Icon */
 @BindingAdapter("order", "scrolledPagerItem", "pagerPosition")

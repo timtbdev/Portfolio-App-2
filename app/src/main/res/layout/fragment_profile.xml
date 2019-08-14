@@ -49,8 +49,10 @@
                     android:onClick="@{() -> model.setShowProfileBottomsheet(true)}"
                     app:layout_behavior=".utils.fabButton.ScrollAwareFABBehavior"
                     app:srcCompat="@drawable/ic_read_more"
+                    app:tint="@null"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:elevation="@dimen/_5sdp"
                     app:maxImageSize="@dimen/_16sdp"
-                    app:backgroundTint="@color/colorPrimary"
                     app:layout_anchor="@+id/screen_profile_about_content"
                     app:layout_anchorGravity="bottom|end"/>
 

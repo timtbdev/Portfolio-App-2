@@ -17,6 +17,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@android:id/title"
             app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/colorHeaderTitle"
             tools:src="@drawable/ic_privacy"/>
 
     <!-- Preference title -->
@@ -34,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@android:id/icon"
             app:layout_constraintBottom_toTopOf="@android:id/summary"
-            android:textColor="@color/colorOnSurface"
+            android:textColor="?attr/colorOnPrimarySurface"
             tools:text="Title"/>
 
     <!-- Preference summary -->
@@ -51,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@android:id/title"
             app:layout_constraintStart_toEndOf="@android:id/icon"
             app:layout_constraintBottom_toTopOf="@+id/divider"
-            android:textColor="@color/colorOnSurfaceSecondary"
+            android:textColor="@color/colorHeaderTitle"
             tools:text="Summary"/>
 
     <!-- Bottom divider -->
@@ -59,7 +60,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_1dp"
-            android:background="@color/colorPreferenceItemBorder"
+            android:background="@color/colorHeaderBackground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

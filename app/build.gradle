@@ -126,8 +126,7 @@ dependencies {
     implementation deps.okhttp.core
     implementation deps.okhttp.logging
     implementation deps.okhttp.okio
-    implementation deps.glide.core
-    kapt deps.glide.compiler
+    implementation deps.coil.core
     implementation deps.stetho.core
     implementation deps.stetho.okhttp
     // Utilities

@@ -1,15 +1,15 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp"
         android:viewportHeight="48" android:viewportWidth="48" android:width="24dp">
-    <path android:fillColor="?attr/actionMenuTextColor"
+    <path android:fillColor="?attr/colorOnSurface"
           android:pathData="M18,4h12v4h2V3c0,-0.552 -0.448,-1 -1,-1H17c-0.552,0 -1,0.448 -1,1v5h2V4z"/>
-    <path android:fillColor="?attr/actionMenuTextColor"
+    <path android:fillColor="?attr/colorOnSurface"
           android:pathData="M29,36c0,0.552 -0.448,1 -1,1h-8c-0.552,0 -1,-0.448 -1,-1v-2h-8v12h26V34h-8V36z"/>
-    <path android:fillColor="?attr/actionMenuTextColor" android:pathData="M39,46h4c1.105,0 2,-0.895 2,-2V34h-6V46z"/>
-    <path android:fillColor="?attr/actionMenuTextColor" android:pathData="M3,44c0,1.105 0.895,2 2,2h4V34H3V44z"/>
-    <path android:fillColor="?attr/actionMenuTextColor"
+    <path android:fillColor="?attr/colorOnSurface" android:pathData="M39,46h4c1.105,0 2,-0.895 2,-2V34h-6V46z"/>
+    <path android:fillColor="?attr/colorOnSurface" android:pathData="M3,44c0,1.105 0.895,2 2,2h4V34H3V44z"/>
+    <path android:fillColor="?attr/colorOnSurface"
           android:pathData="M1,12v19c0,0.552 0.448,1 1,1h7V10H3C1.895,10 1,10.895 1,12z"/>
-    <path android:fillColor="?attr/actionMenuTextColor"
+    <path android:fillColor="?attr/colorOnSurface"
           android:pathData="M11,32h8v-2c0,-0.552 0.448,-1 1,-1h8c0.552,0 1,0.448 1,1v2h8V10H11V32z"/>
-    <path android:fillColor="?attr/actionMenuTextColor"
+    <path android:fillColor="?attr/colorOnSurface"
           android:pathData="M45,10h-6v22h7c0.552,0 1,-0.448 1,-1V12C47,10.895 46.105,10 45,10z"/>
 </vector>

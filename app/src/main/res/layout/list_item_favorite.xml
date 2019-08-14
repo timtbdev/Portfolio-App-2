@@ -39,7 +39,7 @@
                     android:layout_height="@dimen/_100sdp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@{item.imageDescription}"
-                    app:imageUrl="@{item.coverImage}"
+                    app:imageLoad="@{item.coverImage}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
                             android:contentDescription="@{item.logoDescription}"
-                            app:imageUrl="@{item.logo}"
+                            app:imageLoad="@{item.logo}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/list_item_favorite_sub_title"
                             app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +95,9 @@
                             android:maxLines="1"
                             android:textAlignment="textStart"
                             android:textAllCaps="true"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textSize="@dimen/dimen_14sp"
-                            android:textColor="@color/colorOnSurface"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@{item.subTitle}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +151,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_date"
-                            app:tint="@color/colorOnSurfaceSecondary"
+                            app:tint="?attr/colorOnSurface"
                             tools:src="@drawable/ic_date"/>
 
                     <!-- Favorite date -->
@@ -184,7 +184,7 @@
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                     android:layout_width="@dimen/dimen_0dp"
                     android:layout_height="@dimen/dimen_0dp"
-                    android:background="@color/colorSecondaryVariant"
+                    android:background="?attr/colorPrimary"
                     android:onClick="@{() -> clickListener.onClick(item, true)}"
                     android:foreground="?attr/selectableItemBackground"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -203,7 +203,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_menu_delete"
-                        app:tint="@color/colorOnPrimary"/>
+                        app:tint="?attr/colorOnPrimary"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

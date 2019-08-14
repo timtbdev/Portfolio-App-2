@@ -11,7 +11,7 @@
             <item
                     android:id="@+id/menu_delete_all"
                     android:icon="@drawable/ic_menu_delete"
-                    app:iconTint="@color/colorBottomSheetPrimaryText"
+                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_delete_all"/>
         </menu>

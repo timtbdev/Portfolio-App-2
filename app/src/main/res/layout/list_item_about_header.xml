@@ -10,8 +10,8 @@
             android:id="@+id/list_item_about_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/dimen_1dp"
-            android:background="@color/colorPreferenceCategoryBackground">
+            android:background="@color/colorHeaderBackground"
+            android:elevation="@dimen/dimen_2dp">
 
         <!-- About header title -->
         <androidx.appcompat.widget.AppCompatTextView
@@ -22,17 +22,15 @@
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_10sdp"
-                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textAppearance="?attr/textAppearanceHeadline1"
                 android:textAllCaps="true"
                 android:textSize="@dimen/dimen_18sp"
-                android:maxLines="1"
-                android:ellipsize="end"
+                android:textColor="@color/colorHeaderTitle"
                 android:text="@{header.header}"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textColor="@color/colorPreferenceCategoryTitle"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/cd_avatar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

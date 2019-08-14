@@ -11,126 +11,126 @@
             <path
                     android:name="path"
                     android:pathData="M 32 4 C 24.577 4 17.45 6.952 12.201 12.201 C 6.952 17.45 4 24.577 4 32 C 4 39.423 6.952 46.55 12.201 51.799 C 17.45 57.048 24.577 60 32 60 C 39.423 60 46.55 57.048 51.799 51.799 C 57.048 46.55 60 39.423 60 32 C 60 24.577 57.048 17.45 51.799 12.201 C 46.55 6.952 39.423 4 32 4 Z"
-                    android:fillColor="#eaeaea"
+                    android:fillColor="@color/colorLogoGreyLight"
                     android:strokeWidth="1"/>
             <group android:name="group">
                 <path
                         android:name="path_1"
                         android:pathData="M 9.4 34.1 L 59.9 34.1 C 60 33 60 32.4 60 31.4 L 8 31.4 C 8.4 32.3 8.9 33.2 9.4 34.1 Z M 39.7 28.1 C 31.9 28.1 25.6 22.6 25.6 15.8 C 25.6 15.6 25.8 15.4 26.1 15.4 C 26.4 15.4 26.6 15.6 26.6 15.8 C 26.6 22.1 32.5 27.2 39.7 27.2 C 46.9 27.2 52.8 22.1 52.8 15.8 C 52.8 15.6 53 15.4 53.3 15.4 C 53.6 15.4 53.8 15.6 53.8 15.8 C 53.8 22.6 47.5 28.1 39.7 28.1 Z"
-                        android:fillColor="#9e9e9e"
+                        android:fillColor="@color/colorLogoGreyDark"
                         android:strokeWidth="1"/>
                 <path
                         android:name="path_2"
                         android:pathData="M 50.8 23.4 L 50.8 32 L 51.3 32 L 51.3 22.8 C 51.1 23 51 23.2 50.8 23.4 Z M 28.1 22.8 L 28.1 32 L 28.6 32 L 28.6 23.3 L 28.1 22.8 Z M 30 24.7 L 30 32 L 30.5 32 L 30.5 25.1 L 30 24.7 Z M 31.9 26 L 31.9 32 L 32.4 32 L 32.4 26.2 L 31.9 26 Z M 33.8 27 L 33.8 32.1 L 34.3 32.1 L 34.3 27.2 L 33.8 27 Z M 35.7 27.6 L 35.7 32.1 L 36.2 32.1 L 36.2 27.8 L 35.7 27.6 Z M 37.6 27.9 L 37.6 32 L 38.1 32 L 38.1 28 L 37.6 27.9 Z M 39.7 28.1 L 39.4 28.1 L 39.4 32.1 L 40 32.1 L 40 28.1 L 39.7 28.1 Z M 41.4 28 L 41.4 32 L 41.9 32 L 41.9 27.9 L 41.4 28 Z M 43.2 27.7 L 43.2 32.1 L 43.7 32.1 L 43.7 27.6 L 43.2 27.7 Z M 45.1 27.2 L 45.1 32.1 L 45.6 32.1 L 45.6 27 L 45.1 27.2 Z M 47 26.3 L 47 32.1 L 47.5 32.1 L 47.5 26.1 L 47 26.3 Z M 48.9 25.1 L 48.9 32 L 49.4 32 L 49.4 24.7 L 48.9 25.1 Z M 25 15.4 C 24.7 15.4 24.5 15.6 24.5 15.8 C 24.5 21.7 19.3 26.6 12.6 27.1 C 12.7 27.4 12.7 27.7 12.8 28 C 20 27.4 25.6 22.1 25.6 15.8 C 25.5 15.6 25.2 15.4 25 15.4 Z"
-                        android:fillColor="#9e9e9e"
+                        android:fillColor="@color/colorLogoGreyDark"
                         android:strokeWidth="1"/>
                 <path
                         android:name="path_3"
                         android:pathData="M 22.5 23.4 L 22.5 32 L 23 32 L 23 22.8 C 22.8 23 22.6 23.2 22.5 23.4 Z M 13 29.5 C 13.2 30 13.3 30.5 13.5 31 L 13.5 28 L 13 28 L 13 29.5 Z M 14.9 27.7 L 14.9 32.1 L 15.4 32.1 L 15.4 27.6 L 14.9 27.7 Z M 16.8 27.2 L 16.8 32.1 L 17.3 32.1 L 17.3 27 L 16.8 27.2 Z M 18.7 26.3 L 18.7 32.1 L 19.2 32.1 L 19.2 26.1 L 18.7 26.3 Z M 20.6 25.1 L 20.6 32 L 21.1 32 L 21.1 24.7 L 20.6 25.1 Z M 59.1 25 C 59.1 24.9 58.8 23.9 58.8 23.9 C 55.7 21.8 55 19.5 55 15.9 C 55 15.7 54.8 15.5 54.5 15.5 C 54.2 15.5 54 15.7 54 15.9 C 54 20.1 57.4 25.4 59.4 25.8"
-                        android:fillColor="#9e9e9e"
+                        android:fillColor="@color/colorLogoGreyDark"
                         android:strokeWidth="1"/>
                 <path
                         android:name="path_4"
                         android:pathData="M 56.5 22.8 L 56.5 32 L 57 32 L 57 23.3 C 56.8 23.2 56.6 23 56.5 22.8 Z M 58.4 24.7 L 58.4 32 L 58.9 32 L 58.9 25.1 L 58.4 24.7 Z M 24.9 15.1 L 26.2 15.1 C 26.4 15.1 26.6 15.3 26.6 15.5 L 26.6 37.7 L 24.4 37.7 L 24.4 15.5 C 24.5 15.3 24.7 15.1 24.9 15.1 Z M 53.2 15.1 L 54.5 15.1 C 54.7 15.1 54.9 15.3 54.9 15.5 L 54.9 46 L 52.7 46 L 52.7 15.5 C 52.8 15.3 53 15.1 53.2 15.1 Z"
-                        android:fillColor="#9e9e9e"
+                        android:fillColor="@color/colorLogoGreyDark"
                         android:strokeWidth="1"/>
                 <path
                         android:name="path_5"
                         android:pathData="M 53.9 16.7 C 53.82 16.7 53.744 16.721 53.688 16.759 C 53.632 16.796 53.6 16.847 53.6 16.9 C 53.6 16.953 53.632 17.004 53.688 17.041 C 53.744 17.079 53.82 17.1 53.9 17.1 C 53.98 17.1 54.056 17.079 54.112 17.041 C 54.168 17.004 54.2 16.953 54.2 16.9 C 54.2 16.847 54.168 16.796 54.112 16.759 C 54.056 16.721 53.98 16.7 53.9 16.7 Z"
-                        android:fillColor="#9e9e9e"
+                        android:fillColor="@color/colorLogoGrey"
                         android:strokeWidth="1"/>
             </group>
             <path
                     android:name="path_6"
                     android:pathData="M 40.1 35.1 C 39.4 34.4 38.3 34.4 37.5 35.1 L 32.9 39.3 C 32.3 39.9 31.3 39.9 30.7 39.3 L 12.6 23.2 C 11.5 22.3 9.9 22.3 9 23.4 L 4.3 28.5 C 2.4 43.8 13.3 57.8 28.6 59.7 C 38.7 61 48.7 56.7 54.7 48.5 L 40.1 35.1 Z"
-                    android:fillColor="#d6d6d6"
+                    android:fillColor="@color/colorLogoGreyDark"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_7"
                     android:pathData="M 32 60 C 37.7 60 43.3 58.2 48 54.9 L 30.2 38.9 L 12.6 23.2 C 12.2 22.8 11.5 22.9 11.1 23.3 C 10.9 23.5 10.8 23.8 10.8 24 C 10.8 26.3 10.1 28.6 8.7 30.4 L 4.4 36.3 C 4.7 39 5.5 41.6 6.7 44 C 6.8 44.2 7 44.3 7.1 44.5 L 12.8 52.4 C 18 57.3 24.9 60 32 60 Z"
-                    android:fillColor="#9e9e9e"
+                    android:fillColor="@color/colorLogoGrey"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_8"
                     android:pathData="M 29 59.8 L 28.3 58.6 C 28.4 58.5 28.4 58.4 28.4 58.3 L 27.9 57.4 C 28 57.4 28 57.3 28 57.2 L 27.6 56.5 C 27.7 56.5 27.7 56.4 27.7 56.4 L 26.9 55 M 26.7 54.9 L 26 56.3 L 26 56.4 L 25.6 57.1 C 25.6 57.2 25.6 57.3 25.7 57.3 L 25.4 57.8 L 25.2 57.4 C 25.3 57.3 25.4 57.2 25.3 57.1 L 24.6 55.9 C 24.7 55.9 24.7 55.8 24.7 55.7 L 23.3 53.3 C 23.3 53.3 23.2 53.2 23.2 53.3 L 21.8 55.7 C 21.8 55.8 21.8 55.9 21.9 55.9 L 21.7 56.3 L 21.3 55.5 C 21.4 55.4 21.5 55.3 21.4 55.2 L 20.7 54 C 20.8 54 20.8 53.9 20.8 53.8 L 19.5 51.3 C 19.5 51.3 19.4 51.2 19.4 51.3 L 18 53.7 C 18 53.8 18 53.9 18.1 53.9 L 17.4 55.1 C 17.3 55.2 17.4 55.4 17.5 55.4 L 17.3 55.7 C 20.8 57.9 24.8 59.3 29 59.7 L 29 59.6 L 26.7 54.9 Z"
-                    android:fillColor="#d6d6d6"
+                    android:fillColor="@color/colorLogoGreyDark"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_9"
                     android:pathData="M 8.9 16.2 C 12.1 17 15.4 17.6 18.8 18 C 16 17.6 13.6 16.6 12.8 15.8 C 12 15.3 11.1 14.9 10.1 14.7 C 9.6 15.2 9.2 15.7 8.9 16.2 Z M 43.6 16.4 C 43.6 16.4 45.3 16.7 46.3 16.5 C 47.3 16.3 47.8 16.7 48.5 16.4 C 49 16.2 49.6 16.3 49.9 16.8 C 50.1 17.1 50.6 16.8 51 17.1 C 51.4 17.4 52.3 17.3 52.3 17.3 C 52.3 17.3 49.5 18.2 43.6 16.4 Z M 22 10.8 C 22.8 11 23.7 11.1 24.6 10.9 C 25.6 10.6 26.1 11.2 26.7 10.8 C 27.1 10.5 27.8 10.7 28 11.2 L 28 11.3 C 28.1 11.6 28.6 11.3 29 11.6 C 29.4 11.8 29.8 11.9 30.3 11.9 C 30.4 11.9 27.5 12.9 22 10.8 Z M 43.4 10 C 43.4 10 46.4 11 47.8 10.7 C 47.4 10.6 47 10.4 46.6 10.1 C 46.2 9.8 45.7 9.7 45.2 9.8 C 44.9 10 44.8 9.5 44.4 9.7 C 44.1 9.9 43.7 10 43.4 10 Z M 39.2 9.8 C 38.1 9.7 37 9.5 36 9 C 36.3 9 36.6 9 36.9 8.9 C 37.2 8.8 37.6 8.9 37.9 9.1 C 38.1 9.3 38.3 9 38.5 9.3 C 38.8 9.5 39 9.7 39.2 9.8 Z"
-                    android:fillColor="#9e9e9e"
+                    android:fillColor="@color/colorLogoGreyDark"
                     android:strokeWidth="1"/>
             <group android:name="group_1">
                 <path
                         android:name="path_10"
                         android:pathData="M 42.2 22.9 C 41.9 22.8 41.6 22.6 41.5 22.2 C 41.4 21.7 41.4 21.2 41.4 20.7 C 41.4 20.1 40.9 19.7 40.3 19.7 L 35 19.7 C 34.6 19.7 34.3 20 34.3 20.4 L 34.3 20.5 C 34.8 23.2 31.4 24.2 31.1 24.3 C 31.1 24.3 31.1 25 38.3 31.9"
-                        android:fillColor="#f9aa8f"
+                        android:fillColor="@color/colorLogoBody"
                         android:strokeWidth="1"/>
                 <path
                         android:name="path_11"
                         android:pathData="M 30.3 23.4 C 30.3 23.4 30.7 26.8 37 26.8 C 43.3 26.8 45.1 23.4 45.1 23.4 L 41.3 22.5 C 39.7 22.1 38.1 22.1 36.5 22.4 L 30.3 23.4 Z"
-                        android:fillColor="#f9aa8f"
+                        android:fillColor="@color/colorLogoBody"
                         android:strokeWidth="1"/>
             </group>
             <path
                     android:name="hand_body1"
                     android:pathData="M 30.3 23.4 C 30.3 23.4 22.6 25.8 22.6 39 C 22.6 43.5 22.6 43.3 18.4 26.8 L 15.6 26.8 C 15.6 26.8 10.8 51.3 23.1 53.3 C 35.4 55.3 31.9 32.4 31.9 32.4 L 30.3 23.4 Z"
-                    android:fillColor="#0c468c"
+                    android:fillColor="@color/colorLogoHand"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_13"
                     android:pathData="M 55.5 39.5 L 49.7 30.6 L 49 29.6 L 48.2 28.4 L 47.5 27.4 L 45 23.6 L 30.2 23.4 L 29.2 23.8 L 27.1 26.3 C 25.2 28.4 25.5 35.6 25.6 38.4 C 25.8 43.8 25.5 50.3 25.6 54.6 C 25.6 55.6 25.6 56.6 25.5 57.6 L 25.4 59.1 C 36.5 61.8 48.2 57.4 54.8 48 L 55 45.9 L 55.5 39.5 Z"
-                    android:fillColor="#005ab1"
+                    android:fillColor="@color/colorLogoChest"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_14"
                     android:pathData="M 50.3 26.3 L 48.5 28.1 L 48.3 28.3 L 47.5 29.1 L 47 29.6 C 43.5 33.3 40.2 37.2 37.3 41.3 C 33.8 46.1 29.6 52.6 27.2 59.6 L 29.3 59.9 C 31.9 54.2 35.6 48.8 38.1 44.6 L 38.3 44.2 L 39.8 42.1 C 42.3 38.7 45 35.5 47.9 32.5 L 48.4 32 L 49.8 30.6 L 50 30.4 L 50.9 29.5 C 51.6 28.8 51.6 27.7 50.9 27 L 50.3 26.3 Z"
-                    android:fillColor="#0c468c"
+                    android:fillColor="@color/colorTransparent"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_15"
                     android:pathData="M 49.4 26.1 C 49.1 25.8 49 26 48.6 26.3 L 49.4 25.5 L 47.6 27.3 L 46.6 28.3 C 42.9 32.1 39.5 36.1 36.4 40.4 C 32.8 45.4 28.4 52.1 26 59.4 C 26.7 59.6 27.5 59.7 28.2 59.8 C 30.5 53.9 33.6 48.4 37.3 43.3 L 38.8 41.2 C 41.4 37.7 44.3 34.3 47.4 31.1 C 48 30.5 48.5 29.9 49 29.5 L 50.4 27.9 C 50.7 27.6 50.6 27.5 50.3 27.2 L 49.4 26.1 Z"
-                    android:fillColor="#202124"
+                    android:fillColor="@color/colorLogoHair"
                     android:strokeWidth="1"/>
             <path
                     android:name="hand_body2"
                     android:pathData="M 45.1 23.4 C 45.1 23.4 55.8 25.8 56.4 41.5 C 57 57.2 53.3 62.1 31.9 54.2 C 31.9 54.2 33.7 50.8 34 51 C 34.3 51.2 48.9 53.3 48.9 46.1 C 48.9 38.9 42.6 33.6 41.8 30.3 C 41 27 45.1 23.4 45.1 23.4 Z"
-                    android:fillColor="#0c468c"
+                    android:fillColor="@color/colorLogoHand"
                     android:strokeWidth="1"/>
             <path
                     android:name="hand2_part2"
                     android:pathData="M 34 51 C 32.9 50.4 31.9 49.5 31.1 48.5 C 30.1 47 27 49.2 26.9 51.7 C 27 52.6 27.3 53.5 28 54.1 L 28.1 53.9 C 28.4 53.4 29 53.2 29.6 53.5 L 29.7 53.5 C 30.5 54.1 31.5 54.4 32.4 54.4 C 33.7 54.1 34 51 34 51 Z"
-                    android:fillColor="#fbbea0"
+                    android:fillColor="@color/colorLogoBody"
                     android:strokeWidth="1"/>
             <path
                     android:name="hand2_part1"
                     android:pathData="M 28 54.2 L 28.1 54 C 28.4 53.5 29 53.3 29.6 53.6 L 29.7 53.6 C 30.5 54.2 31.5 54.5 32.4 54.5 C 33.7 54.1 34 51 34 51 C 33.1 51 31.5 50.9 30.8 50.2 C 29.8 49.2 29.2 50 28.5 51.7 C 27.8 53.4 27 51.7 27 51.7 C 27 52.7 27.4 53.5 28 54.2 Z"
-                    android:fillColor="#f9aa8f"
+                    android:fillColor="@color/colorLogoBody"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_19"
                     android:pathData="M 34.1 7.5 C 36.3 5 40.1 4.7 42.6 6.9 C 45.3 10 43.5 18.2 40.9 20.8 L 40.4 21.3 C 38.4 22.9 35.6 22.6 34 20.6 C 32.5 18.3 32.7 11.4 32.7 11.4 C 32.7 10 33.2 8.6 34.1 7.5 Z"
-                    android:fillColor="#fbbea0"
+                    android:fillColor="@color/colorLogoBodyFace"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_20"
                     android:pathData="M 32.7 11.7 L 32.3 10.7 C 32.3 10.7 32.3 10.6 32.2 10.5 C 31.3 8 32.5 5.3 34.9 4.4 C 37.9 3.3 42 3.7 43.7 5.6 C 46.4 8.6 44.7 14.1 44.7 14.1 L 42.4 13.4 C 42.3 11.5 41.7 11.1 37.9 11.8 C 35.9 12.3 33.9 11.4 32.9 9.6 L 32.7 11.7 Z"
-                    android:fillColor="#0c0c0c"
+                    android:fillColor="@color/colorLogoHair"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_21"
                     android:pathData="M 43.3 16 L 43.1 14.4 C 43.1 14.4 42.7 12.2 43.8 12.2 C 45 12.3 45.1 15.5 43.3 16 Z"
-                    android:fillColor="#fbbea0"
+                    android:fillColor="@color/colorLogoBodyFace"
                     android:strokeWidth="1"/>
             <path
                     android:name="path_22"
                     android:pathData="M 43.8 15 C 43.8 15 43.8 15 43.8 15 C 43.6 15 43.6 15 43.6 14.9 L 43.6 14.2 C 43.6 14.2 43.4 12.9 43.9 12.9 C 44.4 12.9 44.5 14.5 43.8 15 Z"
-                    android:fillColor="#f9aa8f"
+                    android:fillColor="@color/colorLogoBody"
                     android:strokeWidth="1"/>
             <path
                     android:name="hand1"
                     android:pathData="M 15.6 26.8 L 15.2 22.6 C 14.8 18.4 18.6 18.5 19.3 18.8 C 20 19.1 18.7 22.3 19.4 22.2 C 20.1 22.1 20 21.3 20.4 20.9 C 20.8 20.4 22.4 22.9 20.7 24.1 C 19 25.3 18.4 26.8 18.4 26.8"
-                    android:fillColor="#fbbea0"
+                    android:fillColor="@color/colorLogoBody"
                     android:strokeWidth="1"/>
         </vector>
     </aapt:attr>

@@ -25,40 +25,6 @@ fun setScreenSplash(view: View, screen: ScreenState?) {
     }
 }
 
-/** Loader Screen */
-@BindingAdapter("screenLoader")
-fun setScreenLoader(view: View, screen: ScreenState?) {
-    val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
-    val fadeOut = AnimationUtils.loadAnimation(view.context, R.anim.fade_out)
-    when(screen != null && screen is LoaderScreen){
-        true -> {
-            view.visibility = View.VISIBLE
-            view.startAnimation(fadeIn)
-        }
-        false -> {
-            view.visibility = View.GONE
-            view.startAnimation(fadeOut)
-        }
-    }
-}
-
-/** Host Screen */
-@BindingAdapter("screenHost")
-fun setScreenHost(view: View, screen: ScreenState?) {
-    val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
-    val fadeOut = AnimationUtils.loadAnimation(view.context, R.anim.fade_out)
-    when(screen != null && screen is MainScreen || screen is WelcomeScreen){
-        true -> {
-            view.visibility = View.VISIBLE
-            view.startAnimation(fadeIn)
-        }
-        false -> {
-            view.visibility = View.GONE
-            view.startAnimation(fadeOut)
-        }
-    }
-}
-
 /** Main Screen */
 @BindingAdapter("screenMain")
 fun setScreenMain(view: View, screen: ScreenState?) {

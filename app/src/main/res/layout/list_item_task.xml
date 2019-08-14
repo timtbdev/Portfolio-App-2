@@ -43,14 +43,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="@color/colorBottomSheetIndicator"
+                        android:background="@color/colorHeaderBackground"
                         android:textAppearance="?attr/textAppearanceBody1"
                         android:text="@{String.valueOf(item.order)}"
                         android:textSize="@dimen/dimen_22sp"
                         android:maxLines="1"
                         android:ellipsize="end"
                         android:textAlignment="center"
-                        android:textColor="@color/colorOnSurfaceSecondary"
+                        android:textColor="?attr/colorOnSurface"
                         tools:text="1"/>
 
             </com.github.florent37.shapeofview.shapes.RoundRectView>
@@ -68,7 +68,7 @@
                     android:maxLines="5"
                     android:minLines="3"
                     android:ellipsize="end"
-                    android:textColor="@color/colorOnSurfaceSecondary"
+                    android:textColor="?attr/colorOnSurface"
                     android:text="@{item.task}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +83,7 @@
                 android:id="@+id/list_item_task_decorator"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_1dp"
-                android:background="@color/colorBottomSheetIndicator"/>
+                android:background="?attr/colorControlNormal"/>
 
     </LinearLayout>
 </layout>

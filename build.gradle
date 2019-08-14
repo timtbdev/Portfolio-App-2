@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: "com.github.ben-manes.versions"
+apply plugin: "org.jlleitschuh.gradle.ktlint"
 
 buildscript {
     apply from: 'versions.gradle'
@@ -12,6 +13,7 @@ buildscript {
         classpath deps.navigation.safe
         classpath deps.gradle.version_update
         classpath deps.firebase.plugin
+        classpath deps.gradle.ktlint
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

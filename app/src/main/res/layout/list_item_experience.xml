@@ -38,7 +38,7 @@
                     android:layout_height="@dimen/_80sdp"
                     android:scaleType="centerCrop"
                     android:contentDescription="@{item.logoDescription}"
-                    app:imageUrl="@{item.logo}"
+                    app:imageLoad="@{item.logo}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/list_item_experience_text_content"
                     app:layout_constraintHorizontal_chainStyle="packed"
@@ -87,19 +87,17 @@
                             app:layout_constraintHorizontal_weight="0.10"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/colorOnSurface"/>
+                            app:tint="?attr/colorOnPrimarySurface"/>
 
                     <!-- Job title -->
                     <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/list_item_experience_job_title"
                             android:layout_width="@dimen/dimen_0dp"
                             android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:maxLines="1"
                             android:textAlignment="textStart"
-                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            android:textAppearance="?attr/textAppearanceHeadline1"
                             android:textSize="@dimen/dimen_14sp"
-                            android:textColor="@color/colorOnSurface"
+                            android:textColor="?attr/colorOnPrimarySurface"
                             android:text="@{item.title}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +132,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_office"
-                            app:tint="@color/colorOnSurfaceSecondary"/>
+                            app:tint="?attr/colorOnSurface"/>
 
                     <!-- Company name -->
                     <androidx.appcompat.widget.AppCompatTextView
@@ -146,7 +144,7 @@
                             android:textAlignment="textStart"
                             android:textAppearance="?attr/textAppearanceBody1"
                             android:textSize="@dimen/dimen_14sp"
-                            android:textColor="@color/colorOnSurfaceSecondary"
+                            android:textColor="?attr/colorOnSurface"
                             android:text="@{item.company}"
                             app:layout_constraintHorizontal_weight="0.90"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -182,7 +180,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_map"
-                            app:tint="@color/colorOnSurfaceSecondary"/>
+                            app:tint="?attr/colorOnSurface"/>
 
                     <!-- Location name -->
                     <androidx.appcompat.widget.AppCompatTextView
@@ -194,7 +192,7 @@
                             android:textAlignment="textStart"
                             android:textAppearance="?attr/textAppearanceBody1"
                             android:textSize="@dimen/dimen_14sp"
-                            android:textColor="@color/colorOnSurfaceSecondary"
+                            android:textColor="?attr/colorOnSurface"
                             android:text="@{item.location}"
                             app:layout_constraintHorizontal_weight="0.90"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -229,7 +227,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_date"
-                            app:tint="@color/colorOnSurfaceSecondary"/>
+                            app:tint="?attr/colorOnSurface"/>
 
                     <!-- Date -->
                     <androidx.appcompat.widget.AppCompatTextView
@@ -241,7 +239,7 @@
                             android:textAlignment="textStart"
                             android:textAppearance="?attr/textAppearanceBody1"
                             android:textSize="@dimen/dimen_12sp"
-                            android:textColor="@color/colorOnSurfaceSecondary"
+                            android:textColor="?attr/colorOnSurface"
                             app:dateFrom="@{item.dateFrom}"
                             app:dateTo="@{item.dateTo}"
                             app:layout_constraintHorizontal_weight="0.90"
