@@ -1,6 +1,7 @@
 package me.tumur.portfolio
 
 import android.app.Application
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import androidx.work.*
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 import me.tumur.portfolio.repository.network.DbRefresh
 import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.koin.appModule
+import me.tumur.portfolio.utils.theme.ThemeHelper
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
@@ -19,7 +21,7 @@ import org.koin.core.context.startKoin
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
-class App() : Application(), Configuration.Provider{
+class App : Application(), Configuration.Provider {
 
     /**
      * onCreate is called before the first screen is shown to the user.
@@ -67,10 +69,20 @@ class App() : Application(), Configuration.Provider{
         }
 
         /**
+         * THEME SETTINGS
+         * */
+        /** Shared preferences */
+        val sharedPref: SharedPreferences = getSharedPreferences(Constants.APP, Context.MODE_PRIVATE)
+        val theme =
+            sharedPref.getString(resources.getString(R.string.preference_key_theme_option), Constants.THEME_DEFAULT)
+        theme?.let {
+            ThemeHelper.applyTheme(it)
+        }
+
+        /**
          * AUTO BACKGROUND PERIODIC SYNC
          * */
         /** Shared preferences */
-        val sharedPref: SharedPreferences = getSharedPreferences(Constants.APP, 0)
         if(sharedPref.getBoolean(resources.getString(R.string.preference_key_bg_sync), true)) setDelayedBackgroundSync()
 
     }

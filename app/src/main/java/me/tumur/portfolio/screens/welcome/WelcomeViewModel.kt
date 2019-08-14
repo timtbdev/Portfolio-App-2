@@ -1,13 +1,14 @@
 package me.tumur.portfolio.screens.welcome
 
 import android.content.Context
+import android.content.SharedPreferences
+import androidx.core.content.edit
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import me.tumur.portfolio.R
 import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.database.model.welcome.WelcomeModel
 import me.tumur.portfolio.utils.constants.Constants
-import me.tumur.portfolio.utils.delegates.Preference
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -27,7 +28,7 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
     private val context: Context by inject()
 
     /** Shared preferences */
-    private var isFirstRun by Preference(Constants.FIRST, true)
+    private val sharedPref: SharedPreferences = context.getSharedPreferences(Constants.APP, Context.MODE_PRIVATE)
 
     /** Welcome data */
     val welcomeScreen = liveData(context = viewModelScope.coroutineContext + Dispatchers.IO){
@@ -57,7 +58,9 @@ class WelcomeViewModel: ViewModel(), KoinComponent{
      * First run as {@Boolean as parameter}
      */
     fun setFirstRunAs(value: Boolean) {
-        isFirstRun = value
+        sharedPref.edit {
+            putBoolean(Constants.FIRST, value)
+        }
     }
 
     /**

@@ -8,12 +8,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
+import androidx.preference.Preference.OnPreferenceChangeListener
 import androidx.preference.PreferenceFragmentCompat
 import me.tumur.portfolio.R
 import me.tumur.portfolio.R.string
 import me.tumur.portfolio.R.xml
 import me.tumur.portfolio.screens.MainViewModel
 import me.tumur.portfolio.utils.constants.Constants
+import me.tumur.portfolio.utils.theme.ThemeHelper
 
 
 /**
@@ -92,6 +94,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         /** Preference keys */
         val rate = resources.getString(string.preference_key_rate)
         val appVersion = resources.getString(string.preference_key_app_version)
+        val theme = resources.getString(string.preference_key_theme_option)
 
         /** Preference screen */
         val pref = preferenceManager.preferenceScreen
@@ -103,6 +106,15 @@ class SettingsFragment : PreferenceFragmentCompat() {
         pref.findPreference<Preference>(appVersion)?.summary = version
         // Rate this app
         pref.findPreference<Preference>(rate)?.intent?.data = uri
+        // Theme
+        val themePref = pref.findPreference<Preference>(theme)
+        themePref?.let {
+            it.onPreferenceChangeListener = OnPreferenceChangeListener { _, newValue ->
+                val themeOption = newValue as String
+                ThemeHelper.applyTheme(themeOption)
+                true
+            }
+        }
     }
 
     /**

@@ -80,9 +80,9 @@ def build_versions = [:]
 build_versions.app_name = 'Portfolio'
 build_versions.app_id = 'me.tumur.portfolio'
 build_versions.min_sdk = 21
-build_versions.target_sdk = 28
-build_versions.compile_sdk = 28
-build_versions.build_tools = "28.0.3"
+build_versions.target_sdk = 29
+build_versions.compile_sdk = 29
+build_versions.build_tools = "29.0.0"
 ext.build_versions = build_versions // Add build versions to extension
 
 // Build variants

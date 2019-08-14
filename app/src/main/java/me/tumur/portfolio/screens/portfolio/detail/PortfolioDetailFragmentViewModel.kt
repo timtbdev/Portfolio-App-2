@@ -141,9 +141,7 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
             }
             /** Insert a portfolio item in to favorite table */
             withContext(Dispatchers.IO) {
-                if (favoriteMax != null) {
-                    if (favoriteMax.order > 0) favorite.order = favoriteMax.order + 1
-                }
+                if (favoriteMax.order > 0) favorite.order = favoriteMax.order + 1
                 favoriteDao.insert(favorite)
             }
         }

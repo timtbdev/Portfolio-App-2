@@ -2,6 +2,12 @@ package me.tumur.portfolio.utils.constants
 
 object Constants {
 
+    /** Theme * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    const val THEME_LIGHT = "light"
+    const val THEME_DARK = "dark"
+    const val THEME_DEFAULT = "default"
+
     /** Saved state * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val FRAGMENT_STATE = "FragmentState"
     const val FRAGMENT_PROFILE = "FragmentProfile"

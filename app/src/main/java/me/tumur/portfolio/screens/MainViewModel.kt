@@ -1,6 +1,7 @@
 package me.tumur.portfolio.screens
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -10,7 +11,6 @@ import me.tumur.portfolio.repository.database.dao.welcome.WelcomeDao
 import me.tumur.portfolio.repository.network.Failed
 import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.utils.constants.Constants
-import me.tumur.portfolio.utils.delegates.Preference
 import me.tumur.portfolio.utils.extensions.isNetworkAvailable
 import me.tumur.portfolio.utils.state.*
 import org.koin.core.KoinComponent
@@ -38,7 +38,10 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     private val welcomeDao: WelcomeDao by inject()
 
     /** Shared preferences */
-    private var isFirstRun by Preference(Constants.FIRST, true)
+    private val sharedPref: SharedPreferences = context.getSharedPreferences(Constants.APP, Context.MODE_PRIVATE)
+    private val isFirstRun by lazy {
+        sharedPref.getBoolean(Constants.FIRST, true)
+    }
 
     /** Check network and cache conditions */
     private val network = (isNetworkAvailable(context))

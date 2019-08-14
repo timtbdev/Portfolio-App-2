@@ -2,12 +2,10 @@ package me.tumur.portfolio.screens.experience.detail
 
 import android.content.Context
 import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +41,7 @@ import me.tumur.portfolio.utils.constants.Constants
 import me.tumur.portfolio.utils.state.Empty
 import me.tumur.portfolio.utils.state.NotEmpty
 import org.koin.android.ext.android.inject
+import timber.log.Timber
 import java.io.IOException
 
 /**
@@ -129,13 +128,11 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     override fun onMapReady(googleMap: GoogleMap?) {
         googleMap?.let {
             mMap = it
-            val darkMapStyle = MapStyleOptions.loadRawResourceStyle(ctx, R.raw.google_map_dark_style)
+            val mapStyle = MapStyleOptions.loadRawResourceStyle(ctx, R.raw.map_style)
             mMap?.let { map ->
                 map.uiSettings.isZoomControlsEnabled = true
                 map.setOnMarkerClickListener(this)
-                if (activity?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
-                    map.setMapStyle(darkMapStyle)
-                }
+                map.setMapStyle(mapStyle)
             }
         }
     }
@@ -292,7 +289,7 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
                 }
             }
         } catch (e: IOException) {
-            Log.e(Constants.FRAGMENT_EXPERIENCE, e.localizedMessage)
+            Timber.tag(Constants.FRAGMENT_EXPERIENCE).d(e.localizedMessage)
         }
 
         return addressText

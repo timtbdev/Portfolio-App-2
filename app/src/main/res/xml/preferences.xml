@@ -4,6 +4,23 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
+            app:key="@string/preference_key_theme"
+            app:title="@string/category_theme_options"
+            app:layout="@layout/preference_category_title">
+
+        <ListPreference
+                app:key="@string/preference_key_theme_option"
+                app:title="@string/title_choose_theme"
+                app:icon="@drawable/ic_theme"
+                app:summary="%s"
+                app:layout="@layout/preference_item_icon_title_summary"
+                android:entries="@array/pref_theme_labels"
+                android:entryValues="@array/pref_theme_values"
+                android:defaultValue="default"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
             app:key="@string/preference_key_data"
             app:title="@string/category_data_options"
             app:layout="@layout/preference_category_title">
