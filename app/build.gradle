@@ -140,6 +140,7 @@ dependencies {
     implementation deps.utilities.chrome_custom_tab
     implementation deps.utilities.toasty
     implementation deps.utilities.shape_view
+    debugImplementation deps.utilities.debug_db
     // Test
     testImplementation deps.test.junit
     androidTestImplementation deps.androidx.test
