@@ -20,7 +20,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 </a>
 </div>
 
-## 📽️ VIDEO
+## 📽️ PREVIEW
 [![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2FScreen%20Shot%202019-08-10%20at%203.29.38%20PM.png?alt=media&token=9695ccf8-a35a-473e-a9bb-b9eb44846d9e)](https://youtu.be/oygCoirWDpk "Portfolio App 2.0 - Click to Watch!")
 
 ## 📸 SCREENSHOTS
@@ -30,8 +30,8 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 
 ### Dark Theme
 
-<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-01.jpg?alt=media&token=dec5b593-990b-4aa8-9453-a3d708e845d8" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-02.jpg?alt=media&token=7d6ebea0-5e1a-4801-b1e7-1019ca03538c" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-03.jpg?alt=media&token=58f21a26-89be-4dac-ae9c-e71942834652" width="250"/>
-<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-04.jpg?alt=media&token=2c1cf5b0-4f6f-45d9-bc90-2dd7b96f2f86" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-05.jpg?alt=media&token=6d23d7d9-fa0a-4f3f-9d56-2b6b40db5a05" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-06.jpg?alt=media&token=772e3f19-25a1-4343-8d21-a238eb679517" width="250"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-01.jpg?alt=media&token=7f3a3a49-8702-4b76-a6e8-535ee552b03f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-02.jpg?alt=media&token=540dc65a-43f6-4ee5-ac59-b2d1cc2ed01e" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-03.jpg?alt=media&token=88a86ddf-3ea7-44b8-aa27-5b2273781dc9" width="250"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-04.jpg?alt=media&token=dbbe1036-cf4c-4a0d-b56c-1c90a085e27a" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-05.jpg?alt=media&token=6008514b-f6ff-4a1c-9934-39e4bfc9d0bb" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fdark%2Fs-06.jpg?alt=media&token=209aeea3-576a-4a55-b22c-eb8d740d3fe3" width="250"/>
 
 ## 📐 ARCHITECTURE (MVVM + Single Activity + Single Soure Of Truth)
 <img src="https://firebasestorage.googleapis.com/v0/b/personal-website-76368.appspot.com/o/architecture.png?alt=media&token=c66d207c-c9c4-4c17-9aaa-f78ca2c4e844"/>
