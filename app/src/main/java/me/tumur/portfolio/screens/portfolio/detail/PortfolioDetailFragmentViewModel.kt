@@ -5,7 +5,6 @@ import androidx.paging.PagedList
 import androidx.paging.toLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import me.tumur.portfolio.repository.database.dao.button.ButtonDao
 import me.tumur.portfolio.repository.database.dao.category.CategoryDao
 import me.tumur.portfolio.repository.database.dao.favorite.FavoriteDao
@@ -51,6 +50,13 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     val portfolio = id.switchMap { id ->
         liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
             emitSource(portfolioDao.getSingleItem(id))
+        }
+    }
+
+    /** Is it favorite? */
+    val favorite = id.switchMap { id ->
+        liveData(context = viewModelScope.coroutineContext + Dispatchers.IO) {
+            emitSource(favoriteDao.existSingleItem(id))
         }
     }
 
@@ -130,20 +136,13 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
             header = item.header,
             categoryType = item.categoryType,
             videoUrl = item.videoUrl,
-            order = 1,
+            order = item.order,
             date = Calendar.getInstance().time
         )
 
-        viewModelScope.launch {
-            /** Get max order */
-            val favoriteMax = withContext(Dispatchers.IO) {
-                favoriteDao.getMaxOrder()
-            }
+        viewModelScope.launch(Dispatchers.IO) {
             /** Insert a portfolio item in to favorite table */
-            withContext(Dispatchers.IO) {
-                if (favoriteMax.order > 0) favorite.order = favoriteMax.order + 1
-                favoriteDao.insert(favorite)
-            }
+            favoriteDao.insert(favorite)
         }
     }
 

@@ -17,7 +17,10 @@ import androidx.navigation.fragment.navArgs
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import me.tumur.portfolio.R
 import me.tumur.portfolio.databinding.FragmentPortfolioDetailBinding
 import me.tumur.portfolio.repository.database.dao.favorite.FavoriteDao
@@ -143,10 +146,7 @@ class PortfolioDetailFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         uiScope.launch {
-            val isFavorite = withContext(Dispatchers.IO) {
-                favoriteDao.existSingleItem(id)
-            }
-            if (isFavorite == 1) {
+            if (viewModel.favorite.value == 1) {
                 menu.findItem(R.id.menu_saved).isVisible = true
                 menu.findItem(R.id.menu_save).isVisible = false
             } else {
@@ -172,12 +172,11 @@ class PortfolioDetailFragment : Fragment() {
                 topMenu?.findItem(R.id.menu_saved)?.isVisible = false
                 topMenu?.findItem(R.id.menu_save)?.isVisible = true
             }
+            R.id.menu_route -> {
+                viewModel.clickedScreenShot.value?.let { routeToPreview(it.ownerId, it.order) }
+            }
             R.id.menu_share -> {
-                val model = viewModel.clickedScreenShot.value
-
-                if (model != null) routeToPreview(model.ownerId, model.order) else getShareIntent()
-
-
+                getShareIntent()
             }
         }
         return true
@@ -271,7 +270,7 @@ class PortfolioDetailFragment : Fragment() {
         val observerClickedScreenShot = Observer<ScreenShotModel> {
             it?.let {
                 topMenu?.let { menu ->
-                    val menuAction = menu.findItem(R.id.menu_share)
+                    val menuAction = menu.findItem(R.id.menu_route)
                     menuAction?.let { item ->
                         onOptionsItemSelected(item)
                     }
@@ -288,6 +287,26 @@ class PortfolioDetailFragment : Fragment() {
             }
         }
         viewModel.videoUrl.observe(viewLifecycleOwner, observerVideoUrl)
+
+        /** Set observer for favorite */
+        val observerFavorite = Observer<Int> {
+            it?.let {
+                topMenu?.let { menu ->
+                    val menuSaved = menu.findItem(R.id.menu_saved)
+                    val menuSave = menu.findItem(R.id.menu_save)
+                    val condition1 = it > 0 && menuSave != null && menuSave.isVisible
+                    val condition2 = it == 0 && menuSaved != null && menuSaved.isVisible
+                    if (condition1) {
+                        menuSave.isVisible = false
+                        menuSaved.isVisible = true
+                    } else if (condition2) {
+                        menuSaved.isVisible = false
+                        menuSave.isVisible = true
+                    }
+                }
+            }
+        }
+        viewModel.favorite.observe(viewLifecycleOwner, observerFavorite)
     }
 
     /**

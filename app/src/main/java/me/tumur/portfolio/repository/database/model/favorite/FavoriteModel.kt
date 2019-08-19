@@ -29,5 +29,5 @@ data class FavoriteModel(
     @ColumnInfo(name = DbConstants.TYPE) var categoryType: Int,
     @ColumnInfo(name = DbConstants.VIDEO_URL) var videoUrl: String?,
     @ColumnInfo(name = DbConstants.ORDERS) var order: Int,
-    @ColumnInfo(name = DbConstants.DATE) var date: Date?
+    @ColumnInfo(name = DbConstants.DATE) var date: Date
 ) : Parcelable

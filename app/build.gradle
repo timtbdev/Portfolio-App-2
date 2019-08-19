@@ -87,6 +87,7 @@ dependencies {
     implementation deps.androidx.viewpager
     implementation deps.androidx.emoji
     implementation deps.androidx.preferences
+    implementation deps.androidx.recyclerview
     // Activity
     implementation deps.activity.appcompat
     // Fragment

@@ -38,7 +38,7 @@ abstract class FavoriteDao {
 
     /** Exist single item */
     @Query(DbConstants.FAVORITE_EXIST_SINGLE_ITEM)
-    abstract fun existSingleItem(id: String): Int
+    abstract fun existSingleItem(id: String): LiveData<Int>
 
     /** Get max order */
     @Query(DbConstants.FAVORITE_GET_MAX_ORDER)
