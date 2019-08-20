@@ -115,7 +115,7 @@ Min API level is set to 21, so the presented approach is suitable for over 85% o
 
 ## 📦 THIRD PARTY LIBRARIES
 | Third party libraries | Firebase | Design tools | Gradle | 
-|:-------------------|:------------------------|:------------------------|
+|:-------------------|:------------------------|:------------------------|:------------------------|
 |[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)| [Gradle Kotlin DSL](http://bit.ly/2Njua1r)|
 |[Kotlin Coroutines](https://bit.ly/2wTru3E)|[Cloud Functions](https://bit.ly/2TfAkTE)|[Shape Shifter](https://bit.ly/2IuQzrQ)|[Ktlint](http://bit.ly/2Z9rGJB)|
 |[Retrofit](https://bit.ly/2pSxHbb)|[Hosting](https://bit.ly/2H5qbSW)|[Adobe Photoshop](https://adobe.ly/1Z5LVOp)|[Detekt](http://bit.ly/31T7r0l)|
