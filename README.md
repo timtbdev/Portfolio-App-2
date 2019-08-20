@@ -8,7 +8,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 <i>Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
 <br/>
 <div style="display:flex;" >
-<a target="_blank" href="#">
+<a target="_blank" href="https://play.google.com/store/apps/dev?id=4872099625526337244">
     <img alt="Get it on Google Play"
         height="80"
         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
@@ -21,7 +21,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 </div>
 
 ## 📽️ PREVIEW
-[![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fyoutube.png?alt=media&token=ba66ef7c-2e8e-4bb8-975b-061a764fc0b9)](https://youtu.be/oygCoirWDpk "Portfolio App 2.0 - Click to Watch!")
+[![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fyoutube.png?alt=media&token=ba66ef7c-2e8e-4bb8-975b-061a764fc0b9)](https://youtu.be/YjVJyqcv5I8 "Portfolio App 2.0 - Click to Watch!")
 
 ## 📸 SCREENSHOTS
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-01.png?alt=media&token=87c44bff-a70d-49a3-aaa4-85dfe5d51b0f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-02.png?alt=media&token=318cb9bf-5b19-4f16-be07-110e89c76aac" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-03.png?alt=media&token=2d644113-c427-4aed-99bd-1a0fb1f74e33" width="250"/>
