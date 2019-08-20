@@ -34,13 +34,13 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 
 | Features                                        | Description                                                            |
 |:------------------------------------------------|:-----------------------------------------------------------------------|
-| **Kotlin**                                      | This app is completely written in Kotlin.                              |
+| **Kotlin**                                      | 100% Kotlin.                              |
 | **MVVM architecture**                           | Using the lifecycle aware viewmodels, the view observes changes in the model / repository.|
 | **Android Architecture Components**             | Lifecycle awareness has been achieved using a combination of LiveData, ViewModels and Room.|
-| **Backend**                                    | Used Firebase products for backend and REST API|
+| **Backend**                                    | Used Google Cloud Functions and Firebase Firestore for backend and REST API|
 | **Dependency Injection**                        | Common elements like context, networking interface are injected using Koin.|
-| **Offline first architecture**                  | All the data is first tried to be loaded from the db and then updated from the server. This ensures that the app is usable even in an offline mode.|
-| **Effective Networking**                        | Using a combination of Retrofit, Room and LiveData, we are able to handle networking in the most effective way.|
+| **Offline first architecture**                  | All the data is loaded from the Room database and it's updated from the network. This ensures that the app is usable even in an offline mode.|
+| **Effective Networking**                        | Using a combination of Retrofit, Room, LiveData, Coroutines to handle networking in the most effective way.|
 | **Intelligent sync**                            | Intelligent hybrid syncing logic makes sure your Android app does not make repeated calls to the same back-end API for the same data in a particular time period.|
 | **Feature based packaging**                     | This screen-wise / feature-wise packaging makes code really easy to read and debug.|
 
@@ -58,8 +58,8 @@ You can download the apk from:
 * Android Support library
 
 ## 🌐 BACKEND
-I used Firebase Cloud Storage as a backend server and Firebase Cloud Hosting and Functions for API.
-You can find the Firebase Cloud Functions code in TypeScript <a href="https://github.com/tumurb/Personal-Portoflio-API-Version-2.0">here</a>.
+Firebase Cloud Storage used as a backend server and Firebase Cloud Hosting and Google Cloud Functions for providing REST API.
+You can find the code <a href="https://github.com/tumurb/Personal-Portoflio-API-Version-2.0">here</a>.
 
 ## 🔥 FIREBASE SETUP
 This project uses Firebases Analytics and Crashlytics, Cloud Firestore, Remote Config, etc. You will need to generate the configuration file (`google-services.json`) and copy it to your `/app` dir. See links below
@@ -97,6 +97,9 @@ the option to use the gradle wrapper
 
 
 ## 🚀 ANDROID JETPACK COMPONENTS
+
+Min API level is set to 21, so the presented approach is suitable for over 85% of devices running Android. This app takes advantage of many popular libraries and tools of the Android ecosystem. Most of the libraries are in the stable version, unless there is a good reason to use non-stable dependency.
+
 | Android Foundation | Architecture Components | Behavior | UI |
 |:-------------------|:------------------------|:---------|:---------|
 |[Appcompat](https://bit.ly/2NuMMK8)|[Data Binding](https://bit.ly/2GIx8KE)|[Media & Playback](https://bit.ly/2IAx3tY)|[Animations and Transitions](https://bit.ly/2N029tx)|
@@ -111,26 +114,26 @@ the option to use the gradle wrapper
 ||||[Google Play Instant App](https://bit.ly/2OEkwVy)|
 
 ## 📦 THIRD PARTY LIBRARIES
-| Third party libraries | Firebase | Design tools |
+| Third party libraries | Firebase | Design tools | Gradle | 
 |:-------------------|:------------------------|:------------------------|
-|[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)|
-|[Kotlin Coroutines](https://bit.ly/2wTru3E)|[Cloud Functions](https://bit.ly/2TfAkTE)|[Shape Shifter](https://bit.ly/2IuQzrQ)|
-|[Retrofit](https://bit.ly/2pSxHbb)|[Hosting](https://bit.ly/2H5qbSW)|[Adobe Photoshop](https://adobe.ly/1Z5LVOp)|
-|[OkHttp](https://bit.ly/2fVF6OA)|[Cloud Storage](https://bit.ly/2EuLtb6)|[Adobe Illustrator](https://adobe.ly/1G6wY8i)|
-|[Glide](https://bit.ly/1RIHiKz)|[Crashlytics](https://bit.ly/2GIM9fq)|[Adobe After Effects](https://adobe.ly/1B8kNrh)|
-|[Leak Canary](https://bit.ly/1Mz1RV4)|[Performance Monitoring](https://bit.ly/2Es0b2s)||
-|[Timber](https://bit.ly/1zQNWqd)|[Test Lab](https://bit.ly/2C1h3Mb)||
-|[ThreenTenABP](https://bit.ly/2GIykxt)|[App Indexing](https://bit.ly/2Tcy9jP)||
-|[Stetho](https://bit.ly/2eZ3YI7)|||
-|[Chrome Custom Tab](http://bit.ly/2XQsjYy)|||
-|[CircleImageView](https://bit.ly/1MlTaA6)|||
-|[SDP - Scalable Size Unit](https://bit.ly/2T9wlYZ)|||
-|[Gradle Versions Plugin](https://bit.ly/1FtgBgA)|||
-|[Moshi](https://bit.ly/2TLu7za)|||
-|[InkPageIndicator](http://bit.ly/2CKlcnW)|||
-|[ShapeOfView](http://bit.ly/2MQdFtD)|||
-|[Toasty](http://bit.ly/2McNZYu)|||
-|[COIL](http://bit.ly/2MZRhy1)|||
+|[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)| [Gradle Kotlin DSL](http://bit.ly/2Njua1r)|
+|[Kotlin Coroutines](https://bit.ly/2wTru3E)|[Cloud Functions](https://bit.ly/2TfAkTE)|[Shape Shifter](https://bit.ly/2IuQzrQ)|[Ktlint](http://bit.ly/2Z9rGJB)|
+|[Retrofit](https://bit.ly/2pSxHbb)|[Hosting](https://bit.ly/2H5qbSW)|[Adobe Photoshop](https://adobe.ly/1Z5LVOp)|[Detekt](http://bit.ly/31T7r0l)|
+|[OkHttp](https://bit.ly/2fVF6OA)|[Cloud Storage](https://bit.ly/2EuLtb6)|[Adobe Illustrator](https://adobe.ly/1G6wY8i)|[Versions](http://bit.ly/31P7Xwj)|
+|[Glide](https://bit.ly/1RIHiKz)|[Crashlytics](https://bit.ly/2GIM9fq)|[Adobe After Effects](https://adobe.ly/1B8kNrh)|[SafeArgs](http://bit.ly/2KSkf04)|
+|[Leak Canary](https://bit.ly/1Mz1RV4)|[Performance Monitoring](https://bit.ly/2Es0b2s)|||
+|[Timber](https://bit.ly/1zQNWqd)|[Test Lab](https://bit.ly/2C1h3Mb)|||
+|[ThreenTenABP](https://bit.ly/2GIykxt)|[App Indexing](https://bit.ly/2Tcy9jP)|||
+|[Stetho](https://bit.ly/2eZ3YI7)||||
+|[Chrome Custom Tab](http://bit.ly/2XQsjYy)||||
+|[CircleImageView](https://bit.ly/1MlTaA6)||||
+|[SDP - Scalable Size Unit](https://bit.ly/2T9wlYZ)||||
+|[Gradle Versions Plugin](https://bit.ly/1FtgBgA)||||
+|[Moshi](https://bit.ly/2TLu7za)||||
+|[InkPageIndicator](http://bit.ly/2CKlcnW)||||
+|[ShapeOfView](http://bit.ly/2MQdFtD)||||
+|[Toasty](http://bit.ly/2McNZYu)||||
+|[COIL](http://bit.ly/2MZRhy1)||||
 
 ## 📚 RESSOURCES
 <em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
