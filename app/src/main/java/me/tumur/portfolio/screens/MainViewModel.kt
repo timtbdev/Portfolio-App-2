@@ -15,6 +15,7 @@ import me.tumur.portfolio.utils.extensions.isNetworkAvailable
 import me.tumur.portfolio.utils.state.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject
+import timber.log.Timber
 
 
 /**
@@ -55,7 +56,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     val fragmentState: LiveData<String> = _fragmentState
 
     private val _fragmentStateHolder = MutableLiveData<String>()
-    val fragmentStateHolder: LiveData<String> = _fragmentStateHolder
+    private val fragmentStateHolder: LiveData<String> = _fragmentStateHolder
 
     /** Routed to saved Fragment state */
     private val _routed = MutableLiveData<Boolean>().apply { value = false }
@@ -76,6 +77,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
      * init{} is called immediately when this ViewModel is created.
      */
     init {
+        Timber.tag("SharedPref").d("Created")
         /** Check first run */
         if (isFirstRun) {
             setScreenState(SplashScreen)
@@ -157,7 +159,7 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
     }
 
     /** Set saved state handle for fragment state */
-    fun setFragmentState(state: String) {
+    private fun setFragmentState(state: String) {
         // Sets a new value for the object associated to the key.
         _fragmentState.value = state
     }

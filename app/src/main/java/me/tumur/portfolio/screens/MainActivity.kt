@@ -136,8 +136,8 @@ class MainActivity : AppCompatActivity() {
 
         /** Setup welcome screen observer  */
         val screenWelcomeObserver = Observer<ScreenState> { state ->
-            when(state){
-                is WelcomeScreen -> navController.navigate(R.id.action_global_to_welcome_screen)
+            if (state is WelcomeScreen && prefs.getBoolean(Constants.FIRST, true)) {
+                navController.navigate(R.id.action_global_to_welcome_screen)
             }
         }
         viewModel.screenState.observe(this, screenWelcomeObserver)
