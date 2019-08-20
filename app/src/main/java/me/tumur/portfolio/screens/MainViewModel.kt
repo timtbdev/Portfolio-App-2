@@ -15,7 +15,6 @@ import me.tumur.portfolio.utils.extensions.isNetworkAvailable
 import me.tumur.portfolio.utils.state.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject
-import timber.log.Timber
 
 
 /**
@@ -77,7 +76,6 @@ class MainViewModel(state : SavedStateHandle): ViewModel(), KoinComponent {
      * init{} is called immediately when this ViewModel is created.
      */
     init {
-        Timber.tag("SharedPref").d("Created")
         /** Check first run */
         if (isFirstRun) {
             setScreenState(SplashScreen)

@@ -8,7 +8,7 @@ import me.tumur.portfolio.utils.constants.Constants
 
 class PreviewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    override fun getCount(): Int = 5
+    override fun getCount(): Int = 6
 
     override fun getItem(i: Int): Fragment {
         val fragment = PreviewPagerFragment()

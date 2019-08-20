@@ -134,15 +134,13 @@ class PortfolioFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_search -> {
+            R.id.menu_route -> {
                 val portfolioItem = viewModel.selectedItem.value
                 if (portfolioItem != null) {
                     val action =
                         PortfolioFragmentDirections.actionToPortfolioDetailScreen(portfolioItem.id, portfolioItem.title)
                     findNavController().navigate(action)
                     viewModel.setSelectedItem(null)
-                } else {
-                    findNavController().navigate(R.id.settings_screen)
                 }
             }
 
@@ -178,7 +176,7 @@ class PortfolioFragment : Fragment() {
         val observerSelectedItem = Observer<PortfolioModel> {
             it?.let {
 
-                val menuAction = portfolioMenu.findItem(R.id.menu_search)
+                val menuAction = portfolioMenu.findItem(R.id.menu_route)
                 onOptionsItemSelected(menuAction)
             }
         }
