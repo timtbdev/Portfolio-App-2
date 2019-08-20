@@ -89,7 +89,7 @@ ext.build_versions = build_versions // Add build versions to extension
 
 // Build variants
 def build_variants = [:]
-build_variants.major = 0 // max two digits
+build_variants.major = 1 // max two digits
 build_variants.minor = 0 // max two digits
 build_variants.patch = 0 // max two digits
 build_variants.build = 1 // max three digits

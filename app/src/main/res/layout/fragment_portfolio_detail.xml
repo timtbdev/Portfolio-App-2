@@ -147,6 +147,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:contentDescription="@string/cd_calendar"
+                        app:tint="@color/colorOnSurface"
                         app:layout_constraintBottom_toBottomOf="@+id/portfolio_item_detail_logo"
                         app:layout_constraintEnd_toStartOf="@+id/portfolio_item_date"
                         app:layout_constraintHorizontal_chainStyle="packed"
