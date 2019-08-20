@@ -36,7 +36,7 @@
                 android:id="@+id/pager_item_preview_screen_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:screenPreviewImage="@{model.state}"
                 android:contentDescription="@{model.data.imageDescription}"
                 app:imageLoad="@{model.data.url}"

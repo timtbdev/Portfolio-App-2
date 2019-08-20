@@ -262,6 +262,7 @@ class PortfolioDetailFragment : Fragment() {
                 builder.setShowTitle(true)
                 val intent = builder.build()
                 intent.launchUrl(context, Uri.parse(it))
+                viewModel.setButtonUrl(null)
             }
         }
         viewModel.buttonUrl.observe(viewLifecycleOwner, observerButtonUrl)

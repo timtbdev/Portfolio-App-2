@@ -96,7 +96,7 @@ class PortfolioDetailFragmentViewModel : ViewModel(), KoinComponent {
     /**
      * Set clicked button
      * */
-    fun setButtonUrl(url: String) {
+    fun setButtonUrl(url: String?) {
         _buttonUrl.value = url
     }
 
