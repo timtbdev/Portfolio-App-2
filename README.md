@@ -21,7 +21,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 </div>
 
 ## 📽️ PREVIEW
-[![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2FScreen%20Shot%202019-08-10%20at%203.29.38%20PM.png?alt=media&token=9695ccf8-a35a-473e-a9bb-b9eb44846d9e)](https://youtu.be/oygCoirWDpk "Portfolio App 2.0 - Click to Watch!")
+[![Portfolio App 2.0](https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fyoutube.png?alt=media&token=32b6144e-f8ca-4539-ba01-9c25260c868d)](https://youtu.be/oygCoirWDpk "Portfolio App 2.0 - Click to Watch!")
 
 ## 📸 SCREENSHOTS
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-01.png?alt=media&token=87c44bff-a70d-49a3-aaa4-85dfe5d51b0f" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-02.png?alt=media&token=318cb9bf-5b19-4f16-be07-110e89c76aac" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio2.0%2Fs-03.png?alt=media&token=2d644113-c427-4aed-99bd-1a0fb1f74e33" width="250"/>
