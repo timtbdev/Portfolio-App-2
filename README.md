@@ -135,8 +135,8 @@ Min API level is set to 21, so the presented approach is suitable for over 85% o
 |[Toasty](http://bit.ly/2McNZYu)||||
 |[COIL](http://bit.ly/2MZRhy1)||||
 
-## 📚 RESSOURCES
-<em>A special thanks to everyone who shared great resources on social media 🙌🏻</em>
+## 📚 RESSOURCES & CREDENTIALS
+<em>Applied number of best practices from the Android community, and I'm thankful to everyone who shared their knowledge and experience through social media and blog posts. 🙌🏻</em>
 
 ### Android & Kotlin
 1. <a href="http://bit.ly/2ZTBbK8" target="_blank">Developing Android Apps with Kotlin by Google</a> 🔥🔥🔥
