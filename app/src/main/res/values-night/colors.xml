@@ -32,8 +32,8 @@
     <color name="colorTransparent">#34000000</color>
 
     <!-- * * * * * * * * * * * BUTTON * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-    <color name="colorButton">#699E3F</color>
-    <color name="colorButtonActive">#265F27</color>
+    <color name="colorButton">#3C4043</color>
+    <color name="colorButtonActive">#5F6368</color>
 
     <!-- * * * * * * * * * * * SVG VECTORS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  -->
     <color name="colorLogoChest">#1F1F1F</color>

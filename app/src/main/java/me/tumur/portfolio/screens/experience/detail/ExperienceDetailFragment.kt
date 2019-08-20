@@ -2,6 +2,7 @@ package me.tumur.portfolio.screens.experience.detail
 
 import android.content.Context
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
@@ -128,11 +129,16 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
     override fun onMapReady(googleMap: GoogleMap?) {
         googleMap?.let {
             mMap = it
+            val mapStyleDark = MapStyleOptions.loadRawResourceStyle(ctx, R.raw.map_style_dark)
             val mapStyle = MapStyleOptions.loadRawResourceStyle(ctx, R.raw.map_style)
             mMap?.let { map ->
                 map.uiSettings.isZoomControlsEnabled = true
                 map.setOnMarkerClickListener(this)
-                map.setMapStyle(mapStyle)
+                if (activity?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES) {
+                    map.setMapStyle(mapStyleDark)
+                } else {
+                    map.setMapStyle(mapStyle)
+                }
             }
         }
     }

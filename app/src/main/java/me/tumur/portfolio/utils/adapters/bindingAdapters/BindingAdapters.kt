@@ -3,6 +3,7 @@ package me.tumur.portfolio.utils.adapters.bindingAdapters
 import android.content.res.Configuration
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.IdRes
 import androidx.databinding.BindingAdapter
 import coil.api.load
 import coil.transform.GrayscaleTransformation
@@ -36,6 +37,25 @@ fun loadImage(imageView: ImageView, url: String?) {
         }
     }
 
+}
+
+/** Load image from the network or cache with placeholder and error images */
+@BindingAdapter("android:src")
+fun setImageDrawable(imageView: ImageView, @IdRes drawable: Int?) {
+    drawable?.let {
+        imageView.load(it) {
+            crossfade(true)
+            placeholder(R.color.colorBorder)
+            when (imageView.context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+                Configuration.UI_MODE_NIGHT_NO -> {
+                    transformations(RoundedCornersTransformation(0.0F))
+                } // Night mode is not active, we're using the light theme
+                Configuration.UI_MODE_NIGHT_YES -> {
+                    transformations(GrayscaleTransformation())
+                } // Night mode is active, we're using dark theme
+            }
+        }
+    }
 }
 
 /** Date from and date to */
