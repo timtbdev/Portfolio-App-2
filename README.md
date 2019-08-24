@@ -369,7 +369,7 @@ Min API level is set to 21, so the presented approach is suitable for over 85% o
 Android Developer
 <br/>
 <br/>
-<a href="https://play.google.com/store/apps/dev?id=4872099625526337244"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_google.png?alt=media&token=df311441-34fe-44dd-bf24-c5cbf8f4a6c9" width="60"></a> <a href="https://tumur.me"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_web.png?alt=media&token=3854f445-8465-4ad3-8cd8-7aca2999964f" width="60"></a>
+<a href="https://play.google.com/store/apps/dev?id=8351593314191223257"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_google.png?alt=media&token=df311441-34fe-44dd-bf24-c5cbf8f4a6c9" width="60"></a> <a href="https://tumur.me"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_web.png?alt=media&token=3854f445-8465-4ad3-8cd8-7aca2999964f" width="60"></a>
 <a href="https://twitter.com/tumur_alex"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_twitter.png?alt=media&token=0ada2552-9a35-4231-a502-3feab11d67c6" width="60"></a>
 <a href="https://www.linkedin.com/in/tumur-alex/"><img src="https://firebasestorage.googleapis.com/v0/b/ioco-5c746.appspot.com/o/icon_linkedin.png?alt=media&token=3a0baa2c-8a47-4301-8bf6-11603f3bfb0a" width="60"></a>
 
