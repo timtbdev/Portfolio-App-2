@@ -8,7 +8,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 <i>Ps: This is a result of what I've learned during my learning of Kotlin, Android Jetpack, Material Design components, and Firebase, Google Cloud Functions. I tried to implement as many as possible best practices from the Android community and I'm very thankful to everyone who shared their valuable knowledge and experience through social media and blog posts.</i>
 <br/>
 <div style="display:flex;" >
-<a target="_blank" href="https://play.google.com/store/apps/dev?id=4872099625526337244">
+<a target="_blank" href="https://play.google.com/store/apps/details?id=me.tumur.portfolio">
     <img alt="Get it on Google Play"
         height="80"
         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
