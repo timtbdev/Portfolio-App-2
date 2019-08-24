@@ -46,7 +46,7 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 
 ## 📦 DOWNLOAD APK
 You can download the apk from: 
-1. [Google Playstore](https://play.google.com/store/apps/details?id=info.tumur.resume.app)
+1. [Google Playstore](https://play.google.com/store/apps/details?id=me.tumur.portfolio)
 2. [Github Release](https://github.com/tumurb/Personal-Resume-Android/blob/master/app/release/Resume%201.2.apk)
 
 ## 📝 REQUIREMENTS
