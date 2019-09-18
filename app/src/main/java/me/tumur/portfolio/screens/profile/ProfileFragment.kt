@@ -1,5 +1,6 @@
 package me.tumur.portfolio.screens.profile
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
@@ -71,6 +72,7 @@ class ProfileFragment : Fragment() {
      * @return Return the View for the fragment's UI.
      */
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         /** Lock fragment in portrait screen orientation */

@@ -2,7 +2,10 @@ package me.tumur.portfolio.screens.experience
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -103,32 +106,10 @@ class ExperienceFragment : Fragment() {
             this.model = viewModel
         }
 
-        /** Options menu */
-        setHasOptionsMenu(true)
-
         /** Set observers */
         setObservers(experienceAdapter)
 
         return binding.root
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        experienceMenu = menu
-        inflater.inflate(R.menu.experience_list_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_search -> {
-                viewModel.selectedItem.value?.let {
-                    val action = ExperienceFragmentDirections.actionToExperienceDetailScreen(it.id, it.company)
-                    findNavController().navigate(action)
-                    viewModel.setSelectedItem(null)
-                }
-            }
-        }
-        return true
     }
 
     /** FUNCTIONS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -151,11 +132,10 @@ class ExperienceFragment : Fragment() {
          * */
         val observerItem = Observer<ExperienceModel> {
             it?.let {
-                experienceMenu.let { menu ->
-                    val menuAction = menu.findItem(R.id.menu_search)
-                    onOptionsItemSelected(menuAction)
-                }
-
+                val action =
+                    ExperienceFragmentDirections.actionToExperienceDetailScreen(it.id, it.company)
+                findNavController().navigate(action)
+                viewModel.setSelectedItem(null)
             }
         }
         viewModel.selectedItem.observe(viewLifecycleOwner, observerItem)

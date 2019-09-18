@@ -42,9 +42,7 @@
 
             <item
                     android:id="@+id/menu_route"
-                    android:icon="@drawable/ic_menu_search"
                     android:visible="false"
-                    app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_search" />
         </menu>

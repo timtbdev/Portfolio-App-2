@@ -121,8 +121,6 @@ class PortfolioFragment : Fragment() {
         /** Set observers */
         setObservers(portfolioAdapter)
 
-
-
         return binding.root
     }
 
@@ -134,23 +132,9 @@ class PortfolioFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_route -> {
-                val portfolioItem = viewModel.selectedItem.value
-                if (portfolioItem != null) {
-                    val action =
-                        PortfolioFragmentDirections.actionToPortfolioDetailScreen(portfolioItem.id, portfolioItem.title)
-                    findNavController().navigate(action)
-                    viewModel.setSelectedItem(null)
-                }
-            }
-
             R.id.menu_refresh -> {
                 viewModel.setRefreshStatus(true)
                 viewModel.fetch()
-            }
-
-            R.id.menu_favorite -> {
-                findNavController().navigate(R.id.favorite_screen)
             }
         }
         return true
@@ -175,9 +159,10 @@ class PortfolioFragment : Fragment() {
          * */
         val observerSelectedItem = Observer<PortfolioModel> {
             it?.let {
-
-                val menuAction = portfolioMenu.findItem(R.id.menu_route)
-                onOptionsItemSelected(menuAction)
+                val action =
+                    PortfolioFragmentDirections.actionToPortfolioDetailScreen(it.id, it.title)
+                findNavController().navigate(action)
+                viewModel.setSelectedItem(null)
             }
         }
         viewModel.selectedItem.observe(viewLifecycleOwner, observerSelectedItem)

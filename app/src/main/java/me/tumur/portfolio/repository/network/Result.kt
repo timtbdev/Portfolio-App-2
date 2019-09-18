@@ -2,7 +2,7 @@ package me.tumur.portfolio.repository.network
 
 sealed class Result
 
-/** Network request successfull */
+/** Network request successful */
 object Success : Result()
 
 /** Network request failed */

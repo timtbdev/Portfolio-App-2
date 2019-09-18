@@ -51,7 +51,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
     private lateinit var binding: FragmentProfileBottomSheetBinding
 
     /** Bottom sheet dialog fragment */
-    private lateinit var dialog: BottomSheetDialog
+    private lateinit var dlg: BottomSheetDialog
 
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -108,7 +108,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
         val socialItemClickObserver = Observer<SocialModel> { item ->
                 item?.let {
                     //Hide dialog and reset onclick value
-                    dialog.dismiss()
+                    dlg.dismiss()
                     viewModel.socialItemClicked()
                     // Set chrome custom tab
                     val builder = CustomTabsIntent.Builder()
@@ -132,7 +132,7 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
                 intent.putExtra(Intent.EXTRA_SUBJECT, Constants.SUBJECT)
                 if (intent.resolveActivity(activity!!.packageManager) != null) {
                     //Hide dialog and reset onclick value
-                    dialog.dismiss()
+                    dlg.dismiss()
                     viewModel.emailItemClicked()
                     // Start email intent
                     startActivity(intent)
@@ -146,13 +146,13 @@ class ProfileBottomSheetFragment: BottomSheetDialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
-        dialog.setOnShowListener {
+        dlg = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
+        dlg.setOnShowListener {
             val d = it as BottomSheetDialog
             val sheet = d.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
-            val behavior = BottomSheetBehavior.from(sheet)
-            behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            val behavior = sheet?.let { it1 -> BottomSheetBehavior.from(it1) }
+            behavior?.state = BottomSheetBehavior.STATE_COLLAPSED
         }
-        return dialog
+        return dlg
     }
 }

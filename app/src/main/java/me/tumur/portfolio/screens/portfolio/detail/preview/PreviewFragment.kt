@@ -1,5 +1,6 @@
 package me.tumur.portfolio.screens.portfolio.detail.preview
 
+import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -63,6 +64,7 @@ class PreviewFragment : Fragment() {
      * @return Return the View for the fragment's UI.
      */
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         /** Lock fragment in portrait screen orientation */

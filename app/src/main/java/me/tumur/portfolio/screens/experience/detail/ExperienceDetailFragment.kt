@@ -288,7 +288,7 @@ class ExperienceDetailFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
             // 2
             addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
             // 3
-            if (null != addresses && !addresses.isEmpty()) {
+            if (null != addresses && addresses.isNotEmpty()) {
                 address = addresses[0]
                 for (i in 0 until address.maxAddressLineIndex) {
                     addressText += if (i == 0) address.getAddressLine(i) else "\n" + address.getAddressLine(i)

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "EUEt23lEhUzh77AQhD5R",
+    "title": "Jetpack",
+    "type": 1,
+    "icon": "android",
+    "icon_description": "android logo",
+    "order": 1
+  },
+  {
+    "id": "HrRN20rXOD4gqsF82Ozy",
+    "title": "MVVM",
+    "type": 1,
+    "icon": "structure",
+    "icon_description": "schema",
+    "order": 3
+  },
+  {
+    "id": "nbaf80guV5w8bzARj71j",
+    "title": "Kotlin",
+    "type": 1,
+    "icon": "code",
+    "icon_description": "code in brackets",
+    "order": 2
+  },
+  {
+    "id": "6cYkco4IWDQpCqANbCJb",
+    "title": "MVC",
+    "type": 2,
+    "icon": "structure",
+    "icon_description": "schema",
+    "order": 3
+  },
+  {
+    "id": "OSZlGXDPCi7pEyeW1Umc",
+    "title": "Android",
+    "type": 2,
+    "icon": "android",
+    "icon_description": "android logo",
+    "order": 1
+  },
+  {
+    "id": "sLi3KseI9aVsjxk3sRWA",
+    "title": "Java",
+    "type": 2,
+    "icon": "code",
+    "icon_description": "code in brackets",
+    "order": 2
+  },
+  {
+    "id": "BzPA0Nqupzmnro3FvU7v",
+    "title": "HTML/CSS",
+    "type": 3,
+    "icon": "code",
+    "icon_description": "code in brackets",
+    "order": 2
+  },
+  {
+    "id": "D3a2MPnRCVAw443WhDLD",
+    "title": "Web",
+    "type": 3,
+    "icon": "web",
+    "icon_description": "globe",
+    "order": 1
+  },
+  {
+    "id": "cOeHjbI0TNXYXznYvrYE",
+    "title": "MVC",
+    "type": 3,
+    "icon": "structure",
+    "icon_description": "schema",
+    "order": 3
+  }
+]

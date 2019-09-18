@@ -36,7 +36,6 @@ fun loadImage(imageView: ImageView, url: String?) {
             }
         }
     }
-
 }
 
 /** Load image from the network or cache with placeholder and error images */

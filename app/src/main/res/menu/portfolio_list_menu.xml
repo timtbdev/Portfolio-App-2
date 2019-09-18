@@ -9,26 +9,11 @@
             android:title="">
         <menu>
             <item
-                    android:id="@+id/menu_route"
-                    android:icon="@drawable/ic_menu_search"
-                    app:iconTint="?attr/colorOnPrimarySurface"
-                    android:visible="false"
-                    app:showAsAction="collapseActionView|withText"
-                    android:title="@string/menu_search" />
-
-            <item
                     android:id="@+id/menu_refresh"
                     android:icon="@drawable/ic_menu_refresh"
                     app:iconTint="?attr/colorOnPrimarySurface"
                     app:showAsAction="collapseActionView|withText"
                     android:title="@string/menu_refresh" />
-
-            <item
-                    android:id="@+id/menu_favorite"
-                    android:icon="@drawable/ic_menu_top_favorite"
-                    app:iconTint="?attr/colorOnPrimarySurface"
-                    app:showAsAction="collapseActionView|withText"
-                    android:title="@string/menu_favorite"/>
         </menu>
     </item>
 </menu>

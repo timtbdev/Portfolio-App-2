@@ -21,6 +21,20 @@ object DbConstants {
     const val FAVORITE = "favorite"
     const val RESOURCE = "resource"
 
+    /** DATABASE POPULATION CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    const val WELCOME_JSON = "welcome.json"
+    const val PROFILE_JSON = "profile.json"
+    const val ABOUT_JSON = "about.json"
+    const val SOCIAL_JSON = "social.json"
+    const val BUTTON_JSON = "button.json"
+    const val TASK_JSON = "task.json"
+    const val PORTFOLIO_JSON = "portfolio.json"
+    const val EXPERIENCE_JSON = "experience.json"
+    const val CATEGORY_JSON = "category.json"
+    const val SCREENSHOT_JSON = "screenshot.json"
+    const val RESOURCE_JSON = "resource.json"
+    const val APP_JSON = "app.json"
+
     /** COLUMNS CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     const val ID = "id"
     const val OWNER_ID = "owner_id"
