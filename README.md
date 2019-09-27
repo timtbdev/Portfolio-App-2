@@ -29,8 +29,11 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-08.jpg?alt=media&token=839efa39-3d0e-493e-80e8-299195a16d2d" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-09.jpg?alt=media&token=499a8499-e705-4e96-97da-daf41f6bb3ff" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-10.jpg?alt=media&token=6be3e292-d77e-46ef-971d-92bdc6009dd9" width="250"/>
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-11.jpg?alt=media&token=c918df19-2bcf-4fd0-8d07-9197d80a5bac" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-12.jpg?alt=media&token=d4f0e6f6-6b0a-4272-adc5-145f3d4d33c6" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-14.jpg?alt=media&token=0677ccb3-bd6a-46d6-808a-9a51516a9169" width="250"/>
 
+## 💚 ANDROID JETPACK COMPONENTS
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/jetpack.jpg?alt=media&token=4dbbcaa6-1c08-488f-a1f4-e3c9af453c31"/>
+
 ## 📐 ARCHITECTURE (MVVM + Single Activity + Single Soure Of Truth)
-<img src="https://firebasestorage.googleapis.com/v0/b/personal-website-76368.appspot.com/o/architecture.png?alt=media&token=c66d207c-c9c4-4c17-9aaa-f78ca2c4e844"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/mvvm.jpg?alt=media&token=dd306811-892c-437d-a9eb-fc24abe16110"/>
 
 ## 📊 FEATURES
 
