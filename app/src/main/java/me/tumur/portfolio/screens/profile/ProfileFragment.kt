@@ -51,8 +51,6 @@ class ProfileFragment : Fragment() {
     /** Databinding */
     private lateinit var binding: FragmentProfileBinding
 
-    val uri = Uri.parse("market://details?id=" + context?.packageName)
-
     /** INITIALIZATION * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
     /**
@@ -126,8 +124,6 @@ class ProfileFragment : Fragment() {
 
             }
             R.id.menu_privacy -> startCustomTab(Constants.PRIVACY_URL)
-
-            R.id.menu_rate -> startCustomTab(uri.toString())
         }
         return true
     }
