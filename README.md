@@ -30,13 +30,24 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-11.jpg?alt=media&token=c918df19-2bcf-4fd0-8d07-9197d80a5bac" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-12.jpg?alt=media&token=d4f0e6f6-6b0a-4272-adc5-145f3d4d33c6" width="250"/> <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/screenshots%2Fportfolio1.2%2Fs-14.jpg?alt=media&token=0677ccb3-bd6a-46d6-808a-9a51516a9169" width="250"/>
 
 
-## 💚 ANDROID JETPACK COMPONENTS
+## 🚀 ANDROID JETPACK COMPONENTS
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/jetpack.jpg?alt=media&token=4dbbcaa6-1c08-488f-a1f4-e3c9af453c31"/>
 
+| Android Foundation | Architecture Components | Behavior | UI |
+|:-------------------|:------------------------|:---------|:---------|
+|[Appcompat](https://bit.ly/2NuMMK8)|[Data Binding](https://bit.ly/2GIx8KE)|[Media & Playback](https://bit.ly/2IAx3tY)|[Animations and Transitions](https://bit.ly/2N029tx)|
+|[Android KTX](https://bit.ly/2EtrEB6)|[LiveData](https://bit.ly/2IAnewp)|[Notifications](https://bit.ly/2BQyjmZ)|[Emoji](https://bit.ly/2GZqSgQ)|
+|[Multidex](https://bit.ly/2qnmlL1)|[Lifecycles](https://bit.ly/2E7ackq)|[Permissions](https://bit.ly/2x4HKiW)|[Constraint Layout](https://bit.ly/2tBwOVu)|
+|[Test](https://bit.ly/2GIIOgo)|[Navigation](https://bit.ly/2NLl1MC)|[Preferences](https://bit.ly/2TcvKWl)|[Motion Layout](https://bit.ly/2Nsdsec)|
+||[Paging](https://bit.ly/2IAnVWx)|[Sharing](https://bit.ly/2N6AhTX)|[Fragment](https://bit.ly/2LKTfPd)|
+||[Room](https://bit.ly/2lXfwOX)|[Slices](https://bit.ly/2tALpjL)|[View Pager](https://bit.ly/2ThCMJm)|
+||[ViewModel](https://bit.ly/2H0vRh3)||[Material Theming](https://bit.ly/2NpMeVH)|
+||[Work Manager](https://bit.ly/2EtEaAm)||[Material Design Guideline](https://bit.ly/2VdJ6io)|
+||||[Android Accessibility Guideline](https://bit.ly/2AfIFvN)|
+||||[Google Play Instant App](https://bit.ly/2OEkwVy)|
 
 ## 📐 ARCHITECTURE
 <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-app-147b5.appspot.com/o/mvvm.jpg?alt=media&token=dd306811-892c-437d-a9eb-fc24abe16110"/>
-
 
 ## 📊 FEATURES
 
@@ -52,10 +63,31 @@ I've published two Kotlin Android apps and up to date with the latest technologi
 | **Intelligent sync**                            | Intelligent hybrid syncing logic makes sure your Android app does not make repeated calls to the same back-end API for the same data in a particular time period.|
 | **Feature based packaging**                     | This screen-wise / feature-wise packaging makes code really easy to read and debug.|
 
+## 📦 THIRD PARTY LIBRARIES
+| Third party libraries | Firebase | Design tools | Gradle | 
+|:-------------------|:------------------------|:------------------------|:------------------------|
+|[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)| [Gradle Kotlin DSL](http://bit.ly/2Njua1r)|
+|[Kotlin Coroutines](https://bit.ly/2wTru3E)|[Cloud Functions](https://bit.ly/2TfAkTE)|[Shape Shifter](https://bit.ly/2IuQzrQ)|[Ktlint](http://bit.ly/2Z9rGJB)|
+|[Retrofit](https://bit.ly/2pSxHbb)|[Hosting](https://bit.ly/2H5qbSW)|[Adobe Photoshop](https://adobe.ly/1Z5LVOp)|[Detekt](http://bit.ly/31T7r0l)|
+|[OkHttp](https://bit.ly/2fVF6OA)|[Cloud Storage](https://bit.ly/2EuLtb6)|[Adobe Illustrator](https://adobe.ly/1G6wY8i)|[Versions](http://bit.ly/31P7Xwj)|
+|[Glide](https://bit.ly/1RIHiKz)|[Crashlytics](https://bit.ly/2GIM9fq)|[Adobe After Effects](https://adobe.ly/1B8kNrh)|[SafeArgs](http://bit.ly/2KSkf04)|
+|[Leak Canary](https://bit.ly/1Mz1RV4)|[Performance Monitoring](https://bit.ly/2Es0b2s)|||
+|[Timber](https://bit.ly/1zQNWqd)|[Test Lab](https://bit.ly/2C1h3Mb)|||
+|[ThreenTenABP](https://bit.ly/2GIykxt)|[App Indexing](https://bit.ly/2Tcy9jP)|||
+|[Stetho](https://bit.ly/2eZ3YI7)||||
+|[Chrome Custom Tab](http://bit.ly/2XQsjYy)||||
+|[CircleImageView](https://bit.ly/1MlTaA6)||||
+|[SDP - Scalable Size Unit](https://bit.ly/2T9wlYZ)||||
+|[Gradle Versions Plugin](https://bit.ly/1FtgBgA)||||
+|[Moshi](https://bit.ly/2TLu7za)||||
+|[InkPageIndicator](http://bit.ly/2CKlcnW)||||
+|[ShapeOfView](http://bit.ly/2MQdFtD)||||
+|[Toasty](http://bit.ly/2McNZYu)||||
+|[COIL](http://bit.ly/2MZRhy1)||||
+
 ## 📦 DOWNLOAD APK
 You can download the apk from: 
 1. [Google Playstore](https://play.google.com/store/apps/details?id=me.tumur.portfolio)
-2. [Github Release](https://github.com/tumurb/Portfolio-App-2/blob/master/app-release.aab)
 
 ## 📝 REQUIREMENTS
 * JDK Version 1.7 & above
@@ -103,45 +135,6 @@ the option to use the gradle wrapper
 ### No code!
 * You can [discuss a bug](https://github.com/tumurb/Bio/issues) or if it was not reported yet [submit a bug](https://github.com/tumurb/Bio/issues/new).
 
-
-## 🚀 ANDROID JETPACK COMPONENTS
-
-Min API level is set to 21, so the presented approach is suitable for over 85% of devices running Android. This app takes advantage of many popular libraries and tools of the Android ecosystem. Most of the libraries are in the stable version, unless there is a good reason to use non-stable dependency.
-
-| Android Foundation | Architecture Components | Behavior | UI |
-|:-------------------|:------------------------|:---------|:---------|
-|[Appcompat](https://bit.ly/2NuMMK8)|[Data Binding](https://bit.ly/2GIx8KE)|[Media & Playback](https://bit.ly/2IAx3tY)|[Animations and Transitions](https://bit.ly/2N029tx)|
-|[Android KTX](https://bit.ly/2EtrEB6)|[LiveData](https://bit.ly/2IAnewp)|[Notifications](https://bit.ly/2BQyjmZ)|[Emoji](https://bit.ly/2GZqSgQ)|
-|[Multidex](https://bit.ly/2qnmlL1)|[Lifecycles](https://bit.ly/2E7ackq)|[Permissions](https://bit.ly/2x4HKiW)|[Constraint Layout](https://bit.ly/2tBwOVu)|
-|[Test](https://bit.ly/2GIIOgo)|[Navigation](https://bit.ly/2NLl1MC)|[Preferences](https://bit.ly/2TcvKWl)|[Motion Layout](https://bit.ly/2Nsdsec)|
-||[Paging](https://bit.ly/2IAnVWx)|[Sharing](https://bit.ly/2N6AhTX)|[Fragment](https://bit.ly/2LKTfPd)|
-||[Room](https://bit.ly/2lXfwOX)|[Slices](https://bit.ly/2tALpjL)|[View Pager](https://bit.ly/2ThCMJm)|
-||[ViewModel](https://bit.ly/2H0vRh3)||[Material Theming](https://bit.ly/2NpMeVH)|
-||[Work Manager](https://bit.ly/2EtEaAm)||[Material Design Guideline](https://bit.ly/2VdJ6io)|
-||||[Android Accessibility Guideline](https://bit.ly/2AfIFvN)|
-||||[Google Play Instant App](https://bit.ly/2OEkwVy)|
-
-## 📦 THIRD PARTY LIBRARIES
-| Third party libraries | Firebase | Design tools | Gradle | 
-|:-------------------|:------------------------|:------------------------|:------------------------|
-|[Koin](https://bit.ly/2GIqyDE)|[Cloud Firestore](https://bit.ly/2U1Z9iZ)|[Sketch](https://bit.ly/23L9Cj0)| [Gradle Kotlin DSL](http://bit.ly/2Njua1r)|
-|[Kotlin Coroutines](https://bit.ly/2wTru3E)|[Cloud Functions](https://bit.ly/2TfAkTE)|[Shape Shifter](https://bit.ly/2IuQzrQ)|[Ktlint](http://bit.ly/2Z9rGJB)|
-|[Retrofit](https://bit.ly/2pSxHbb)|[Hosting](https://bit.ly/2H5qbSW)|[Adobe Photoshop](https://adobe.ly/1Z5LVOp)|[Detekt](http://bit.ly/31T7r0l)|
-|[OkHttp](https://bit.ly/2fVF6OA)|[Cloud Storage](https://bit.ly/2EuLtb6)|[Adobe Illustrator](https://adobe.ly/1G6wY8i)|[Versions](http://bit.ly/31P7Xwj)|
-|[Glide](https://bit.ly/1RIHiKz)|[Crashlytics](https://bit.ly/2GIM9fq)|[Adobe After Effects](https://adobe.ly/1B8kNrh)|[SafeArgs](http://bit.ly/2KSkf04)|
-|[Leak Canary](https://bit.ly/1Mz1RV4)|[Performance Monitoring](https://bit.ly/2Es0b2s)|||
-|[Timber](https://bit.ly/1zQNWqd)|[Test Lab](https://bit.ly/2C1h3Mb)|||
-|[ThreenTenABP](https://bit.ly/2GIykxt)|[App Indexing](https://bit.ly/2Tcy9jP)|||
-|[Stetho](https://bit.ly/2eZ3YI7)||||
-|[Chrome Custom Tab](http://bit.ly/2XQsjYy)||||
-|[CircleImageView](https://bit.ly/1MlTaA6)||||
-|[SDP - Scalable Size Unit](https://bit.ly/2T9wlYZ)||||
-|[Gradle Versions Plugin](https://bit.ly/1FtgBgA)||||
-|[Moshi](https://bit.ly/2TLu7za)||||
-|[InkPageIndicator](http://bit.ly/2CKlcnW)||||
-|[ShapeOfView](http://bit.ly/2MQdFtD)||||
-|[Toasty](http://bit.ly/2McNZYu)||||
-|[COIL](http://bit.ly/2MZRhy1)||||
 
 ## 📚 RESSOURCES & CREDENTIALS
 <em>Applied number of best practices from the Android community, and I'm thankful to everyone who shared their knowledge and experience through social media and blog posts. 🙌🏻</em>
@@ -332,11 +325,19 @@ Min API level is set to 21, so the presented approach is suitable for over 85% o
 ### Test
 1. <a href="http://bit.ly/2Dj9YXW" target="_blank">Leveling Up Your UI Tests With MockWebServer</a>
 
-### Firebase
+### Firebase Cloud Functions
 1. <a href="http://bit.ly/2IHK8Ad" target="_blank">Building a “Serverless” RESTful API with Cloud Functions</a>
 2. <a href="http://bit.ly/2IHKs1T" target="_blank">Build a Serverless full stack app using firebase cloud functions</a>
 3. <a href="https://youtu.be/c93iGKyvh3o" target="_blank">How Firebase Cloud Functions support custom domains</a>
 4. <a href="http://bit.ly/2KT4A3Z" target="_blank">Serve dynamic content and host microservices with Cloud Functions</a>
+
+### Firebase security rules
+1. <a href="https://youtu.be/QEuu9X9L-MU" target="_blank">Introduction to Firebase security rules (Firecasts)</a> 🔥
+2. <a href="http://bit.ly/2YBre39" target="_blank">Perform simple and compound queries in Cloud Firestore</a>
+3. <a href="http://bit.ly/30aPlGi" target="_blank">Firebase Auth REST API</a>
+4. <a href="http://bit.ly/2FXvLW9" target="_blank">Writing conditions for Cloud Firestore Security Rules</a>
+5. <a href="http://bit.ly/2xAjbYm" target="_blank">Five tips to secure your app (Firebase Summit 2018)</a>
+6. <a href="http://bit.ly/2LDq3MU" target="_blank">Firestore Security Rules</a>
 
 ### Network
 1. <a href="http://bit.ly/2Zl30Lr" target="_blank">Making Android Networking Pretty with Kotlin Coroutines</a>
@@ -353,14 +354,6 @@ Min API level is set to 21, so the presented approach is suitable for over 85% o
 6. <a href="https://youtu.be/jOeofbFWbsA" target="_blank">Networking the Kotlin way: Retrofit + Coroutines</a>
 7. <a href="http://bit.ly/2SXOm8e" target="_blank">Migrate from GSON to Moshi in Android</a>
 8. <a href="http://bit.ly/2GAXgG4" target="_blank">Modern DateTimes on Android</a>
-
-### Firebase
-1. <a href="https://youtu.be/QEuu9X9L-MU" target="_blank">Introduction to Firebase security rules (Firecasts)</a> 🔥
-2. <a href="http://bit.ly/2YBre39" target="_blank">Perform simple and compound queries in Cloud Firestore</a>
-3. <a href="http://bit.ly/30aPlGi" target="_blank">Firebase Auth REST API</a>
-4. <a href="http://bit.ly/2FXvLW9" target="_blank">Writing conditions for Cloud Firestore Security Rules</a>
-5. <a href="http://bit.ly/2xAjbYm" target="_blank">Five tips to secure your app (Firebase Summit 2018)</a>
-6. <a href="http://bit.ly/2LDq3MU" target="_blank">Firestore Security Rules</a>
 
 ### Other
 1. <a href="https://bit.ly/2H1f1yE" target="_blank">Kotlin + buildSrc for Better Gradle Dependency Management</a>
