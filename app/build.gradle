@@ -26,6 +26,11 @@ android {
             buildConfigField "boolean", "LOGS", "true"
             buildConfigField "boolean", "DEV_ENVIRONMENT", "true"
 
+            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
             resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
             versionNameSuffix "-debug"
         }

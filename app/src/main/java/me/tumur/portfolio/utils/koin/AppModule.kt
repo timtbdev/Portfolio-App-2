@@ -2,16 +2,11 @@ package me.tumur.portfolio.utils.koin
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import me.tumur.portfolio.repository.database.AppDatabase
-import me.tumur.portfolio.repository.database.DbPopulation
 import me.tumur.portfolio.repository.network.RestApi
 import me.tumur.portfolio.repository.repo.Repository
 import me.tumur.portfolio.repository.repo.RepositoryImp
@@ -160,14 +155,8 @@ internal fun createAppDatabase(context: Context): AppDatabase {
 
     return Room.databaseBuilder(context, AppDatabase::class.java, DbConstants.DATABASE_NAME)
         //Migration is not provided. So database will be cleared on upgrade
+        .createFromAsset(DbConstants.DATABASE_NAME)
         .fallbackToDestructiveMigration()
         .enableMultiInstanceInvalidation()
-        .addCallback(object : RoomDatabase.Callback() {
-            override fun onCreate(db: SupportSQLiteDatabase) {
-                super.onCreate(db)
-                val request = OneTimeWorkRequestBuilder<DbPopulation>().run { build() }
-                WorkManager.getInstance(context).enqueue(request)
-            }
-        })
         .build()
 }
