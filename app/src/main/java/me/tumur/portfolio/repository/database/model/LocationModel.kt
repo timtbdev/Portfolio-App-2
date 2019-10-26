@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.squareup.moshi.Json
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import me.tumur.portfolio.utils.constants.DbConstants
 
@@ -13,8 +13,8 @@ import me.tumur.portfolio.utils.constants.DbConstants
 @Parcelize
 data class LocationModel(
     @PrimaryKey(autoGenerate = false)
-    @Json(name = DbConstants.ID) @ColumnInfo(name = DbConstants.ID) var id: String,
-    @Json(name = DbConstants.OWNER_ID) @ColumnInfo(name = DbConstants.OWNER_ID) var ownerId: String,
-    @Json(name = DbConstants.LATITUDE) @ColumnInfo(name = DbConstants.LATITUDE) var latitude: Double? = null,
-    @Json(name = DbConstants.LONGITUDE) @ColumnInfo(name = DbConstants.LONGITUDE) var longitude: Double? = null
+    @SerializedName(DbConstants.ID) @ColumnInfo(name = DbConstants.ID) var id: String,
+    @SerializedName(DbConstants.OWNER_ID) @ColumnInfo(name = DbConstants.OWNER_ID) var ownerId: String,
+    @SerializedName(DbConstants.LATITUDE) @ColumnInfo(name = DbConstants.LATITUDE) var latitude: Double? = null,
+    @SerializedName(DbConstants.LONGITUDE) @ColumnInfo(name = DbConstants.LONGITUDE) var longitude: Double? = null
 ) : Parcelable

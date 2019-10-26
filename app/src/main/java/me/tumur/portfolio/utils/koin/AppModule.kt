@@ -3,9 +3,6 @@ package me.tumur.portfolio.utils.koin
 import android.content.Context
 import androidx.room.Room
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import me.tumur.portfolio.repository.database.AppDatabase
 import me.tumur.portfolio.repository.network.RestApi
 import me.tumur.portfolio.repository.repo.Repository
@@ -16,8 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.*
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /** 1.CONSTANTS * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -119,7 +115,7 @@ fun provideRetrofit(serverUrl: String, connect: Long, read: Long, write: Long): 
     return Retrofit.Builder()
         .baseUrl(serverUrl)
         .client(provideOkHttpClient(provideLoggingInterceptor(), connect, read, write))
-        .addConverterFactory(MoshiConverterFactory.create(provideMoshiBuilder()))
+        .addConverterFactory(GsonConverterFactory.create())
         //.addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 }
@@ -142,13 +138,13 @@ fun provideLoggingInterceptor(): HttpLoggingInterceptor {
     return interceptor
 }
 
-/** MOSHI ----------------------------------------------------------------------------------------------------------- */
-fun provideMoshiBuilder(): Moshi {
-    return Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
-        .build()
-}
+///** MOSHI ----------------------------------------------------------------------------------------------------------- */
+//fun provideMoshiBuilder(): Moshi {
+//    return Moshi.Builder()
+//        .add(KotlinJsonAdapterFactory())
+//        .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
+//        .build()
+//}
 
 /** DATABASE -------------------------------------------------------------------------------------------------------- */
 internal fun createAppDatabase(context: Context): AppDatabase {

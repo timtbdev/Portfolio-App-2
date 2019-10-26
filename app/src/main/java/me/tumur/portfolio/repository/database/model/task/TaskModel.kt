@@ -5,18 +5,16 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import me.tumur.portfolio.utils.constants.DbConstants
 
 @Entity(tableName = DbConstants.TASKS, indices = [Index(value = [DbConstants.ID], unique = true)])
-@JsonClass(generateAdapter = true)
 @Parcelize
 data class TaskModel(
     @PrimaryKey(autoGenerate = false)
-    @Json(name = DbConstants.ID) @ColumnInfo(name = DbConstants.ID) var id: String,
-    @Json(name = DbConstants.OWNER_ID) @ColumnInfo(name = DbConstants.OWNER_ID) var ownerId: String,
-    @Json(name = DbConstants.TASK) @ColumnInfo(name = DbConstants.TASK) var task: String,
-    @Json(name = DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
+    @SerializedName(DbConstants.ID) @ColumnInfo(name = DbConstants.ID) var id: String,
+    @SerializedName(DbConstants.OWNER_ID) @ColumnInfo(name = DbConstants.OWNER_ID) var ownerId: String,
+    @SerializedName(DbConstants.TASK) @ColumnInfo(name = DbConstants.TASK) var task: String,
+    @SerializedName(DbConstants.ORDER) @ColumnInfo(name = DbConstants.ORDERS) var order: Int
 ): Parcelable

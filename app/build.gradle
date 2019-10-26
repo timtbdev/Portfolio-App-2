@@ -27,8 +27,8 @@ android {
             buildConfigField "boolean", "DEV_ENVIRONMENT", "true"
 
             zipAlignEnabled true
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 
             resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
@@ -40,8 +40,8 @@ android {
             buildConfigField "boolean", "DEV_ENVIRONMENT", "false"
 
             zipAlignEnabled true
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
         }
@@ -124,12 +124,9 @@ dependencies {
     implementation deps.coroutines.core
     implementation deps.coroutines.android
     implementation deps.retrofit.core
-    implementation deps.retrofit.moshi
     implementation deps.retrofit.coroutines
-    implementation deps.moshi.core
-    implementation deps.moshi.kotlin
-    kapt deps.moshi.codegen
-    implementation deps.moshi.adapters
+    implementation deps.gson.core
+    implementation deps.gson.converter
     implementation deps.okhttp.core
     implementation deps.okhttp.logging
     implementation deps.okhttp.okio
